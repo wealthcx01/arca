@@ -1,0 +1,34 @@
+{
+  "api_paths": [],
+  "ws_urls": [],
+  "http_urls": [
+    "http://code.highcharts.com/modules/canvas-tools.js",
+    "http://code.highcharts.com/stock/4.2.5/gfx/vml-radial-gradient.png",
+    "http://export.highcharts.com/",
+    "http://localhost/desktop24_data/chart/stockchartpdf2?",
+    "http://t1.tr-lfa.com/trkdp_bulletin/board.jsp",
+    "http://t1.tr-lfa.com/trkdp_bulletin/message/status",
+    "http://www.highcharts.com",
+    "http://www.w3.org/1999/xhtml",
+    "http://www.w3.org/1999/xlink",
+    "http://www.w3.org/2000/svg"
+  ],
+  "jwt_patterns": [],
+  "api_key_headers": [],
+  "env_config": [],
+  "field_names": [
+    "PreviousClose",
+    "beforeClose",
+    "className",
+    "defaultDate",
+    "getDate",
+    "legendSymbol",
+    "onClose",
+    "triggerChange"
+  ],
+  "ric_patterns": [],
+  "soap_actions": [],
+  "_meta": {
+    "files_analysed": 14
+  }
+}

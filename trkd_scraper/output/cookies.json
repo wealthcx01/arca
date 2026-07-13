@@ -1,0 +1,82 @@
+[
+  {
+    "name": "dde",
+    "value": "2B19CE5435C281A671634B2403F9EAAAAC90B9744204E58B35384713F1F89D0D2DE7451558DB6B0938475AD93953F23502ED80862A05CC84ED225924228F8DFF9A7E3F9DA40D4FB0F46654DECEDB9900|00e7e3f00b36051ea31c32823509fb57|1773372922924",
+    "domain": "innov.trkd-hs.com",
+    "path": "/tha_desktop24",
+    "expires": 1773459322.971136,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "TT",
+    "value": "2B19CE5435C281A671634B2403F9EAAAAC90B9744204E58B35384713F1F89D0D2DE7451558DB6B0938475AD93953F23502ED80862A05CC84ED225924228F8DFF9A7E3F9DA40D4FB0F46654DECEDB9900",
+    "domain": "innov.trkd-hs.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "userrefid",
+    "value": "00e7e3f00b36051ea31c32823509fb57",
+    "domain": "innov.trkd-hs.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "UUID",
+    "value": "1773372922924",
+    "domain": "innov.trkd-hs.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "AWSALBTG",
+    "value": "jodQYzXr5UHhAalpRDTjL5lZAjqZPYVocJu6BbfHbvXFuAxwgM39btWKBrBJnOSdK8XE4apB0e9XaMB4jf48iMCs+FFlCSkOXYnUUgEDfhrzHDYTkF+QeD48iopIWXHjRoE2lBXKKrK9sca+14fy9inNmQ5hk9IRLiiNrIK3nDWGuzq25ntDVMRzIOqAjamwoyDKIBwFoi6mbru/zk1GcKRMI8O7pphRL9Wo8U8UR3Wj0KpZPFXUeVLvCXkAQn8b",
+    "domain": "innov.trkd-hs.com",
+    "path": "/",
+    "expires": 1773977739.202168,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "AWSALBTGCORS",
+    "value": "jodQYzXr5UHhAalpRDTjL5lZAjqZPYVocJu6BbfHbvXFuAxwgM39btWKBrBJnOSdK8XE4apB0e9XaMB4jf48iMCs+FFlCSkOXYnUUgEDfhrzHDYTkF+QeD48iopIWXHjRoE2lBXKKrK9sca+14fy9inNmQ5hk9IRLiiNrIK3nDWGuzq25ntDVMRzIOqAjamwoyDKIBwFoi6mbru/zk1GcKRMI8O7pphRL9Wo8U8UR3Wj0KpZPFXUeVLvCXkAQn8b",
+    "domain": "innov.trkd-hs.com",
+    "path": "/",
+    "expires": 1773977739.202289,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "AWSALB",
+    "value": "yoJ9ID/75A79lQmusFeMpVshAL8EGVJd+BBDzETMUIkA7L7wcNfd4nEMwwJD4IrCuG+NBZLE314raKY1w5RXzl4tJ7UnN9KQHSwBpjFGEAbtU6QjNpvv7e/5F41+",
+    "domain": "innov.trkd-hs.com",
+    "path": "/",
+    "expires": 1773977739.202325,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "AWSALBCORS",
+    "value": "yoJ9ID/75A79lQmusFeMpVshAL8EGVJd+BBDzETMUIkA7L7wcNfd4nEMwwJD4IrCuG+NBZLE314raKY1w5RXzl4tJ7UnN9KQHSwBpjFGEAbtU6QjNpvv7e/5F41+",
+    "domain": "innov.trkd-hs.com",
+    "path": "/",
+    "expires": 1773977739.20235,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  }
+]

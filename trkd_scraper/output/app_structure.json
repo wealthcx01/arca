@@ -1,0 +1,91 @@
+{
+  "links": [
+    {
+      "text": "CSV Export",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "User Guide (File format: PDF)",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/help/RMMAUserGuide.pdf"
+    },
+    {
+      "text": "close",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "1",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "2",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "3",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "4",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "5",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "6",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "7",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "8",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "9",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "10",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "11",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "12",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "13",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    },
+    {
+      "text": "close",
+      "href": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en#"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "close",
+      "id": "",
+      "class": "ui-dialog-titlebar-close ui-corner-all"
+    },
+    {
+      "text": "close",
+      "id": "",
+      "class": "ui-dialog-titlebar-close ui-corner-all"
+    }
+  ],
+  "iframes": [
+    {
+      "src": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+      "id": "streaming",
+      "name": ""
+    }
+  ]
+}

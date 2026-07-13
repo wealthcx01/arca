@@ -1,0 +1,84 @@
+{
+  "forms": [
+    {
+      "action": "https://innov.trkd-hs.com/tha_desktop/loginauth",
+      "method": "post",
+      "fields": [
+        {
+          "name": "username",
+          "type": "email",
+          "id": "",
+          "placeholder": ""
+        },
+        {
+          "name": "password",
+          "type": "password",
+          "id": "",
+          "placeholder": ""
+        },
+        {
+          "name": "version",
+          "type": "hidden",
+          "id": "",
+          "placeholder": ""
+        },
+        {
+          "name": "lang",
+          "type": "hidden",
+          "id": "",
+          "placeholder": ""
+        },
+        {
+          "name": "brand",
+          "type": "hidden",
+          "id": "",
+          "placeholder": ""
+        },
+        {
+          "name": "",
+          "type": "submit",
+          "id": "",
+          "placeholder": ""
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "name": "username",
+      "type": "email",
+      "id": "",
+      "placeholder": ""
+    },
+    {
+      "name": "password",
+      "type": "password",
+      "id": "",
+      "placeholder": ""
+    },
+    {
+      "name": "version",
+      "type": "hidden",
+      "id": "",
+      "placeholder": ""
+    },
+    {
+      "name": "lang",
+      "type": "hidden",
+      "id": "",
+      "placeholder": ""
+    },
+    {
+      "name": "brand",
+      "type": "hidden",
+      "id": "",
+      "placeholder": ""
+    },
+    {
+      "name": "",
+      "type": "submit",
+      "id": "",
+      "placeholder": ""
+    }
+  ]
+}

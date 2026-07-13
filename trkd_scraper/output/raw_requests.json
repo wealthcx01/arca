@@ -1,0 +1,2451 @@
+[
+  {
+    "timestamp": "2026-03-13T03:35:21.370323",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop/login",
+    "type": "auth",
+    "resource_type": "document",
+    "headers": {
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:21.801336",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop/js/jquery/jquery.js.combine?_=V2.4.5.1.20201012a&lang=",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop/login",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:21.801336",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=",
+    "type": "static_asset",
+    "resource_type": "stylesheet",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop/login",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:21.801336",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop/css/widget.css.combine?_=V2.4.5.1.20201012a&lang=",
+    "type": "static_asset",
+    "resource_type": "stylesheet",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop/login",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:21.801336",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop/js/util.js.combine?_=V2.4.5.1.20201012a&lang=",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop/login",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:21.803343",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop/js/widget.js.combine?_=V2.4.5.1.20201012a&lang=",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop/login",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:21.803343",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop/js/lfaconfig.js.combine?_=V2.4.5.1.20201012a&lang=",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop/login",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:22.203751",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop/img/login/loginform.png",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop/login",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:22.203751",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop/img/toolbutton/btn_login.jpg",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop/login",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:22.795186",
+    "method": "POST",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/loginauth",
+    "type": "auth",
+    "resource_type": "document",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded",
+      "origin": "https://innov.trkd-hs.com",
+      "referer": "https://innov.trkd-hs.com/tha_desktop/login",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "post_data": "username=u0001&password=u0001&version=&lang=en&brand="
+  },
+  {
+    "timestamp": "2026-03-13T03:35:22.973361",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+    "type": "other",
+    "resource_type": "document",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded",
+      "origin": "https://innov.trkd-hs.com",
+      "referer": "https://innov.trkd-hs.com/tha_desktop/login",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.150584",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/css/jquery/jquery.css.combine.css",
+    "type": "static_asset",
+    "resource_type": "stylesheet",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.151626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/jquery/jquery.js.combine.js",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.151626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "static_asset",
+    "resource_type": "stylesheet",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.151626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/custom.size/size-15/css/widget.css.combine.css",
+    "type": "static_asset",
+    "resource_type": "stylesheet",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.151626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/custom.theme/theme-white/css/widget.css.combine.css",
+    "type": "static_asset",
+    "resource_type": "stylesheet",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.151626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "static_asset",
+    "resource_type": "stylesheet",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.151626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/custom.size/size-15/css/lfa.css.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "stylesheet",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.151626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/custom.theme/theme-white/css/lfa.css.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "stylesheet",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.152626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/css/comp.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "static_asset",
+    "resource_type": "stylesheet",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.152626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/custom.size/size-15/css/comp.css.combine.css",
+    "type": "static_asset",
+    "resource_type": "stylesheet",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.152626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/custom.theme/theme-white/css/comp.css.combine.css",
+    "type": "static_asset",
+    "resource_type": "stylesheet",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.152626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/util.js.combine.js",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.152626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/widget.js.combine.js",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.152626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/widget/contextmenu.js.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.153626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/pdf.js?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.153626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/bulletin.js?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.153626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/reportconfig.js.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.153626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/lfaconfig.js.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.153626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/sschart/jquery.ui.sschart.js?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.153626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/sschart.js.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.154626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/widget/quotebox.js?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.154626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/widget/quotebox_lang_rs.js.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.154626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/widget/smartlisttable.js",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.154626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/widget/smartlisttable_lang_rs.js.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.154626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/lfaresourcebundle.js.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.154626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/lfaappcore.js.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.154626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/highchart/highstock.js",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.154626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/highchart/exporting.js",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.154626",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/streamingconfig.js.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.155625",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/streaming.js?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.155625",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/lfa.js?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "type": "javascript",
+    "resource_type": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.877994",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/header.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.877994",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/menu_bg_for_right.jpg",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.877994",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/separator.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.879185",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/19.png?_=1773372923252",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.879185",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/21.png?_=1773372923252",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.879185",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/left_arrow.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.879185",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/right_arrow.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.879185",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/refresh_btn.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.880315",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/powersearch/expand.png",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.880315",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/setting_icon.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.889017",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?qid=1773372923882&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.893641",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/widget/progress.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.131655",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/22.png?_=1773372923252",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.131655",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/left_arrow_disable.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.131655",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/right_arrow_disable.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.131655",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/pricealertsettingaction?action=get&sortcol=alert_time&sortdir=desc&qid=1773372924116&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.132664",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/css/jquery/images/ui-bg_flat_75_ffffff_40x100.png",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/jquery/jquery.css.combine.css",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.132664",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+    "type": "other",
+    "resource_type": "document",
+    "headers": {
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.133965",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/favoritepageeditaction?action=get&qid=1773372924126&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.135964",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/powersearch/powersearch_magnifier.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.304883",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?subcat2=price&subcat1=.SETI,.STI,THB=&qid=1773372924126&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.365394",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/btn_red.jpg",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.365394",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/btn_unselected.jpg",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.367642",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/btn_selected.jpg",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.367642",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/homepagesettingaction?action=get&qid=1773372924126&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.467088",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/quotemonitor?lang=en&brand=",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.556321",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/markettop?lang=en&brand=",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.667470",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/stockfullquote?lang=en&brand=",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.718854",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/stocklv2tmpl?lang=en&brand=",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.870873",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/quoteboxtmpl?lang=en&brand=",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.870873",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/space.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.870873",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/chartArrow.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.872881",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/fundfullquote?lang=en&brand=",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.054910",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/slchart/json2.js?_=1773372925053",
+    "type": "javascript",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.195321",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/slchart/Silverlight.js?_=1773372925194",
+    "type": "javascript",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.364714",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/funddivcomptmpl?lang=en&brand=",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.371616",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/prodcomptmpl?lang=en&brand=",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.373178",
+    "method": "POST",
+    "url": "https://innov.trkd-hs.com/jds/req",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+    },
+    "post_data": "ts=1773372925370&action=0&ric=IDN_RDF%2C0100.HK%2C6%2C16%2C18%2C21%2C79%2C1465%2C3265%2C3372%3BIDN_RDF%2C0700.HK%2C6%2C16%2C18%2C21%2C79%2C1465%2C3372%3BIDN_RDF%2C.SETI%2C6%2C11%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.STI%2C6%2C11%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2CTHB%3D%2C11%2C22%2C56&token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b"
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.498343",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/prod_comp/close.png",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.498343",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/lipper/region/OTHER.png",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.498343",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/lipper/asset_type/OTHER.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.499539",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/lipper/size-29/NA.png",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.534643",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/fund/FFD62F.png",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.534643",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/fund/85D6AD.png",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.772228",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/titlebox_bg_silver.jpg",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.772228",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/flag/flag18x12.png?_=1468055879124",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.773235",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/tab_bg01a.jpg",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.773235",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/btn_black.jpg",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/comp.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.773235",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/titlebox_btn_unselected.jpg",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.774234",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/superwatchlistgetlistdata?qid=1773372926569&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.774234",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/govbondperioddata?country=GL&qid=1773372926602&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.774605",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/15.png?_=1468055879124",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.775075",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/14.png?_=1468055879124",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.775075",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/8.png?_=1468055879124",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.775555",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/18.png?_=1468055879124",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.775555",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/24.png?_=1468055879124",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.775890",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/6.png?_=1773372923252",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.775890",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/sschart/space.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.781031",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/ecicategorydata?country=GL&qid=1773372926605&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.949266",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stockquotedata?template=lv2&ric=undefined&cc=&assettype=&qid=1773372926945&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.034655",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/navhistorylogdata?pid=markettop&cc=GL&tab=",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "application/json, text/javascript, */*; q=0.01",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.041655",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/menu_selected.jpg",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.141252",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stocksectorindexlistdata?listtype=EQTYIDX&cpage=markettop&subcat1=GL&subcat2=stockindex&qid=1773372927136&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.297374",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/fxlistdata?listtype=CURR&cpage=markettop&subcat1=GL&subcat2=THB&qid=1773372927137&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.323023",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/govbondlistdata?listtype=GBND&cpage=markettop&subcat1=GL&subcat2=10Y&qid=1773372927137&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.326022",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/s1.png?_=1468055879124",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.380597",
+    "method": "POST",
+    "url": "https://innov.trkd-hs.com/jds/req",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+    },
+    "post_data": "ts=1773372927379&action=0&ric=IDN_RDF%2C.DJI%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.IXIC%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.SPX%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.VIX%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.HSI%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.SSEC%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.SZSC%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.KLSE%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.STI%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.SETI%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.JKSE%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372&token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b"
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.437594",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/localtimedata?qid=1773372927137&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.481203",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stocksectorindexlistdata?listtype=EQTYIDX&cpage=markettop&subcat2=stockindex&subcat1=THA&qid=1773372927137&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.600666",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/marketstatlistdata?listtype=marketstat&cpage=markettop&subcat1=THA&qid=1773372927137&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.620710",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/interestratelistdata?listtype=interestrate&cpage=markettop&subcat1=LIBOR&subcat2=GL&qid=1773372927137&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.734973",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=THA_market_summary&recperpage=7&qid=1773372927137&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.785902",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stocksectorindexquotedata?ric=.SETI&assettype=EQTYIDX&template=minimini&cc=JPN&qid=1773372927139&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.947878",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/2.png?_=1468055879124",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.948417",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/22.png?_=1468055879124",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.948417",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/3.png?_=1468055879124",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.948970",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/5.png?_=1468055879124",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.948970",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/render_ta?width=624&height=168&ta=&span=MINUTE_5&code=.SETI&instrument=&type=LINE&caption=&ts=1773372927944&imageOnly=true&dp=-1&element=1773372927138&assettype=EQTYIDX&cc=THA&period=DAY_1&theme=theme-black&lang=en&qid=1773372927944&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.114400",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/ecilistdata?listtype=eci&cpage=markettop&subcat1=GL&subcat2=ECILISTBYTOTDAY&subcat3=TODAY&subcat4=2&recperpage=5&pn=1&qid=1773372927600&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.122527",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/star4.png",
+    "type": "static_asset",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.122527",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/chart_img.gif?uuid=6b5f5bef-3971-4835-8689-b8eab36fcb61&width=624&height=168&theme=theme-black&lang=en&span=MINUTE_5&code=.SETI&assettype=EQTYIDX&cc=THA",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.256634",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=USA_market_summary&recperpage=6&qid=1773372928113&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.384087",
+    "method": "POST",
+    "url": "https://innov.trkd-hs.com/jds/req",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+    },
+    "post_data": "ts=1773372928382&action=0&ric=IDN_RDF%2CTHB%3D%2C5%2C11%2C22%2C56%3BIDN_RDF%2CEURTHB%3DR%2C5%2C11%2C22%2C56%3BIDN_RDF%2CCNYTHB%3DR%2C5%2C11%2C22%2C56%3BIDN_RDF%2CAUDTHB%3DR%2C5%2C11%2C22%2C56%3BIDN_RDF%2CGBPTHB%3DR%2C5%2C11%2C22%2C56%3BIDN_RDF%2CJPYTHB%3DR%2C5%2C11%2C22%2C56%3BIDN_RDF%2CTH10YT%3DRR%2C356%2C361%2C1010%3BIDN_RDF%2CSG10YT%3DRR%2C356%2C361%2C1010%3BIDN_RDF%2CUS10YT%3DRR%2C356%2C361%2C1010%3BIDN_RDF%2CHK10YT%3DRR%2C356%2C361%2C1010%3BIDN_RDF%2CCN10YT%3DRR%2C356%2C361%2C1010%3BIDN_RDF%2CMY10YT%3DRR%2C356%2C361%2C1010%3BIDN_RDF%2CID10YT%3DRR%2C356%2C361%2C1010%3BIDN_RDF%2C.SETI%2C6%2C11%2C14%2C16%2C18%2C21%2C56%2C79%2C344%2C1465%2C3372%3BIDN_RDF%2C.FTFSTHA%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.FTFSTHL%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.FTFSTHM%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.FTFSTHMS%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.FTFSTSH%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.MAII%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.SET100%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.SET50%2C6%2C11%2C18%2C21%2C56%2C79%2C1465%2C3372&token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b"
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.408099",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=EUR_market_summary&recperpage=6&qid=1773372928406&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.559805",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=AS_market_summary&recperpage=6&qid=1773372928558&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.613936",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/flash_arrow_down_inv.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:30.509393",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/arrow_down_inv.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:37.490520",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/flash_arrow_up_inv.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:39.020720",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/arrow_up_inv.gif",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:54.126234",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?qid=1773372954126&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:54.309414",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+    "type": "other",
+    "resource_type": "document",
+    "headers": {
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:24.270192",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?qid=1773372984270&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:24.541398",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+    "type": "other",
+    "resource_type": "document",
+    "headers": {
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:27.948962",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/render_ta?width=624&height=168&ta=&span=MINUTE_5&code=.SETI&instrument=&type=LINE&caption=&ts=1773372987946&imageOnly=true&dp=-1&element=1773372927138&assettype=EQTYIDX&cc=THA&period=DAY_1&theme=theme-black&lang=en&qid=1773372987947&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.109032",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/chart_img.gif?uuid=38dd4f5f-61f4-4682-bb90-534fbc1f52b6&width=624&height=168&theme=theme-black&lang=en&span=MINUTE_5&code=.SETI&assettype=EQTYIDX&cc=THA",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.116031",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=THA_market_summary&recperpage=7&qid=1773372988114&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.263366",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/ecilistdata?listtype=eci&cpage=markettop&subcat1=GL&subcat2=ECILISTBYTOTDAY&subcat3=TODAY&subcat4=2&recperpage=5&pn=1&qid=1773372988262&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.307118",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=USA_market_summary&recperpage=6&qid=1773372988306&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.454363",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=EUR_market_summary&recperpage=6&qid=1773372988453&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.617764",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=AS_market_summary&recperpage=6&qid=1773372988616&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:54.415830",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?qid=1773373014414&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:54.767639",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+    "type": "other",
+    "resource_type": "document",
+    "headers": {
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:24.580176",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?qid=1773373044578&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:24.982937",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+    "type": "other",
+    "resource_type": "document",
+    "headers": {
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:27.961176",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/render_ta?width=624&height=168&ta=&span=MINUTE_5&code=.SETI&instrument=&type=LINE&caption=&ts=1773373047958&imageOnly=true&dp=-1&element=1773372927138&assettype=EQTYIDX&cc=THA&period=DAY_1&theme=theme-black&lang=en&qid=1773373047959&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.109828",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/chart_img.gif?uuid=ced1cf05-7c0e-4e10-b920-dd967cff3ffd&width=624&height=168&theme=theme-black&lang=en&span=MINUTE_5&code=.SETI&assettype=EQTYIDX&cc=THA",
+    "type": "other",
+    "resource_type": "image",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.329774",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=THA_market_summary&recperpage=7&qid=1773373048328&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.413398",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/ecilistdata?listtype=eci&cpage=markettop&subcat1=GL&subcat2=ECILISTBYTOTDAY&subcat3=TODAY&subcat4=2&recperpage=5&pn=1&qid=1773373048411&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.623765",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=USA_market_summary&recperpage=6&qid=1773373048516&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.630905",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=EUR_market_summary&recperpage=6&qid=1773373048629&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.772642",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=EUR_market_summary&recperpage=6&qid=1773373048770&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.772642",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=AS_market_summary&recperpage=6&qid=1773373048758&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.931730",
+    "method": "GET",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=AS_market_summary&recperpage=6&qid=1773373048928&lang=en&snap=1",
+    "type": "other",
+    "resource_type": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "accept": "*/*",
+      "sec-ch-ua": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"HeadlessChrome\";v=\"134\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "post_data": null
+  }
+]

@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Expires" content="Fri, 01 Jan 2038 01:01:01 GMT">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="pragma" content="no-store">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+
+
+<title>Refinitiv Market Monitor Asia</title>
+
+
+
+
+<link rel="apple-touch-icon" sizes="114x114" href="img/ipad-touch-icon.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ipad-touch-icon.png">
+
+
+
+
+
+
+
+
+
+<!--<link rel="stylesheet" href="css/jquery/jquery.css.combine?_=V2.4.5.1.20201012a&lang="/>-->
+<script type="text/javascript" src="js/jquery/jquery.js.combine?_=V2.4.5.1.20201012a&amp;lang="></script>
+
+<link rel="stylesheet" href="css/lfa.css.combine?_=V2.4.5.1.20201012a&amp;lang=">
+<link rel="stylesheet" href="css/widget.css.combine?_=V2.4.5.1.20201012a&amp;lang=">
+
+<script type="text/javascript" src="js/util.js.combine?_=V2.4.5.1.20201012a&amp;lang="></script>
+<script type="text/javascript" src="js/widget.js.combine?_=V2.4.5.1.20201012a&amp;lang="></script>
+
+<script type="text/javascript" src="js/lfaconfig.js.combine?_=V2.4.5.1.20201012a&amp;lang="></script>
+<script>
+var lang = getURLParameter("lang");
+if (lang) _currentapplang = lang;
+     else _currentapplang = _DEFAULT_APPLANG;
+</script>
+
+
+
+
+
+
+<script>
+
+CONSOLELOGGER.isdebug = false;
+CONSOLELOGGER.useconsoleloggerdialog = false;
+
+
+CONSOLELOGGER.debug("===== DEBUG CONSOLE LOGGING ENABLED =====");
+CONSOLELOGGER.debug("debug = null");
+CONSOLELOGGER.debug("useconsoleloggerdialog = null");
+
+CONSOLELOGGER.debug("===== FOR DEVELOPMENT USE =====");
+
+</script>
+
+
+
+
+
+<style>
+body {
+    background-color: #FFFFFF;
+}
+
+#backdrop {
+    background: url("img/login/loginform.png") no-repeat center center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 603px;
+    height: 402px;
+}
+#backdrop #loginform {
+    display: none;
+    position: absolute;
+    top: 295px;
+    left: 45px;
+    width: 130px;
+    height: 70px;
+}
+#backdrop #loginform .inputbox {
+    /* Default size-12 */
+    width: 128px;
+}
+#backdrop #loginform .inputbox input {
+    text-align: center;
+
+    /* Default size-12 */
+    width: 124px;
+}
+#backdrop #loginform #button_login.pushbutton {
+    /* Default size-12 */
+    /* Default theme-black */
+    background: url("img/toolbutton/btn_login.jpg") repeat-x !important;
+    color: #FFFFFF !important;
+    border-color: #404040 !important;
+}
+#backdrop #versionbox {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    font-size: smaller;
+
+    /* Default theme-black */
+    color: #C0C0C0;
+}
+#backdrop2 {
+    position: absolute;
+    top: 402px;
+    left: 0px;
+    width: 603px;
+    color: #000;
+}
+</style>
+
+<script>
+////////////////////////////////////////////////////////////////////////////////
+
+// The reference of various UI objects
+var $backdrop;
+var $loginform;
+var $button_login;
+var $input_uid;
+var $input_pwd;
+
+////////////////////////////////////////////////////////////////////////////////
+
+// Initialization starts here...
+$(function() {
+    // Save the reference of various UI objects
+    $backdrop = $("#backdrop");
+    $loginform = $("#loginform");
+    $button_login = $("#button_login");
+    $input_uid = $("#input_uid.inputbox input");
+    $input_pwd = $("#input_pwd.inputbox input");
+
+    // The login action~~
+    $button_login.toolbutton({
+        click: function(id) {
+            $loginform.submit();
+        }
+    });
+
+    $input_uid.keypress(function(event) {
+        if (event.which == 13) {
+            event.preventDefault();
+            $input_pwd.focus();
+        }
+    })
+    .focus(function() {
+        this.select();
+    });
+
+    $input_pwd.keypress(function(event) {
+        if (event.which == 13) {
+            event.preventDefault();
+            $button_login.click();
+        }
+    })
+    .focus(function() {
+        this.select();
+    });
+
+    // When the window size is changed...
+    $window.bind(_RESIZE_EVENT, relayout);
+    relayout();
+
+    // Show the login form
+    $loginform.show();
+});
+
+function relayout() {
+    var x = parseInt(($window.innerWidth() - $backdrop.width()) / 2);
+    var y = parseInt(($window.innerHeight() - $backdrop.height()) / 2);
+    $backdrop.css({ left:x, top:y });
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+// Set UI language now...
+var lang = _DEFAULT_APPLANG;
+$(function() {
+    $loginform.find("[name='lang']").attr("value", lang);
+
+    $button_login.children("span").html(RESOURCEBUNDLE[lang].buttonlogin_label);
+    $input_uid.attr("_placeholder", RESOURCEBUNDLE[lang].inputuid_placeholder).setinputplaceholder();
+    $input_pwd.attr("_placeholder", RESOURCEBUNDLE[lang].inputpwd_placeholder).setinputplaceholder();
+});
+
+var RESOURCEBUNDLE = {
+    "ja": {
+        inputuid_placeholder: "ユーザー名",
+        inputpwd_placeholder: "パスワード",
+        buttonlogin_label: "ログイン",
+        errmsg: {
+            "s1": "セッションのタイムアウトが発生しました。",
+            "l1": "ユーザーIDまたはパスワードが無効です。再度確認してください。",
+            "l2": "ユーザーIDまたはパスワードが無効です。再度確認してください",
+            "l3": "システムエラーが発生しました。再度確認してください。"
+        }
+    },
+    "en": {
+        inputuid_placeholder: "Username",
+        inputpwd_placeholder: "Password",
+        buttonlogin_label: "Login",
+        errmsg: {
+            "s1": "Session timeout",
+            "l1": "Invalid username or password",
+            "l2": "Account inactive",
+            "l3": "System error"
+        }
+    }
+};
+
+
+
+function onsubmitloginform() {
+    var version = $loginform.find("[name='version']").val();
+    if (version == "") version = "default";
+    if (_LOGIN_TARGET_MAP[version]==null) version = "default";
+    var actionpath = _LOGIN_TARGET_MAP[version];
+    if (version != "default") actionpath += "?version=" + version;
+    $loginform.attr("action", actionpath);
+    return true;
+}
+
+</script>
+
+
+</head>
+
+<body class="landscape size-12 theme-black">
+
+<div id="backdrop" style="left: 658px; top: 339px;">
+    <div id="backdrop2" style="display:none;">
+2018年10月1日、トムソン・ロイターの旧フィナンシャル・リスク事業部門は[Refinitiv]となりました。トムソン・ロイターが所有する全ての名称や商標(”Thomson Reuters”およびKinesisロゴを含む)は、トムソン・ロイター及びその関連会社からのライセンス許諾を受けて使用されます。<br>
+<br>
+Refinitivの製品については、今後Refinitivブランドを反映するためのブランド変更が行われる予定です。<br>
+本件に関する詳細につきましては、legal@refinitiv.comにお問い合わせください。<br>
+    </div>
+    <form id="loginform" name="login" action="loginauth" method="post" onsubmit="return onsubmitloginform();" style="display: block;">
+        <div id="input_uid" class="inputbox"><input type="email" name="username" autocapitalize="off" autocorrect="off" maxlength="50" _placeholder="Username" class="placeholder" style=""></div>
+        <div id="input_pwd" class="inputbox"><input type="password" name="password" autocapitalize="off" autocorrect="off" maxlength="32" _placeholder="Password" class="placeholder" style=""></div>
+        <input type="hidden" name="version" value="" style="">
+        <input type="hidden" name="lang" value="en" style="">
+        <input type="hidden" name="brand" value="" style="">
+        <div class="rowseparator"></div>
+        <div id="button_login" class="pushbutton"><span>Login</span></div><input type="submit" style="position: absolute; visibility: hidden; width: 0px; height: 0px; border: none;">
+    </form>
+    <div id="versionbox">V2.4.5.1.20201012a</div>
+
+</div>
+
+
+
+
+<script>var VERSION_ID = "Desktop - V2.4.5.1.20201012a"</script>
+
+<script>
+CONSOLELOGGER.debug("===== Starting up... login loaded =====");
+</script>
+</body></html>

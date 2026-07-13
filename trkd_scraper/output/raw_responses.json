@@ -1,0 +1,2455 @@
+[
+  {
+    "timestamp": "2026-03-13T03:35:21.798613",
+    "url": "https://innov.trkd-hs.com/tha_desktop/login",
+    "status": 200,
+    "type": "auth",
+    "headers": {
+      "content-encoding": "gzip",
+      "content-type": "text/html;charset=UTF-8",
+      "date": "Fri, 13 Mar 2026 03:35:21 GMT",
+      "vary": "Accept-Encoding",
+      "x-powered-by": "JSP/2.3"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:21.956989",
+    "url": "https://innov.trkd-hs.com/tha_desktop/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:21 GMT",
+      "content-type": "text/css;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:21.956989",
+    "url": "https://innov.trkd-hs.com/tha_desktop/css/widget.css.combine?_=V2.4.5.1.20201012a&lang=",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:21 GMT",
+      "content-type": "text/css;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:21.956989",
+    "url": "https://innov.trkd-hs.com/tha_desktop/js/lfaconfig.js.combine?_=V2.4.5.1.20201012a&lang=",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:21 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:21.960604",
+    "url": "https://innov.trkd-hs.com/tha_desktop/js/widget.js.combine?_=V2.4.5.1.20201012a&lang=",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:21 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:21.999160",
+    "url": "https://innov.trkd-hs.com/tha_desktop/js/util.js.combine?_=V2.4.5.1.20201012a&lang=",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:21 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:22.155966",
+    "url": "https://innov.trkd-hs.com/tha_desktop/js/jquery/jquery.js.combine?_=V2.4.5.1.20201012a&lang=",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:21 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:22.365644",
+    "url": "https://innov.trkd-hs.com/tha_desktop/img/toolbutton/btn_login.jpg",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:22 GMT",
+      "etag": "W/\"2696-1606117427000\"",
+      "content-type": "image/jpeg",
+      "last-modified": "Mon, 23 Nov 2020 07:43:47 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:22.367189",
+    "url": "https://innov.trkd-hs.com/tha_desktop/img/login/loginform.png",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:22 GMT",
+      "etag": "W/\"167573-1606117427000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 23 Nov 2020 07:43:47 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:22.971355",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/loginauth",
+    "status": 302,
+    "type": "auth",
+    "headers": {
+      "content-language": "en-US",
+      "content-length": "210",
+      "content-type": "text/html;charset=UTF-8",
+      "date": "Fri, 13 Mar 2026 03:35:22 GMT",
+      "location": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "x-powered-by": "JSP/2.3"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.101091",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "content-language": "en",
+      "content-type": "text/html;charset=UTF-8",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "vary": "Accept-Encoding",
+      "x-powered-by": "JSP/2.3"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.281911",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/css/jquery/jquery.css.combine.css",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"34427-1610357001000\"",
+      "content-type": "text/css",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.282477",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/custom.theme/theme-white/css/widget.css.combine.css",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"66253-1610357001000\"",
+      "content-type": "text/css",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.282477",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/custom.size/size-15/css/widget.css.combine.css",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"135176-1610357001000\"",
+      "content-type": "text/css",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.300870",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/custom.size/size-15/css/lfa.css.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "content-type": "text/css;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.300870",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"212705-1610357001000\"",
+      "content-type": "text/css",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.353121",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "content-type": "text/css;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.388019",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/custom.theme/theme-white/css/lfa.css.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "content-type": "text/css;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.388570",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/custom.size/size-15/css/comp.css.combine.css",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"16660-1610357001000\"",
+      "content-type": "text/css",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.388570",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/custom.theme/theme-white/css/comp.css.combine.css",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"14049-1610357001000\"",
+      "content-type": "text/css",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.388570",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/css/comp.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"231344-1610357001000\"",
+      "content-type": "text/css",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.490534",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/jquery/jquery.js.combine.js",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"376184-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.504296",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/bulletin.js?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "167",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"167-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.504296",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/pdf.js?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "955",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"955-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.516497",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/reportconfig.js.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.516497",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/widget/contextmenu.js.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.612673",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/util.js.combine.js",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"457364-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.625313",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/widget.js.combine.js",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"464531-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.662866",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/widget/smartlisttable_lang_rs.js.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.664637",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/widget/quotebox_lang_rs.js.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.665094",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/highchart/exporting.js",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"8464-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.665094",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/streamingconfig.js.jsp?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.666494",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/lfaconfig.js.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.666494",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/lfa.js?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"23843-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.667529",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/sschart/jquery.ui.sschart.js?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"121643-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.668344",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/sschart.js.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.700982",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/widget/smartlisttable.js",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"232830-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.709903",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/lfaappcore.js.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.709903",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/widget/quotebox.js?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"491238-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.831627",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/streaming.js?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"175958-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.836025",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/lfaresourcebundle.js.combine?_=V2.4.5.1.20201012a&lang=en&brand=null",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "content-type": "text/javascript;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:23.857488",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/highchart/highstock.js",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:23 GMT",
+      "etag": "W/\"218802-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.030713",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/header.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"1408-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.041838",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/menu_bg_for_right.jpg",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "329",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"329-1610357001000\"",
+      "content-type": "image/jpeg",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.041838",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/separator.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "49",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"49-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.043004",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/19.png?_=1773372923252",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "415",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"415-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.049049",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/setting_icon.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "251",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"251-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.049493",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/21.png?_=1773372923252",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "525",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"525-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.055178",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/powersearch/expand.png",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "140",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"140-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.055916",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/right_arrow.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "358",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"358-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.062375",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/refresh_btn.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "284",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"284-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.108125",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/left_arrow.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "356",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"356-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.111347",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/widget/progress.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"3292-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.130432",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?qid=1773372923882&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.270237",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/left_arrow_disable.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "378",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"378-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.270237",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/22.png?_=1773372923252",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "425",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"425-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.273997",
+    "url": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "access-control-allow-headers": "Content-Type",
+      "access-control-allow-methods": "OPTIONS, POST, DELETE, PUT, GET",
+      "access-control-allow-origin": "*",
+      "allow": "OPTIONS, POST, DELETE, PUT, GET",
+      "content-type": "text/html;charset=UTF-8",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "server": ""
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.277033",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/right_arrow_disable.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "381",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"381-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.277033",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/css/jquery/images/ui-bg_flat_75_ffffff_40x100.png",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "178",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"178-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.279043",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/powersearch/powersearch_magnifier.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "631",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"631-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.303876",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/favoritepageeditaction?action=get&qid=1773372924126&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.365394",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/pricealertsettingaction?action=get&sortcol=alert_time&sortdir=desc&qid=1773372924116&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.462520",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?subcat2=price&subcat1=.SETI,.STI,THB=&qid=1773372924126&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.508569",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/btn_red.jpg",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"2758-1610357001000\"",
+      "content-type": "image/jpeg",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.510579",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/btn_unselected.jpg",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"2752-1610357001000\"",
+      "content-type": "image/jpeg",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.510579",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/btn_selected.jpg",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "etag": "W/\"2766-1610357001000\"",
+      "content-type": "image/jpeg",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.556321",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/homepagesettingaction?action=get&qid=1773372924126&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.623374",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/quotemonitor?lang=en&brand=",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "en"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.718210",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/markettop?lang=en&brand=",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "en"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.869955",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/stockfullquote?lang=en&brand=",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "en"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:24.872881",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/stocklv2tmpl?lang=en&brand=",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:24 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "en"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.036722",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/space.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "43",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "etag": "W/\"43-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.038731",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/chartArrow.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "865",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "etag": "W/\"865-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.038731",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/quoteboxtmpl?lang=en&brand=",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "en"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.195321",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/slchart/json2.js?_=1773372925053",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "etag": "W/\"17898-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.363949",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/js/slchart/Silverlight.js?_=1773372925194",
+    "status": 200,
+    "type": "javascript",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "etag": "W/\"9018-1610357001000\"",
+      "content-type": "text/javascript",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.370901",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/fundfullquote?lang=en&brand=",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "en"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.498343",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/funddivcomptmpl?lang=en&brand=",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "en"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.499539",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/prodcomptmpl?lang=en&brand=",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "en"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.540975",
+    "url": "https://innov.trkd-hs.com/jds/req",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "access-control-allow-methods": "OPTIONS, POST, DELETE, PUT, GET",
+      "allow": "OPTIONS, POST, DELETE, PUT, GET",
+      "access-control-allow-origin": "*",
+      "content-length": "0",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "server": "",
+      "access-control-allow-headers": "Content-Type"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.642707",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/prod_comp/close.png",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "454",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "etag": "W/\"454-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.642707",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/lipper/region/OTHER.png",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "etag": "W/\"1481-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.644248",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/lipper/asset_type/OTHER.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "813",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "etag": "W/\"813-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.644819",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/lipper/size-29/NA.png",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "etag": "W/\"1409-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.679457",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/fund/FFD62F.png",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "392",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "etag": "W/\"392-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:25.679457",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/fund/85D6AD.png",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "413",
+      "date": "Fri, 13 Mar 2026 03:35:25 GMT",
+      "etag": "W/\"413-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.775890",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/titlebox_bg_silver.jpg",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "etag": "W/\"2797-1610357001000\"",
+      "content-type": "image/jpeg",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.775890",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/flag/flag18x12.png?_=1468055879124",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "etag": "W/\"10482-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.775890",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/tab_bg01a.jpg",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "etag": "W/\"2767-1610357001000\"",
+      "content-type": "image/jpeg",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.777894",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/btn_black.jpg",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "etag": "W/\"2752-1610357001000\"",
+      "content-type": "image/jpeg",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.777894",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/titlebox_btn_unselected.jpg",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "etag": "W/\"2766-1610357001000\"",
+      "content-type": "image/jpeg",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.777894",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/15.png?_=1468055879124",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "342",
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "etag": "W/\"342-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.777894",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/14.png?_=1468055879124",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "357",
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "etag": "W/\"357-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.777894",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/8.png?_=1468055879124",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "392",
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "etag": "W/\"392-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.777894",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/18.png?_=1468055879124",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "373",
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "etag": "W/\"373-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.779898",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/24.png?_=1468055879124",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "351",
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "etag": "W/\"351-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.779898",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/6.png?_=1773372923252",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "306",
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "etag": "W/\"306-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.781031",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/govbondperioddata?country=GL&qid=1773372926602&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:26.781031",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/superwatchlistgetlistdata?qid=1773372926569&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:26 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.089759",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/sschart/space.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "43",
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "etag": "W/\"43-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.108673",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/ecicategorydata?country=GL&qid=1773372926605&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.171740",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/menu_selected.jpg",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "362",
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "etag": "W/\"362-1610357001000\"",
+      "content-type": "image/jpeg",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.172245",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/navhistorylogdata?pid=markettop&cc=GL&tab=",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.296757",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stockquotedata?template=lv2&ric=undefined&cc=&assettype=&qid=1773372926945&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.322024",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stocksectorindexlistdata?listtype=EQTYIDX&cpage=markettop&subcat1=GL&subcat2=stockindex&qid=1773372927136&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.432554",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/fxlistdata?listtype=CURR&cpage=markettop&subcat1=GL&subcat2=THB&qid=1773372927137&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.481203",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/govbondlistdata?listtype=GBND&cpage=markettop&subcat1=GL&subcat2=10Y&qid=1773372927137&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.482204",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/s1.png?_=1468055879124",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "413",
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "etag": "W/\"413-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.507549",
+    "url": "https://innov.trkd-hs.com/jds/req",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "access-control-allow-methods": "OPTIONS, POST, DELETE, PUT, GET",
+      "allow": "OPTIONS, POST, DELETE, PUT, GET",
+      "access-control-allow-origin": "*",
+      "content-length": "0",
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "server": "",
+      "access-control-allow-headers": "Content-Type"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.600666",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/localtimedata?qid=1773372927137&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.620710",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stocksectorindexlistdata?listtype=EQTYIDX&cpage=markettop&subcat2=stockindex&subcat1=THA&qid=1773372927137&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.733864",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/marketstatlistdata?listtype=marketstat&cpage=markettop&subcat1=THA&qid=1773372927137&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.785902",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/interestratelistdata?listtype=interestrate&cpage=markettop&subcat1=LIBOR&subcat2=GL&qid=1773372927137&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:27.947345",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stocksectorindexquotedata?ric=.SETI&assettype=EQTYIDX&template=minimini&cc=JPN&qid=1773372927139&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:27 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.093591",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/2.png?_=1468055879124",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "443",
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "etag": "W/\"443-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.093591",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/22.png?_=1468055879124",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "425",
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "etag": "W/\"425-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.094982",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/3.png?_=1468055879124",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "308",
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "etag": "W/\"308-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.094982",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/5.png?_=1468055879124",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "358",
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "etag": "W/\"358-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.097121",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=THA_market_summary&recperpage=7&qid=1773372927137&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.119526",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/render_ta?width=624&height=168&ta=&span=MINUTE_5&code=.SETI&instrument=&type=LINE&caption=&ts=1773372927944&imageOnly=true&dp=-1&element=1773372927138&assettype=EQTYIDX&cc=THA&period=DAY_1&theme=theme-black&lang=en&qid=1773372927944&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "content-type": "text/plain;charset=utf-8"
+    },
+    "body_size": 122,
+    "body_sample": "{\"data\":{\"element\":\"1773372927138\",\"imageOnly\":true,\"uuid\":\"6b5f5bef-3971-4835-8689-b8eab36fcb61\"},\"qid\":\"1773372927944\"}\n"
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.256634",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/ecilistdata?listtype=eci&cpage=markettop&subcat1=GL&subcat2=ECILISTBYTOTDAY&subcat3=TODAY&subcat4=2&recperpage=5&pn=1&qid=1773372927600&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.296775",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/icon/star4.png",
+    "status": 200,
+    "type": "static_asset",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-length": "409",
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "etag": "W/\"409-1610357001000\"",
+      "content-type": "image/png",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.297829",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/chart_img.gif?uuid=6b5f5bef-3971-4835-8689-b8eab36fcb61&width=624&height=168&theme=theme-black&lang=en&span=MINUTE_5&code=.SETI&assettype=EQTYIDX&cc=THA",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "content-type": "image/gif",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.397938",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=USA_market_summary&recperpage=6&qid=1773372928113&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.534447",
+    "url": "https://innov.trkd-hs.com/jds/req",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "access-control-allow-methods": "OPTIONS, POST, DELETE, PUT, GET",
+      "allow": "OPTIONS, POST, DELETE, PUT, GET",
+      "access-control-allow-origin": "*",
+      "content-length": "0",
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "server": "",
+      "access-control-allow-headers": "Content-Type"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.547313",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=EUR_market_summary&recperpage=6&qid=1773372928406&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.707270",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=AS_market_summary&recperpage=6&qid=1773372928558&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:28.753796",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/flash_arrow_down_inv.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:28 GMT",
+      "etag": "W/\"2043-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:30.653069",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/arrow_down_inv.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:30 GMT",
+      "etag": "W/\"2049-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:37.665127",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/flash_arrow_up_inv.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:37 GMT",
+      "etag": "W/\"2048-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:39.203504",
+    "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/arrow_up_inv.gif",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "accept-ranges": "bytes",
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:35:39 GMT",
+      "etag": "W/\"2048-1610357001000\"",
+      "content-type": "image/gif",
+      "last-modified": "Mon, 11 Jan 2021 09:23:21 GMT",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:54.266907",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?qid=1773372954126&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:35:54 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:35:54.440890",
+    "url": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "access-control-allow-headers": "Content-Type",
+      "access-control-allow-methods": "OPTIONS, POST, DELETE, PUT, GET",
+      "access-control-allow-origin": "*",
+      "allow": "OPTIONS, POST, DELETE, PUT, GET",
+      "content-type": "text/html;charset=UTF-8",
+      "date": "Fri, 13 Mar 2026 03:35:54 GMT",
+      "server": ""
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:24.412448",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?qid=1773372984270&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:36:24 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:24.682742",
+    "url": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "access-control-allow-headers": "Content-Type",
+      "access-control-allow-methods": "OPTIONS, POST, DELETE, PUT, GET",
+      "access-control-allow-origin": "*",
+      "allow": "OPTIONS, POST, DELETE, PUT, GET",
+      "content-type": "text/html;charset=UTF-8",
+      "date": "Fri, 13 Mar 2026 03:36:24 GMT",
+      "server": ""
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.105006",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/render_ta?width=624&height=168&ta=&span=MINUTE_5&code=.SETI&instrument=&type=LINE&caption=&ts=1773372987946&imageOnly=true&dp=-1&element=1773372927138&assettype=EQTYIDX&cc=THA&period=DAY_1&theme=theme-black&lang=en&qid=1773372987947&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:36:28 GMT",
+      "content-type": "text/plain;charset=utf-8"
+    },
+    "body_size": 122,
+    "body_sample": "{\"data\":{\"element\":\"1773372927138\",\"imageOnly\":true,\"uuid\":\"38dd4f5f-61f4-4682-bb90-534fbc1f52b6\"},\"qid\":\"1773372987947\"}\n"
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.264835",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/chart_img.gif?uuid=38dd4f5f-61f4-4682-bb90-534fbc1f52b6&width=624&height=168&theme=theme-black&lang=en&span=MINUTE_5&code=.SETI&assettype=EQTYIDX&cc=THA",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:36:28 GMT",
+      "content-type": "image/gif",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.307118",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=THA_market_summary&recperpage=7&qid=1773372988114&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:36:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.407351",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/ecilistdata?listtype=eci&cpage=markettop&subcat1=GL&subcat2=ECILISTBYTOTDAY&subcat3=TODAY&subcat4=2&recperpage=5&pn=1&qid=1773372988262&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:36:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.447002",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=USA_market_summary&recperpage=6&qid=1773372988306&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:36:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.617764",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=EUR_market_summary&recperpage=6&qid=1773372988453&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:36:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:28.753865",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=AS_market_summary&recperpage=6&qid=1773372988616&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:36:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:54.578464",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?qid=1773373014414&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:36:54 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:36:54.926195",
+    "url": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "access-control-allow-headers": "Content-Type",
+      "access-control-allow-methods": "OPTIONS, POST, DELETE, PUT, GET",
+      "access-control-allow-origin": "*",
+      "allow": "OPTIONS, POST, DELETE, PUT, GET",
+      "content-type": "text/html;charset=UTF-8",
+      "date": "Fri, 13 Mar 2026 03:36:54 GMT",
+      "server": ""
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:24.729182",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?qid=1773373044578&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:37:24 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:25.129330",
+    "url": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "access-control-allow-headers": "Content-Type",
+      "access-control-allow-methods": "OPTIONS, POST, DELETE, PUT, GET",
+      "access-control-allow-origin": "*",
+      "allow": "OPTIONS, POST, DELETE, PUT, GET",
+      "content-type": "text/html;charset=UTF-8",
+      "date": "Fri, 13 Mar 2026 03:37:25 GMT",
+      "server": ""
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.106827",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/render_ta?width=624&height=168&ta=&span=MINUTE_5&code=.SETI&instrument=&type=LINE&caption=&ts=1773373047958&imageOnly=true&dp=-1&element=1773372927138&assettype=EQTYIDX&cc=THA&period=DAY_1&theme=theme-black&lang=en&qid=1773373047959&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:37:28 GMT",
+      "content-type": "text/plain;charset=utf-8"
+    },
+    "body_size": 122,
+    "body_sample": "{\"data\":{\"element\":\"1773372927138\",\"imageOnly\":true,\"uuid\":\"ced1cf05-7c0e-4e10-b920-dd967cff3ffd\"},\"qid\":\"1773373047959\"}\n"
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.256302",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/chart_img.gif?uuid=ced1cf05-7c0e-4e10-b920-dd967cff3ffd&width=624&height=168&theme=theme-black&lang=en&span=MINUTE_5&code=.SETI&assettype=EQTYIDX&cc=THA",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:37:28 GMT",
+      "content-type": "image/gif",
+      "vary": "Accept-Encoding"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.517214",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=THA_market_summary&recperpage=7&qid=1773373048328&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:37:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.622826",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/ecilistdata?listtype=eci&cpage=markettop&subcat1=GL&subcat2=ECILISTBYTOTDAY&subcat3=TODAY&subcat4=2&recperpage=5&pn=1&qid=1773373048411&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "date": "Fri, 13 Mar 2026 03:37:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.772077",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=USA_market_summary&recperpage=6&qid=1773373048516&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:37:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.772642",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=EUR_market_summary&recperpage=6&qid=1773373048629&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:37:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.931202",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=EUR_market_summary&recperpage=6&qid=1773373048770&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:37:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:28.931730",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=AS_market_summary&recperpage=6&qid=1773373048758&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:37:28 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  },
+  {
+    "timestamp": "2026-03-13T03:37:29.054898",
+    "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=AS_market_summary&recperpage=6&qid=1773373048928&lang=en&snap=1",
+    "status": 200,
+    "type": "other",
+    "headers": {
+      "content-encoding": "gzip",
+      "date": "Fri, 13 Mar 2026 03:37:29 GMT",
+      "content-type": "text/html;charset=UTF-8",
+      "x-powered-by": "JSP/2.3",
+      "vary": "Accept-Encoding",
+      "content-language": "ja"
+    },
+    "body_size": null,
+    "body_sample": null
+  }
+]

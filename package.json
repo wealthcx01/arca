@@ -1,0 +1,36 @@
+{
+  "name": "arca",
+  "version": "0.1.0",
+  "description": "The Bloomberg Terminal for Pokemon Cards",
+  "module": "server.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"bun run dev:server\" \"bun run dev:client\"",
+    "dev:server": "PORT=3001 bun --watch server.ts",
+    "dev:client": "cd client && bunx vite --port 5173",
+    "build": "cd client && bunx vite build",
+    "db:push": "bun run db/push.ts",
+    "db:seed": "bun run db/seed.ts",
+    "lint": "bunx biome check .",
+    "lint:fix": "bunx biome check --fix .",
+    "typecheck": "bunx tsc --noEmit",
+    "test": "bun test",
+    "test:e2e": "cd client && bunx playwright test --config ../playwright.config.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.0",
+    "@types/bun": "latest",
+    "concurrently": "^9.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "hono": "^4.7.0",
+    "drizzle-orm": "^0.39.0",
+    "drizzle-kit": "^0.30.0",
+    "nanoid": "^5.0.0",
+    "@hono/node-server": "^1.13.0"
+  }
+}

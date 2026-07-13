@@ -1,0 +1,2600 @@
+{
+  "summary": {
+    "total_requests": 155,
+    "total_responses": 155,
+    "unique_endpoints": 51,
+    "websocket_frames": 0,
+    "auth_tokens_found": 0,
+    "js_files_found": 14,
+    "source_maps_found": 0,
+    "captured_at": "2026-03-13T03:37:39.666844"
+  },
+  "auth_tokens": [],
+  "endpoints": {
+    "auth": [
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop/login",
+        "path": "/tha_desktop/login",
+        "host": "innov.trkd-hs.com",
+        "type": "auth",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {},
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "POST",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/loginauth",
+        "path": "/tha_desktop24/loginauth",
+        "host": "innov.trkd-hs.com",
+        "type": "auth",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "content-type": "application/x-www-form-urlencoded",
+          "origin": "https://innov.trkd-hs.com",
+          "referer": "https://innov.trkd-hs.com/tha_desktop/login"
+        },
+        "post_data_sample": "username=u0001&password=u0001&version=&lang=en&brand=",
+        "responses": [
+          {
+            "status": 302,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      }
+    ],
+    "data_api": [],
+    "websocket": [],
+    "soap": [],
+    "other": [
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "path": "/tha_desktop24/ui/home",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "&lang=en",
+        "request_headers_sample": {
+          "content-type": "application/x-www-form-urlencoded",
+          "origin": "https://innov.trkd-hs.com",
+          "referer": "https://innov.trkd-hs.com/tha_desktop/login"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/header.gif",
+        "path": "/tha_desktop24/img/headerbox/header.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/separator.gif",
+        "path": "/tha_desktop24/img/headerbox/separator.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/left_arrow.gif",
+        "path": "/tha_desktop24/img/headerbox/left_arrow.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/right_arrow.gif",
+        "path": "/tha_desktop24/img/headerbox/right_arrow.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/refresh_btn.gif",
+        "path": "/tha_desktop24/img/headerbox/refresh_btn.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/setting_icon.gif",
+        "path": "/tha_desktop24/img/headerbox/setting_icon.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?qid=1773372923882&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/assetinfolistdata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 6,
+        "query_params": "qid=1773372923882&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/widget/progress.gif",
+        "path": "/tha_desktop24/img/widget/progress.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/left_arrow_disable.gif",
+        "path": "/tha_desktop24/img/headerbox/left_arrow_disable.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/right_arrow_disable.gif",
+        "path": "/tha_desktop24/img/headerbox/right_arrow_disable.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/pricealertsettingaction?action=get&sortcol=alert_time&sortdir=desc&qid=1773372924116&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/pricealertsettingaction",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "action=get&sortcol=alert_time&sortdir=desc&qid=1773372924116&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+        "path": "/jds/res",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 5,
+        "query_params": "token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/favoritepageeditaction?action=get&qid=1773372924126&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/favoritepageeditaction",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "action=get&qid=1773372924126&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/powersearch/powersearch_magnifier.gif",
+        "path": "/tha_desktop24/img/powersearch/powersearch_magnifier.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/homepagesettingaction?action=get&qid=1773372924126&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/homepagesettingaction",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "action=get&qid=1773372924126&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/quotemonitor?lang=en&brand=",
+        "path": "/tha_desktop24/uicomp/quotemonitor",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "lang=en&brand=",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/markettop?lang=en&brand=",
+        "path": "/tha_desktop24/uicomp/markettop",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "lang=en&brand=",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/stockfullquote?lang=en&brand=",
+        "path": "/tha_desktop24/uicomp/stockfullquote",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "lang=en&brand=",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/stocklv2tmpl?lang=en&brand=",
+        "path": "/tha_desktop24/uicomp/stocklv2tmpl",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "lang=en&brand=",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/quoteboxtmpl?lang=en&brand=",
+        "path": "/tha_desktop24/uicomp/quoteboxtmpl",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "lang=en&brand=",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/space.gif",
+        "path": "/tha_desktop24/img/space.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/chartArrow.gif",
+        "path": "/tha_desktop24/img/toolbutton/chartArrow.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/fundfullquote?lang=en&brand=",
+        "path": "/tha_desktop24/uicomp/fundfullquote",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "lang=en&brand=",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/funddivcomptmpl?lang=en&brand=",
+        "path": "/tha_desktop24/uicomp/funddivcomptmpl",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "lang=en&brand=",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/prodcomptmpl?lang=en&brand=",
+        "path": "/tha_desktop24/uicomp/prodcomptmpl",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "lang=en&brand=",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "POST",
+        "url": "https://innov.trkd-hs.com/jds/req",
+        "path": "/jds/req",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 3,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*",
+          "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+        },
+        "post_data_sample": "ts=1773372925370&action=0&ric=IDN_RDF%2C0100.HK%2C6%2C16%2C18%2C21%2C79%2C1465%2C3265%2C3372%3BIDN_RDF%2C0700.HK%2C6%2C16%2C18%2C21%2C79%2C1465%2C3372%3BIDN_RDF%2C.SETI%2C6%2C11%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.STI%2C6%2C11%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2CTHB%3D%2C11%2C22%2C56&token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/lipper/asset_type/OTHER.gif",
+        "path": "/tha_desktop24/img/lipper/asset_type/OTHER.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/superwatchlistgetlistdata?qid=1773372926569&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/superwatchlistgetlistdata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "qid=1773372926569&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/govbondperioddata?country=GL&qid=1773372926602&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/govbondperioddata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "country=GL&qid=1773372926602&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/sschart/space.gif",
+        "path": "/tha_desktop24/img/sschart/space.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/ecicategorydata?country=GL&qid=1773372926605&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/ecicategorydata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "country=GL&qid=1773372926605&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stockquotedata?template=lv2&ric=undefined&cc=&assettype=&qid=1773372926945&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/stockquotedata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "template=lv2&ric=undefined&cc=&assettype=&qid=1773372926945&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/navhistorylogdata?pid=markettop&cc=GL&tab=",
+        "path": "/tha_desktop24_data/data/navhistorylogdata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "pid=markettop&cc=GL&tab=",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "application/json, text/javascript, */*; q=0.01"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stocksectorindexlistdata?listtype=EQTYIDX&cpage=markettop&subcat1=GL&subcat2=stockindex&qid=1773372927136&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/stocksectorindexlistdata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 2,
+        "query_params": "listtype=EQTYIDX&cpage=markettop&subcat1=GL&subcat2=stockindex&qid=1773372927136&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/fxlistdata?listtype=CURR&cpage=markettop&subcat1=GL&subcat2=THB&qid=1773372927137&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/fxlistdata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "listtype=CURR&cpage=markettop&subcat1=GL&subcat2=THB&qid=1773372927137&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/govbondlistdata?listtype=GBND&cpage=markettop&subcat1=GL&subcat2=10Y&qid=1773372927137&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/govbondlistdata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "listtype=GBND&cpage=markettop&subcat1=GL&subcat2=10Y&qid=1773372927137&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/localtimedata?qid=1773372927137&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/localtimedata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "qid=1773372927137&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/marketstatlistdata?listtype=marketstat&cpage=markettop&subcat1=THA&qid=1773372927137&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/marketstatlistdata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "listtype=marketstat&cpage=markettop&subcat1=THA&qid=1773372927137&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/interestratelistdata?listtype=interestrate&cpage=markettop&subcat1=LIBOR&subcat2=GL&qid=1773372927137&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/interestratelistdata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "listtype=interestrate&cpage=markettop&subcat1=LIBOR&subcat2=GL&qid=1773372927137&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=THA_market_summary&recperpage=7&qid=1773372927137&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/newslistdata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 14,
+        "query_params": "listtype=news&cpage=markettop&subcat1=THA_market_summary&recperpage=7&qid=1773372927137&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stocksectorindexquotedata?ric=.SETI&assettype=EQTYIDX&template=minimini&cc=JPN&qid=1773372927139&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/stocksectorindexquotedata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "ric=.SETI&assettype=EQTYIDX&template=minimini&cc=JPN&qid=1773372927139&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/render_ta?width=624&height=168&ta=&span=MINUTE_5&code=.SETI&instrument=&type=LINE&caption=&ts=1773372927944&imageOnly=true&dp=-1&element=1773372927138&assettype=EQTYIDX&cc=THA&period=DAY_1&theme=theme-black&lang=en&qid=1773372927944&lang=en&snap=1",
+        "path": "/tha_desktop24_data/sschart/render_ta",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 3,
+        "query_params": "width=624&height=168&ta=&span=MINUTE_5&code=.SETI&instrument=&type=LINE&caption=&ts=1773372927944&imageOnly=true&dp=-1&element=1773372927138&assettype=EQTYIDX&cc=THA&period=DAY_1&theme=theme-black&lang=en&qid=1773372927944&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/plain;charset=utf-8",
+            "body_size": 122,
+            "body_sample": "{\"data\":{\"element\":\"1773372927138\",\"imageOnly\":true,\"uuid\":\"6b5f5bef-3971-4835-8689-b8eab36fcb61\"},\"qid\":\"1773372927944\"}\n"
+          },
+          {
+            "status": 200,
+            "content_type": "text/plain;charset=utf-8",
+            "body_size": 122,
+            "body_sample": "{\"data\":{\"element\":\"1773372927138\",\"imageOnly\":true,\"uuid\":\"38dd4f5f-61f4-4682-bb90-534fbc1f52b6\"},\"qid\":\"1773372987947\"}\n"
+          },
+          {
+            "status": 200,
+            "content_type": "text/plain;charset=utf-8",
+            "body_size": 122,
+            "body_sample": "{\"data\":{\"element\":\"1773372927138\",\"imageOnly\":true,\"uuid\":\"ced1cf05-7c0e-4e10-b920-dd967cff3ffd\"},\"qid\":\"1773373047959\"}\n"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/ecilistdata?listtype=eci&cpage=markettop&subcat1=GL&subcat2=ECILISTBYTOTDAY&subcat3=TODAY&subcat4=2&recperpage=5&pn=1&qid=1773372927600&lang=en&snap=1",
+        "path": "/tha_desktop24_data/data/ecilistdata",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 3,
+        "query_params": "listtype=eci&cpage=markettop&subcat1=GL&subcat2=ECILISTBYTOTDAY&subcat3=TODAY&subcat4=2&recperpage=5&pn=1&qid=1773372927600&lang=en&snap=1",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+          "accept": "*/*"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "text/html;charset=UTF-8",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/chart_img.gif?uuid=6b5f5bef-3971-4835-8689-b8eab36fcb61&width=624&height=168&theme=theme-black&lang=en&span=MINUTE_5&code=.SETI&assettype=EQTYIDX&cc=THA",
+        "path": "/tha_desktop24_data/sschart/chart_img.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 3,
+        "query_params": "uuid=6b5f5bef-3971-4835-8689-b8eab36fcb61&width=624&height=168&theme=theme-black&lang=en&span=MINUTE_5&code=.SETI&assettype=EQTYIDX&cc=THA",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          },
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/flash_arrow_down_inv.gif",
+        "path": "/tha_desktop24/img/tick/flash_arrow_down_inv.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/arrow_down_inv.gif",
+        "path": "/tha_desktop24/img/tick/arrow_down_inv.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/flash_arrow_up_inv.gif",
+        "path": "/tha_desktop24/img/tick/flash_arrow_up_inv.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/arrow_up_inv.gif",
+        "path": "/tha_desktop24/img/tick/arrow_up_inv.gif",
+        "host": "innov.trkd-hs.com",
+        "type": "other",
+        "call_count": 1,
+        "query_params": "",
+        "request_headers_sample": {
+          "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+        },
+        "post_data_sample": null,
+        "responses": [
+          {
+            "status": 200,
+            "content_type": "image/gif",
+            "body_size": null,
+            "body_sample": null
+          }
+        ]
+      }
+    ]
+  },
+  "all_endpoints": [
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop/login",
+      "path": "/tha_desktop/login",
+      "host": "innov.trkd-hs.com",
+      "type": "auth",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {},
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/loginauth",
+      "path": "/tha_desktop24/loginauth",
+      "host": "innov.trkd-hs.com",
+      "type": "auth",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://innov.trkd-hs.com",
+        "referer": "https://innov.trkd-hs.com/tha_desktop/login"
+      },
+      "post_data_sample": "username=u0001&password=u0001&version=&lang=en&brand=",
+      "responses": [
+        {
+          "status": 302,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+      "path": "/tha_desktop24/ui/home",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "&lang=en",
+      "request_headers_sample": {
+        "content-type": "application/x-www-form-urlencoded",
+        "origin": "https://innov.trkd-hs.com",
+        "referer": "https://innov.trkd-hs.com/tha_desktop/login"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/header.gif",
+      "path": "/tha_desktop24/img/headerbox/header.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/separator.gif",
+      "path": "/tha_desktop24/img/headerbox/separator.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/left_arrow.gif",
+      "path": "/tha_desktop24/img/headerbox/left_arrow.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/right_arrow.gif",
+      "path": "/tha_desktop24/img/headerbox/right_arrow.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/refresh_btn.gif",
+      "path": "/tha_desktop24/img/headerbox/refresh_btn.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/setting_icon.gif",
+      "path": "/tha_desktop24/img/headerbox/setting_icon.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/assetinfolistdata?qid=1773372923882&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/assetinfolistdata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 6,
+      "query_params": "qid=1773372923882&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/widget/progress.gif",
+      "path": "/tha_desktop24/img/widget/progress.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/left_arrow_disable.gif",
+      "path": "/tha_desktop24/img/headerbox/left_arrow_disable.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/headerbox/right_arrow_disable.gif",
+      "path": "/tha_desktop24/img/headerbox/right_arrow_disable.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/pricealertsettingaction?action=get&sortcol=alert_time&sortdir=desc&qid=1773372924116&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/pricealertsettingaction",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "action=get&sortcol=alert_time&sortdir=desc&qid=1773372924116&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/jds/res?token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+      "path": "/jds/res",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 5,
+      "query_params": "token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/favoritepageeditaction?action=get&qid=1773372924126&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/favoritepageeditaction",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "action=get&qid=1773372924126&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/powersearch/powersearch_magnifier.gif",
+      "path": "/tha_desktop24/img/powersearch/powersearch_magnifier.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/widget.css.combine.css?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/homepagesettingaction?action=get&qid=1773372924126&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/homepagesettingaction",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "action=get&qid=1773372924126&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/quotemonitor?lang=en&brand=",
+      "path": "/tha_desktop24/uicomp/quotemonitor",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "lang=en&brand=",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/markettop?lang=en&brand=",
+      "path": "/tha_desktop24/uicomp/markettop",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "lang=en&brand=",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/stockfullquote?lang=en&brand=",
+      "path": "/tha_desktop24/uicomp/stockfullquote",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "lang=en&brand=",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/stocklv2tmpl?lang=en&brand=",
+      "path": "/tha_desktop24/uicomp/stocklv2tmpl",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "lang=en&brand=",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/quoteboxtmpl?lang=en&brand=",
+      "path": "/tha_desktop24/uicomp/quoteboxtmpl",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "lang=en&brand=",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/space.gif",
+      "path": "/tha_desktop24/img/space.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/toolbutton/chartArrow.gif",
+      "path": "/tha_desktop24/img/toolbutton/chartArrow.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/fundfullquote?lang=en&brand=",
+      "path": "/tha_desktop24/uicomp/fundfullquote",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "lang=en&brand=",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/funddivcomptmpl?lang=en&brand=",
+      "path": "/tha_desktop24/uicomp/funddivcomptmpl",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "lang=en&brand=",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/uicomp/prodcomptmpl?lang=en&brand=",
+      "path": "/tha_desktop24/uicomp/prodcomptmpl",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "lang=en&brand=",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "https://innov.trkd-hs.com/jds/req",
+      "path": "/jds/req",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 3,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*",
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      },
+      "post_data_sample": "ts=1773372925370&action=0&ric=IDN_RDF%2C0100.HK%2C6%2C16%2C18%2C21%2C79%2C1465%2C3265%2C3372%3BIDN_RDF%2C0700.HK%2C6%2C16%2C18%2C21%2C79%2C1465%2C3372%3BIDN_RDF%2C.SETI%2C6%2C11%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2C.STI%2C6%2C11%2C21%2C56%2C79%2C1465%2C3372%3BIDN_RDF%2CTHB%3D%2C11%2C22%2C56&token=687ba9b3dacff0f7f9f01e638e340b6f0331bafc2d25424e581d8d7e8029cfd385c191871bab7184ff26207ac8d28e324fa8fb7c29b31a78adb8a2538532895b",
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/lipper/asset_type/OTHER.gif",
+      "path": "/tha_desktop24/img/lipper/asset_type/OTHER.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/superwatchlistgetlistdata?qid=1773372926569&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/superwatchlistgetlistdata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "qid=1773372926569&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/govbondperioddata?country=GL&qid=1773372926602&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/govbondperioddata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "country=GL&qid=1773372926602&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/sschart/space.gif",
+      "path": "/tha_desktop24/img/sschart/space.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/ecicategorydata?country=GL&qid=1773372926605&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/ecicategorydata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "country=GL&qid=1773372926605&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stockquotedata?template=lv2&ric=undefined&cc=&assettype=&qid=1773372926945&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/stockquotedata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "template=lv2&ric=undefined&cc=&assettype=&qid=1773372926945&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/navhistorylogdata?pid=markettop&cc=GL&tab=",
+      "path": "/tha_desktop24_data/data/navhistorylogdata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "pid=markettop&cc=GL&tab=",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "application/json, text/javascript, */*; q=0.01"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stocksectorindexlistdata?listtype=EQTYIDX&cpage=markettop&subcat1=GL&subcat2=stockindex&qid=1773372927136&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/stocksectorindexlistdata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 2,
+      "query_params": "listtype=EQTYIDX&cpage=markettop&subcat1=GL&subcat2=stockindex&qid=1773372927136&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/fxlistdata?listtype=CURR&cpage=markettop&subcat1=GL&subcat2=THB&qid=1773372927137&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/fxlistdata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "listtype=CURR&cpage=markettop&subcat1=GL&subcat2=THB&qid=1773372927137&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/govbondlistdata?listtype=GBND&cpage=markettop&subcat1=GL&subcat2=10Y&qid=1773372927137&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/govbondlistdata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "listtype=GBND&cpage=markettop&subcat1=GL&subcat2=10Y&qid=1773372927137&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/localtimedata?qid=1773372927137&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/localtimedata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "qid=1773372927137&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/marketstatlistdata?listtype=marketstat&cpage=markettop&subcat1=THA&qid=1773372927137&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/marketstatlistdata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "listtype=marketstat&cpage=markettop&subcat1=THA&qid=1773372927137&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/interestratelistdata?listtype=interestrate&cpage=markettop&subcat1=LIBOR&subcat2=GL&qid=1773372927137&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/interestratelistdata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "listtype=interestrate&cpage=markettop&subcat1=LIBOR&subcat2=GL&qid=1773372927137&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/newslistdata?listtype=news&cpage=markettop&subcat1=THA_market_summary&recperpage=7&qid=1773372927137&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/newslistdata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 14,
+      "query_params": "listtype=news&cpage=markettop&subcat1=THA_market_summary&recperpage=7&qid=1773372927137&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/stocksectorindexquotedata?ric=.SETI&assettype=EQTYIDX&template=minimini&cc=JPN&qid=1773372927139&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/stocksectorindexquotedata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "ric=.SETI&assettype=EQTYIDX&template=minimini&cc=JPN&qid=1773372927139&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/render_ta?width=624&height=168&ta=&span=MINUTE_5&code=.SETI&instrument=&type=LINE&caption=&ts=1773372927944&imageOnly=true&dp=-1&element=1773372927138&assettype=EQTYIDX&cc=THA&period=DAY_1&theme=theme-black&lang=en&qid=1773372927944&lang=en&snap=1",
+      "path": "/tha_desktop24_data/sschart/render_ta",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 3,
+      "query_params": "width=624&height=168&ta=&span=MINUTE_5&code=.SETI&instrument=&type=LINE&caption=&ts=1773372927944&imageOnly=true&dp=-1&element=1773372927138&assettype=EQTYIDX&cc=THA&period=DAY_1&theme=theme-black&lang=en&qid=1773372927944&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/plain;charset=utf-8",
+          "body_size": 122,
+          "body_sample": "{\"data\":{\"element\":\"1773372927138\",\"imageOnly\":true,\"uuid\":\"6b5f5bef-3971-4835-8689-b8eab36fcb61\"},\"qid\":\"1773372927944\"}\n"
+        },
+        {
+          "status": 200,
+          "content_type": "text/plain;charset=utf-8",
+          "body_size": 122,
+          "body_sample": "{\"data\":{\"element\":\"1773372927138\",\"imageOnly\":true,\"uuid\":\"38dd4f5f-61f4-4682-bb90-534fbc1f52b6\"},\"qid\":\"1773372987947\"}\n"
+        },
+        {
+          "status": 200,
+          "content_type": "text/plain;charset=utf-8",
+          "body_size": 122,
+          "body_sample": "{\"data\":{\"element\":\"1773372927138\",\"imageOnly\":true,\"uuid\":\"ced1cf05-7c0e-4e10-b920-dd967cff3ffd\"},\"qid\":\"1773373047959\"}\n"
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/data/ecilistdata?listtype=eci&cpage=markettop&subcat1=GL&subcat2=ECILISTBYTOTDAY&subcat3=TODAY&subcat4=2&recperpage=5&pn=1&qid=1773372927600&lang=en&snap=1",
+      "path": "/tha_desktop24_data/data/ecilistdata",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 3,
+      "query_params": "listtype=eci&cpage=markettop&subcat1=GL&subcat2=ECILISTBYTOTDAY&subcat3=TODAY&subcat4=2&recperpage=5&pn=1&qid=1773372927600&lang=en&snap=1",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en",
+        "accept": "*/*"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24_data/sschart/chart_img.gif?uuid=6b5f5bef-3971-4835-8689-b8eab36fcb61&width=624&height=168&theme=theme-black&lang=en&span=MINUTE_5&code=.SETI&assettype=EQTYIDX&cc=THA",
+      "path": "/tha_desktop24_data/sschart/chart_img.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 3,
+      "query_params": "uuid=6b5f5bef-3971-4835-8689-b8eab36fcb61&width=624&height=168&theme=theme-black&lang=en&span=MINUTE_5&code=.SETI&assettype=EQTYIDX&cc=THA",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/ui/home?&lang=en"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        },
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/flash_arrow_down_inv.gif",
+      "path": "/tha_desktop24/img/tick/flash_arrow_down_inv.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/arrow_down_inv.gif",
+      "path": "/tha_desktop24/img/tick/arrow_down_inv.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/flash_arrow_up_inv.gif",
+      "path": "/tha_desktop24/img/tick/flash_arrow_up_inv.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://innov.trkd-hs.com/tha_desktop24/img/tick/arrow_up_inv.gif",
+      "path": "/tha_desktop24/img/tick/arrow_up_inv.gif",
+      "host": "innov.trkd-hs.com",
+      "type": "other",
+      "call_count": 1,
+      "query_params": "",
+      "request_headers_sample": {
+        "referer": "https://innov.trkd-hs.com/tha_desktop24/css/lfa.css.combine?_=V2.4.5.1.20201012a&lang=en&brand=null"
+      },
+      "post_data_sample": null,
+      "responses": [
+        {
+          "status": 200,
+          "content_type": "image/gif",
+          "body_size": null,
+          "body_sample": null
+        }
+      ]
+    }
+  ]
+}
