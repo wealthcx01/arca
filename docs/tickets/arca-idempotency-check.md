@@ -1,3 +1,3 @@
 # ARCA-NEW — idempotency check
 
-first version
+REVISED version
