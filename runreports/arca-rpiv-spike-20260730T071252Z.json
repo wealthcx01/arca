@@ -1,9 +1,0 @@
-{
-  "ticket": "arca-rpiv-spike",
-  "lane": "arca",
-  "status": "working",
-  "summary": "Lane claimed the ticket and started work.",
-  "started": "2026-07-30T07:12:51Z",
-  "finished": "2026-07-30T07:12:52Z",
-  "repo": "wealthcx01/arca"
-}
