@@ -1,0 +1,10 @@
+{
+  "ticket": "arca-rpiv-spike",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "Added `docs/foundry-lane.md`, a short doc describing the autonomous Foundry lane workflow (ticket → plan → implement → review → test → PR for human merge). — passed the lane's own gate (tests, /review review pass (0 critical), /qa: Change is docs/foundry-lane.md only (new markdown doc, no code changes) — no web-facing surface to test.).",
+  "pr_url": "https://github.com/wealthcx01/arca/pull/10",
+  "started": "2026-07-30T07:12:51Z",
+  "finished": "2026-07-30T07:16:38Z",
+  "repo": "wealthcx01/arca"
+}
