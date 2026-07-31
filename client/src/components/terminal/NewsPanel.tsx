@@ -1,6 +1,8 @@
+import { Bell } from "lucide-react";
 import { usePolling } from "../../hooks/usePolling";
 import { api } from "../../lib/api";
 import { DataPanel } from "./DataPanel";
+import { PanelEmptyState, PanelErrorState } from "./PanelEmptyState";
 
 interface AlertItem {
   id: string;
@@ -27,12 +29,33 @@ interface NewsPanelProps {
 }
 
 export function NewsPanel({ onCardSelect }: NewsPanelProps = {}) {
-  const { data, loading } = usePolling<AlertsResponse>(
+  const { data, loading, error } = usePolling<AlertsResponse>(
     () => api.get<AlertsResponse>("/market/alerts?limit=15&period=7d"),
     120_000,
   );
 
   const alerts = data?.data ?? [];
+
+  if (!loading && error) {
+    return (
+      <DataPanel title="Price Alerts (>5% Move)">
+        <PanelErrorState message={error} />
+      </DataPanel>
+    );
+  }
+
+  if (!loading && alerts.length === 0) {
+    return (
+      <DataPanel title="Price Alerts (>5% Move)">
+        <PanelEmptyState
+          icon={Bell}
+          message="Price alerts flag cards that moved more than 5% in the past week. They'll appear here once enough price history has built up."
+          ctaLabel="Browse the catalog"
+          ctaHref="/cards"
+        />
+      </DataPanel>
+    );
+  }
 
   return (
     <DataPanel title="Price Alerts (>5% Move)">
@@ -40,10 +63,6 @@ export function NewsPanel({ onCardSelect }: NewsPanelProps = {}) {
         {loading && alerts.length === 0 ? (
           <div className="px-2 py-6 text-center text-[10px] text-[var(--color-muted-foreground)]">
             Loading alerts...
-          </div>
-        ) : alerts.length === 0 ? (
-          <div className="px-2 py-6 text-center text-[10px] text-[var(--color-muted-foreground)]">
-            No significant price movements
           </div>
         ) : (
           alerts.map((a) => {

@@ -1,6 +1,8 @@
+import { Coins } from "lucide-react";
 import { usePolling } from "../../hooks/usePolling";
 import { api } from "../../lib/api";
 import { DataPanel } from "./DataPanel";
+import { PanelEmptyState, PanelErrorState } from "./PanelEmptyState";
 
 interface FxRate {
   id: string;
@@ -23,8 +25,14 @@ const FLAGS: Record<string, string> = {
   SGD: "SGD",
 };
 
-export function FxRatesPanel() {
-  const { data, loading } = usePolling<FxResponse>(
+interface FxRatesPanelProps {
+  /** False when the user has no portfolio yet — routes the CTA to portfolio creation instead of the (dead-end) Portfolio page. */
+  hasPortfolio?: boolean;
+  onCreatePortfolio?: () => void;
+}
+
+export function FxRatesPanel({ hasPortfolio = true, onCreatePortfolio }: FxRatesPanelProps) {
+  const { data, loading, error } = usePolling<FxResponse>(
     () => api.get<FxResponse>("/pricing/fx"),
     300_000,
   );
@@ -34,16 +42,35 @@ export function FxRatesPanel() {
   // Only show USD-based pairs (not reverse pairs)
   const usdPairs = rates.filter((r) => r.base === "USD" && FLAGS[r.quote]);
 
+  if (!loading && error) {
+    return (
+      <DataPanel title="FX Rates (USD Base)">
+        <PanelErrorState message={error} />
+      </DataPanel>
+    );
+  }
+
+  if (!loading && usdPairs.length === 0) {
+    return (
+      <DataPanel title="FX Rates (USD Base)">
+        <PanelEmptyState
+          icon={Coins}
+          message="FX rates convert card prices into your base currency. They'll appear here once your base currency is set and rates have synced."
+          ctaLabel="Set base currency"
+          {...(hasPortfolio
+            ? { ctaHref: "/portfolio" }
+            : { onCtaClick: onCreatePortfolio })}
+        />
+      </DataPanel>
+    );
+  }
+
   return (
     <DataPanel title="FX Rates (USD Base)">
       <div className="divide-y divide-[var(--color-border)]">
         {loading && usdPairs.length === 0 ? (
           <div className="px-2 py-4 text-center text-[10px] text-[var(--color-muted-foreground)]">
             Loading...
-          </div>
-        ) : usdPairs.length === 0 ? (
-          <div className="px-2 py-4 text-center text-[10px] text-[var(--color-muted-foreground)]">
-            No FX data
           </div>
         ) : (
           usdPairs.map((r) => (

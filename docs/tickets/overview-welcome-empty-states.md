@@ -1,6 +1,6 @@
 # ARCA-NEW — Overview page welcome & empty states
 
-**Status:** Todo · **Area:** Onboarding / Overview page · **Depends on:** —
+**Status:** In progress · **Area:** Onboarding / Overview page · **Depends on:** —
 
 ## Why this matters (for the founder)
 The Overview page is the first screen a new user sees after signing up, and right now it's nine blank panels with no guidance — the worst possible first impression for a market terminal. Fixing this turns a confusing dead-end into a clear, trustworthy welcome.

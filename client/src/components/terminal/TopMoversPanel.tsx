@@ -1,7 +1,9 @@
+import { TrendingUp } from "lucide-react";
 import { useState } from "react";
 import { usePolling } from "../../hooks/usePolling";
 import { api } from "../../lib/api";
 import { DataPanel } from "./DataPanel";
+import { PanelEmptyState, PanelErrorState } from "./PanelEmptyState";
 
 interface MoverItem {
   id: string;
@@ -28,7 +30,7 @@ interface TopMoversPanelProps {
 
 export function TopMoversPanel({ onCardSelect }: TopMoversPanelProps = {}) {
   const [period, setPeriod] = useState("7d");
-  const { data, loading } = usePolling<MoversResponse>(
+  const { data, loading, error } = usePolling<MoversResponse>(
     () => api.get<MoversResponse>(`/market/movers?limit=20&period=${period}`),
     120_000,
     [period],
@@ -40,27 +42,47 @@ export function TopMoversPanel({ onCardSelect }: TopMoversPanelProps = {}) {
 
   const periodButtons = ["1d", "7d", "30d"];
 
+  const toolbar = (
+    <div className="flex gap-0.5">
+      {periodButtons.map((p) => (
+        <button
+          key={p}
+          onClick={() => setPeriod(p)}
+          className={`rounded px-1.5 py-0.5 text-[9px] font-medium ${
+            period === p
+              ? "bg-[var(--color-primary)] text-white"
+              : "text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"
+          }`}
+        >
+          {p}
+        </button>
+      ))}
+    </div>
+  );
+
+  if (!loading && error) {
+    return (
+      <DataPanel title="Top Movers" toolbar={toolbar}>
+        <PanelErrorState message={error} />
+      </DataPanel>
+    );
+  }
+
+  if (!loading && items.length === 0) {
+    return (
+      <DataPanel title="Top Movers" toolbar={toolbar}>
+        <PanelEmptyState
+          icon={TrendingUp}
+          message="Top gainers and losers will appear here once graded price data is available for your tracked sets."
+          ctaLabel="Browse the catalog"
+          ctaHref="/cards"
+        />
+      </DataPanel>
+    );
+  }
+
   return (
-    <DataPanel
-      title="Top Movers"
-      toolbar={
-        <div className="flex gap-0.5">
-          {periodButtons.map((p) => (
-            <button
-              key={p}
-              onClick={() => setPeriod(p)}
-              className={`rounded px-1.5 py-0.5 text-[9px] font-medium ${
-                period === p
-                  ? "bg-[var(--color-primary)] text-white"
-                  : "text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"
-              }`}
-            >
-              {p}
-            </button>
-          ))}
-        </div>
-      }
-    >
+    <DataPanel title="Top Movers" toolbar={toolbar}>
       <div className="grid grid-cols-2 divide-x divide-[var(--color-border)]">
         {/* Gainers */}
         <div>

@@ -1,3 +1,4 @@
+import { LineChart as LineChartIcon } from "lucide-react";
 import { useState } from "react";
 import {
   Area,
@@ -10,6 +11,7 @@ import {
 import { usePolling } from "../../hooks/usePolling";
 import { api } from "../../lib/api";
 import { DataPanel } from "./DataPanel";
+import { PanelEmptyState, PanelErrorState } from "./PanelEmptyState";
 
 interface HistoryPoint {
   recorded_at: number;
@@ -31,7 +33,7 @@ interface PriceChartPanelProps {
 export function PriceChartPanel({ cardId, cardName }: PriceChartPanelProps) {
   const [days, setDays] = useState(30);
 
-  const { data, loading } = usePolling<HistoryResponse>(
+  const { data, loading, error } = usePolling<HistoryResponse>(
     () =>
       cardId
         ? api.get<HistoryResponse>(`/pricing/${cardId}/history?days=${days}`)
@@ -82,16 +84,30 @@ export function PriceChartPanel({ cardId, cardName }: PriceChartPanelProps) {
     >
       <div className="p-2" style={{ height: 200 }}>
         {!cardId ? (
-          <div className="flex h-full items-center justify-center text-[10px] text-[var(--color-muted-foreground)]">
-            Select a card to view price chart
+          <div className="flex h-full items-center justify-center">
+            <PanelEmptyState
+              icon={LineChartIcon}
+              message="Price history for any card you select (from Top Movers, Alerts, or the catalog) will chart here."
+              ctaLabel="Browse the catalog"
+              ctaHref="/cards"
+            />
+          </div>
+        ) : !loading && error ? (
+          <div className="flex h-full items-center justify-center">
+            <PanelErrorState message={error} />
           </div>
         ) : loading && chartData.length === 0 ? (
           <div className="flex h-full items-center justify-center text-[10px] text-[var(--color-muted-foreground)]">
             Loading chart...
           </div>
         ) : chartData.length === 0 ? (
-          <div className="flex h-full items-center justify-center text-[10px] text-[var(--color-muted-foreground)]">
-            No price history available
+          <div className="flex h-full items-center justify-center">
+            <PanelEmptyState
+              icon={LineChartIcon}
+              message="No price history has been recorded yet for this card."
+              ctaLabel="Browse the catalog"
+              ctaHref="/cards"
+            />
           </div>
         ) : (
           <ResponsiveContainer width="100%" height="100%">

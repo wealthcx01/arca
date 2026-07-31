@@ -20,7 +20,7 @@ export function LoginPage() {
       } else {
         await login(email, password);
       }
-      window.location.href = "/dashboard";
+      window.location.href = "/overview";
     } catch (err) {
       setError(err instanceof Error ? err.message : "Authentication failed");
     } finally {

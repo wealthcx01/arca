@@ -1,11 +1,13 @@
-import { useCallback, useState } from "react";
+import { BarChart3, Layers, Package, Plus, Wallet } from "lucide-react";
+import { useCallback, useRef, useState } from "react";
+import { DataPanel } from "../components/terminal/DataPanel";
 import { FxRatesPanel } from "../components/terminal/FxRatesPanel";
 import { GradingPremiumPanel } from "../components/terminal/GradingPremiumPanel";
 import { NewsPanel } from "../components/terminal/NewsPanel";
+import { PanelEmptyState, PanelErrorState } from "../components/terminal/PanelEmptyState";
 import { PriceChartPanel } from "../components/terminal/PriceChartPanel";
 import { SetPerformancePanel } from "../components/terminal/SetPerformancePanel";
 import { TopMoversPanel } from "../components/terminal/TopMoversPanel";
-import { DataPanel } from "../components/terminal/DataPanel";
 import { usePolling } from "../hooks/usePolling";
 import { api } from "../lib/api";
 
@@ -39,37 +41,123 @@ function formatCompact(cents: number): string {
   return "$" + (cents / 100).toFixed(0);
 }
 
+/** The first thing a brand-new user (no portfolio yet) sees — relocated from the Portfolio page. */
+function WelcomeBanner({
+  showCreate,
+  onShowCreate,
+}: {
+  showCreate: boolean;
+  onShowCreate: () => void;
+}) {
+  const [name, setName] = useState("My Collection");
+  const [currency, setCurrency] = useState("GBP");
+
+  const handleCreate = async () => {
+    await api.post("/portfolio", { name, base_currency: currency });
+    window.location.reload();
+  };
+
+  return (
+    <div className="mb-3 rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-6">
+      {showCreate ? (
+        <div className="mx-auto max-w-sm">
+          <h2 className="mb-4 text-lg font-semibold">Create Your Portfolio</h2>
+          <div className="space-y-3">
+            <div>
+              <label className="mb-1 block text-sm font-medium">Portfolio Name</label>
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full rounded-md border border-[var(--color-input)] bg-[var(--color-background)] px-3 py-2 text-sm"
+              />
+            </div>
+            <div>
+              <label className="mb-1 block text-sm font-medium">Base Currency</label>
+              <select
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value)}
+                className="w-full rounded-md border border-[var(--color-input)] bg-[var(--color-background)] px-3 py-2 text-sm"
+              >
+                <option value="GBP">GBP (British Pound)</option>
+                <option value="USD">USD (US Dollar)</option>
+                <option value="EUR">EUR (Euro)</option>
+                <option value="SGD">SGD (Singapore Dollar)</option>
+                <option value="HKD">HKD (Hong Kong Dollar)</option>
+                <option value="JPY">JPY (Japanese Yen)</option>
+              </select>
+            </div>
+            <button
+              onClick={handleCreate}
+              className="w-full rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90"
+            >
+              Create Portfolio
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="flex flex-col items-center text-center">
+          <Package size={40} className="mb-3 text-[var(--color-muted-foreground)]" />
+          <h2 className="text-xl font-semibold">Welcome to ARCA</h2>
+          <p className="mt-2 max-w-md text-sm text-[var(--color-muted-foreground)]">
+            Track your Pokemon card collection like a pro. Create your first portfolio to get
+            started — the panels below will fill in with real data as it becomes available.
+          </p>
+          <button
+            onClick={onShowCreate}
+            className="mt-4 flex items-center gap-1.5 rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90"
+          >
+            <Plus size={14} />
+            Create Portfolio
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function OverviewPage() {
   const [selectedCardId, setSelectedCardId] = useState<string | undefined>();
   const [selectedCardName, setSelectedCardName] = useState<string | undefined>();
+  const [showCreatePortfolio, setShowCreatePortfolio] = useState(false);
+  const welcomeBannerRef = useRef<HTMLDivElement>(null);
+
+  // Shared by every empty-panel CTA that needs "create a portfolio" rather than a page navigation —
+  // keeps first-run users on this page instead of bouncing them to the Portfolio page dead end.
+  const openCreatePortfolio = useCallback(() => {
+    setShowCreatePortfolio(true);
+    welcomeBannerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
 
   const handleCardSelect = useCallback((id: string, name: string) => {
     setSelectedCardId(id);
     setSelectedCardName(name);
   }, []);
 
-  const { data: overview } = usePolling<OverviewData>(
-    () => api.get<OverviewData>("/market/overview"),
-    120_000,
-  );
+  const {
+    data: overview,
+    loading: overviewLoading,
+    error: overviewError,
+  } = usePolling<OverviewData>(() => api.get<OverviewData>("/market/overview"), 120_000);
 
-  const { data: portfolios } = usePolling<PortfolioSummary[]>(
+  const {
+    data: portfolios,
+    loading: portfoliosLoading,
+    error: portfoliosError,
+  } = usePolling<PortfolioSummary[]>(
     () =>
-      api
-        .get<PortfolioSummary[]>("/portfolio")
-        .then(async (list) => {
-          if (list.length === 0) return [];
-          const detail = await api.get<PortfolioSummary>(`/portfolio/${list[0]!.id}`);
-          return [detail];
-        })
-        .catch(() => []),
+      api.get<PortfolioSummary[]>("/portfolio").then(async (list) => {
+        if (list.length === 0) return [];
+        const detail = await api.get<PortfolioSummary>(`/portfolio/${list[0]!.id}`);
+        return [detail];
+      }),
     120_000,
   );
 
-  const { data: setsData } = usePolling<{ data: SetInfo[] }>(
-    () => api.get<{ data: SetInfo[] }>("/market/sets?limit=50"),
-    300_000,
-  );
+  const {
+    data: setsData,
+    loading: setsLoading,
+    error: setsError,
+  } = usePolling<{ data: SetInfo[] }>(() => api.get<{ data: SetInfo[] }>("/market/sets?limit=50"), 300_000);
 
   const portfolio = portfolios?.[0];
   const holdings = portfolio?.holdings ?? [];
@@ -81,125 +169,183 @@ export function OverviewPage() {
   const allSets = setsData?.data ?? [];
   const eraStats = categorizeByEra(allSets);
 
+  // True first-run: the user has no portfolio at all yet (not just zero holdings on an existing one).
+  const isFirstRun = portfolios !== null && portfolios.length === 0;
+
   return (
-    <div className="grid gap-3 lg:grid-cols-[30%_35%_35%]">
-      {/* Left column */}
-      <div className="flex flex-col gap-3">
-        <SetPerformancePanel />
+    <div>
+      {isFirstRun && (
+        <div ref={welcomeBannerRef}>
+          <WelcomeBanner
+            showCreate={showCreatePortfolio}
+            onShowCreate={() => setShowCreatePortfolio(true)}
+          />
+        </div>
+      )}
 
-        {/* Portfolio Stats */}
-        <DataPanel title="Portfolio">
-          <div className="divide-y divide-[var(--color-border)]">
-            <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
-              <span className="text-[var(--color-muted-foreground)]">Value</span>
-              <span className="font-mono font-semibold tabular-nums">
-                {formatCompact(totalValue)}
-              </span>
-            </div>
-            <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
-              <span className="text-[var(--color-muted-foreground)]">Cost</span>
-              <span className="font-mono tabular-nums">{formatCompact(totalCost)}</span>
-            </div>
-            <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
-              <span className="text-[var(--color-muted-foreground)]">P&L</span>
-              <span
-                className={`font-mono font-semibold tabular-nums ${
-                  totalPnl >= 0
-                    ? "text-[var(--color-positive)]"
-                    : "text-[var(--color-negative)]"
-                }`}
-              >
-                {totalPnl >= 0 ? "+" : ""}
-                {formatCompact(totalPnl)}
-              </span>
-            </div>
-            <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
-              <span className="text-[var(--color-muted-foreground)]">Cards</span>
-              <span className="font-mono tabular-nums">{holdings.length}</span>
-            </div>
-          </div>
-        </DataPanel>
+      <div className="grid gap-3 lg:grid-cols-[30%_35%_35%]">
+        {/* Left column */}
+        <div className="flex flex-col gap-3">
+          <SetPerformancePanel />
 
-        <FxRatesPanel />
-        <GradingPremiumPanel />
-      </div>
+          {/* Portfolio Stats */}
+          <DataPanel title="Portfolio">
+            {portfoliosLoading && !portfolio ? (
+              <div className="px-2 py-4 text-center text-[10px] text-[var(--color-muted-foreground)]">
+                Loading...
+              </div>
+            ) : portfoliosError ? (
+              <PanelErrorState message={portfoliosError} />
+            ) : holdings.length === 0 ? (
+              <PanelEmptyState
+                icon={Wallet}
+                message="Your portfolio value, cost basis, and P&L will appear here once you add your first card."
+                ctaLabel={isFirstRun ? "Create a portfolio" : "Add your first card"}
+                {...(isFirstRun
+                  ? { onCtaClick: openCreatePortfolio }
+                  : { ctaHref: "/portfolio" })}
+              />
+            ) : (
+              <div className="divide-y divide-[var(--color-border)]">
+                <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
+                  <span className="text-[var(--color-muted-foreground)]">Value</span>
+                  <span className="font-mono font-semibold tabular-nums">
+                    {formatCompact(totalValue)}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
+                  <span className="text-[var(--color-muted-foreground)]">Cost</span>
+                  <span className="font-mono tabular-nums">{formatCompact(totalCost)}</span>
+                </div>
+                <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
+                  <span className="text-[var(--color-muted-foreground)]">P&L</span>
+                  <span
+                    className={`font-mono font-semibold tabular-nums ${
+                      totalPnl >= 0
+                        ? "text-[var(--color-positive)]"
+                        : "text-[var(--color-negative)]"
+                    }`}
+                  >
+                    {totalPnl >= 0 ? "+" : ""}
+                    {formatCompact(totalPnl)}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
+                  <span className="text-[var(--color-muted-foreground)]">Cards</span>
+                  <span className="font-mono tabular-nums">{holdings.length}</span>
+                </div>
+              </div>
+            )}
+          </DataPanel>
 
-      {/* Center column */}
-      <div className="flex flex-col gap-3">
-        <TopMoversPanel onCardSelect={handleCardSelect} />
-        <NewsPanel onCardSelect={handleCardSelect} />
+          <FxRatesPanel hasPortfolio={!isFirstRun} onCreatePortfolio={openCreatePortfolio} />
+          <GradingPremiumPanel />
+        </div>
 
-        {/* Market stats */}
-        <DataPanel title="Market Stats">
-          <div className="divide-y divide-[var(--color-border)]">
-            <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
-              <span className="text-[var(--color-muted-foreground)]">Total Cards</span>
-              <span className="font-mono tabular-nums">
-                {(overview?.total_cards ?? 0).toLocaleString()}
-              </span>
-            </div>
-            <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
-              <span className="text-[var(--color-muted-foreground)]">Priced Cards</span>
-              <span className="font-mono tabular-nums">
-                {(overview?.priced_cards ?? 0).toLocaleString()}
-              </span>
-            </div>
-            <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
-              <span className="text-[var(--color-muted-foreground)]">Coverage</span>
-              <span className="font-mono tabular-nums">
-                {overview && overview.total_cards > 0
-                  ? ((overview.priced_cards / overview.total_cards) * 100).toFixed(0)
-                  : 0}
-                %
-              </span>
-            </div>
-          </div>
-        </DataPanel>
-      </div>
+        {/* Center column */}
+        <div className="flex flex-col gap-3">
+          <TopMoversPanel onCardSelect={handleCardSelect} />
+          <NewsPanel onCardSelect={handleCardSelect} />
 
-      {/* Right column */}
-      <div className="flex flex-col gap-3">
-        <PriceChartPanel cardId={selectedCardId} cardName={selectedCardName} />
+          {/* Market stats */}
+          <DataPanel title="Market Stats">
+            {overviewLoading && !overview ? (
+              <div className="px-2 py-4 text-center text-[10px] text-[var(--color-muted-foreground)]">
+                Loading...
+              </div>
+            ) : overviewError ? (
+              <PanelErrorState message={overviewError} />
+            ) : !overview || overview.total_cards === 0 ? (
+              <PanelEmptyState
+                icon={BarChart3}
+                message="Market-wide card counts and pricing coverage will appear here once catalog data has synced."
+                ctaLabel="Browse the catalog"
+                ctaHref="/cards"
+              />
+            ) : (
+              <div className="divide-y divide-[var(--color-border)]">
+                <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
+                  <span className="text-[var(--color-muted-foreground)]">Total Cards</span>
+                  <span className="font-mono tabular-nums">
+                    {overview.total_cards.toLocaleString()}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
+                  <span className="text-[var(--color-muted-foreground)]">Priced Cards</span>
+                  <span className="font-mono tabular-nums">
+                    {overview.priced_cards.toLocaleString()}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between px-2 py-1.5 text-[11px]">
+                  <span className="text-[var(--color-muted-foreground)]">Coverage</span>
+                  <span className="font-mono tabular-nums">
+                    {((overview.priced_cards / overview.total_cards) * 100).toFixed(0)}%
+                  </span>
+                </div>
+              </div>
+            )}
+          </DataPanel>
+        </div>
 
-        {/* Era breakdown — live data */}
-        <DataPanel title="Market Intel — By Era">
-          <div className="max-h-[240px] overflow-auto">
-            <table className="w-full terminal-dense">
-              <thead className="sticky top-0 bg-[var(--color-muted)]">
-                <tr>
-                  <th className="px-2 py-1 text-left text-[10px] font-semibold uppercase tracking-wider text-[var(--color-muted-foreground)]">
-                    Era
-                  </th>
-                  <th className="px-2 py-1 text-right text-[10px] font-semibold uppercase tracking-wider text-[var(--color-muted-foreground)]">
-                    Sets
-                  </th>
-                  <th className="px-2 py-1 text-right text-[10px] font-semibold uppercase tracking-wider text-[var(--color-muted-foreground)]">
-                    Avg
-                  </th>
-                  <th className="px-2 py-1 text-right text-[10px] font-semibold uppercase tracking-wider text-[var(--color-muted-foreground)]">
-                    Value
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-[var(--color-border)]">
-                {eraStats.map((era) => (
-                  <tr key={era.label} className="hover:bg-[var(--color-muted)]">
-                    <td className="px-2 py-1 font-medium">{era.label}</td>
-                    <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
-                      {era.setCount}
-                    </td>
-                    <td className="px-2 py-1 text-right font-mono tabular-nums">
-                      ${(era.avgPrice / 100).toFixed(0)}
-                    </td>
-                    <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
-                      {formatCompact(era.totalValue)}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </DataPanel>
+        {/* Right column */}
+        <div className="flex flex-col gap-3">
+          <PriceChartPanel cardId={selectedCardId} cardName={selectedCardName} />
+
+          {/* Era breakdown — live data */}
+          <DataPanel title="Market Intel — By Era">
+            {setsLoading && eraStats.length === 0 ? (
+              <div className="px-2 py-4 text-center text-[10px] text-[var(--color-muted-foreground)]">
+                Loading...
+              </div>
+            ) : setsError ? (
+              <PanelErrorState message={setsError} />
+            ) : eraStats.length === 0 ? (
+              <PanelEmptyState
+                icon={Layers}
+                message="Set data broken down by era will appear here once set information has synced."
+                ctaLabel="Browse sets"
+                ctaHref="/sets"
+              />
+            ) : (
+              <div className="max-h-[240px] overflow-auto">
+                <table className="w-full terminal-dense">
+                  <thead className="sticky top-0 bg-[var(--color-muted)]">
+                    <tr>
+                      <th className="px-2 py-1 text-left text-[10px] font-semibold uppercase tracking-wider text-[var(--color-muted-foreground)]">
+                        Era
+                      </th>
+                      <th className="px-2 py-1 text-right text-[10px] font-semibold uppercase tracking-wider text-[var(--color-muted-foreground)]">
+                        Sets
+                      </th>
+                      <th className="px-2 py-1 text-right text-[10px] font-semibold uppercase tracking-wider text-[var(--color-muted-foreground)]">
+                        Avg
+                      </th>
+                      <th className="px-2 py-1 text-right text-[10px] font-semibold uppercase tracking-wider text-[var(--color-muted-foreground)]">
+                        Value
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[var(--color-border)]">
+                    {eraStats.map((era) => (
+                      <tr key={era.label} className="hover:bg-[var(--color-muted)]">
+                        <td className="px-2 py-1 font-medium">{era.label}</td>
+                        <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
+                          {era.setCount}
+                        </td>
+                        <td className="px-2 py-1 text-right font-mono tabular-nums">
+                          ${(era.avgPrice / 100).toFixed(0)}
+                        </td>
+                        <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
+                          {formatCompact(era.totalValue)}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </DataPanel>
+        </div>
       </div>
     </div>
   );
