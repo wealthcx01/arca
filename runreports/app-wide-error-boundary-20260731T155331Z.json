@@ -1,0 +1,10 @@
+{
+  "ticket": "app-wide-error-boundary",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "Added a new `client/src/components/ErrorBoundary.tsx` class component and wrapped the routed page (not the header/nav) with it in `client/src/App.tsx`, so any page-level crash now shows a plain \"Something went wrong loading this page.\" message with Reload and Back to Overview actions instead of a blank screen, while the error is still logged to the console. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Booted client (vite :5173) + server (:3001) headless via gstack browse. Signed up a test user, forced a real React render-time crash on /cards (pre-existing sets.map bug), and confirmed ErrorBoundary catches it per-page: shows 'Something went wrong loading this page.' with working Reload and Back to Overview buttons, while the app nav/layout stays fully functional around the crashed page. Back to Overview correctly recovers and other pages (Portfolio, Watchlist) render normally, confirming the boundary is scoped per-route (key={path}) and doesn't white-screen the whole app..",
+  "pr_url": "https://github.com/wealthcx01/arca/pull/17",
+  "started": "2026-07-31T15:40:03Z",
+  "finished": "2026-07-31T15:53:31Z",
+  "repo": "wealthcx01/arca"
+}
