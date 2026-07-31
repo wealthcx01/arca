@@ -1,0 +1,9 @@
+{
+  "ticket": "real-history-honest-gaps",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: seed-prices.ts unconditionally purges ALL price_history/OHLC/indicators/card_analytics on every run, wiping real accumulated history the ticket exists to preserve. No PR opened; it needs a human.",
+  "started": "2026-07-31T16:35:59Z",
+  "finished": "2026-07-31T17:23:39Z",
+  "repo": "wealthcx01/arca"
+}
