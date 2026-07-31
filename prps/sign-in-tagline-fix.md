@@ -31,3 +31,5 @@ No other files require changes — `client/index.html` and every other `client/s
 - [ ] coverage: acceptance criterion "no placeholder copy goes live as final" is met by inspection — the diff contains a deletion with no new tagline string introduced, and the founder-confirmation question has been raised, not silently skipped
 
 <!-- foundry-ticket: ff3284c18fed6b2d -->
+
+<!-- foundry-ticket: ff3284c18fed6b2d -->
