@@ -1,0 +1,9 @@
+{
+  "ticket": "sign-in-tagline-fix",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: Out-of-scope edits to DashboardPage.tsx/CardsPage.tsx/SourceBadge.tsx violate ticket scope (sign-in tagline only); SourceBadge.tsx mislabels third-party pokemon-tcg source as 'Official TCG API' — factually false, misleading data provenance. No PR opened; it needs a human.",
+  "started": "2026-07-31T18:27:10Z",
+  "finished": "2026-07-31T18:39:41Z",
+  "repo": "wealthcx01/arca"
+}
