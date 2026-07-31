@@ -1,0 +1,9 @@
+{
+  "ticket": "sign-in-tagline-fix",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: CardsPage.tsx:135 dropdown displays 'Creature' for value=\"Pokémon\" — invented term mismatches the actual filter value/real TCG supertype, out of ticket's explicit scope ('beyond this one line of copy'); SourceBadge.tsx:17 relabeled the real 'Pokemon TCG API' data-provider attribution to 'TCG API' — inaccurate provenance label, not a trademark issue (nominative attribution of an actual integrated API), out of ticket scope. No PR opened; it needs a human.",
+  "started": "2026-07-31T18:39:47Z",
+  "finished": "2026-07-31T18:51:05Z",
+  "repo": "wealthcx01/arca"
+}
