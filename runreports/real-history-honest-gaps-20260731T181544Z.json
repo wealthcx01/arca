@@ -1,0 +1,9 @@
+{
+  "ticket": "real-history-honest-gaps",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane tried this 3 times and couldn't get it past its own review/tests. It needs a human — parked.",
+  "started": "2026-07-31T18:15:44Z",
+  "finished": "2026-07-31T18:15:44Z",
+  "repo": "wealthcx01/arca"
+}
