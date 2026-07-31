@@ -1,0 +1,9 @@
+{
+  "ticket": "real-history-honest-gaps",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: analytics:daily job is registered but scheduler.start() is never called (only pricing:sync-prices is started) — real_days/OHLC/ARCA-score never advance after prices sync, so the 'building history' UI never resolves in production; scripts/seed-prices.ts purge (purgeSyntheticHistoryOnce) is guarded only by a filesystem marker decoupled from the DB file — a DB restore/copy without that marker would silently wipe all real accumulated price_history/analytics. No PR opened; it needs a human.",
+  "started": "2026-07-31T17:23:45Z",
+  "finished": "2026-07-31T17:56:59Z",
+  "repo": "wealthcx01/arca"
+}
