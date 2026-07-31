@@ -1,3 +1,4 @@
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import { Layout } from "./components/Layout";
 import { ToastProvider } from "./components/ui/Toaster";
 import { AuthProvider, useAuth } from "./hooks/useAuth";
@@ -68,7 +69,11 @@ function Router() {
     return null;
   }
 
-  return <Layout>{page}</Layout>;
+  return (
+    <Layout>
+      <ErrorBoundary key={path}>{page}</ErrorBoundary>
+    </Layout>
+  );
 }
 
 export default function App() {

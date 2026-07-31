@@ -1,6 +1,6 @@
 # ARCA-NEW — App-wide error boundary for page crashes
 
-**Status:** Todo · **Area:** Client/UI · **Depends on:** —
+**Status:** In progress · **Area:** Client/UI · **Depends on:** —
 
 ## Why this matters (for the founder)
 Right now, if any page throws an error, the whole app goes to a blank screen with no message and no way back — that's a broken first impression and it erodes trust. This ticket makes crashes fail safely and visibly, with a way to recover.
