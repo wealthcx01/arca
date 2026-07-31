@@ -115,3 +115,5 @@ Files touched:
 - [ ] coverage: grep confirms no remaining reference to the removed random-walk block or `generateOHLCFromCurrentPrices`-as-backfill in the codebase, and every place `arca_score`, `volatility_e6`, `sharpe_e6`, `max_drawdown_bp`, or an indicator value is rendered in `client/` is reachable only through the new `real_days`-gated path.
 
 <!-- foundry-ticket: 824a18be8b21a138 -->
+
+<!-- foundry-ticket: 824a18be8b21a138 -->
