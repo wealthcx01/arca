@@ -1,6 +1,8 @@
+import { LineChart } from "lucide-react";
 import { usePolling } from "../../hooks/usePolling";
 import { api } from "../../lib/api";
 import { DataPanel } from "./DataPanel";
+import { PanelEmptyState, PanelErrorState } from "./PanelEmptyState";
 
 interface SetData {
   set_code: string;
@@ -25,12 +27,33 @@ function formatValue(cents: number): string {
 }
 
 export function SetPerformancePanel() {
-  const { data, loading } = usePolling<SetsResponse>(
+  const { data, loading, error } = usePolling<SetsResponse>(
     () => api.get<SetsResponse>("/market/sets?limit=15"),
     120_000,
   );
 
   const sets = data?.data ?? [];
+
+  if (!loading && error) {
+    return (
+      <DataPanel title="Set Indices">
+        <PanelErrorState message={error} />
+      </DataPanel>
+    );
+  }
+
+  if (!loading && sets.length === 0) {
+    return (
+      <DataPanel title="Set Indices">
+        <PanelEmptyState
+          icon={LineChart}
+          message="Set indices show average and total card value per Pokemon set. They'll appear here once set price data is available."
+          ctaLabel="Browse sets"
+          ctaHref="/sets"
+        />
+      </DataPanel>
+    );
+  }
 
   return (
     <DataPanel title="Set Indices">
@@ -57,12 +80,6 @@ export function SetPerformancePanel() {
               <tr>
                 <td colSpan={4} className="py-4 text-center text-[10px] text-[var(--color-muted-foreground)]">
                   Loading...
-                </td>
-              </tr>
-            ) : sets.length === 0 ? (
-              <tr>
-                <td colSpan={4} className="py-4 text-center text-[10px] text-[var(--color-muted-foreground)]">
-                  No set data available
                 </td>
               </tr>
             ) : (

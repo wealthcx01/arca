@@ -97,9 +97,22 @@ export function DashboardPage() {
     return <DashboardSkeleton />;
   }
 
-  // Empty state — no portfolios yet
+  // No portfolios yet — the full first-run welcome treatment lives on the Overview page now;
+  // this is just a pointer back there, not a duplicate welcome state.
   if (portfolios.length === 0) {
-    return <EmptyState />;
+    return (
+      <div className="flex h-[40vh] flex-col items-center justify-center text-center">
+        <p className="text-sm text-[var(--color-muted-foreground)]">
+          You don't have a portfolio yet.
+        </p>
+        <a
+          href="/overview"
+          className="mt-2 text-sm font-medium text-[var(--color-primary)] hover:underline"
+        >
+          Go to Overview to create one
+        </a>
+      </div>
+    );
   }
 
   const summary = data ? deriveSummary(data.holdings ?? []) : null;
@@ -324,71 +337,3 @@ function StatCard({
   );
 }
 
-function EmptyState() {
-  const [showCreate, setShowCreate] = useState(false);
-  const [name, setName] = useState("My Collection");
-  const [currency, setCurrency] = useState("GBP");
-
-  const handleCreate = async () => {
-    await api.post("/portfolio", { name, base_currency: currency });
-    window.location.reload();
-  };
-
-  if (showCreate) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <div className="w-full max-w-sm rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-6">
-          <h2 className="mb-4 text-lg font-semibold">Create Your Portfolio</h2>
-          <div className="space-y-3">
-            <div>
-              <label className="mb-1 block text-sm font-medium">Portfolio Name</label>
-              <input
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full rounded-md border border-[var(--color-input)] bg-[var(--color-background)] px-3 py-2 text-sm"
-              />
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium">Base Currency</label>
-              <select
-                value={currency}
-                onChange={(e) => setCurrency(e.target.value)}
-                className="w-full rounded-md border border-[var(--color-input)] bg-[var(--color-background)] px-3 py-2 text-sm"
-              >
-                <option value="GBP">GBP (British Pound)</option>
-                <option value="USD">USD (US Dollar)</option>
-                <option value="EUR">EUR (Euro)</option>
-                <option value="SGD">SGD (Singapore Dollar)</option>
-                <option value="HKD">HKD (Hong Kong Dollar)</option>
-                <option value="JPY">JPY (Japanese Yen)</option>
-              </select>
-            </div>
-            <button
-              onClick={handleCreate}
-              className="w-full rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90"
-            >
-              Create Portfolio
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex h-[60vh] flex-col items-center justify-center text-center">
-      <Package size={48} className="mb-4 text-[var(--color-muted-foreground)]" />
-      <h2 className="text-xl font-semibold">Welcome to ARCA</h2>
-      <p className="mt-2 max-w-sm text-sm text-[var(--color-muted-foreground)]">
-        Track your Pokemon card collection like a pro. Create your first portfolio to get started.
-      </p>
-      <button
-        onClick={() => setShowCreate(true)}
-        className="mt-4 flex items-center gap-1.5 rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90"
-      >
-        <Plus size={14} />
-        Create Portfolio
-      </button>
-    </div>
-  );
-}

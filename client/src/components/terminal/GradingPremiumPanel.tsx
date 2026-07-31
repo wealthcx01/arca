@@ -1,6 +1,8 @@
+import { Award } from "lucide-react";
 import { usePolling } from "../../hooks/usePolling";
 import { api } from "../../lib/api";
 import { DataPanel } from "./DataPanel";
+import { PanelEmptyState, PanelErrorState } from "./PanelEmptyState";
 
 interface GradedItem {
   id: string;
@@ -23,12 +25,33 @@ function formatPrice(cents: number): string {
 }
 
 export function GradingPremiumPanel() {
-  const { data, loading } = usePolling<GradedResponse>(
+  const { data, loading, error } = usePolling<GradedResponse>(
     () => api.get<GradedResponse>("/market/graded?limit=10"),
     120_000,
   );
 
   const items = data?.data ?? [];
+
+  if (!loading && error) {
+    return (
+      <DataPanel title="Grading Premiums">
+        <PanelErrorState message={error} />
+      </DataPanel>
+    );
+  }
+
+  if (!loading && items.length === 0) {
+    return (
+      <DataPanel title="Grading Premiums">
+        <PanelEmptyState
+          icon={Award}
+          message="Grading premiums compare raw vs. graded card prices. They'll appear here once graded price data is available."
+          ctaLabel="Browse graded market"
+          ctaHref="/graded"
+        />
+      </DataPanel>
+    );
+  }
 
   return (
     <DataPanel title="Grading Premiums">
@@ -58,12 +81,6 @@ export function GradingPremiumPanel() {
               <tr>
                 <td colSpan={5} className="py-4 text-center text-[10px] text-[var(--color-muted-foreground)]">
                   Loading...
-                </td>
-              </tr>
-            ) : items.length === 0 ? (
-              <tr>
-                <td colSpan={5} className="py-4 text-center text-[10px] text-[var(--color-muted-foreground)]">
-                  No graded price data
                 </td>
               </tr>
             ) : (
