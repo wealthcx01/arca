@@ -1,0 +1,9 @@
+{
+  "ticket": "sign-in-tagline-fix",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: CardsPage.tsx:135 relabels the \"Pokémon\" card-type filter option as \"Character\" — wrong TCG terminology and out of ticket scope; SourceBadge.tsx:17 relabels the real \"Pokemon TCG API\" data source as ambiguous \"TCG API\", hurting pricing-provenance clarity and out of ticket scope. No PR opened; it needs a human.",
+  "started": "2026-07-31T18:51:12Z",
+  "finished": "2026-07-31T19:03:42Z",
+  "repo": "wealthcx01/arca"
+}
