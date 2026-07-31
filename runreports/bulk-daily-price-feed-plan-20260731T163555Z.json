@@ -1,0 +1,10 @@
+{
+  "ticket": "bulk-daily-price-feed-plan",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "I appended a findings/plan section to `docs/tickets/bulk-daily-price-feed-plan.md`, confirming the full TCGCSV Pokémon catalog is 217 groups (435 requests/day for a full daily bulk pull — well under the ~10,000 guidance), and documenting the required shape change to `syncPrices()`/`tcgcsv.ts` (once-daily bulk pull over all groups instead of held-cards-only/6-hourly), the missing `tcgcsv_product_id` column as a matching-accuracy prerequisite, the scheduler's lack of wall-clock alignment to TCGCSV's ~20:00 UTC refresh, per-group failure handling, and explicit open questions on promo/non-English/variant coverage gaps, closing with a $0-cost summary and founder decision point. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Branch only edits docs/tickets/bulk-daily-price-feed-plan.md (a planning ticket doc); no application code, schema, routes, or UI changed, so there is no web-facing surface to QA..",
+  "pr_url": "https://github.com/wealthcx01/arca/pull/22",
+  "started": "2026-07-31T16:27:13Z",
+  "finished": "2026-07-31T16:35:55Z",
+  "repo": "wealthcx01/arca"
+}
