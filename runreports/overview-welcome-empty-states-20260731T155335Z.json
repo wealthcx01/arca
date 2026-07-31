@@ -1,0 +1,9 @@
+{
+  "ticket": "overview-welcome-empty-states",
+  "lane": "arca",
+  "status": "working",
+  "summary": "Lane claimed the ticket and started work.",
+  "started": "2026-07-31T15:53:34Z",
+  "finished": "2026-07-31T15:53:35Z",
+  "repo": "wealthcx01/arca"
+}
