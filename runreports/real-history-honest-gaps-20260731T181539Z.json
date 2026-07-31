@@ -1,0 +1,9 @@
+{
+  "ticket": "real-history-honest-gaps",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — validation gates not met — coverage: grep confirms no remaining reference to the removed random-walk block or `generateOHLCFromCurrentPrices`-as-backfill in the codebase, and every place `arca_score`, `volatility_e6`, `sharpe_e6`, `max_drawdown_bp`, or an indicator value is rendered in `client/` is reachable only through the new `real_days`-gated path. (grep confirms no remaining jitter()/generateOHLCFromCurrentPrices reference, but client/src/pages/AnalyticsPage.tsx's screener table (lines 326,329,332) renders card.arca_score/sharpe_e6/volatility_e6 directly via ArcaScoreBadge with no realDays/threshold props and no BuildingHistory fallback — not reachable through the new real_days-gated path, so this gate's 'every place' requirement fails.). No PR opened; it needs a human.",
+  "started": "2026-07-31T17:57:04Z",
+  "finished": "2026-07-31T18:15:39Z",
+  "repo": "wealthcx01/arca"
+}
