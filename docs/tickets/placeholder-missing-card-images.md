@@ -1,24 +1,23 @@
-# ARCA-NEW — placeholder for missing card images
+# ARCA-NEW — Placeholder for missing card images
 
-**Status:** Todo · **Area:** Frontend/UI · **Depends on:** —
+**Status:** Todo · **Area:** Client/UI · **Depends on:** —
 
 ## Why this matters (for the founder)
-Right now, any card missing an image shows a broken-icon graphic, which looks unfinished and unprofessional. A proper placeholder keeps the page looking clean and trustworthy even when image data is incomplete.
+Right now any card without an image (or with a broken image link) shows a browser's default broken-image icon, which looks unfinished. A proper placeholder keeps the terminal looking polished everywhere card art appears.
 
 ## Context
-This is a visual/UX fix on card display pages. No new data or backend changes are needed — just a fallback state for the existing image element when the image URL is missing, null, or fails to load.
+Card images come from the Pokemon TCG API ingest (`image_url` / `image_url_hires` fields in `db/seed.ts`), so any card missing art, or any dead/expired image link, currently falls through to the browser's native broken-image icon. Card images appear across `CardsPage`, `CardSearch`, `CardDetailPage`, and `WatchlistPage`.
 
 ## Scope
-- Detect when a card's image is missing or fails to load.
-- Show a designed placeholder graphic in its place (styled to match ARCA's look — e.g. a subtle card outline or "no image available" panel).
-- Apply consistently across all pages/components where card images appear (grid views, detail views, etc.).
+- Add a shared placeholder (card-shaped box, with set icon or card name, styled consistently with the terminal look) used wherever a card image is rendered.
+- Detect both cases: no `image_url` present, and an `image_url` that fails to load.
+- Apply it across card search results, card detail page, and watchlist.
 
 ## Out of scope
-- Fetching, sourcing, or uploading actual missing card images.
-- Changing how images are stored or linked in the database.
-- Any change to layout/sizing of the card display beyond swapping in the placeholder.
+- No changes to how images are ingested, sourced, or stored.
+- No image upload or manual image-fixing tools.
 
 ## Acceptance criteria
-- [ ] When a card has no image (or the image fails to load), a designed placeholder displays instead of a broken image icon.
-- [ ] The placeholder is visually consistent with ARCA's existing design.
-- [ ] The fix applies everywhere card images are shown, not just one page.
+- [ ] A card with no image URL shows the placeholder, not a broken-image icon.
+- [ ] A card whose image URL fails to load falls back to the same placeholder.
+- [ ] Placeholder appears consistently on search, detail, and watchlist views.
