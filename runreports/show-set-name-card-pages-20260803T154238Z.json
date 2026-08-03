@@ -1,0 +1,10 @@
+{
+  "ticket": "show-set-name-card-pages",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "I set the card list and card detail pages to actually render, and confirmed the set name shows correctly: the set-name JSX already existed from prior work, but `CardsPage.tsx` and `CardDetailPage.tsx` were unwrapping the API responses incorrectly (expecting a bare array/flat fields instead of the server's `{data: ...}`/`{data, pagination}` envelopes), which crashed the card list page entirely and left the detail page's name/set/rarity/number blank — I fixed those two response-unwrapping bugs and marked the ticket Shipped with notes on what was actually found and fixed. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (resumed), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Booted app headless (backend :3001 already running, started frontend vite :5173 manually since dev:client wasn't up). Signed up a fresh test user, verified via gstack browse: /cards list shows set name on every card tile and in the set filter dropdown (e.g. 'Base Set (1)', 'Test Set (2)'); card detail pages show set name next to the title/card number (e.g. 'Charizard | Base Set #4'); checked all 3 seeded cards across 2 sets. No console errors on either page. Nonexistent card ID shows a graceful 'Failed to load card' message, no crash. Matches the ticket's acceptance criteria..",
+  "pr_url": "https://github.com/wealthcx01/arca/pull/36",
+  "started": "2026-08-03T15:28:45Z",
+  "finished": "2026-08-03T15:42:38Z",
+  "repo": "wealthcx01/arca"
+}
