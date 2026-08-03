@@ -1,0 +1,9 @@
+{
+  "ticket": "show-set-name-card-pages",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — the gate check changed the working tree instead of just reporting, so its verdicts don't describe the committed code. No PR opened; it needs a human.",
+  "started": "2026-08-03T15:05:07Z",
+  "finished": "2026-08-03T15:28:39Z",
+  "repo": "wealthcx01/arca"
+}
