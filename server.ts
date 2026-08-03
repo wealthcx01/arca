@@ -1,4 +1,6 @@
+import { existsSync } from "node:fs";
 import { Hono } from "hono";
+import { serveStatic } from "hono/bun";
 import { getCookie } from "hono/cookie";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
@@ -88,6 +90,15 @@ app.get("/api/system/status", (c) => {
     uptime: process.uptime(),
   });
 });
+
+// Serve the built client when it exists (the Docker image; dev keeps using Vite on 5173).
+// API routes are all under /api/* and are registered above, so they win; anything else falls
+// through to static assets and finally to index.html — the SPA router owns those paths.
+if (existsSync("./client/dist/index.html")) {
+  app.use("*", serveStatic({ root: "./client/dist" }));
+  app.get("*", serveStatic({ path: "./client/dist/index.html" }));
+  console.log("🖥️  Serving built client from client/dist");
+}
 
 const port = Number(process.env.PORT) || 3001;
 
