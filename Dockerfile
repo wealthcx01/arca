@@ -2,12 +2,13 @@ FROM oven/bun:1.3 AS builder
 
 WORKDIR /app
 
-# Install dependencies
-COPY package.json bun.lockb ./
+# Install dependencies. Bun 1.3 writes the text lockfile (bun.lock); the binary bun.lockb this
+# file used to reference no longer exists in the repo, so the old COPY failed every build.
+COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile
 
 # Copy client and install its dependencies
-COPY client/package.json client/bun.lockb ./client/
+COPY client/package.json client/bun.lock ./client/
 RUN cd client && bun install --frozen-lockfile
 
 # Copy source
@@ -21,7 +22,7 @@ FROM oven/bun:1.3-slim
 
 WORKDIR /app
 
-COPY --from=builder /app/package.json /app/bun.lockb ./
+COPY --from=builder /app/package.json /app/bun.lock ./
 RUN bun install --frozen-lockfile --production
 
 COPY --from=builder /app/server.ts ./
@@ -36,4 +37,6 @@ RUN mkdir -p data
 ENV PORT=3000
 EXPOSE 3000
 
-CMD ["bun", "run", "server.ts"]
+# Ensure the schema exists before serving: db/push.ts is CREATE TABLE IF NOT EXISTS throughout, so
+# this is a no-op on a database that already has tables and a bootstrap on a fresh volume.
+CMD ["sh", "-c", "bun run db/push.ts && bun run server.ts"]

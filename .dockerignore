@@ -1,0 +1,13 @@
+# Keep the build context lean and the image free of local state.
+node_modules
+client/node_modules
+data
+.git
+screenshots
+reference
+docs
+test-results
+playwright-report
+*.log
+.env
+.env.*
