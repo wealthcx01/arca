@@ -33,3 +33,5 @@ This is a verification ticket, not a build ticket: the acceptance criteria are a
 - [ ] coverage: all three display locations named in the ticket scope — `CardsPage` grid tiles, `CardsPage` list rows, and `CardDetailPage` header — are individually confirmed, not just one representative view.
 
 <!-- foundry-ticket: aa491c9add848766 -->
+
+<!-- foundry-ticket: aa491c9add848766 -->
