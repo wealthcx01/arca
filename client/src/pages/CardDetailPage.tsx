@@ -94,7 +94,7 @@ export function CardDetailPage() {
     setError(null);
 
     Promise.allSettled([
-      api.get<Card>(`/cards/${cardId}`),
+      api.get<{ data: Card }>(`/cards/${cardId}`).then((d) => d.data),
       api.get<{ conflated: ConflatedPrice[] }>(`/pricing/${cardId}/conflated`).then((d) => d.conflated),
       api.get<{ prices: Record<string, Record<string, PriceData>> }>(`/pricing/${cardId}`).then((d) => {
         const flat: PriceData[] = [];
