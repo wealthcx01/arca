@@ -1,0 +1,9 @@
+{
+  "ticket": "ARCA-043-uiux-audit-of-the-terminal",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't fix what its own validation caught: validation gates not met — coverage: the PR diff contains only `docs/tickets/` additions/edits (new ARCA-044+ files plus (diff also adds 6 non-docs/tickets files (.gstack/browse-console.log, browse-network.log, claude-available.json, terminal-agent-pid, terminal-internal-token, terminal-port) — stray tool artifacts including what looks like a session token, violating 'only docs/tickets/ additions/edits'). It needs a human.",
+  "started": "2026-08-03T17:15:24Z",
+  "finished": "2026-08-03T17:45:07Z",
+  "repo": "wealthcx01/arca"
+}
