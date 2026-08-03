@@ -1,0 +1,10 @@
+{
+  "ticket": "ARCA-043-uiux-audit-of-the-terminal",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "Audit complete: drove a fresh, unseeded account through all 12 nav routes plus card detail and login/signup at 1280/1024/375px widths, and filed 14 findings (ARCA-044–ARCA-057) in `docs/tickets/`, ordered by first-impression damage — most critically that `/cards` (and Overview's own \"Browse the catalog\" CTA) crashes for every user due to an unwrapped API response shape, with a matching silent-breakage bug on card detail pages, plus a real backend routing bug that makes saved API keys unlistable in Settings, duplicate-row data-integrity issues in Top Movers/Alerts, a News page with no actual news, and several visual/responsive/docs findings. Updated ARCA-043 itself with the full results, the first-five-minutes judgement, and what couldn't be established — the diff touches only `docs/tickets/`, no application code. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (resumed), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: ARCA-043 is a documentation-only UI/UX audit: it added/updated markdown ticket files under docs/tickets/ (audit findings + follow-up tickets ARCA-044..057). No application code, routes, or UI changed, so there is no web-facing surface to QA test..",
+  "pr_url": "https://github.com/wealthcx01/arca/pull/37",
+  "started": "2026-08-03T17:45:10Z",
+  "finished": "2026-08-03T18:09:05Z",
+  "repo": "wealthcx01/arca"
+}
