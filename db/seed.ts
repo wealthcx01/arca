@@ -67,6 +67,12 @@ async function fetchPage(page: number): Promise<ApiResponse> {
   return res.json() as Promise<ApiResponse>;
 }
 
+// Below this, treat the run as a failed seed rather than a small-but-real
+// catalog: a single successful page returns up to 250 cards, so anything
+// under that floor means something broke (bad key, network, API outage)
+// rather than the API legitimately running out of cards mid-page-1.
+const MIN_EXPECTED_CARDS = 100;
+
 async function seed() {
   console.log("🌱 Seeding card database from Pokemon TCG API...");
 
@@ -112,6 +118,15 @@ async function seed() {
     }
   }
 
+  if (totalCards < MIN_EXPECTED_CARDS) {
+    console.error(`\n❌ Seed failed: only ${totalCards} cards were seeded (expected at least ${MIN_EXPECTED_CARDS}).`);
+    console.error(
+      "   This usually means the Pokemon TCG API was unreachable, the API key is invalid/expired, or the API is down.",
+    );
+    console.error("   Check your network connection and the API_KEY in db/seed.ts, then re-run: bun run db:seed");
+    process.exit(1);
+  }
+
   console.log(`\n🎉 Seeded ${totalCards} cards into database`);
 
   // Show stats
@@ -122,4 +137,7 @@ async function seed() {
   console.log(`📊 Database: ${cardCount.count} cards across ${setCount.count} sets`);
 }
 
-seed().catch(console.error);
+seed().catch((err) => {
+  console.error("Seed failed:", err);
+  process.exit(1);
+});
