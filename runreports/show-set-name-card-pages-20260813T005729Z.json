@@ -1,0 +1,9 @@
+{
+  "ticket": "show-set-name-card-pages",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — validation gates not met — happy path: a card list (grid and list view) and a card detail page, loaded against seeded data, visibly render a non-empty set name for a normal card (e.g. a Base Set or Jungle card). (CardDetailPage renders set_name fine ('Base #4' next to Charizard, screenshot confirmed), but CardsPage crashes to the global ErrorBoundary on every load in both grid and list view before any card renders — grid/list never show a set name at all.); errors: loading `CardsPage`/`CardDetailPage` for a nonexistent or slow-loading card does not throw due to the set-name rendering (i.e. `card.set_name` access is safe under the existing loading/error branches already in those components). (CardDetailPage handles a nonexistent card id safely (renders 'Failed to load card', no throw, set_name never touched); but CardsPage throws unconditionally on normal load — TypeError: Cannot read properties of undefined (reading 'toLocaleString') at CardsPage.tsx, so 'does not throw' is false for CardsPage even though the specific cause is unrelated to set_name access.); coverage: all three display locations named in the ticket scope — `CardsPage` grid tiles, `CardsPage` list rows, and `CardDetailPage` header — are individually confirmed, not just one representative view. (Only CardDetailPage header was confirmable; grid tiles and list rows could not be confirmed because CardsPage.tsx crashes before rendering any card (verified via screenshot + patched-response test showing set names DO render correctly once the crash is worked around, proving the blocker is a separate bug, not the set-name code itself).). No PR opened; it needs a human.",
+  "started": "2026-08-13T00:35:14Z",
+  "finished": "2026-08-13T00:57:29Z",
+  "repo": "wealthcx01/arca"
+}
