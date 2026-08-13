@@ -1,0 +1,9 @@
+{
+  "ticket": "show-set-name-card-pages",
+  "lane": "arca",
+  "status": "working",
+  "summary": "Lane claimed the ticket and started work.",
+  "started": "2026-08-13T00:35:14Z",
+  "finished": "2026-08-13T00:35:16Z",
+  "repo": "wealthcx01/arca"
+}
