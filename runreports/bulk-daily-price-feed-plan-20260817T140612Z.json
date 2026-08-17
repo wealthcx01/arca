@@ -1,0 +1,10 @@
+{
+  "ticket": "bulk-daily-price-feed-plan",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "The ticket doc at `docs/tickets/bulk-daily-price-feed-plan.md` now has a \"Findings & plan\" section appended, covering the exact request-volume math (435/day vs TCGCSV's ~10,000 guidance, verified live), the shape change needed in `syncPrices()`/`tcgcsv.ts`, the `matchProduct()`/missing-`productId` accuracy gap as a named decision point, the `scheduler.ts` wall-clock gap vs TCGCSV's ~20:00 UTC refresh, error-handling behavior (skip-and-retry, no partial persist), three explicit coverage open questions (promos, non-English exclusives, unmapped variant subtypes), and a $0-cost summary with an explicit founder yes/no decision point. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (resumed), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: HEAD (4a41cf4) only edits docs/tickets/bulk-daily-price-feed-plan.md — a planning/research doc (updates Status to In Progress, adds a Findings & plan section). No code, schema, API, or UI changes in this commit, so there is no web-facing surface to QA..",
+  "pr_url": "https://github.com/wealthcx01/arca/pull/41",
+  "started": "2026-08-17T14:00:22Z",
+  "finished": "2026-08-17T14:06:12Z",
+  "repo": "wealthcx01/arca"
+}
