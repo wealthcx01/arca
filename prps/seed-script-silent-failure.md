@@ -33,3 +33,5 @@ Files touched: `db/seed.ts` only.
 - [ ] coverage: manually run both the zero-card failure scenario and the normal success scenario end-to-end and confirm exit codes with `echo $?`, since `db/seed.ts` has no existing automated test harness (unlike `src/lib/*.test.ts`) and hits a live external API — note this manual verification in the PR description in lieu of an automated test.
 
 <!-- foundry-ticket: d5a6ba52f905c5b9 -->
+
+<!-- foundry-ticket: d5a6ba52f905c5b9 -->
