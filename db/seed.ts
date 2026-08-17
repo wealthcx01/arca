@@ -112,6 +112,17 @@ async function seed() {
     }
   }
 
+  // Anything at/below this is treated as a failed run, not a small-but-real seed.
+  // A single successful page returns up to 250 cards, so a nonzero-but-tiny count
+  // (e.g. one page before the API cut off) still clears this floor comfortably.
+  const MIN_EXPECTED_CARDS = 100;
+  if (totalCards <= MIN_EXPECTED_CARDS) {
+    console.error(`\n❌ Seed failed: only ${totalCards} cards were seeded (expected > ${MIN_EXPECTED_CARDS}).`);
+    console.error("   Likely cause: network failure or an invalid/expired Pokemon TCG API key.");
+    console.error("   Check: your network connection, and the API_KEY in db/seed.ts against https://api.pokemontcg.io/v2.");
+    process.exit(1);
+  }
+
   console.log(`\n🎉 Seeded ${totalCards} cards into database`);
 
   // Show stats
@@ -122,4 +133,7 @@ async function seed() {
   console.log(`📊 Database: ${cardCount.count} cards across ${setCount.count} sets`);
 }
 
-seed().catch(console.error);
+seed().catch((err) => {
+  console.error("Seed failed:", err);
+  process.exit(1);
+});
