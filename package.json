@@ -16,10 +16,11 @@
     "lint:fix": "bunx biome check --fix .",
     "typecheck": "bunx tsc --noEmit",
     "test": "bun test",
-    "test:e2e": "cd client && bunx playwright test --config ../playwright.config.ts"
+    "test:e2e": "cd client && bunx playwright test --config ./playwright.config.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.0",
+    "@playwright/test": "^1.62.1",
     "@types/bun": "latest",
     "concurrently": "^9.1.0"
   },
