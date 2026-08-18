@@ -1,0 +1,10 @@
+{
+  "ticket": "ARCA-049-bulk-daily-price-feed-plan",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "I corrected `docs/bulk-price-feed-plan.md` §2 and §6: the worst-case retry figure now correctly uses 4 total attempts (not 3) per the actual `maxRetries=3` + `<=` loop bound in `modules/etl/pipeline.ts`, giving 361×4≈1,444 requests (14.4% of the 10k/day budget, ~7x headroom) instead of the wrong \"1,083, well under 10%\" claim — the doc's overall \"proceed\" recommendation still holds since 14.4% remains comfortably within budget. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 2 of 2 (earlier rounds failed — round 1: /review didn't clear this to ship: doc/bulk-price-feed-plan.md §2 worst-case retry math is wrong: 361x3=1083 is 10.83% of the 10k/day budget, not 'well under 10%'; actual ETL retry default is 4 total attempts not 3, so true worst case is ~1444 (14.4%)) against them plus tests, /review review pass (0 critical) and /qa: Change is documentation-only (docs/bulk-price-feed-plan.md and a ticket file update, no code changes) — no web-facing surface to QA..",
+  "pr_url": "https://github.com/wealthcx01/arca/pull/45",
+  "started": "2026-08-18T21:29:23Z",
+  "finished": "2026-08-18T21:40:19Z",
+  "repo": "wealthcx01/arca"
+}
