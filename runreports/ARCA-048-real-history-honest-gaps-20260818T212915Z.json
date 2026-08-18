@@ -1,0 +1,9 @@
+{
+  "ticket": "ARCA-048-real-history-honest-gaps",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — validation gates not met — coverage: grep confirms no reference to `jitter(` or a synthetic-history loop remains in (grep confirms no jitter()/backward-day loop remains anywhere, but client/src/components/analytics/DrawdownChart.tsx computes and renders a peak-to-trough drawdown % (the same max-drawdown risk figure gated elsewhere) directly from raw /ohlc bars with no sufficient/history_days check at all). No PR opened; it needs a human.",
+  "started": "2026-08-18T21:08:11Z",
+  "finished": "2026-08-18T21:29:15Z",
+  "repo": "wealthcx01/arca"
+}
