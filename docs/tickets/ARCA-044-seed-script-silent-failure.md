@@ -1,6 +1,6 @@
 # ARCA-44 — Seed script must fail loudly on zero cards seeded
 
-**Status:** Todo · **Area:** Cards/Setup · **Depends on:** —
+**Status:** In progress · **Area:** Cards/Setup · **Depends on:** —
 
 ## Why this matters (for the founder)
 Right now a broken seed run tells you it worked. A new developer or a new user can end up with a completely empty app and no signal that anything went wrong — that's a trust-breaking first impression and a support nightmare.
