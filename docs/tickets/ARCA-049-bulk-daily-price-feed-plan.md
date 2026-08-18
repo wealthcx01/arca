@@ -1,6 +1,6 @@
 # ARCA-49 — Plan full-catalog daily price coverage using bulk provider feeds
 
-**Status:** Todo · **Area:** Pricing/ETL · **Depends on:** ARCA-24, ARCA-4
+**Status:** Shipped · **Area:** Pricing/ETL · **Depends on:** ARCA-24, ARCA-4
 
 ## Why this matters (for the founder)
 Right now the screener and any market-wide view only ever look at a sliver of the market — held
@@ -51,10 +51,14 @@ shape to cover the full catalog affordably.
 - Any paid-tier provider upgrade (e.g. PriceCharting Legendary) — noted as an option, not adopted here.
 
 ## Acceptance criteria
-- [ ] A written plan exists showing how to price the full ~19k-card catalog daily via bulk feeds,
-      with request volume and timing spelled out against provider limits.
-- [ ] The plan states clearly what it costs (expected: $0 in provider fees) and what changes are
-      needed in the existing pricing job to use it.
-- [ ] Any coverage gaps between free bulk feeds and the full catalog are listed as explicit open
-      questions, not silently assumed away.
-- [ ] Founder has a clear yes/no decision point on whether to proceed to the full build (ARCA-24).
+- [x] A written plan exists showing how to price the full ~19k-card catalog daily via bulk feeds,
+      with request volume and timing spelled out against provider limits. See
+      `docs/bulk-price-feed-plan.md` §2 (Request volume) and §3 (Timing).
+- [x] The plan states clearly what it costs (expected: $0 in provider fees) and what changes are
+      needed in the existing pricing job to use it. See `docs/bulk-price-feed-plan.md` §4 (Job/provider
+      changes) and §6 (Cost/feasibility summary).
+- [x] Any coverage gaps between free bulk feeds and the full catalog are listed as explicit open
+      questions, not silently assumed away. See `docs/bulk-price-feed-plan.md` §5 (Coverage /
+      data-quality gaps).
+- [x] Founder has a clear yes/no decision point on whether to proceed to the full build (ARCA-24). See
+      `docs/bulk-price-feed-plan.md` §7 (Founder decision point).
