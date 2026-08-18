@@ -1,0 +1,10 @@
+{
+  "ticket": "ARCA-044-seed-script-silent-failure",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "I updated `db/seed.ts` so it fails loudly (non-zero exit, explanatory error naming likely causes) when zero cards are seeded—whether from an API error or an empty result—while leaving the existing success output unchanged for `totalCards > 0`, and made the top-level `seed().catch()` also exit non-zero on unhandled errors. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Change is confined to db/seed.ts (CLI seed script exit-code/error-message behavior on fetch failure) and a docs status line — no web-facing surface (no routes, handlers, or UI touched), so there is nothing for browser-based QA to exercise..",
+  "pr_url": "https://github.com/wealthcx01/arca/pull/44",
+  "started": "2026-08-18T19:41:47Z",
+  "finished": "2026-08-18T19:47:10Z",
+  "repo": "wealthcx01/arca"
+}
