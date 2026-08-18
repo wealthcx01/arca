@@ -1,0 +1,10 @@
+{
+  "ticket": "ARCA-043-uiux-audit-of-the-terminal",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "No other references to the false claim exist elsewhere. Fixed ARCA-57's root-cause section: it now correctly states that `modules/pricing/jobs.ts`'s `updateProviderStatus` does write `price_source_status` after syncs, and that the actual gap is `scripts/seed-prices.ts` bypassing it, updating the Scope to target the seed script instead of the job. — researched from the venture's brain (semantic), planned as a PRP with 8 validation gate(s) (written), then passed on round 2 of 2 (earlier rounds failed — round 1: /review didn't clear this to ship: ARCA-57's root-cause claim ('the price-sync job never writes price_source_status') is false — modules/pricing/jobs.ts:63-101 (updateProviderStatus) does write it; the real gap is that scripts/seed-prices.ts bypasses it. Fix the ticket's root-cause prose before merge so engineers don't chase a nonexistent bug in jobs.ts.) against them plus tests, /review review pass (0 critical) and /qa: Branch only changes ticket documentation (.claude/tickets/*.md - the audit report and 8 new bug tickets it spawned). No application/frontend/backend code changed, so there is no web-facing surface to QA..",
+  "pr_url": "https://github.com/wealthcx01/arca/pull/43",
+  "started": "2026-08-18T19:05:02Z",
+  "finished": "2026-08-18T19:41:43Z",
+  "repo": "wealthcx01/arca"
+}
