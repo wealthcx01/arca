@@ -1,0 +1,9 @@
+{
+  "ticket": "ARCA-048-real-history-honest-gaps",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — validation gates not met — coverage: grep confirms no reference to `jitter(` or a synthetic-history loop remains in (jitter()/synthetic loop is fully removed, but SetMomentumHeatmap.tsx (client/src/components/analytics/SetMomentumHeatmap.tsx:49) renders AVG(trend_score)/AVG(arca_score) via `set.avg_trend ?? 0` with no sufficiency check, so a set whose cards all lack enough history (SQL AVG of all-NULL trend_score returns NULL) renders as a fake 'Trend +0' indistinguishable from a real zero trend). No PR opened; it needs a human.",
+  "started": "2026-08-18T20:41:43Z",
+  "finished": "2026-08-18T21:08:04Z",
+  "repo": "wealthcx01/arca"
+}
