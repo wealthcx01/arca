@@ -1,0 +1,9 @@
+{
+  "ticket": "ARCA-047-sign-in-tagline-fix",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — validation gates not met — happy path: `client/src/pages/LoginPage.tsx` no longer contains the strings \"Bloomberg\" or \"Pokemon\"/\"Pokémon\" anywhere, and the sign-in page displays the founder-approved tagline in place of the old line (old tagline strings are gone but no tagline was added at all — the <p> was deleted, leaving only a comment, so nothing 'displays the founder-approved tagline in place of the old line'); edge cases: the new tagline fits the existing `<p>` styling (`text-sm`, centered, `max-w-sm` container) without visual overflow or awkward wrapping at common viewport widths (no new tagline exists to check against text-sm/max-w-sm styling, so this gate cannot hold); coverage: a full-repo search for \"Bloomberg\" and \"Pokemon\" (excluding docs/tickets, CLAUDE.md, package.json, and other internal-only files) turns up zero remaining user-visible matches, confirming `client/index.html` and the rest of `client/src` are already clean and no new occurrence was missed (grep still finds user-visible 'Pokémon' in client/src/pages/CardsPage.tsx:135, OverviewPage.tsx:102, components/pricing/SourceBadge.tsx:17-19, and terminal/SetPerformancePanel.tsx:50, plus 'Bloomberg' in client/src/index.css:7 — not the zero-match clean state the gate requires). No PR opened; it needs a human.",
+  "started": "2026-08-18T19:47:15Z",
+  "finished": "2026-08-18T19:55:16Z",
+  "repo": "wealthcx01/arca"
+}
