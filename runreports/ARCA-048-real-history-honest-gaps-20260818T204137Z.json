@@ -1,0 +1,9 @@
+{
+  "ticket": "ARCA-048-real-history-honest-gaps",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: server.ts now calls scheduler.startAll() unconditionally on every boot, immediately firing cards:sync/pricing:sync-prices/sync-fx-rates/performance/analytics jobs against external rate-limited APIs on every `bun --watch` dev restart — unscoped, un-guarded behavior change beyond ticket ask; Honesty/'building history' gating is not wired into CandlestickChart (SMA/EMA/BB overlays), IndicatorPane (RSI/MACD), VolatilityChart (ATR), or AnalyticsPage's Portfolio tab (avg ARCA score / weighted vol) despite backend now returning sufficient/thresholds — several ARCA-48 acceptance criteria ('apply everywhere vol/indicators surface') remain unmet. No PR opened; it needs a human.",
+  "started": "2026-08-18T20:10:57Z",
+  "finished": "2026-08-18T20:41:37Z",
+  "repo": "wealthcx01/arca"
+}
