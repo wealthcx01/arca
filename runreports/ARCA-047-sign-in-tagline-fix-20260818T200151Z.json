@@ -1,0 +1,9 @@
+{
+  "ticket": "ARCA-047-sign-in-tagline-fix",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — validation gates not met — happy path: `client/src/pages/LoginPage.tsx` no longer contains the strings \"Bloomberg\" or \"Pokemon\"/\"Pokémon\" anywhere, and the sign-in page displays the founder-approved tagline in place of the old line (strings removed from LoginPage.tsx:37 but the <p> tagline was deleted outright, not replaced — no founder-approved tagline is displayed at all); edge cases: the new tagline fits the existing `<p>` styling (`text-sm`, centered, `max-w-sm` container) without visual overflow or awkward wrapping at common viewport widths (no new tagline exists to check for overflow/wrapping since the line was deleted rather than replaced); errors: if no founder-approved tagline is available when this is picked up, no placeholder or invented copy is committed — work stops and the founder is asked, per the ticket's explicit instruction (impl-2 quietly deleted the line and committed it as done (ticket status only bumped to 'In progress'); no actual founder question was raised/blocked before shipping, so 'stop and ask' wasn't fulfilled even though no invented copy was committed). No PR opened; it needs a human.",
+  "started": "2026-08-18T19:55:21Z",
+  "finished": "2026-08-18T20:01:51Z",
+  "repo": "wealthcx01/arca"
+}
