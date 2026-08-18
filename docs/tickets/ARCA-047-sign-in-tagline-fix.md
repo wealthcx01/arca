@@ -1,4 +1,4 @@
-# ARCA-NEW — Replace Bloomberg/Pokemon tagline on sign-in page
+# ARCA-47 — Replace Bloomberg/Pokemon tagline on sign-in page
 
 **Status:** Todo · **Area:** Client/UI · **Depends on:** —
 

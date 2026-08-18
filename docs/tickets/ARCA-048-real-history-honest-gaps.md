@@ -1,4 +1,4 @@
-# ARCA-NEW — Replace synthetic price history with real accumulated data, and say so when there isn't enough yet
+# ARCA-48 — Replace synthetic price history with real accumulated data, and say so when there isn't enough yet
 
 **Status:** Todo · **Area:** Analytics · **Depends on:** ARCA-4, ARCA-5, ARCA-8
 

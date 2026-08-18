@@ -1,4 +1,4 @@
-# ARCA-NEW — Seed script must fail loudly on zero cards seeded
+# ARCA-44 — Seed script must fail loudly on zero cards seeded
 
 **Status:** Todo · **Area:** Cards/Setup · **Depends on:** —
 

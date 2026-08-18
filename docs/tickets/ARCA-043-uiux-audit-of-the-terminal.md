@@ -37,7 +37,8 @@ trusted?
 user would not know what to do, that is the most valuable finding on the list.
 
 ## How to file what you find
-One ticket per finding, in `docs/tickets/`, numbered from ARCA-44 upwards. Each one states what you
+One ticket per finding, in `docs/tickets/`, each taking the next free id after the highest already in
+the directory — do not reuse a fixed starting number. Each one states what you
 did, what happened, what you expected, and how to reproduce it. Order the set by what would most
 damage a first impression.
 

@@ -1,4 +1,4 @@
-# ARCA-NEW — App-wide error boundary for page crashes
+# ARCA-45 — App-wide error boundary for page crashes
 
 **Status:** In progress · **Area:** Client/UI · **Depends on:** —
 

@@ -1,4 +1,4 @@
-# ARCA-NEW — Plan full-catalog daily price coverage using bulk provider feeds
+# ARCA-49 — Plan full-catalog daily price coverage using bulk provider feeds
 
 **Status:** Todo · **Area:** Pricing/ETL · **Depends on:** ARCA-24, ARCA-4
 

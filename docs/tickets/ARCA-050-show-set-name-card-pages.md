@@ -1,4 +1,4 @@
-# ARCA-NEW — Show set name on card pages
+# ARCA-50 — Show set name on card pages
 
 **Status:** Todo · **Area:** Client/UI · **Depends on:** ARCA-3
 
