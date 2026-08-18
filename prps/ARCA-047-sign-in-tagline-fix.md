@@ -35,3 +35,5 @@ Files touched:
 - [ ] coverage: a full-repo search for "Bloomberg" and "Pokemon" (excluding docs/tickets, CLAUDE.md, package.json, and other internal-only files) turns up zero remaining user-visible matches, confirming `client/index.html` and the rest of `client/src` are already clean and no new occurrence was missed
 
 <!-- foundry-ticket: ff574a674caef1c7 -->
+
+<!-- foundry-ticket: ff574a674caef1c7 -->
