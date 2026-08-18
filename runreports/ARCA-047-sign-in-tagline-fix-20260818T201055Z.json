@@ -1,0 +1,9 @@
+{
+  "ticket": "ARCA-047-sign-in-tagline-fix",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane tried this 3 times and couldn't get it past its own review/tests. It needs a human — parked.",
+  "started": "2026-08-18T20:10:55Z",
+  "finished": "2026-08-18T20:10:55Z",
+  "repo": "wealthcx01/arca"
+}
