@@ -1,4 +1,4 @@
-# ARCA-NEW — Brand & Visual Identity Redesign: Premium Terminal, Earned Not Decorative
+# ARCA-62 — Brand & Visual Identity Redesign: Premium Terminal, Earned Not Decorative
 
 **Status:** Todo · **Area:** Design/Brand · **Depends on:** —
 
