@@ -1,4 +1,4 @@
-# ARCA-NEW — Show "last updated" time next to each price on the card page
+# ARCA-64 — Show "last updated" time next to each price on the card page
 
 **Status:** Todo · **Area:** Cards · **Depends on:** ARCA-4
 
