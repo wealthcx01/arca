@@ -1,0 +1,9 @@
+{
+  "ticket": "ARCA-053-card-detail-blank-identity",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: New regression tests (handlers.test.ts + card-detail-identity.pw.ts) assert image_url is always non-empty for GET /api/cards/:id, but image_url is nullable in schema and 2/502 seeded cards already violate it — test only passes by incidental alphabetical sort order and will false-fail CI with no real regression present. No PR opened; it needs a human.",
+  "started": "2026-08-19T13:31:14Z",
+  "finished": "2026-08-19T13:48:06Z",
+  "repo": "wealthcx01/arca"
+}
