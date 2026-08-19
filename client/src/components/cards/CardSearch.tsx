@@ -33,7 +33,7 @@ export function CardSearch({ onSelect, placeholder = "Search cards..." }: CardSe
     }
     setLoading(true);
     try {
-      const res = await api.get<{ data: CardResult[]; total: number }>(
+      const res = await api.get<{ data: CardResult[]; pagination: { total: number } }>(
         `/cards?q=${encodeURIComponent(q)}&limit=10`,
       );
       setResults(res.data);
