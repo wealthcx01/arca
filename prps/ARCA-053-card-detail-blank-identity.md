@@ -85,3 +85,5 @@ Files touched: `modules/cards/handlers.test.ts`, `scripts/cards-set-name.pw.ts` 
       the rendered `<img>` element are present.
 
 <!-- foundry-ticket: 6d941acf8b42ead5 -->
+
+<!-- foundry-ticket: 6d941acf8b42ead5 -->
