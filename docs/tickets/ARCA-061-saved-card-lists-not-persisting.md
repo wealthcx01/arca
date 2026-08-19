@@ -1,4 +1,4 @@
-# ARCA-NEW — Saved card lists not persisting to signed-in account
+# ARCA-61 — Saved card lists not persisting to signed-in account
 
 **Status:** Todo · **Area:** Watchlist · **Depends on:** ARCA-19
 
