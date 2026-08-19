@@ -1,4 +1,4 @@
-# ARCA-NEW — Refresh prices for the whole tradable market, not just held cards
+# ARCA-63 — Refresh prices for the whole tradable market, not just held cards
 
 **Status:** Todo · **Area:** Pricing/ETL · **Depends on:** ARCA-4
 
