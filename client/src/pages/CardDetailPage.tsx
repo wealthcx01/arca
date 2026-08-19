@@ -107,7 +107,11 @@ export function CardDetailPage() {
       api.get<{ data: AnalyticsSummary }>(`/analytics/${cardId}/summary`).then((d) => d.data).catch(() => null),
     ]).then(([cardR, confR, pricesR, gradedR, analyticsR]) => {
       if (cardR.status === "fulfilled") setCard(cardR.value);
-      else { setError("Failed to load card"); toast.error("Failed to load card"); }
+      else {
+        const message = cardR.reason instanceof Error ? cardR.reason.message : "Failed to load card";
+        setError(message);
+        toast.error(message);
+      }
       setConflated(confR.status === "fulfilled" ? confR.value : []);
       setPrices(pricesR.status === "fulfilled" ? pricesR.value : []);
       setGradedPrices(gradedR.status === "fulfilled" ? gradedR.value : []);

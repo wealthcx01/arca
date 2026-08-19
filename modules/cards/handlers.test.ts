@@ -30,6 +30,7 @@ const FIXTURES = [
     set_code: "TST",
     card_number: "1",
     supertype: "Pokémon",
+    image_url: "https://images.pokemontcg.io/tst/1.png",
   },
   {
     external_id: "arca34-test-002",
@@ -38,6 +39,7 @@ const FIXTURES = [
     set_code: "TST2",
     card_number: "2",
     supertype: "Pokémon",
+    image_url: "https://images.pokemontcg.io/tst2/2.png",
   },
 ];
 
@@ -80,5 +82,31 @@ describe("GET /api/cards/:id", () => {
     const body = await res.json();
     expect(typeof body.data.set_name).toBe("string");
     expect(body.data.set_name.length).toBeGreaterThan(0);
+  });
+
+  // ARCA-53: CardDetailPage reads name/card_number/image_url off the same response — a
+  // shape-mismatch regression here silently blanks the header and breaks the card image.
+  test("a single card includes non-empty name, card_number, and image_url", async () => {
+    const listRes = await app.request("/api/cards?limit=1");
+    const listBody = await listRes.json();
+    expect(listBody.data.length).toBeGreaterThan(0);
+    const id = listBody.data[0].id;
+
+    const res = await app.request(`/api/cards/${id}`);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(typeof body.data.name).toBe("string");
+    expect(body.data.name.length).toBeGreaterThan(0);
+    expect(typeof body.data.card_number).toBe("string");
+    expect(body.data.card_number.length).toBeGreaterThan(0);
+    expect(typeof body.data.image_url).toBe("string");
+    expect(body.data.image_url.length).toBeGreaterThan(0);
+  });
+
+  test("a nonexistent card id returns 404 with an error message", async () => {
+    const res = await app.request("/api/cards/does-not-exist");
+    expect(res.status).toBe(404);
+    const body = await res.json();
+    expect(body.error).toBe("Card not found");
   });
 });

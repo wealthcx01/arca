@@ -1,6 +1,6 @@
 # ARCA-53 — Card detail page shows no card name, set, or image (API response shape mismatch)
 
-**Status:** Todo · **Area:** Client/UI · **Depends on:** —
+**Status:** Done · **Area:** Client/UI · **Depends on:** —
 
 ## Why this matters (for the founder)
 Card detail is one of the required routes for every collector — it's where someone lands after
@@ -36,6 +36,18 @@ same class of bug as ARCA-51 (list endpoint envelope mismatch), on the single-ca
 **Reproduce:** with the Cards-page crash (ARCA-51) worked around, navigate directly to any
 `/cards/:id` URL for a real card id and observe the header bar and image panel.
 
+**Resolution:** the root-cause fix (unwrapping the `{ data: ... }` envelope in
+`CardDetailPage.tsx`) already shipped under ARCA-050 — `git diff master --
+client/src/pages/CardDetailPage.tsx` is empty on this branch, confirming the fix is present and
+unchanged. This pass adds the regression coverage the ticket asked for: `modules/cards/
+handlers.test.ts` now also asserts `name`, `card_number`, and `image_url` are non-empty on `GET
+/api/cards/:id` (previously only `set_name` was checked), plus a 404 check for unknown ids.
+`scripts/card-detail-identity.pw.ts` navigates directly to a real card's `/cards/:id` URL
+(independent of CardsPage) and asserts the header shows the card's name and the artwork renders as
+an `<img>`, not the `ImageOff` placeholder. Manually confirmed in the running app at 1024, 1280,
+and 375 widths that name, set, card number, rarity, artwork, and the price/analytics side panels
+all render correctly.
+
 ## Scope
 - Fix `CardDetailPage.tsx` to unwrap the `{ data: ... }` envelope from `GET /api/cards/:id` before
   using the result as the `Card` object.
@@ -51,8 +63,8 @@ same class of bug as ARCA-51 (list endpoint envelope mismatch), on the single-ca
   page — noted separately in ARCA-56 since it also affects the Analytics page's chart.
 
 ## Acceptance criteria
-- [ ] Any `/cards/:id` page shows the card's real name, set name, card number, and rarity in the
+- [x] Any `/cards/:id` page shows the card's real name, set name, card number, and rarity in the
       header.
-- [ ] The card artwork renders instead of the broken-image placeholder, for cards with a valid
+- [x] The card artwork renders instead of the broken-image placeholder, for cards with a valid
       `image_url`.
-- [ ] Confirmed working at 1024, 1280, and 375 widths.
+- [x] Confirmed working at 1024, 1280, and 375 widths.
