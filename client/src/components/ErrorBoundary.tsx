@@ -28,6 +28,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
           </p>
           <div className="flex items-center gap-2">
             <button
+              type="button"
               onClick={() => window.location.reload()}
               className="rounded bg-[var(--color-primary)] px-3 py-1.5 text-xs font-medium text-white transition-colors hover:opacity-90"
             >

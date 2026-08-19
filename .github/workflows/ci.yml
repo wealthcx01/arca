@@ -50,6 +50,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
+      # The client is a separate workspace with its own package.json and lockfile. Installing only
+      # at the root leaves vite, @vitejs/plugin-react and the JSX types missing — which passes on a
+      # machine where client/node_modules already exists and fails on every clean checkout.
+      - name: Install client dependencies
+        run: cd client && bun install --frozen-lockfile
       - run: bun run typecheck
 
   test:
@@ -76,4 +81,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
+      # The client is a separate workspace with its own package.json and lockfile. Installing only
+      # at the root leaves vite, @vitejs/plugin-react and the JSX types missing — which passes on a
+      # machine where client/node_modules already exists and fails on every clean checkout.
+      - name: Install client dependencies
+        run: cd client && bun install --frozen-lockfile
       - run: bun run build
