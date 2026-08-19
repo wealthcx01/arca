@@ -22,7 +22,7 @@ interface Card {
 interface SetInfo {
   set_code: string;
   set_name: string;
-  count: number;
+  card_count: number;
 }
 
 export function CardsPage() {
@@ -42,8 +42,8 @@ export function CardsPage() {
   // Load sets
   useEffect(() => {
     api
-      .get<SetInfo[]>("/cards/sets")
-      .then(setSets)
+      .get<{ data: SetInfo[] }>("/cards/sets")
+      .then((res) => setSets(res.data))
       .catch((err) => toast.error(err.message || "Failed to load sets"));
   }, []);
 
@@ -59,10 +59,10 @@ export function CardsPage() {
     params.set("limit", String(limit));
 
     api
-      .get<{ data: Card[]; total: number; page: number }>(`/cards?${params}`)
+      .get<{ data: Card[]; pagination: { total: number } }>(`/cards?${params}`)
       .then((res) => {
         setCards(res.data);
-        setTotal(res.total);
+        setTotal(res.pagination.total);
       })
       .catch((err) => toast.error(err.message || "Failed to load cards"))
       .finally(() => setLoading(false));
@@ -119,7 +119,7 @@ export function CardsPage() {
           <option value="">All Sets</option>
           {sets.map((s) => (
             <option key={s.set_code} value={s.set_code}>
-              {s.set_name} ({s.count})
+              {s.set_name} ({s.card_count})
             </option>
           ))}
         </select>
@@ -186,8 +186,13 @@ export function CardsPage() {
                 </div>
               )}
               <div className="p-2">
-                <p className="truncate text-xs font-medium">{card.name}</p>
-                <p className="truncate text-[10px] text-[var(--color-muted-foreground)]">
+                <p className="truncate text-xs font-medium" title={card.name}>
+                  {card.name}
+                </p>
+                <p
+                  className="truncate text-[10px] text-[var(--color-muted-foreground)]"
+                  title={card.set_name}
+                >
                   {card.set_name}
                 </p>
               </div>
