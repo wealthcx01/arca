@@ -1,0 +1,79 @@
+name: CI
+
+# ARCA-34. Until now this repository had no automated checks at all: `.github/workflows` did not
+# exist, and every change was verified by whoever happened to read it. Eleven pieces of work were
+# merged on 2026-08-19 with nothing but a human's reading behind them.
+#
+# Four gates, each one green on `master` the day it was added — a gate that is red from birth gets
+# ignored, and an ignored gate is worse than none because it looks like cover.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: [master]
+
+# A superseded run is wasted minutes; the newest push is the only one anyone acts on.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Scoped to what THIS change touched, deliberately. ARCA's own code currently carries ~198 biome
+    # errors of accumulated debt (ARCA-65) — blocking on all of it would stop every PR on day one
+    # and the gate would be switched off within a week. Holding new code clean while the debt is
+    # worked down separately is the version of this that survives contact with a real backlog.
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # --since needs the base branch's history, not a shallow clone
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      # `--no-errors-on-unmatched` is load-bearing, not tidiness: biome exits 1 when it processes no
+      # files, and a ticket-only change touches nothing it lints. Without it every ticket the
+      # composer files would fail lint for having no code in it.
+      - name: Lint the files this change touches
+        run: >-
+          bunx biome check --changed
+          --since=origin/${{ github.base_ref || 'master' }}
+          --no-errors-on-unmatched .
+
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run typecheck
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      # The suite talks to SQLite, so it needs the tables to exist. It does NOT need the catalog:
+      # tests that depend on data bring their own and clean up after themselves (ARCA-34), which is
+      # what lets them run here at all. `db:seed` is deliberately not called — it reaches out to the
+      # Pokemon TCG API, and a gate that fails when someone else's service is slow is not a gate.
+      - name: Create the database schema
+        run: bun run db:push
+      - run: bun test
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run build

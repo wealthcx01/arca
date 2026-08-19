@@ -36,7 +36,8 @@
       "data",
       "*.db",
       "client/tsconfig.app.json",
-      "client/tsconfig.node.json"
+      "client/tsconfig.node.json",
+      "trkd_scraper"
     ]
   }
 }

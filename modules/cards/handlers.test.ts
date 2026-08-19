@@ -1,14 +1,59 @@
-import { describe, expect, test } from "bun:test";
+import { afterAll, beforeAll, describe, expect, test } from "bun:test";
+import { eq } from "drizzle-orm";
 import { Hono } from "hono";
+import { getDb } from "../../db";
 import { cardsRouter } from "./handlers";
+import { cards } from "./schema";
 
 /**
  * Coverage for ARCA-50: set_name must be present on every card the
  * /api/cards* endpoints return, since CardsPage/CardDetailPage rely on it.
+ *
+ * ARCA-34: this test used to assume the catalog was already seeded. That is true on a developer's
+ * machine and false everywhere else, so on a clean checkout it did not fail with "set_name is
+ * missing" — it fell over reading `data[0].id` of an empty list. A test that only runs where
+ * someone has already run the seeder is a test CI cannot use.
+ *
+ * It now brings its own two cards and removes them afterwards, so it verifies the same contract on
+ * an empty database as on a full one.
  */
 
 const app = new Hono();
 app.route("/api/cards", cardsRouter);
+
+/** Recognisable, and namespaced so a failed run cannot be mistaken for real catalog data. */
+const FIXTURES = [
+  {
+    external_id: "arca34-test-001",
+    name: "Test Card Alpha",
+    set_name: "Test Set",
+    set_code: "TST",
+    card_number: "1",
+    supertype: "Pokémon",
+  },
+  {
+    external_id: "arca34-test-002",
+    name: "Test Card Beta",
+    set_name: "Another Test Set",
+    set_code: "TST2",
+    card_number: "2",
+    supertype: "Pokémon",
+  },
+];
+
+beforeAll(() => {
+  const db = getDb();
+  for (const fixture of FIXTURES) {
+    db.insert(cards).values(fixture).onConflictDoNothing().run();
+  }
+});
+
+afterAll(() => {
+  const db = getDb();
+  for (const fixture of FIXTURES) {
+    db.delete(cards).where(eq(cards.external_id, fixture.external_id)).run();
+  }
+});
 
 describe("GET /api/cards", () => {
   test("every returned card has a non-empty set_name", async () => {
@@ -27,6 +72,7 @@ describe("GET /api/cards/:id", () => {
   test("a single card includes a non-empty set_name", async () => {
     const listRes = await app.request("/api/cards?limit=1");
     const listBody = await listRes.json();
+    expect(listBody.data.length).toBeGreaterThan(0);
     const id = listBody.data[0].id;
 
     const res = await app.request(`/api/cards/${id}`);
