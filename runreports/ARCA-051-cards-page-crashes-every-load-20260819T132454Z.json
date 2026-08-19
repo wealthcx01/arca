@@ -1,0 +1,10 @@
+{
+  "ticket": "ARCA-051-cards-page-crashes-every-load",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "I added `test-results/`, `playwright-report/`, and `blob-report/` to `client/.gitignore` — the previous gate run's Playwright suite (run against `client/playwright.config.ts`) wrote failure screenshots/reports into the tracked `client/` tree on any retry or flaky failure, so the gate's pass/fail verdict was computed against a working tree that no longer matched the committed code; I reran the full suite (including the ARCA-51 Cards regression tests, which all pass) and confirmed a test failure/retry now leaves `git status` showing only my `.gitignore` edit instead of stray artifact files. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 2 of 2 (earlier rounds failed — round 1: the gate check changed the working tree instead of just reporting, so its verdicts don't describe the committed code) against them plus tests, /review review pass (0 critical) and /qa: App booted (backend :3001, frontend :5173). Confirmed GET /api/cards returns pagination.total (not top-level total), matching what CardsPage.tsx and CardSearch.tsx now read. The /qa-only and /browse skills errored on invocation in this environment, so verification was done by running the repo's own Playwright e2e suite (scripts/e2e-playwright.pw.ts) headless: all 18 tests passed, including the 4 ARCA-051 regression tests (fresh signup, /cards renders real total count with no crash, verified at 1024/1280/375 widths) and all 12 route smoke tests. No ErrorBoundary fallback, no console TypeError observed..",
+  "pr_url": "https://github.com/wealthcx01/arca/pull/48",
+  "started": "2026-08-19T13:05:03Z",
+  "finished": "2026-08-19T13:24:54Z",
+  "repo": "wealthcx01/arca"
+}
