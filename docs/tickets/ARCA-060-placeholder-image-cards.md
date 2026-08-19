@@ -1,4 +1,4 @@
-# ARCA-NEW — Placeholder image for cards with no artwork
+# ARCA-60 — Placeholder image for cards with no artwork
 
 **Status:** Todo · **Area:** Client/UI · **Depends on:** ARCA-3
 
