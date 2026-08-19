@@ -1,0 +1,9 @@
+{
+  "ticket": "ARCA-053-card-detail-blank-identity",
+  "lane": "arca",
+  "status": "working",
+  "summary": "Lane claimed the ticket and started work.",
+  "started": "2026-08-19T13:31:14Z",
+  "finished": "2026-08-19T13:31:15Z",
+  "repo": "wealthcx01/arca"
+}
