@@ -1,0 +1,10 @@
+{
+  "ticket": "ARCA-052-readme-does-not-match-real-setup",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "Replaced the root `README.md`'s `bun init` boilerplate with the real quick start: env setup (`.env.example` → `.env` with required keys), the full install/db/seed sequence matching `CLAUDE.md`, expected ports (3001 backend, 5173 frontend), a heads-up about the known `seed-analytics.ts` summary-step error (ARCA-56), and a pointer to `CLAUDE.md` for deeper docs. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Change is README.md + ticket doc only (no app code touched); no web-facing surface to QA in a browser. Sanity-checked that files/scripts referenced in the new README (.env.example, db:push, db:seed, scripts/seed-prices.ts, scripts/seed-analytics.ts, bun run dev) all exist and match package.json, so the documented setup path is consistent with the repo..",
+  "pr_url": "https://github.com/wealthcx01/arca/pull/49",
+  "started": "2026-08-19T13:24:58Z",
+  "finished": "2026-08-19T13:31:08Z",
+  "repo": "wealthcx01/arca"
+}
