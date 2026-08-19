@@ -71,6 +71,7 @@ async function seed() {
   console.log("🌱 Seeding card database from Pokemon TCG API...");
 
   let totalCards = 0;
+  let fetchError: unknown = null;
   const maxPages = 5; // Limit to ~1250 cards for initial seed
 
   for (let page = 1; page <= maxPages; page++) {
@@ -108,8 +109,22 @@ async function seed() {
       }
     } catch (err) {
       console.error(`   ❌ Page ${page} failed:`, err instanceof Error ? err.message : err);
+      fetchError = err;
       break;
     }
+  }
+
+  if (totalCards === 0) {
+    console.error("\n❌ Seed failed: 0 cards were inserted into the database.");
+    if (fetchError) {
+      console.error(
+        `   Cause: request to the Pokemon TCG API failed — ${fetchError instanceof Error ? fetchError.message : fetchError}`,
+      );
+    } else {
+      console.error("   Cause: the Pokemon TCG API returned an empty result set on page 1.");
+    }
+    console.error("   Check: your network connection, the API_KEY in db/seed.ts, and https://api.pokemontcg.io status.");
+    process.exit(1);
   }
 
   console.log(`\n🎉 Seeded ${totalCards} cards into database`);
@@ -122,4 +137,7 @@ async function seed() {
   console.log(`📊 Database: ${cardCount.count} cards across ${setCount.count} sets`);
 }
 
-seed().catch(console.error);
+seed().catch((err) => {
+  console.error("Seed failed:", err);
+  process.exit(1);
+});
