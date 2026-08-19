@@ -1,0 +1,9 @@
+{
+  "ticket": "ARCA-054-settings-pricing-keys-route-shadowed",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-54 (no changes made — plan only)  **Confirmed root cause** by reading `modules/pricing/handlers.ts`: `GET /:cardId` is registered at line 72, `GET /keys` at line 214. Hono matches in registration order, so `GET /api/pricing/keys` binds `cardId = \"keys\"`, finds no rows, and returns the misleading 404. `POST /keys`, `DELETE /keys/:provider`, and `PUT /keys/:provider/toggle` use HTTP methods/paths that don't collide with any dynamic `GET` route, so they're already unaffected — confirmed by inspection, no fix needed there.  ### What I'd do 1. **Reorder routes in `modules/prici",
+  "started": "2026-08-19T14:20:53Z",
+  "finished": "2026-08-19T14:20:54Z",
+  "repo": "wealthcx01/arca"
+}
