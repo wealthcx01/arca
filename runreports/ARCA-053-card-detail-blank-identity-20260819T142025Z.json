@@ -1,0 +1,10 @@
+{
+  "ticket": "ARCA-053-card-detail-blank-identity",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "All gates pass now. Fixed `client/src/pages/CardDetailPage.tsx` so the error state on a fetch rejection uses the actual server error message (e.g. \"Card not found\" for a 404) instead of always hardcoding \"Failed to load card\"; verified via live Playwright run that requesting a nonexistent card id now renders \"Card not found\", and existing unit/e2e tests still pass. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (resumed), then passed on round 2 of 2 (earlier rounds failed — round 1: validation gates not met — errors: requesting a nonexistent card id still shows the existing \"Card not found\" state (backend 404s correctly with {error:'Card not found'}, but CardDetailPage.tsx:110 hardcodes setError('Failed to load card') on any fetch rejection, so the rendered block (confirmed via live test) shows literal text 'Failed to load card', never 'Card not found' as the gate requires)) against them plus tests, /review review pass (0 critical) and /qa: App was already running (backend :3001, frontend :5173). Confirmed GET /api/cards/:id returns proper name/set_name/card_number/image_url, CardDetailPage.tsx unwraps the {data:...} envelope, and the added Playwright regression test (scripts/card-detail-identity.pw.ts) passes: navigating directly to /cards/ht254dhrynyj shows the real card name/artwork, not blank fields or the ImageOff placeholder. Backend unit tests in modules/cards/handlers.test.ts also pass (4/4). Note: invoked via manual verification since the /qa-only and /browse skill tool calls errored out in this session (\"Execute skill\" error), not because of an app issue..",
+  "pr_url": "https://github.com/wealthcx01/arca/pull/51",
+  "started": "2026-08-19T14:03:47Z",
+  "finished": "2026-08-19T14:20:25Z",
+  "repo": "wealthcx01/arca"
+}
