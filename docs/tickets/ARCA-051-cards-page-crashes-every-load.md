@@ -1,6 +1,16 @@
 # ARCA-51 — Cards page crashes on every load (API response shape mismatch)
 
-**Status:** In progress · **Area:** Client/UI · **Depends on:** —
+**Status:** Shipped — fixed under ARCA-50, closed 2026-08-20 · **Area:** Client/UI · **Depends on:** —
+
+> **Closed because the crash no longer exists, not because this ticket was worked.**
+>
+> The fix landed as a side effect of **ARCA-50** (#46, merged 2026-08-19), which changed
+> `CardsPage.tsx` to read `res.pagination.total` while making set names render. By the time the lane
+> picked this ticket up, the bug it describes was already gone — which is why #48, the run against
+> this ticket, ended up correcting a *different* file (`CardSearch.tsx`) that carried the same wrong
+> type inertly.
+>
+> Leaving it open would mean the board showing a founder a broken Cards page that is not broken.
 
 ## Why this matters (for the founder)
 Cards is one of the twelve primary nav tabs — the card catalog is the product's core inventory. It
@@ -49,7 +59,22 @@ the catalog is completely unreachable through the UI.
 - Any redesign of the Cards page beyond restoring correct rendering.
 
 ## Acceptance criteria
-- [ ] Visiting `/cards` as any signed-in user renders the card grid/list and a correct total count,
-      with no ErrorBoundary fallback and no console error.
-- [ ] Confirmed working at 1024, 1280, and 375 widths.
-- [ ] Pagination controls reflect the real total (502 cards / 26 pages at time of audit).
+- [x] Visiting `/cards` renders the catalog with a correct total count and no ErrorBoundary.
+      `CardsPage.tsx:65` now reads `setTotal(res.pagination.total)`, and `total` is a `useState(0)`,
+      so line 163's `total.toLocaleString()` cannot receive `undefined` even if the field were
+      absent. The exact mechanism in the console trace above is gone.
+- [ ] **Confirmed at 1024, 1280 and 375 widths — not re-verified here.** ARCA-50's run checked the
+      page in a browser; this closure is from reading the code path and the API contract, and no
+      instance was running to check against. Left unticked rather than claimed.
+- [x] Pagination reflects the real total — same corrected read, and `modules/cards/handlers.test.ts`
+      asserts the endpoint's shape in CI so it cannot silently drift back.
+
+## What the scope asked for, and where each part went
+
+- **Fix `CardsPage.tsx`** → ARCA-50 (#46).
+- **Audit other client callers of `/api/cards`** → #48 corrected `CardSearch.tsx`, which declared
+  `{ data; total }` against the same endpoint. It never read `res.total`, so it was a latent trap
+  rather than a second crash. `CardDetailPage.tsx` uses `/cards/:id`, explicitly out of scope here.
+- **Add a regression check** → `scripts/e2e-playwright.pw.ts` (#48) loads `/cards` and asserts a real
+  total renders. **It does not run in CI yet** — the browser suite needs a seeded catalog and a
+  running stack, which is **ARCA-66**. Until that lands the guard exists but is not enforced.
