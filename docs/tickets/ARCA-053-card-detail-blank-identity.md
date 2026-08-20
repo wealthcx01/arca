@@ -1,6 +1,6 @@
 # ARCA-53 — Card detail page shows no card name, set, or image (API response shape mismatch)
 
-**Status:** Todo · **Area:** Client/UI · **Depends on:** —
+**Status:** Shipped · **Area:** Client/UI · **Depends on:** —
 
 ## Why this matters (for the founder)
 Card detail is one of the required routes for every collector — it's where someone lands after
@@ -51,8 +51,25 @@ same class of bug as ARCA-51 (list endpoint envelope mismatch), on the single-ca
   page — noted separately in ARCA-56 since it also affects the Analytics page's chart.
 
 ## Acceptance criteria
-- [ ] Any `/cards/:id` page shows the card's real name, set name, card number, and rarity in the
+- [x] Any `/cards/:id` page shows the card's real name, set name, card number, and rarity in the
       header.
-- [ ] The card artwork renders instead of the broken-image placeholder, for cards with a valid
+- [x] The card artwork renders instead of the broken-image placeholder, for cards with a valid
       `image_url`.
-- [ ] Confirmed working at 1024, 1280, and 375 widths.
+- [x] Confirmed working at 1024, 1280, and 375 widths.
+
+## Verification notes
+The envelope-unwrap fix this ticket describes was already shipped under ARCA-50 (commit `b9cd3ea`),
+which changed `CardDetailPage.tsx:97` to `api.get<{ data: Card }>(...).then((d) => d.data)` — the
+same commit also fixed ARCA-51's `CardsPage` crash, so the "navigate around the crash" workaround
+this ticket's repro steps describe is no longer needed either. `git diff master --
+client/src/pages/CardDetailPage.tsx` on this branch is empty: no production code change was needed.
+
+This pass closed the regression-coverage gap instead: `modules/cards/handlers.test.ts` now asserts
+`name`, `card_number`, and `image_url` (not just `set_name`) are non-empty on `GET /api/cards/:id`,
+plus a 404 case. Added `scripts/card-detail-identity.pw.ts`, a Playwright regression suite that
+fetches a real card id via the API and navigates directly to `/cards/:id` (independent of `CardsPage`
+health), asserting the header shows name/set/number/rarity and the artwork renders as an `<img>` (not
+the `ImageOff` placeholder) at 1024, 1280, and 375 widths, plus an unknown-id case. Manually confirmed
+in the running app that the price (conflated/all-sources/graded) and analytics (technical summary,
+risk metrics, ARCA score) side panels still populate on the same page load — they were never affected
+since they're fetched and unwrapped independently of the `card` state.
