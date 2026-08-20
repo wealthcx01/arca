@@ -1,6 +1,6 @@
 # ARCA-51 — Cards page crashes on every load (API response shape mismatch)
 
-**Status:** Todo · **Area:** Client/UI · **Depends on:** —
+**Status:** In progress · **Area:** Client/UI · **Depends on:** —
 
 ## Why this matters (for the founder)
 Cards is one of the twelve primary nav tabs — the card catalog is the product's core inventory. It

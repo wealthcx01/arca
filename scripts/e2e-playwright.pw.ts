@@ -66,3 +66,67 @@ test.describe("ARCA Route Smoke Tests", () => {
     await expect(arcaText).toBeVisible();
   });
 });
+
+test.describe("Cards page — regression for ARCA-51 (pagination shape mismatch)", () => {
+  test("/cards renders the catalog with a real total count and no crash", async ({ page }) => {
+    // Sign up a fresh user so the page renders the real catalog instead of the
+    // login form — the ARCA-51 crash only reproduces once `res.pagination.total`
+    // is actually read while rendering the card grid.
+    const email = `e2e-cards-${Date.now()}-${Math.floor(Math.random() * 1e6)}@example.com`;
+    const signupRes = await page.request.post("/api/auth/signup", {
+      data: { email, password: "e2e-test-password", name: "E2E Cards Test" },
+    });
+    expect(signupRes.ok()).toBe(true);
+
+    const consoleErrors: string[] = [];
+    page.on("console", (msg) => {
+      if (msg.type() === "error") consoleErrors.push(msg.text());
+    });
+
+    await page.goto("/cards", { waitUntil: "domcontentloaded" });
+
+    // The ErrorBoundary fallback must never show.
+    await expect(page.locator("text=Something went wrong loading this page")).toHaveCount(0);
+
+    // Wait for the real catalog to load (the count starts at "0 cards found"
+    // before the fetch resolves) before reading the final total.
+    await expect(page.locator('a[href^="/cards/"]').first()).toBeVisible({ timeout: 10_000 });
+
+    const countText = await page.locator("text=/\\d[\\d,]* cards found/").first().textContent();
+
+    expect(countText).toBeTruthy();
+    const total = Number(countText!.replace(/[^\d]/g, ""));
+    expect(total).toBeGreaterThan(0);
+    expect(Number.isNaN(total)).toBe(false);
+
+    const criticalErrors = consoleErrors.filter(
+      (e) => e.includes("Uncaught") || e.includes("toLocaleString"),
+    );
+    expect(criticalErrors).toHaveLength(0);
+  });
+
+  for (const viewport of [
+    { width: 1024, height: 768 },
+    { width: 1280, height: 800 },
+    { width: 375, height: 812 },
+  ]) {
+    test(`/cards renders without crashing at ${viewport.width}px`, async ({ page }) => {
+      await page.setViewportSize(viewport);
+
+      const email = `e2e-cards-${viewport.width}-${Date.now()}-${Math.floor(Math.random() * 1e6)}@example.com`;
+      const signupRes = await page.request.post("/api/auth/signup", {
+        data: { email, password: "e2e-test-password", name: "E2E Cards Test" },
+      });
+      expect(signupRes.ok()).toBe(true);
+
+      await page.goto("/cards", { waitUntil: "domcontentloaded" });
+
+      await expect(page.locator("text=Something went wrong loading this page")).toHaveCount(0);
+      await expect(page.locator('a[href^="/cards/"]').first()).toBeVisible({ timeout: 10_000 });
+
+      const countText = await page.locator("text=/\\d[\\d,]* cards found/").first().textContent();
+      const total = Number(countText!.replace(/[^\d]/g, ""));
+      expect(total).toBeGreaterThan(0);
+    });
+  }
+});
