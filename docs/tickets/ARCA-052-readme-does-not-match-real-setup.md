@@ -1,6 +1,6 @@
 # ARCA-52 — Root README doesn't match the real setup path; following it does not run the app
 
-**Status:** Todo · **Area:** Docs/Setup · **Depends on:** —
+**Status:** In progress · **Area:** Docs/Setup · **Depends on:** —
 
 ## Why this matters (for the founder)
 This is the very first thing anyone touching the repo reads. As written, following it produces
