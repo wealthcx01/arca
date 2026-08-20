@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-20T11:37:09Z",
+  "ended_at": "2026-08-20T11:54:13Z",
+  "trigger": "scheduled",
+  "outcome": "opened-pr",
+  "summary_md": "Fixed the two biome lint gate failures (unsorted import in scripts/card-detail-identity.pw.ts, formatter line-width diff in modules/cards/handlers.test.ts) by applying biome's own --fix, with no logic changes. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (resumed), then passed on round 2 of 2 (earlier rounds failed — round 1: /review didn't clear this to ship: CI lint gate fails: `bunx biome check --changed --since=origin/master` (the exact command in .github/workflows/ci.yml) reports 2 errors in the new files — organizeImports in scripts/card-detail-identity.pw.ts and a formatter diff in modules/cards/handlers.test.ts — verified locally, exit code 1) against them plus tests, /review review pass (0 critical) and /qa: This ticket's fix was already shipped under ARCA-50 (envelope-unwrap in CardDetailPage.tsx); this branch only adds regression coverage, no production code diff. Booted backend (:3001) and frontend (:5173) headless. Confirmed GET /api/cards/:id returns non-empty name/card_number/image_url and GET /api/cards/does-not-exist returns 404 with {error:'Card not found'}. Ran the branch's own scripts/card-detail-identity.pw.ts Playwright suite against the live app: all 5 tests passed, confirming the card detail header renders name/set/number/rarity and artwork as an <img> (not broken-image placeholder) at 1024/1280/375 widths, and the unknown-id case shows an error state instead of a blank identity. Also ran modules/cards/handlers.test.ts: 4/4 pass..",
+  "tickets_touched": [
+    "ARCA-053-card-detail-blank-identity"
+  ],
+  "error_detail": null,
+  "pr_url": "https://github.com/wealthcx01/arca/pull/52",
+  "ticket": "ARCA-053-card-detail-blank-identity",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "Fixed the two biome lint gate failures (unsorted import in scripts/card-detail-identity.pw.ts, formatter line-width diff in modules/cards/handlers.test.ts) by applying biome's own --fix, with no logic changes. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (resumed), then passed on round 2 of 2 (earlier rounds failed — round 1: /review didn't clear this to ship: CI lint gate fails: `bunx biome check --changed --since=origin/master` (the exact command in .github/workflows/ci.yml) reports 2 errors in the new files — organizeImports in scripts/card-detail-identity.pw.ts and a formatter diff in modules/cards/handlers.test.ts — verified locally, exit code 1) against them plus tests, /review review pass (0 critical) and /qa: This ticket's fix was already shipped under ARCA-50 (envelope-unwrap in CardDetailPage.tsx); this branch only adds regression coverage, no production code diff. Booted backend (:3001) and frontend (:5173) headless. Confirmed GET /api/cards/:id returns non-empty name/card_number/image_url and GET /api/cards/does-not-exist returns 404 with {error:'Card not found'}. Ran the branch's own scripts/card-detail-identity.pw.ts Playwright suite against the live app: all 5 tests passed, confirming the card detail header renders name/set/number/rarity and artwork as an <img> (not broken-image placeholder) at 1024/1280/375 widths, and the unknown-id case shows an error state instead of a blank identity. Also ran modules/cards/handlers.test.ts: 4/4 pass..",
+  "started": "2026-08-20T11:37:09Z",
+  "finished": "2026-08-20T11:54:13Z",
+  "repo": "wealthcx01/arca"
+}
