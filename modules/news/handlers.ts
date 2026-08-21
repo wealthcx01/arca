@@ -39,7 +39,7 @@ newsRouter.get("/:cardId", (c) => {
   // Search card_ids JSON array for the card ID
   const data = db.all(sql`
     SELECT * FROM market_news
-    WHERE card_ids LIKE ${'%"' + cardId + '"%'}
+    WHERE card_ids LIKE ${`%"${cardId}"%`}
     ORDER BY published_at DESC
     LIMIT 20
   `);

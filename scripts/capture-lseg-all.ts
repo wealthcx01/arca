@@ -80,7 +80,7 @@ async function analyzeTarget(target: any, index: number) {
         }
       }
     } catch {
-      console.log(`  Screenshot: failed`);
+      console.log("  Screenshot: failed");
     }
 
     // Extract detailed UI analysis

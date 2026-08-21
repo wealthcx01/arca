@@ -103,7 +103,7 @@ async function main() {
 
     // Check if we're now on the dashboard (empty state)
     const currentUrl = page.url();
-    if (currentUrl.includes("/dashboard") || currentUrl === BASE_URL + "/") {
+    if (currentUrl.includes("/dashboard") || currentUrl === `${BASE_URL}/`) {
       log("pass", "Signup", "Redirected to dashboard after signup");
     } else {
       // Maybe we're on the empty state
@@ -123,7 +123,7 @@ async function main() {
     // 3. DASHBOARD — Empty State
     // ═══════════════════════════════════════════════
     console.log("\n3. Dashboard (Empty State)");
-    await page.goto(BASE_URL + "/dashboard", { waitUntil: "networkidle", timeout: 10000 });
+    await page.goto(`${BASE_URL}/dashboard`, { waitUntil: "networkidle", timeout: 10000 });
     await page.waitForTimeout(1000);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "04-dashboard-empty.png") });
 
@@ -162,7 +162,7 @@ async function main() {
     // 4. DASHBOARD — With Portfolio
     // ═══════════════════════════════════════════════
     console.log("\n4. Dashboard (With Portfolio)");
-    await page.goto(BASE_URL + "/dashboard", { waitUntil: "networkidle", timeout: 10000 });
+    await page.goto(`${BASE_URL}/dashboard`, { waitUntil: "networkidle", timeout: 10000 });
     await page.waitForTimeout(1500);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "06-dashboard-loaded.png") });
 
@@ -187,7 +187,7 @@ async function main() {
     // 5. CARDS PAGE
     // ═══════════════════════════════════════════════
     console.log("\n5. Cards Page");
-    await page.goto(BASE_URL + "/cards", { waitUntil: "networkidle", timeout: 15000 });
+    await page.goto(`${BASE_URL}/cards`, { waitUntil: "networkidle", timeout: 15000 });
     await page.waitForTimeout(2000);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "07-cards-grid.png") });
 
@@ -331,7 +331,7 @@ async function main() {
     // 7. TRADES/TRANSACTIONS PAGE
     // ═══════════════════════════════════════════════
     console.log("\n7. Transactions Page");
-    await page.goto(BASE_URL + "/transactions", { waitUntil: "networkidle", timeout: 10000 });
+    await page.goto(`${BASE_URL}/transactions`, { waitUntil: "networkidle", timeout: 10000 });
     await page.waitForTimeout(1500);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "11-transactions.png") });
 
@@ -360,7 +360,7 @@ async function main() {
     // 8. ANALYTICS PAGE
     // ═══════════════════════════════════════════════
     console.log("\n8. Analytics Page");
-    await page.goto(BASE_URL + "/analytics", { waitUntil: "networkidle", timeout: 10000 });
+    await page.goto(`${BASE_URL}/analytics`, { waitUntil: "networkidle", timeout: 10000 });
     await page.waitForTimeout(1500);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "12-analytics.png") });
 
@@ -379,7 +379,7 @@ async function main() {
     // 9. IMPORT PAGE
     // ═══════════════════════════════════════════════
     console.log("\n9. Import Page");
-    await page.goto(BASE_URL + "/import", { waitUntil: "networkidle", timeout: 10000 });
+    await page.goto(`${BASE_URL}/import`, { waitUntil: "networkidle", timeout: 10000 });
     await page.waitForTimeout(1000);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "13-import.png") });
 
@@ -396,7 +396,7 @@ async function main() {
     // 10. SETTINGS PAGE
     // ═══════════════════════════════════════════════
     console.log("\n10. Settings Page");
-    await page.goto(BASE_URL + "/settings", { waitUntil: "networkidle", timeout: 10000 });
+    await page.goto(`${BASE_URL}/settings`, { waitUntil: "networkidle", timeout: 10000 });
     await page.waitForTimeout(1500);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "14-settings.png") });
 
@@ -488,7 +488,7 @@ async function main() {
   // ═══════════════════════════════════════════════
   // SUMMARY
   // ═══════════════════════════════════════════════
-  console.log("\n" + "═".repeat(60));
+  console.log(`\n${"═".repeat(60)}`);
   console.log("E2E VERIFICATION SUMMARY");
   console.log("═".repeat(60));
 

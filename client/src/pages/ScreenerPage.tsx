@@ -33,7 +33,7 @@ interface SetsResponse {
 
 function formatPrice(cents: number): string {
   if (!cents) return "—";
-  return "$" + (cents / 100).toFixed(2);
+  return `$${(cents / 100).toFixed(2)}`;
 }
 
 const rankingTabs = [

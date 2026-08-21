@@ -39,9 +39,9 @@ export function RiskMetrics({
   max_drawdown_bp,
   liquidity_score,
 }: RiskMetricsProps) {
-  const vol = volatility_e6 != null ? ((volatility_e6 / 1_000_000) * 100).toFixed(1) + "%" : "—";
+  const vol = volatility_e6 != null ? `${((volatility_e6 / 1_000_000) * 100).toFixed(1)}%` : "—";
   const sharpe = sharpe_e6 != null ? (sharpe_e6 / 1_000_000).toFixed(2) : "—";
-  const dd = max_drawdown_bp != null ? (max_drawdown_bp / 100).toFixed(1) + "%" : "—";
+  const dd = max_drawdown_bp != null ? `${(max_drawdown_bp / 100).toFixed(1)}%` : "—";
   const liq = liquidity_score != null ? String(liquidity_score) : "—";
 
   const sharpeColor =

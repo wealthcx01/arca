@@ -194,7 +194,7 @@ async function main() {
       console.log(`    - "${l.text}" → ${l.href}`);
     }
     if (info.bodyHTML) {
-      console.log(`\n  Body preview (first 500 chars):`);
+      console.log("\n  Body preview (first 500 chars):");
       console.log(`  ${info.bodyHTML.slice(0, 500)}`);
     }
   }

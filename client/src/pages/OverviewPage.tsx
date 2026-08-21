@@ -37,8 +37,8 @@ interface SetInfo {
 }
 
 function formatCompact(cents: number): string {
-  if (Math.abs(cents) >= 10_000_00) return "$" + (cents / 100_00).toFixed(1) + "K";
-  return "$" + (cents / 100).toFixed(0);
+  if (Math.abs(cents) >= 10_000_00) return `$${(cents / 100_00).toFixed(1)}K`;
+  return `$${(cents / 100).toFixed(0)}`;
 }
 
 /** The first thing a brand-new user (no portfolio yet) sees — relocated from the Portfolio page. */

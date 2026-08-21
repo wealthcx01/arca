@@ -327,7 +327,7 @@ function ScreenerTab({
                   </td>
                   <td className="px-2 py-1 text-[var(--color-muted-foreground)]">
                     {card.set_name?.length > 15
-                      ? card.set_name.slice(0, 15) + "..."
+                      ? `${card.set_name.slice(0, 15)}...`
                       : card.set_name}
                   </td>
                   <td className="px-2 py-1 text-right font-mono tabular-nums">
@@ -343,7 +343,7 @@ function ScreenerTab({
                   </td>
                   <td className="px-2 py-1 text-right font-mono tabular-nums">
                     {card.volatility_e6 != null
-                      ? ((card.volatility_e6 / 1_000_000) * 100).toFixed(0) + "%"
+                      ? `${((card.volatility_e6 / 1_000_000) * 100).toFixed(0)}%`
                       : "—"}
                   </td>
                   <td className="px-2 py-1 text-right font-mono tabular-nums">
@@ -419,7 +419,7 @@ function PortfolioTab({
             <StatCard label="Avg ARCA Score" value={String(risk.avg_arca_score)} />
             <StatCard
               label="Portfolio Vol"
-              value={((risk.weighted_volatility_e6 / 1_000_000) * 100).toFixed(1) + "%"}
+              value={`${((risk.weighted_volatility_e6 / 1_000_000) * 100).toFixed(1)}%`}
               subtitle="annual"
             />
             <StatCard label="Wtd Sharpe" value={(risk.weighted_sharpe_e6 / 1_000_000).toFixed(2)} />
@@ -428,15 +428,15 @@ function PortfolioTab({
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
             <StatCard
               label="Max Drawdown"
-              value={(risk.max_drawdown_bp / 100).toFixed(1) + "%"}
+              value={`${(risk.max_drawdown_bp / 100).toFixed(1)}%`}
               color={risk.max_drawdown_bp > 2000 ? "text-[var(--color-negative)]" : ""}
             />
             <StatCard
               label="Top 5 Concentration"
-              value={(risk.top5_concentration_bp / 100).toFixed(1) + "%"}
+              value={`${(risk.top5_concentration_bp / 100).toFixed(1)}%`}
               color={risk.top5_concentration_bp > 6000 ? "text-[var(--color-negative)]" : ""}
             />
-            <StatCard label="Diversification" value={risk.diversification_ratio + "%"} />
+            <StatCard label="Diversification" value={`${risk.diversification_ratio}%`} />
             <StatCard label="Unique Cards" value={String(risk.card_count)} />
           </div>
 

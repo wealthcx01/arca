@@ -52,7 +52,7 @@ export function IndicatorPane({
 
   const handleChart = (chart: IChartApi) => {
     if (indicator === "RSI_14") {
-      const rsiData = data["RSI_14"];
+      const rsiData = data.RSI_14;
       if (rsiData && rsiData.length > 0) {
         const series = chart.addSeries(LineSeries, {
           color: theme.primaryColor,
@@ -89,9 +89,9 @@ export function IndicatorPane({
         }
       }
     } else if (indicator === "MACD") {
-      const histData = data["MACD_HIST"];
-      const macdData = data["MACD"];
-      const signalData = data["MACD_SIGNAL"];
+      const histData = data.MACD_HIST;
+      const macdData = data.MACD;
+      const signalData = data.MACD_SIGNAL;
 
       if (histData && histData.length > 0) {
         const histSeries = chart.addSeries(HistogramSeries, {
@@ -132,7 +132,7 @@ export function IndicatorPane({
   };
 
   const hasData =
-    indicator === "RSI_14" ? (data["RSI_14"]?.length ?? 0) > 0 : (data["MACD"]?.length ?? 0) > 0;
+    indicator === "RSI_14" ? (data.RSI_14?.length ?? 0) > 0 : (data.MACD?.length ?? 0) > 0;
 
   if (!hasData) {
     return (

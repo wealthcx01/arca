@@ -34,7 +34,7 @@ export function VolatilityChart({
         `/analytics/${cardId}/indicators?days=${days}&currency=${currency}&indicators=ATR_14`,
       )
       .then((res) => {
-        const atr = res.data["ATR_14"];
+        const atr = res.data.ATR_14;
         if (atr) {
           setAtrData(
             atr.map((v) => ({

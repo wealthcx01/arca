@@ -18,12 +18,12 @@ interface SetsResponse {
 }
 
 function formatPrice(cents: number): string {
-  return "$" + (cents / 100).toFixed(2);
+  return `$${(cents / 100).toFixed(2)}`;
 }
 
 function formatValue(cents: number): string {
-  if (cents >= 100000) return "$" + (cents / 100000).toFixed(1) + "K";
-  return "$" + (cents / 100).toFixed(0);
+  if (cents >= 100000) return `$${(cents / 100000).toFixed(1)}K`;
+  return `$${(cents / 100).toFixed(0)}`;
 }
 
 export function SetPerformancePanel() {

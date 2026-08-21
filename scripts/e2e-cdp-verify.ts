@@ -238,8 +238,8 @@ async function main() {
     await new Promise((r) => setTimeout(r, 3000));
     await tryScreenshot(ws, "03-after-signup.png");
 
-    const afterSignup = await evaluateExpression(ws, `window.location.href`);
-    if (afterSignup?.includes("/dashboard") || afterSignup === BASE_URL + "/") {
+    const afterSignup = await evaluateExpression(ws, "window.location.href");
+    if (afterSignup?.includes("/dashboard") || afterSignup === `${BASE_URL}/`) {
       log("pass", "Signup", "Redirected to dashboard after signup");
     } else {
       log("warn", "Signup", `After signup URL: ${afterSignup}`);
@@ -612,7 +612,7 @@ async function main() {
   // ═══════════════════════════════════════════════
   // SUMMARY
   // ═══════════════════════════════════════════════
-  console.log("\n" + "═".repeat(60));
+  console.log(`\n${"═".repeat(60)}`);
   console.log("E2E VERIFICATION SUMMARY");
   console.log("═".repeat(60));
 

@@ -36,7 +36,7 @@ function captureTarget(target: CDPTarget, filename: string): Promise<boolean> {
     }, 20000);
 
     ws.onopen = () => {
-      console.log(`    Connected, enabling Page domain...`);
+      console.log("    Connected, enabling Page domain...");
       // First enable Page domain
       ws.send(JSON.stringify({ id: ++msgId, method: "Page.enable", params: {} }));
     };
@@ -45,7 +45,7 @@ function captureTarget(target: CDPTarget, filename: string): Promise<boolean> {
       const msg = JSON.parse(String(event.data));
       if (msg.id === 1) {
         // Page.enable response, now capture
-        console.log(`    Page enabled, capturing screenshot...`);
+        console.log("    Page enabled, capturing screenshot...");
         ws.send(
           JSON.stringify({
             id: ++msgId,
@@ -62,7 +62,7 @@ function captureTarget(target: CDPTarget, filename: string): Promise<boolean> {
           ws.close();
           resolve(true);
         } else {
-          console.log(`    Screenshot error:`, JSON.stringify(msg.error || msg).slice(0, 200));
+          console.log("    Screenshot error:", JSON.stringify(msg.error || msg).slice(0, 200));
           clearTimeout(timeout);
           ws.close();
           resolve(false);
