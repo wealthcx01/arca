@@ -87,3 +87,80 @@ jobs:
       - name: Install client dependencies
         run: cd client && bun install --frozen-lockfile
       - run: bun run build
+
+  e2e:
+    name: Browser suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # ARCA-66. The .pw.ts suite existed since ARCA-50 and had never run anywhere but a developer's
+    # machine, because it needs three things at once: a populated catalog, a running stack, and a
+    # browser. Each is arranged here, and none of them reaches the network.
+    env:
+      # Throwaway, and only ever used by this job. Real values live on the deployment.
+      BETTER_AUTH_SECRET: ci-only-not-a-real-secret-value-000000
+      ARCA_ENCRYPTION_KEY: 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+      CI: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - name: Install client dependencies
+        run: cd client && bun install --frozen-lockfile
+
+      # Cache the browser on the resolved Playwright version. No `--with-deps`: that shells out to
+      # apt, which hung the studio's own UI gate for six hours and then failed it at eight minutes
+      # on an unreachable mirror. The runner already carries chromium's libraries.
+      - name: Resolve Playwright version
+        id: pw
+        run: echo "version=$(cd client && node -p "require('@playwright/test/package.json').version")" >> "$GITHUB_OUTPUT"
+      - name: Cache Playwright browser
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ steps.pw.outputs.version }}-chromium
+      - name: Install Playwright browser
+        if: steps.pw-cache.outputs.cache-hit != 'true'
+        timeout-minutes: 5
+        run: cd client && bunx playwright install chromium
+
+      # The catalog, offline. `db:seed` would work and calls the Pokémon TCG API — a gate that fails
+      # when someone else's service is slow is not a gate.
+      - name: Create the schema and load the catalog fixture
+        run: |
+          bun run db:push
+          bun run scripts/seed-fixture.ts
+
+      - name: Start the stack
+        run: |
+          PORT=3001 bun server.ts > /tmp/arca-server.log 2>&1 &
+          (cd client && bunx vite --port 5173 > /tmp/arca-client.log 2>&1 &)
+
+      # Wait for readiness rather than sleeping: a fixed sleep is either too short on a slow runner
+      # or wasted on a fast one, and its failure mode is a browser test that reads as a product bug.
+      - name: Wait for the stack to answer
+        timeout-minutes: 3
+        run: |
+          for url in http://localhost:3001/api/cards?limit=1 http://localhost:5173/ http://localhost:5173/fixture-card.svg; do
+            echo "waiting for $url"
+            until curl -fsS -o /dev/null --max-time 5 "$url"; do sleep 2; done
+            echo "  ok"
+          done
+
+      - name: Run the browser suite
+        timeout-minutes: 8
+        run: cd client && bunx playwright test --config ./playwright.config.ts --reporter=line
+
+      # Screenshots and the report on failure, so a red run can be read without reproducing it.
+      - name: Upload screenshots and report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-suite-artifacts
+          path: |
+            client/test-results/
+            client/playwright-report/
+          if-no-files-found: ignore
+      - name: Server logs on failure
+        if: failure()
+        run: tail -50 /tmp/arca-server.log /tmp/arca-client.log || true

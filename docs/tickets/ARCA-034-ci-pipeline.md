@@ -1,6 +1,6 @@
 # ARCA-34 — CI pipeline
 
-**Status:** Done — the browser smoke is ARCA-66 · **Area:** Infra/QA · **Depends on:** ARCA-22
+**Status:** Done · **Area:** Infra/QA · **Depends on:** ARCA-22
 
 ## Context
 There was no CI (`.github/workflows` absent); tests ran only locally. Eleven pieces of work were
@@ -41,5 +41,5 @@ fail lint for containing no code.
 
 ## Acceptance criteria
 - [x] Every PR runs lint + typecheck + tests automatically, and blocks on red.
-- [ ] **Playwright smoke.** Not running — it needs a populated catalog and a running stack, and
-      seeding it calls an external API. Scoped as **ARCA-66** rather than ticked.
+- [x] **Playwright smoke.** Running as of ARCA-66: a committed catalog fixture, the stack booted in
+      the job, 26 browser tests, screenshots on failure. No external network call.

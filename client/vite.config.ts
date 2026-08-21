@@ -11,10 +11,13 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5173,
+    // ARCA-66: both overridable so a second stack can be brought up beside a running dev server —
+    // which is what the browser suite needs when someone already has :5173 and :3001 in use.
+    // Defaults are unchanged, so `bun run dev` behaves exactly as before.
+    port: Number(process.env.VITE_PORT) || 5173,
     proxy: {
       "/api": {
-        target: "http://localhost:3001",
+        target: process.env.VITE_API_TARGET ?? "http://localhost:3001",
         changeOrigin: true,
       },
     },
