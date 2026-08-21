@@ -66,6 +66,28 @@ interface PortfolioRisk {
   avg_arca_score: number;
 }
 
+/**
+ * How much of the catalog the index actually covers (ARCA-56 Part B).
+ *
+ * `fraction` is null when the catalog itself is empty — "no cards at all" and "0% of the cards we
+ * have" are different situations and the page must not say the wrong one.
+ */
+interface IndexCoverage {
+  cards_covered: number;
+  catalog_total: number;
+  fraction: number | null;
+}
+
+/**
+ * Below this share of the catalog, the market figures get a caveat.
+ *
+ * 0.8 rather than something stricter because real coverage is never total: a card with too little
+ * price history has nothing to compute, so a healthy run still falls short of 100%. The audit found
+ * 1 of 502 — the case worth catching is an order of magnitude away from the edge, and a threshold
+ * that fires on a healthy run is one people learn to ignore.
+ */
+const INDEX_COVERAGE_FLOOR = 0.8;
+
 const COLORS = [
   "#2563eb",
   "#7c3aed",
@@ -81,6 +103,7 @@ export function AnalyticsPage() {
   const { toast } = useToast();
   const [tab, setTab] = useState<"market" | "screener" | "portfolio">("market");
   const [marketIndex, setMarketIndex] = useState<MarketIndexPoint[]>([]);
+  const [coverage, setCoverage] = useState<IndexCoverage | null>(null);
   const [screenerData, setScreenerData] = useState<ScreenerCard[]>([]);
   const [screenerSort, setScreenerSort] = useState("arca_score");
   const [screenerLoading, setScreenerLoading] = useState(false);
@@ -94,8 +117,11 @@ export function AnalyticsPage() {
   // Load market index
   useEffect(() => {
     api
-      .get<{ data: MarketIndexPoint[] }>("/analytics/market-index?days=90")
-      .then((res) => setMarketIndex(res.data))
+      .get<{ data: MarketIndexPoint[]; coverage: IndexCoverage }>("/analytics/market-index?days=90")
+      .then((res) => {
+        setMarketIndex(res.data);
+        setCoverage(res.coverage);
+      })
       .catch(() => {})
       .finally(() => setLoading(false));
   }, []);
@@ -155,7 +181,9 @@ export function AnalyticsPage() {
         </div>
       </div>
 
-      {tab === "market" && <MarketTab marketIndex={marketIndex} isDark={isDark} />}
+      {tab === "market" && (
+        <MarketTab marketIndex={marketIndex} isDark={isDark} coverage={coverage} />
+      )}
       {tab === "screener" && (
         <ScreenerTab
           data={screenerData}
@@ -176,7 +204,15 @@ export function AnalyticsPage() {
   );
 }
 
-function MarketTab({ marketIndex, isDark }: { marketIndex: MarketIndexPoint[]; isDark: boolean }) {
+function MarketTab({
+  marketIndex,
+  isDark,
+  coverage,
+}: {
+  marketIndex: MarketIndexPoint[];
+  isDark: boolean;
+  coverage: IndexCoverage | null;
+}) {
   const theme = getChartTheme(isDark);
 
   return (
@@ -212,6 +248,23 @@ function MarketTab({ marketIndex, isDark }: { marketIndex: MarketIndexPoint[]; i
         </div>
       </DataPanel>
 
+      {/* ARCA-56 Part B: an honest caveat when the index describes a fraction of the catalog.
+          Below the threshold the figures are not wrong, they are unrepresentative — and the page
+          previously gave a reader no way to tell those apart. */}
+      {coverage && coverage.fraction !== null && coverage.fraction < INDEX_COVERAGE_FLOOR && (
+        <div
+          data-testid="analytics-partial-coverage"
+          className="rounded border border-[var(--color-warning,#b45309)] bg-[var(--color-muted)] px-3 py-2 text-[11px]"
+        >
+          <strong>
+            These market figures cover {coverage.cards_covered} of {coverage.catalog_total} cards.
+          </strong>{" "}
+          The index, market cap and averages below describe only that subset, so treat them as a
+          sample rather than the market. This usually means the analytics run was interrupted — run{" "}
+          <code>bun run scripts/seed-analytics.ts</code> to complete it.
+        </div>
+      )}
+
       {/* Market stats */}
       {marketIndex.length > 0 && (
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
@@ -227,7 +280,16 @@ function MarketTab({ marketIndex, isDark }: { marketIndex: MarketIndexPoint[]; i
                   label="Market Cap"
                   value={formatMoney(latest.total_market_cap_cents, "USD")}
                 />
-                <StatCard label="Cards Tracked" value={String(latest.card_count)} />
+                {/* ARCA-56 Part B: the denominator. "Cards Tracked: 1" read as a fact about the
+                    market; it was a fact about an interrupted seed run. */}
+                <StatCard
+                  label="Cards Tracked"
+                  value={
+                    coverage && coverage.catalog_total > 0
+                      ? `${latest.card_count} of ${coverage.catalog_total}`
+                      : String(latest.card_count)
+                  }
+                />
                 <StatCard label="Data Points" value={String(marketIndex.length)} subtitle="days" />
               </>
             );

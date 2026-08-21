@@ -50,8 +50,41 @@ const indicatorTotal = db.all(sql`SELECT COUNT(*) as cnt FROM technical_indicato
 const analyticsTotal = db.all(sql`SELECT COUNT(*) as cnt FROM card_analytics`);
 const indexTotal = db.all(sql`SELECT COUNT(*) as cnt FROM market_index_daily`);
 
+const cardsTotal = db.all(sql`SELECT COUNT(*) as cnt FROM cards`);
+
+const count = (rows: unknown): number => {
+  const first = Array.isArray(rows) ? rows[0] : undefined;
+  return typeof first === "object" && first !== null && "cnt" in first
+    ? Number((first as { cnt: unknown }).cnt)
+    : 0;
+};
+
 console.log("\nTable counts:");
-console.log(`  card_ohlc_daily:       ${JSON.stringify(ohlcTotal)}`);
-console.log(`  technical_indicators:  ${JSON.stringify(indicatorTotal)}`);
-console.log(`  card_analytics:        ${JSON.stringify(analyticsTotal)}`);
-console.log(`  market_index_daily:    ${JSON.stringify(indexTotal)}`);
+console.log(`  cards:                 ${count(cardsTotal)}`);
+console.log(`  card_ohlc_daily:       ${count(ohlcTotal)}`);
+console.log(`  technical_indicators:  ${count(indicatorTotal)}`);
+console.log(`  card_analytics:        ${count(analyticsTotal)}`);
+console.log(`  market_index_daily:    ${count(indexTotal)}`);
+
+// ARCA-56 Part B. An interrupted run is the normal failure here — the pipeline takes minutes and a
+// 90-second default timeout kills it halfway — and until now it exited looking like a success while
+// leaving the Analytics page presenting a handful of cards as though they were the whole market.
+//
+// Same spirit as ARCA-44's fix to the card seed: say so, and exit non-zero, rather than reporting
+// success for work that did not finish.
+const catalog = count(cardsTotal);
+const analysed = count(analyticsTotal);
+const COVERAGE_FLOOR = 0.8;
+
+if (catalog > 0 && analysed / catalog < COVERAGE_FLOOR) {
+  console.error(
+    `\n⚠️  Analytics covers ${analysed} of ${catalog} cards (${Math.round((analysed / catalog) * 100)}%).`,
+  );
+  console.error("   The market index and its averages describe only that subset, not the market.");
+  console.error(
+    "   This usually means the run was interrupted. Re-run this script to complete it.",
+  );
+  process.exit(1);
+}
+
+console.log(`\n✅ Analytics covers ${analysed} of ${catalog} cards.`);

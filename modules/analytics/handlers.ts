@@ -141,7 +141,34 @@ analyticsRouter.get("/market-index", (c) => {
     .orderBy(marketIndexDaily.date)
     .all();
 
-  return c.json({ data, days });
+  // ARCA-56 Part B: say what the index actually covers.
+  //
+  // `card_count` alone reads as a fact about the market. It is a fact about the *pipeline*: on a
+  // database where seed-analytics was interrupted, the audit found the page showing "Cards Tracked:
+  // 1", an index value of 0.02 and a market cap of $9.45 — all technically true, all presented as
+  // though they described the whole market. The number a reader needs is the denominator.
+  //
+  // Computed here rather than in the client so there is one answer. A page that derives its own
+  // coverage can disagree with the API about what is covered, and then neither can be trusted.
+  const [catalog] = db
+    .select({ total: sql<number>`count(*)`.as("total") })
+    .from(cards)
+    .all();
+  const catalogTotal = catalog?.total ?? 0;
+  const latest = data.length > 0 ? data[data.length - 1] : undefined;
+  const covered = latest?.card_count ?? 0;
+
+  return c.json({
+    data,
+    days,
+    coverage: {
+      cards_covered: covered,
+      catalog_total: catalogTotal,
+      // Null rather than 0 when the catalog is empty: "no cards at all" is a different situation
+      // from "0% of the cards we have", and a UI that cannot tell them apart will say the wrong one.
+      fraction: catalogTotal > 0 ? covered / catalogTotal : null,
+    },
+  });
 });
 
 // ---------------------------------------------------------------------------
