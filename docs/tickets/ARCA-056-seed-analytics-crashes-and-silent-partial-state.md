@@ -1,6 +1,6 @@
 # ARCA-56 — `seed-analytics.ts` crashes in its own summary step; a partial run leaves Analytics silently broken
 
-**Status:** Part A fixed under ARCA-65 ·  **Area:** Analytics/Setup · **Depends on:** —
+**Status:** Shipped ·  **Area:** Analytics/Setup · **Depends on:** —
 
 ## Why this matters (for the founder)
 This is one of the six documented setup commands (`CLAUDE.md` Quick Start). It takes several
@@ -68,9 +68,9 @@ and load `/analytics` in the app afterward.
 > what this ticket asked for. Demonstrated both ways: `db.all(sql`…`)` returns `[{"cnt":0}]`, while
 > the old `{sql, args}` form throws `query.getSQL is not a function`.
 >
-> **Part B is still open** — a partial or interrupted run still leaves the Analytics page showing
-> numbers that look market-wide and are not. That is the half that matters to a founder, and nothing
-> here touched it.
+> **Part B shipped 2026-08-21.** Both halves the scope offered, because they reach different people:
+> the script warning helps whoever ran it, and the page caveat helps everyone who looks afterwards —
+> which is the founder, and the reason this ticket exists.
 
 ## Scope
 - Fix `scripts/seed-analytics.ts`'s summary block to use Drizzle's query builder (or `sqlite`'s raw
@@ -90,7 +90,33 @@ and load `/analytics` in the app afterward.
 - Any change to indicator/score formulas.
 
 ## Acceptance criteria
-- [ ] `bun run scripts/seed-analytics.ts` exits with status 0 and prints its table-count summary on a
-      successful run, with no uncaught exception.
-- [ ] Either the script warns loudly when coverage is far below the seeded catalog size, or the
-      Analytics UI itself indicates when its market-wide figures are based on partial coverage.
+- [x] `bun run scripts/seed-analytics.ts` exits 0 and prints its summary on a successful run, with no
+      uncaught exception (Part A, ARCA-65). Verified end to end: the script now runs to completion
+      and prints readable counts rather than `[{"cnt":0}]`.
+- [x] **Both**, not either. The script warns and **exits 1** when coverage is below 80% of the
+      catalog; the Analytics page carries a caveat naming both numbers, and "Cards Tracked" now
+      shows `N of M` rather than a bare N.
+
+## How it works, and why the numbers live server-side
+
+`GET /analytics/market-index` returns a `coverage` block — cards covered, catalog total, and the
+fraction. Computed in the handler rather than the client so there is **one** answer: a page that
+derives its own coverage can disagree with the API about what is covered, and then neither can be
+trusted.
+
+`fraction` is `null` when the catalog is empty. "No cards at all" and "0% of the cards we have" are
+different situations, and a page that cannot tell them apart will state the wrong one.
+
+The floor is **80%**, not something stricter. Real coverage is never total — a card with too little
+price history has nothing to compute, so a healthy run still falls short of 100%. The case worth
+catching (the audit found **1 of 502**) is an order of magnitude from the edge, and a threshold that
+fires on a healthy run is one people learn to ignore.
+
+## Verified in both directions
+
+A banner that is always visible is decoration. `scripts/analytics-coverage.pw.ts` asserts it appears
+when coverage is partial **and is absent when it is not**, and both branches were exercised: shown at
+0 of 12, then absent after a full-coverage index row was inserted.
+
+The script's exit code was checked directly rather than through a pipe — `$?` after `| tail` is
+tail's status, which is how a non-zero exit gets missed.
