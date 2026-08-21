@@ -4,6 +4,7 @@
  * Usage: bun run scripts/seed-analytics.ts [--backfill-days=30]
  */
 
+import { sql } from "drizzle-orm";
 import { getDb } from "../db/index.ts";
 import { runDailyAnalytics } from "../modules/analytics/jobs.ts";
 import { backfillMarketIndex } from "../modules/analytics/market-index.ts";
@@ -44,19 +45,10 @@ console.log("=== Analytics seed complete! ===");
 
 // Summary
 const db = getDb();
-const ohlcTotal = db.all({ sql: "SELECT COUNT(*) as cnt FROM card_ohlc_daily", args: [] } as any);
-const indicatorTotal = db.all({
-  sql: "SELECT COUNT(*) as cnt FROM technical_indicators",
-  args: [],
-} as any);
-const analyticsTotal = db.all({
-  sql: "SELECT COUNT(*) as cnt FROM card_analytics",
-  args: [],
-} as any);
-const indexTotal = db.all({
-  sql: "SELECT COUNT(*) as cnt FROM market_index_daily",
-  args: [],
-} as any);
+const ohlcTotal = db.all(sql`SELECT COUNT(*) as cnt FROM card_ohlc_daily`);
+const indicatorTotal = db.all(sql`SELECT COUNT(*) as cnt FROM technical_indicators`);
+const analyticsTotal = db.all(sql`SELECT COUNT(*) as cnt FROM card_analytics`);
+const indexTotal = db.all(sql`SELECT COUNT(*) as cnt FROM market_index_daily`);
 
 console.log("\nTable counts:");
 console.log(`  card_ohlc_daily:       ${JSON.stringify(ohlcTotal)}`);
