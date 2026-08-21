@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 /**
  * ARCA-50 — Set name must be visible on the card list and card detail pages.
@@ -9,18 +9,21 @@ import { test, expect } from "@playwright/test";
 
 test.describe("Set name visibility (ARCA-50)", () => {
   test.beforeEach(async ({ page }) => {
-    const email = `arca50-${test.info().parallelIndex}-${test.info().repeatEachIndex}-${Math.floor(Math.random() * 1e9)}@test.io`;
-    await page.goto("/", { waitUntil: "domcontentloaded" });
-
-    const signupToggle = page.locator('button:has-text("Sign up")');
-    if (await signupToggle.isVisible({ timeout: 3000 }).catch(() => false)) {
-      await signupToggle.click();
-    }
-    await page.locator("#name").fill("ARCA 50 Tester");
-    await page.locator("#email").fill(email);
-    await page.locator("#password").fill("test1234test");
-    await page.locator('button[type="submit"]').click();
-    await page.waitForURL(/\/overview/, { timeout: 10000 });
+    // ARCA-66: sign up through the API, as the other two suites do.
+    //
+    // This used to drive the sign-up FORM, and it was the one flaky thing in the suite: it waited
+    // 3s for a "Sign up" toggle, silently skipped the click if the app had not rendered yet, and
+    // then timed out 30s later on `#name` — a field that only exists once the toggle has been
+    // clicked. A different test in this file failed on every local run, never the same one twice.
+    //
+    // These tests are about set names being visible, not about the sign-up screen. Getting a
+    // session the cheap deterministic way is the right trade; the sign-up UI deserves its own test
+    // rather than being a precondition of everything else.
+    const email = `arca50-${test.info().parallelIndex}-${Math.floor(Math.random() * 1e9)}@test.io`;
+    const signupRes = await page.request.post("/api/auth/signup", {
+      data: { email, password: "e2e-test-password", name: "ARCA 50 Tester" },
+    });
+    expect(signupRes.ok()).toBe(true);
   });
 
   test("CardsPage grid view shows set name on every card", async ({ page }) => {

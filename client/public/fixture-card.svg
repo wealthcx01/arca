@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="245" height="342" viewBox="0 0 245 342" role="img" aria-label="Fixture card artwork">
+  <!-- ARCA-66. Stand-in artwork for the committed catalog fixture, served by the app itself.
+       Card art cannot be fetched from images.pokemontcg.io in CI: there is no network, and
+       CardDetailPage swaps to the ImageOff placeholder on the img's onError — so a remote URL
+       would make the browser test fail for a reason that has nothing to do with the code. -->
+  <rect width="245" height="342" rx="12" fill="#1f2933"/>
+  <rect x="14" y="14" width="217" height="314" rx="8" fill="#323f4b"/>
+  <text x="122" y="165" text-anchor="middle" font-family="monospace" font-size="15" fill="#9aa5b1">FIXTURE</text>
+  <text x="122" y="190" text-anchor="middle" font-family="monospace" font-size="11" fill="#7b8794">test artwork</text>
+</svg>
