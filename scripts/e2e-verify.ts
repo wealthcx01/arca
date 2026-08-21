@@ -8,6 +8,7 @@ import { join } from "node:path";
  * Or:  bun run scripts/e2e-verify.ts
  */
 import { chromium, firefox, webkit } from "playwright";
+import { type CdpPage, type CdpParams, type CdpTarget, errorMessage } from "./cdp-types";
 
 const BASE_URL = "http://localhost:5173";
 const SCREENSHOTS_DIR = join(import.meta.dir, "..", "screenshots", "e2e");
@@ -478,8 +479,8 @@ async function main() {
         log("warn", "Console", `Error: ${err.slice(0, 100)}`);
       }
     }
-  } catch (e: any) {
-    log("fail", "E2E", `Fatal error: ${e.message}`);
+  } catch (e) {
+    log("fail", "E2E", `Fatal error: ${errorMessage(e)}`);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "99-error.png") }).catch(() => {});
   }
 
@@ -501,14 +502,14 @@ async function main() {
   if (fails > 0) {
     console.log("FAILURES:");
     for (const r of results.filter((r) => r.status === "fail")) {
-      console.log(`  ✗ [${r.page}] ${r.message}`);
+      console.log(`  ✗ [${r.page}] ${errorMessage(r)}`);
     }
   }
 
   if (warns > 0) {
     console.log("\nWARNINGS:");
     for (const r of results.filter((r) => r.status === "warn")) {
-      console.log(`  ⚠ [${r.page}] ${r.message}`);
+      console.log(`  ⚠ [${r.page}] ${errorMessage(r)}`);
     }
   }
 

@@ -5,21 +5,30 @@
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
+import {
+  type CdpEvaluateResult,
+  type CdpPage,
+  type CdpParams,
+  type CdpScreenshotResult,
+  type CdpTarget,
+  errorMessage,
+} from "./cdp-types";
+
 const CDP_URL = "http://localhost:9222";
 const SCREENSHOTS_DIR = join(import.meta.dir, "..", "screenshots", "lseg-web");
 
-function cdpSession(wsUrl: string): Promise<{
-  send: (method: string, params?: any) => Promise<any>;
-  close: () => void;
-}> {
+function cdpSession(wsUrl: string): Promise<CdpPage & { close: () => void }> {
   return new Promise((resolve, reject) => {
     const ws = new WebSocket(wsUrl);
     let msgId = 0;
-    const pending = new Map<number, { resolve: (v: any) => void; reject: (e: any) => void }>();
+    const pending = new Map<
+      number,
+      { resolve: (v: unknown) => void; reject: (e: unknown) => void }
+    >();
 
     ws.onopen = () =>
       resolve({
-        send: (method: string, params: any = {}) =>
+        send: (method: string, params: CdpParams = {}) =>
           new Promise((res, rej) => {
             const id = ++msgId;
             pending.set(id, { resolve: res, reject: rej });
@@ -48,31 +57,33 @@ function cdpSession(wsUrl: string): Promise<{
   });
 }
 
-async function screenshot(page: any, filename: string): Promise<boolean> {
+async function screenshot(page: CdpPage, filename: string): Promise<boolean> {
   try {
-    const ss = await page.send("Page.captureScreenshot", { format: "png" });
+    const ss = (await page.send("Page.captureScreenshot", {
+      format: "png",
+    })) as CdpScreenshotResult;
     if (ss.data) {
       const buf = Buffer.from(ss.data, "base64");
       writeFileSync(join(SCREENSHOTS_DIR, filename), buf);
       console.log(`  Screenshot: ${filename} (${(buf.length / 1024).toFixed(0)} KB)`);
       return true;
     }
-  } catch (e: any) {
-    console.log(`  Screenshot failed: ${e.message?.slice(0, 60)}`);
+  } catch (e) {
+    console.log(`  Screenshot failed: ${errorMessage(e).slice(0, 60)}`);
   }
   return false;
 }
 
-async function evalJS(page: any, expression: string): Promise<any> {
+async function evalJS(page: CdpPage, expression: string): Promise<unknown> {
   try {
     const result = await page.send("Runtime.evaluate", {
       expression,
       returnByValue: true,
       awaitPromise: true,
     });
-    return result?.result?.value;
-  } catch (e: any) {
-    console.log(`  Eval failed: ${e.message?.slice(0, 80)}`);
+    return (result as CdpEvaluateResult)?.result?.value;
+  } catch (e) {
+    console.log(`  Eval failed: ${errorMessage(e).slice(0, 80)}`);
     return null;
   }
 }
@@ -84,14 +95,15 @@ async function main() {
   const resp = await fetch(`${CDP_URL}/json`);
   const targets = await resp.json();
   const lsegTab = targets.find(
-    (t: any) => t.title?.includes("Refinitiv Market Monitor") && t.webSocketDebuggerUrl,
+    (t: CdpTarget) => t.title?.includes("Refinitiv Market Monitor") && t.webSocketDebuggerUrl,
   );
 
   if (!lsegTab) {
     console.log("ERROR: No LSEG web tab found. Available pages:");
-    targets
-      .filter((t: any) => t.type === "page")
-      .forEach((t: any) => console.log(`  "${t.title}"`));
+    const pages = targets
+      .filter((t: CdpTarget) => t.type === "page")
+      .map((t: CdpTarget) => `  "${t.title}"`);
+    for (const line of pages) console.log(line);
     return;
   }
 
@@ -178,7 +190,7 @@ async function main() {
   `,
   );
 
-  if (pageInfo) {
+  if (typeof pageInfo === "string") {
     const info = JSON.parse(pageInfo);
     console.log(`  Title: ${info.title}`);
     console.log(`  URL: ${info.url}`);
@@ -271,7 +283,7 @@ async function main() {
     })
   `,
   );
-  if (design) {
+  if (typeof design === "string") {
     const d = JSON.parse(design);
     console.log(`  Background: ${d.bgColor}`);
     console.log(`  Text color: ${d.fgColor}`);

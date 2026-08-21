@@ -5,6 +5,14 @@
  */
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import {
+  type CdpEvaluateResult,
+  type CdpPage,
+  type CdpParams,
+  type CdpScreenshotResult,
+  type CdpTarget,
+  errorMessage,
+} from "./cdp-types";
 
 const BASE_URL = "http://localhost:5173";
 const CDP_URL = "http://localhost:9222";
@@ -24,9 +32,9 @@ function log(status: "pass" | "fail" | "warn", page: string, message: string) {
   results.push({ page, status, message });
 }
 
-async function cdpFetch(path: string) {
+async function cdpFetch<T>(path: string): Promise<T> {
   const r = await fetch(`${CDP_URL}${path}`);
-  return r.json();
+  return (await r.json()) as T;
 }
 
 async function connectToTarget(wsUrl: string): Promise<WebSocket> {
@@ -43,7 +51,7 @@ function sendCommand(
   ws: WebSocket,
   method: string,
   params: Record<string, any> = {},
-): Promise<any> {
+): Promise<unknown> {
   return new Promise((resolve, reject) => {
     const id = ++msgId;
     const timeout = setTimeout(() => reject(new Error(`Timeout: ${method}`)), 30000);
@@ -62,7 +70,7 @@ function sendCommand(
   });
 }
 
-async function waitForEvent(ws: WebSocket, eventName: string, timeoutMs = 15000): Promise<any> {
+async function waitForEvent(ws: WebSocket, eventName: string, timeoutMs = 15000): Promise<unknown> {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(
       () => reject(new Error(`Timeout waiting for ${eventName}`)),
@@ -92,7 +100,7 @@ async function tryScreenshot(ws: WebSocket, screenshotName: string): Promise<boo
       format: "png",
     });
     const filePath = join(SCREENSHOTS_DIR, screenshotName);
-    const buffer = Buffer.from(result.data, "base64");
+    const buffer = Buffer.from((result as CdpScreenshotResult).data ?? "", "base64");
     writeFileSync(filePath, buffer);
     return true;
   } catch {
@@ -100,12 +108,12 @@ async function tryScreenshot(ws: WebSocket, screenshotName: string): Promise<boo
   }
 }
 
-async function evaluateExpression(ws: WebSocket, expression: string): Promise<any> {
+async function evaluateExpression(ws: WebSocket, expression: string): Promise<unknown> {
   const result = await sendCommand(ws, "Runtime.evaluate", {
     expression,
     returnByValue: true,
   });
-  return result.result?.value;
+  return (result as CdpEvaluateResult).result?.value;
 }
 
 async function main() {
@@ -115,18 +123,18 @@ async function main() {
   console.log("Connecting to browser on port 9222...\n");
 
   // Get available targets
-  const targets = await cdpFetch("/json");
+  const targets = await cdpFetch<CdpTarget[]>("/json");
 
   // Try to create a new tab
-  let targetInfo: any;
+  let targetInfo: CdpTarget | undefined;
   try {
-    const newTab = await cdpFetch(`/json/new?${BASE_URL}`);
+    const newTab = await cdpFetch<CdpTarget>(`/json/new?${BASE_URL}`);
     targetInfo = newTab;
     console.log(`Created new tab: ${targetInfo.id}\n`);
   } catch {
     // Find an expendable tab
     const expendable = targets.find(
-      (t: any) =>
+      (t: CdpTarget) =>
         t.type === "page" &&
         (t.url?.includes("about:blank") ||
           t.url?.includes("newtab") ||
@@ -137,7 +145,7 @@ async function main() {
       console.log(`Reusing tab: ${targetInfo.title || targetInfo.id}\n`);
     } else {
       // Use the first page tab
-      const firstPage = targets.find((t: any) => t.type === "page");
+      const firstPage = targets.find((t: CdpTarget) => t.type === "page");
       if (!firstPage) {
         console.error("No usable browser tabs found");
         process.exit(1);
@@ -145,6 +153,11 @@ async function main() {
       targetInfo = firstPage;
       console.log(`Using tab: ${targetInfo.title || targetInfo.id}\n`);
     }
+  }
+
+  if (!targetInfo?.webSocketDebuggerUrl) {
+    console.error("No usable browser tab with a debugger URL was found");
+    process.exit(1);
   }
 
   const ws = await connectToTarget(targetInfo.webSocketDebuggerUrl);
@@ -173,7 +186,7 @@ async function main() {
       })
     `,
     );
-    const login = JSON.parse(loginCheck);
+    const login = JSON.parse(typeof loginCheck === "string" ? loginCheck : "{}");
     if (login.hasEmailInput && login.hasPasswordInput) {
       log("pass", "Login", "Login form with email + password inputs");
     } else {
@@ -239,7 +252,8 @@ async function main() {
     await tryScreenshot(ws, "03-after-signup.png");
 
     const afterSignup = await evaluateExpression(ws, "window.location.href");
-    if (afterSignup?.includes("/dashboard") || afterSignup === `${BASE_URL}/`) {
+    const afterSignupUrl = typeof afterSignup === "string" ? afterSignup : "";
+    if (afterSignupUrl.includes("/dashboard") || afterSignupUrl === `${BASE_URL}/`) {
       log("pass", "Signup", "Redirected to dashboard after signup");
     } else {
       log("warn", "Signup", `After signup URL: ${afterSignup}`);
@@ -264,7 +278,7 @@ async function main() {
       })
     `,
     );
-    const dash = JSON.parse(dashCheck);
+    const dash = JSON.parse(typeof dashCheck === "string" ? dashCheck : "{}");
 
     if (dash.bodyText.includes("Welcome to ARCA") || dash.bodyText.includes("Create")) {
       log("pass", "Dashboard", "Empty state displayed correctly");
@@ -316,7 +330,7 @@ async function main() {
       })
     `,
     );
-    const cards = JSON.parse(cardsCheck);
+    const cards = JSON.parse(typeof cardsCheck === "string" ? cardsCheck : "{}");
 
     if (cards.title.includes("Card Database")) {
       log("pass", "Cards", `Page title: "${cards.title}"`);
@@ -392,7 +406,7 @@ async function main() {
       })
     `,
     );
-    const detail = JSON.parse(detailCheck);
+    const detail = JSON.parse(typeof detailCheck === "string" ? detailCheck : "{}");
 
     if (detail.url.includes("/cards/")) {
       log("pass", "CardDetail", `Navigated to: ${detail.url}`);
@@ -431,7 +445,7 @@ async function main() {
       })
     `,
     );
-    const tx = JSON.parse(txCheck);
+    const tx = JSON.parse(typeof txCheck === "string" ? txCheck : "{}");
 
     if (tx.title.includes("Transaction")) {
       log("pass", "Transactions", `Title: "${tx.title}"`);
@@ -461,10 +475,11 @@ async function main() {
       document.body.textContent?.substring(0, 300) || ''
     `,
     );
+    const analyticsText = typeof analyticsCheck === "string" ? analyticsCheck : "";
     if (
-      analyticsCheck.includes("Concentration") ||
-      analyticsCheck.includes("Analytics") ||
-      analyticsCheck.includes("Loading")
+      analyticsText.includes("Concentration") ||
+      analyticsText.includes("Analytics") ||
+      analyticsText.includes("Loading")
     ) {
       log("pass", "Analytics", "Analytics page loaded");
     } else {
@@ -487,7 +502,7 @@ async function main() {
       })
     `,
     );
-    const imp = JSON.parse(importCheck);
+    const imp = JSON.parse(typeof importCheck === "string" ? importCheck : "{}");
     if (imp.hasUpload || imp.hasCSV) {
       log("pass", "Import", "Import page with upload UI");
     }
@@ -510,7 +525,7 @@ async function main() {
       })
     `,
     );
-    const settings = JSON.parse(settingsCheck);
+    const settings = JSON.parse(typeof settingsCheck === "string" ? settingsCheck : "{}");
     if (settings.hasSettings) {
       log("pass", "Settings", "Settings page loaded");
     }
@@ -537,7 +552,7 @@ async function main() {
       })
     `,
     );
-    const theme = JSON.parse(themeCheck);
+    const theme = JSON.parse(typeof themeCheck === "string" ? themeCheck : "{}");
     if (theme.isDark) {
       log("pass", "Theme", "Diamond (dark) theme active");
     } else {
@@ -590,7 +605,7 @@ async function main() {
       JSON.stringify({ found, brokenPortfolio });
     `,
     );
-    const nav = JSON.parse(navCheck);
+    const nav = JSON.parse(typeof navCheck === "string" ? navCheck : "{}");
     for (const item of nav.found) {
       if (item.visible) {
         log("pass", "Nav", `"${item.name}" nav link visible`);
@@ -603,8 +618,8 @@ async function main() {
     } else {
       log("fail", "Nav", "Broken /portfolio link still exists");
     }
-  } catch (e: any) {
-    log("fail", "E2E", `Error: ${e.message}`);
+  } catch (e) {
+    log("fail", "E2E", `Error: ${errorMessage(e)}`);
   }
 
   ws.close();
@@ -625,14 +640,14 @@ async function main() {
   if (fails > 0) {
     console.log("FAILURES:");
     for (const r of results.filter((r) => r.status === "fail")) {
-      console.log(`  ✗ [${r.page}] ${r.message}`);
+      console.log(`  ✗ [${r.page}] ${errorMessage(r)}`);
     }
   }
 
   if (warns > 0) {
     console.log("\nWARNINGS:");
     for (const r of results.filter((r) => r.status === "warn")) {
-      console.log(`  ⚠ [${r.page}] ${r.message}`);
+      console.log(`  ⚠ [${r.page}] ${errorMessage(r)}`);
     }
   }
 

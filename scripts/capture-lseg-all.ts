@@ -5,23 +5,34 @@
  */
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import {
+  type CdpEvaluateResult,
+  type CdpPage,
+  type CdpParams,
+  type CdpScreenshotResult,
+  type CdpTarget,
+  errorMessage,
+} from "./cdp-types";
 
 const CDP_URL = "http://localhost:9222";
 const SCREENSHOTS_DIR = join(import.meta.dir, "..", "screenshots", "lseg-reference");
 const ANALYSIS_DIR = join(import.meta.dir, "..", "screenshots", "lseg-analysis");
 
 function cdpSession(wsUrl: string): Promise<{
-  send: (method: string, params?: any) => Promise<any>;
+  send: (method: string, params?: CdpParams) => Promise<unknown>;
   close: () => void;
 }> {
   return new Promise((resolve, reject) => {
     const ws = new WebSocket(wsUrl);
     let msgId = 0;
-    const pending = new Map<number, { resolve: (v: any) => void; reject: (e: any) => void }>();
+    const pending = new Map<
+      number,
+      { resolve: (v: unknown) => void; reject: (e: unknown) => void }
+    >();
 
     ws.onopen = () => {
       resolve({
-        send: (method: string, params: any = {}) => {
+        send: (method: string, params: CdpParams = {}) => {
           return new Promise((res, rej) => {
             const id = ++msgId;
             pending.set(id, { resolve: res, reject: rej });
@@ -64,7 +75,9 @@ async function analyzeTarget(target: any, index: number) {
     // Try screenshot first
     let screenshotSaved = false;
     try {
-      const ss = await page.send("Page.captureScreenshot", { format: "png" });
+      const ss = (await page.send("Page.captureScreenshot", {
+        format: "png",
+      })) as CdpScreenshotResult;
       if (ss.data) {
         const buf = Buffer.from(ss.data, "base64");
         if (buf.length > 1000) {
@@ -196,12 +209,13 @@ async function analyzeTarget(target: any, index: number) {
       returnByValue: true,
     });
 
-    const analysisData = JSON.parse(analysis.result?.value || "{}");
+    const analysisValue = (analysis as CdpEvaluateResult).result?.value;
+    const analysisData = JSON.parse(typeof analysisValue === "string" ? analysisValue : "{}");
     page.close();
 
     return { ...analysisData, screenshotSaved };
-  } catch (e: any) {
-    return { error: e.message?.slice(0, 100) };
+  } catch (e) {
+    return { error: errorMessage(e).slice(0, 100) };
   }
 }
 
@@ -214,7 +228,7 @@ async function main() {
   const resp = await fetch(`${CDP_URL}/json`);
   const targets = await resp.json();
 
-  const pages = targets.filter((t: any) => t.type === "page" && t.webSocketDebuggerUrl);
+  const pages = targets.filter((t: CdpTarget) => t.type === "page" && t.webSocketDebuggerUrl);
   console.log(`Found ${pages.length} page targets\n`);
 
   const fullAnalysis: any[] = [];
