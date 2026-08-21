@@ -5,23 +5,37 @@
  */
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import {
+  type CdpEvaluateResult,
+  type CdpPage,
+  type CdpParams,
+  type CdpScreenshotResult,
+  type CdpTarget,
+  type LsegAnalysis,
+  type LsegHeading,
+  type LsegNavItem,
+  errorMessage,
+} from "./cdp-types";
 
 const CDP_URL = "http://localhost:9222";
 const SCREENSHOTS_DIR = join(import.meta.dir, "..", "screenshots", "lseg-reference");
 const ANALYSIS_DIR = join(import.meta.dir, "..", "screenshots", "lseg-analysis");
 
 function cdpSession(wsUrl: string): Promise<{
-  send: (method: string, params?: any) => Promise<any>;
+  send: (method: string, params?: CdpParams) => Promise<unknown>;
   close: () => void;
 }> {
   return new Promise((resolve, reject) => {
     const ws = new WebSocket(wsUrl);
     let msgId = 0;
-    const pending = new Map<number, { resolve: (v: any) => void; reject: (e: any) => void }>();
+    const pending = new Map<
+      number,
+      { resolve: (v: unknown) => void; reject: (e: unknown) => void }
+    >();
 
     ws.onopen = () => {
       resolve({
-        send: (method: string, params: any = {}) => {
+        send: (method: string, params: CdpParams = {}) => {
           return new Promise((res, rej) => {
             const id = ++msgId;
             pending.set(id, { resolve: res, reject: rej });
@@ -53,7 +67,7 @@ function cdpSession(wsUrl: string): Promise<{
   });
 }
 
-async function analyzeTarget(target: any, index: number) {
+async function analyzeTarget(target: CdpTarget, index: number) {
   if (!target.webSocketDebuggerUrl) return null;
 
   try {
@@ -64,18 +78,25 @@ async function analyzeTarget(target: any, index: number) {
     // Try screenshot first
     let screenshotSaved = false;
     try {
-      const ss = await page.send("Page.captureScreenshot", { format: "png" });
+      const ss = (await page.send("Page.captureScreenshot", {
+        format: "png",
+      })) as CdpScreenshotResult;
       if (ss.data) {
         const buf = Buffer.from(ss.data, "base64");
-        if (buf.length > 1000) { // Skip trivially small screenshots
-          const safeName = target.title.replace(/[^a-zA-Z0-9 -]/g, "").replace(/\s+/g, "-").toLowerCase().slice(0, 50);
+        if (buf.length > 1000) {
+          // Skip trivially small screenshots
+          const safeName = (target.title ?? "")
+            .replace(/[^a-zA-Z0-9 -]/g, "")
+            .replace(/\s+/g, "-")
+            .toLowerCase()
+            .slice(0, 50);
           writeFileSync(join(SCREENSHOTS_DIR, `lseg-${safeName}.png`), buf);
           screenshotSaved = true;
           console.log(`  Screenshot: ${safeName}.png (${(buf.length / 1024).toFixed(0)} KB)`);
         }
       }
     } catch {
-      console.log(`  Screenshot: failed`);
+      console.log("  Screenshot: failed");
     }
 
     // Extract detailed UI analysis
@@ -191,12 +212,13 @@ async function analyzeTarget(target: any, index: number) {
       returnByValue: true,
     });
 
-    const analysisData = JSON.parse(analysis.result?.value || "{}");
+    const analysisValue = (analysis as CdpEvaluateResult).result?.value;
+    const analysisData = JSON.parse(typeof analysisValue === "string" ? analysisValue : "{}");
     page.close();
 
     return { ...analysisData, screenshotSaved };
-  } catch (e: any) {
-    return { error: e.message?.slice(0, 100) };
+  } catch (e) {
+    return { error: errorMessage(e).slice(0, 100) };
   }
 }
 
@@ -209,24 +231,26 @@ async function main() {
   const resp = await fetch(`${CDP_URL}/json`);
   const targets = await resp.json();
 
-  const pages = targets.filter((t: any) => t.type === "page" && t.webSocketDebuggerUrl);
+  const pages = targets.filter((t: CdpTarget) => t.type === "page" && t.webSocketDebuggerUrl);
   console.log(`Found ${pages.length} page targets\n`);
 
-  const fullAnalysis: any[] = [];
+  const fullAnalysis: LsegAnalysis[] = [];
 
   for (let i = 0; i < pages.length; i++) {
     const target = pages[i];
-    console.log(`\n[${i + 1}/${pages.length}] "${target.title}"`);
+    console.log(`\n[${i + 1}/${pages.length}] "${target.title ?? ""}"`);
     console.log(`  URL: ${target.url?.slice(0, 100)}`);
 
     const analysis = await analyzeTarget(target, i);
     if (analysis) {
-      fullAnalysis.push({ target: target.title, ...analysis });
+      fullAnalysis.push({ target: target.title ?? "", ...analysis });
 
       // Print key findings
       if (analysis.colors) {
         console.log(`  BG: ${analysis.colors.background} | FG: ${analysis.colors.color}`);
-        console.log(`  Font: ${analysis.colors.fontFamily?.slice(0, 60)} @ ${analysis.colors.fontSize}`);
+        console.log(
+          `  Font: ${analysis.colors.fontFamily?.slice(0, 60)} @ ${analysis.colors.fontSize}`,
+        );
       }
       if (analysis.viewport) {
         console.log(`  Viewport: ${analysis.viewport.w}x${analysis.viewport.h}`);
@@ -243,7 +267,7 @@ async function main() {
         if (patterns.length) console.log(`  UI: ${patterns.join(", ")}`);
       }
       if (analysis.navItems?.length) {
-        console.log(`  Nav: ${analysis.navItems.map((n: any) => n.text).join(" | ")}`);
+        console.log(`  Nav: ${analysis.navItems.map((n: LsegNavItem) => n.text).join(" | ")}`);
       }
       if (Object.keys(analysis.cssVars || {}).length) {
         console.log(`  CSS vars: ${Object.keys(analysis.cssVars).length} custom properties`);
@@ -252,10 +276,7 @@ async function main() {
   }
 
   // Save full analysis
-  writeFileSync(
-    join(ANALYSIS_DIR, "lseg-ui-analysis.json"),
-    JSON.stringify(fullAnalysis, null, 2)
-  );
+  writeFileSync(join(ANALYSIS_DIR, "lseg-ui-analysis.json"), JSON.stringify(fullAnalysis, null, 2));
   console.log(`\n\nFull analysis saved to: ${join(ANALYSIS_DIR, "lseg-ui-analysis.json")}`);
 
   // Generate summary report
@@ -264,7 +285,7 @@ async function main() {
   console.log(`Design report saved to: ${join(ANALYSIS_DIR, "lseg-ui-report.md")}`);
 }
 
-function generateReport(analyses: any[]): string {
+function generateReport(analyses: LsegAnalysis[]): string {
   const lines: string[] = ["# LSEG Workspace UI Analysis Report\n"];
   lines.push(`Generated: ${new Date().toISOString()}\n`);
 
@@ -274,7 +295,7 @@ function generateReport(analyses: any[]): string {
   const allCssVars: Record<string, string> = {};
 
   for (const a of analyses) {
-    if (a.uniqueColors) a.uniqueColors.forEach((c: string) => allColors.add(c));
+    if (a.uniqueColors) for (const c of a.uniqueColors) allColors.add(c);
     if (a.colors?.fontFamily) allFonts.add(a.colors.fontFamily);
     if (a.cssVars) Object.assign(allCssVars, a.cssVars);
   }
@@ -311,7 +332,9 @@ function generateReport(analyses: any[]): string {
     }
     if (a.uiPatterns) {
       const p = a.uiPatterns;
-      lines.push(`- UI Patterns: search=${p.hasSearchBar}, tabs=${p.hasTabs}, cards=${p.hasCards}, charts=${p.hasCharts}, sidebar=${p.hasSidebar}, toolbar=${p.hasToolbar}`);
+      lines.push(
+        `- UI Patterns: search=${p.hasSearchBar}, tabs=${p.hasTabs}, cards=${p.hasCards}, charts=${p.hasCharts}, sidebar=${p.hasSidebar}, toolbar=${p.hasToolbar}`,
+      );
     }
     if (a.tables?.length) {
       lines.push(`- Data grids: ${a.tables.length}`);
@@ -320,7 +343,9 @@ function generateReport(analyses: any[]): string {
       }
     }
     if (a.headings?.length) {
-      lines.push(`- Headings: ${a.headings.map((h: any) => `${h.tag}:"${h.text}"`).join(", ")}`);
+      lines.push(
+        `- Headings: ${a.headings.map((h: LsegHeading) => `${h.tag}:"${h.text}"`).join(", ")}`,
+      );
     }
     lines.push("");
   }

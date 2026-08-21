@@ -29,7 +29,8 @@ function deriveSummary(holdings: HoldingItem[]): DerivedSummary {
   const total_value_cents = holdings.reduce((s, h) => s + h.mktvalue_cents, 0);
   const total_cost_basis_cents = holdings.reduce((s, h) => s + h.total_cost_basis_cents, 0);
   const total_pnl_cents = total_value_cents - total_cost_basis_cents;
-  const total_pnl_pct = total_cost_basis_cents > 0 ? (total_pnl_cents / total_cost_basis_cents) * 100 : 0;
+  const total_pnl_pct =
+    total_cost_basis_cents > 0 ? (total_pnl_cents / total_cost_basis_cents) * 100 : 0;
   return {
     total_value_cents,
     total_cost_basis_cents,
@@ -81,7 +82,7 @@ export function DashboardPage() {
       })
       .catch((err) => toast.error(err.message || "Failed to load portfolios"))
       .finally(() => setLoading(false));
-  }, []);
+  }, [toast]);
 
   useEffect(() => {
     if (!activePortfolioId) return;
@@ -91,7 +92,7 @@ export function DashboardPage() {
       .then(setData)
       .catch((err) => toast.error(err.message || "Failed to load portfolio"))
       .finally(() => setLoading(false));
-  }, [activePortfolioId]);
+  }, [activePortfolioId, toast]);
 
   if (loading) {
     return <DashboardSkeleton />;
@@ -216,7 +217,9 @@ export function DashboardPage() {
       {activePortfolioId && <PerformanceChart portfolioId={activePortfolioId} />}
 
       {/* Top movers (if holdings exist) */}
-      {data?.holdings && data.holdings.length > 0 && <TopMovers holdings={data.holdings} currency={currency} />}
+      {data?.holdings && data.holdings.length > 0 && (
+        <TopMovers holdings={data.holdings} currency={currency} />
+      )}
 
       {/* Holdings table */}
       <HoldingsTable holdings={data?.holdings ?? []} currency={currency} />
@@ -241,7 +244,10 @@ export function DashboardPage() {
 function TopMovers({ holdings, currency }: { holdings: HoldingItem[]; currency: string }) {
   const sorted = [...holdings].sort((a, b) => b.pnl_pct - a.pnl_pct);
   const gainers = sorted.filter((h) => h.pnl_pct > 0).slice(0, 5);
-  const losers = sorted.filter((h) => h.pnl_pct < 0).reverse().slice(0, 5);
+  const losers = sorted
+    .filter((h) => h.pnl_pct < 0)
+    .reverse()
+    .slice(0, 5);
 
   if (gainers.length === 0 && losers.length === 0) return null;
 
@@ -336,4 +342,3 @@ function StatCard({
     </div>
   );
 }
-

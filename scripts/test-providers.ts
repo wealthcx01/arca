@@ -73,9 +73,7 @@ async function main() {
     const card = testCards.find((c) => c.id === cp.card_id);
     console.log(`  ${card?.name ?? cp.card_id} [${cp.variant}] ${cp.currency}`);
     if (cp.market_price_cents) {
-      console.log(
-        `    Market: $${(cp.market_price_cents / 100).toFixed(2)} ← ${cp.market_source}`,
-      );
+      console.log(`    Market: $${(cp.market_price_cents / 100).toFixed(2)} ← ${cp.market_source}`);
     }
     if (cp.low_price_cents) {
       console.log(`    Low:    $${(cp.low_price_cents / 100).toFixed(2)} ← ${cp.low_source}`);

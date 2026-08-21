@@ -28,18 +28,65 @@ interface SetDetail {
 
 const eras = [
   { label: "All Sets", filter: "" },
-  { label: "Vintage (1999-2003)", keywords: ["base", "jungle", "fossil", "rocket", "gym", "neo", "expedition", "aquapolis", "skyridge"] },
+  {
+    label: "Vintage (1999-2003)",
+    keywords: [
+      "base",
+      "jungle",
+      "fossil",
+      "rocket",
+      "gym",
+      "neo",
+      "expedition",
+      "aquapolis",
+      "skyridge",
+    ],
+  },
   { label: "Ex Era (2003-2007)", keywords: ["ex "] },
   { label: "Diamond & Pearl", keywords: ["diamond", "pearl", "platinum"] },
   { label: "BW / XY", keywords: ["black", "white", "xy", "flashfire", "phantom", "roaring"] },
-  { label: "Sun & Moon", keywords: ["sun", "moon", "ultra prism", "burning", "celestial", "cosmic", "unified"] },
-  { label: "Sword & Shield", keywords: ["sword", "shield", "vivid", "chilling", "evolving", "fusion", "brilliant", "astral", "lost origin", "silver tempest", "crown zenith"] },
-  { label: "Scarlet & Violet", keywords: ["scarlet", "violet", "paldea", "obsidian", "151", "paradox", "temporal", "twilight", "shrouded", "stellar", "surging", "prismatic"] },
+  {
+    label: "Sun & Moon",
+    keywords: ["sun", "moon", "ultra prism", "burning", "celestial", "cosmic", "unified"],
+  },
+  {
+    label: "Sword & Shield",
+    keywords: [
+      "sword",
+      "shield",
+      "vivid",
+      "chilling",
+      "evolving",
+      "fusion",
+      "brilliant",
+      "astral",
+      "lost origin",
+      "silver tempest",
+      "crown zenith",
+    ],
+  },
+  {
+    label: "Scarlet & Violet",
+    keywords: [
+      "scarlet",
+      "violet",
+      "paldea",
+      "obsidian",
+      "151",
+      "paradox",
+      "temporal",
+      "twilight",
+      "shrouded",
+      "stellar",
+      "surging",
+      "prismatic",
+    ],
+  },
 ];
 
 function formatPrice(cents: number): string {
   if (!cents) return "—";
-  return "$" + (cents / 100).toFixed(2);
+  return `$${(cents / 100).toFixed(2)}`;
 }
 
 export function SetsErasPage() {
@@ -72,9 +119,7 @@ export function SetsErasPage() {
   const filteredSets =
     selectedEra === 0
       ? allSets
-      : allSets.filter((s) =>
-          era.keywords?.some((k) => s.set_name.toLowerCase().includes(k)),
-        );
+      : allSets.filter((s) => era.keywords?.some((k) => s.set_name.toLowerCase().includes(k)));
 
   return (
     <div className="grid gap-3 lg:grid-cols-[220px_1fr_1fr]">
@@ -117,13 +162,19 @@ export function SetsErasPage() {
             <tbody className="divide-y divide-[var(--color-border)]">
               {setsLoading && filteredSets.length === 0 ? (
                 <tr>
-                  <td colSpan={2} className="py-6 text-center text-[10px] text-[var(--color-muted-foreground)]">
+                  <td
+                    colSpan={2}
+                    className="py-6 text-center text-[10px] text-[var(--color-muted-foreground)]"
+                  >
                     Loading sets...
                   </td>
                 </tr>
               ) : filteredSets.length === 0 ? (
                 <tr>
-                  <td colSpan={2} className="py-6 text-center text-[10px] text-[var(--color-muted-foreground)]">
+                  <td
+                    colSpan={2}
+                    className="py-6 text-center text-[10px] text-[var(--color-muted-foreground)]"
+                  >
                     No sets found
                   </td>
                 </tr>
@@ -190,14 +241,14 @@ export function SetsErasPage() {
                   <tr
                     key={card.id}
                     className="cursor-pointer hover:bg-[var(--color-muted)]"
-                    onClick={() => (window.location.href = `/cards/${card.id}`)}
+                    onClick={() => {
+                      window.location.href = `/cards/${card.id}`;
+                    }}
                   >
                     <td className="px-2 py-1 font-mono text-[var(--color-muted-foreground)]">
                       {card.card_number}
                     </td>
-                    <td className="max-w-[160px] truncate px-2 py-1 font-medium">
-                      {card.name}
-                    </td>
+                    <td className="max-w-[160px] truncate px-2 py-1 font-medium">{card.name}</td>
                     <td className="px-2 py-1 text-[var(--color-muted-foreground)]">
                       {card.rarity || "—"}
                     </td>

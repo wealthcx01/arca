@@ -44,7 +44,7 @@ export function DataTable<T>({
     }
   };
 
-  let sorted = [...data];
+  const sorted = [...data];
   if (sortKey) {
     const col = columns.find((c) => c.key === sortKey);
     if (col?.sortFn) {

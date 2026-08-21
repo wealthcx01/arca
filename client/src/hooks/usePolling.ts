@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 /**
  * Periodically fetches data from an API endpoint.
@@ -14,9 +14,20 @@ export function usePolling<T>(
   const [error, setError] = useState<string | null>(null);
   const mountedRef = useRef(true);
 
-  const doFetch = async () => {
+  // ARCA-65. `doFetch` was recreated every render, so naming it as a dependency of the effect below
+  // would clear and recreate the interval on every render — the fix that produces the bug.
+  //
+  // Instead the latest `fetcher` is kept in a ref and `doFetch` is stable. The effect re-runs on
+  // exactly what it did before (`intervalMs` and the caller's `deps`), still calls the freshest
+  // fetcher, and the dependency list is now true rather than convenient.
+  const fetcherRef = useRef(fetcher);
+  useEffect(() => {
+    fetcherRef.current = fetcher;
+  });
+
+  const doFetch = useCallback(async () => {
     try {
-      const result = await fetcher();
+      const result = await fetcherRef.current();
       if (mountedRef.current) {
         setData(result);
         setError(null);
@@ -28,7 +39,7 @@ export function usePolling<T>(
     } finally {
       if (mountedRef.current) setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     mountedRef.current = true;
@@ -40,7 +51,7 @@ export function usePolling<T>(
       mountedRef.current = false;
       clearInterval(timer);
     };
-  }, [intervalMs, ...deps]);
+  }, [intervalMs, doFetch, ...deps]);
 
   return { data, loading, error, refetch: doFetch };
 }

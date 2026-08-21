@@ -1,4 +1,5 @@
 import {
+  ArrowLeftRight,
   BarChart3,
   ChevronDown,
   Diamond,
@@ -13,7 +14,6 @@ import {
   Star,
   Upload,
   Wallet,
-  ArrowLeftRight,
 } from "lucide-react";
 import { type ReactNode, useEffect, useState } from "react";
 import { useAuth } from "../hooks/useAuth";

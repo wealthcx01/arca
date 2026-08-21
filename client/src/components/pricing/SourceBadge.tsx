@@ -32,7 +32,8 @@ interface SourceBadgeProps {
 export function SourceBadge({ source, size = "sm" }: SourceBadgeProps) {
   // Get color from base source (strip sub-source like ":ebay")
   const baseSource = source.split(":")[0] ?? source;
-  const colorClass = SOURCE_COLORS[baseSource] ?? "bg-gray-100 text-gray-700 dark:bg-gray-800/50 dark:text-gray-400";
+  const colorClass =
+    SOURCE_COLORS[baseSource] ?? "bg-gray-100 text-gray-700 dark:bg-gray-800/50 dark:text-gray-400";
   const label = SOURCE_LABELS[source] ?? source;
 
   const sizeClass = size === "sm" ? "px-1.5 py-0.5 text-[10px]" : "px-2 py-1 text-xs";

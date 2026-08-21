@@ -95,31 +95,48 @@ export function CardDetailPage() {
 
     Promise.allSettled([
       api.get<{ data: Card }>(`/cards/${cardId}`).then((d) => d.data),
-      api.get<{ conflated: ConflatedPrice[] }>(`/pricing/${cardId}/conflated`).then((d) => d.conflated),
-      api.get<{ prices: Record<string, Record<string, PriceData>> }>(`/pricing/${cardId}`).then((d) => {
-        const flat: PriceData[] = [];
-        for (const sourceGroup of Object.values(d.prices)) {
-          for (const price of Object.values(sourceGroup)) flat.push(price);
+      api
+        .get<{ conflated: ConflatedPrice[] }>(`/pricing/${cardId}/conflated`)
+        .then((d) => d.conflated),
+      api
+        .get<{ prices: Record<string, Record<string, PriceData>> }>(`/pricing/${cardId}`)
+        .then((d) => {
+          const flat: PriceData[] = [];
+          for (const sourceGroup of Object.values(d.prices)) {
+            for (const price of Object.values(sourceGroup)) flat.push(price);
+          }
+          return flat;
+        }),
+      api
+        .get<{ graded_prices: GradedPrice[] }>(`/pricing/${cardId}/graded`)
+        .then((d) => d.graded_prices),
+      api
+        .get<{ data: AnalyticsSummary }>(`/analytics/${cardId}/summary`)
+        .then((d) => d.data)
+        .catch(() => null),
+    ])
+      .then(([cardR, confR, pricesR, gradedR, analyticsR]) => {
+        if (cardR.status === "fulfilled") setCard(cardR.value);
+        else {
+          setError("Failed to load card");
+          toast.error("Failed to load card");
         }
-        return flat;
-      }),
-      api.get<{ graded_prices: GradedPrice[] }>(`/pricing/${cardId}/graded`).then((d) => d.graded_prices),
-      api.get<{ data: AnalyticsSummary }>(`/analytics/${cardId}/summary`).then((d) => d.data).catch(() => null),
-    ]).then(([cardR, confR, pricesR, gradedR, analyticsR]) => {
-      if (cardR.status === "fulfilled") setCard(cardR.value);
-      else { setError("Failed to load card"); toast.error("Failed to load card"); }
-      setConflated(confR.status === "fulfilled" ? confR.value : []);
-      setPrices(pricesR.status === "fulfilled" ? pricesR.value : []);
-      setGradedPrices(gradedR.status === "fulfilled" ? gradedR.value : []);
-      setAnalytics(analyticsR.status === "fulfilled" ? analyticsR.value : null);
-    }).finally(() => setLoading(false));
-  }, [cardId]);
+        setConflated(confR.status === "fulfilled" ? confR.value : []);
+        setPrices(pricesR.status === "fulfilled" ? pricesR.value : []);
+        setGradedPrices(gradedR.status === "fulfilled" ? gradedR.value : []);
+        setAnalytics(analyticsR.status === "fulfilled" ? analyticsR.value : null);
+      })
+      .finally(() => setLoading(false));
+  }, [cardId, toast]);
 
   if (loading) return <CardDetailSkeleton />;
   if (error || !card) {
     return (
       <div className="space-y-4">
-        <a href="/cards" className="inline-flex items-center gap-1 text-sm text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]">
+        <a
+          href="/cards"
+          className="inline-flex items-center gap-1 text-sm text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"
+        >
           <ArrowLeft size={14} /> Back to cards
         </a>
         <div className="flex h-48 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] text-sm text-[var(--color-negative)]">
@@ -137,13 +154,18 @@ export function CardDetailPage() {
     <div className="space-y-4">
       {/* Terminal header bar */}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-md border border-[var(--color-border)] bg-[var(--color-card)] px-3 py-2 font-mono text-xs">
-        <a href="/cards" className="text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]">
+        <a
+          href="/cards"
+          className="text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"
+        >
           <ArrowLeft size={12} className="inline" /> CARDS
         </a>
         <span className="text-[var(--color-border)]">|</span>
         <span className="font-semibold text-[var(--color-foreground)]">{card.name}</span>
         <span className="text-[var(--color-border)]">|</span>
-        <span className="text-[var(--color-muted-foreground)]">{card.set_name} #{card.card_number}</span>
+        <span className="text-[var(--color-muted-foreground)]">
+          {card.set_name} #{card.card_number}
+        </span>
         {card.rarity && (
           <>
             <span className="text-[var(--color-border)]">|</span>
@@ -226,9 +248,15 @@ export function CardDetailPage() {
                         <td className="px-2 py-1 font-mono text-xs capitalize">{cp.variant}</td>
                         <td className="px-2 py-1 text-right">
                           <span className="font-mono tabular-nums">
-                            {cp.market_price_cents ? formatMoney(cp.market_price_cents, cp.currency) : "—"}
+                            {cp.market_price_cents
+                              ? formatMoney(cp.market_price_cents, cp.currency)
+                              : "—"}
                           </span>
-                          {cp.market_source && <div className="mt-0.5"><SourceBadge source={cp.market_source} /></div>}
+                          {cp.market_source && (
+                            <div className="mt-0.5">
+                              <SourceBadge source={cp.market_source} />
+                            </div>
+                          )}
                         </td>
                         <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
                           {cp.low_price_cents ? formatMoney(cp.low_price_cents, cp.currency) : "—"}
@@ -237,7 +265,9 @@ export function CardDetailPage() {
                           {cp.mid_price_cents ? formatMoney(cp.mid_price_cents, cp.currency) : "—"}
                         </td>
                         <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
-                          {cp.high_price_cents ? formatMoney(cp.high_price_cents, cp.currency) : "—"}
+                          {cp.high_price_cents
+                            ? formatMoney(cp.high_price_cents, cp.currency)
+                            : "—"}
                         </td>
                       </tr>
                     ))}
@@ -253,7 +283,12 @@ export function CardDetailPage() {
           {/* Card image */}
           <div>
             {imgSrc && !imgError ? (
-              <img src={imgSrc} alt={card.name} className="w-full rounded-lg shadow-lg" onError={() => setImgError(true)} />
+              <img
+                src={imgSrc}
+                alt={card.name}
+                className="w-full rounded-lg shadow-lg"
+                onError={() => setImgError(true)}
+              />
             ) : (
               <div className="flex aspect-[2.5/3.5] w-full items-center justify-center rounded-lg bg-[var(--color-muted)]">
                 <ImageOff size={32} className="text-[var(--color-muted-foreground)]" />
@@ -318,9 +353,13 @@ export function CardDetailPage() {
                   <tbody>
                     {prices.map((p, i) => (
                       <tr key={i} className="border-t border-[var(--color-border)]">
-                        <td className="px-2 py-1"><SourceBadge source={p.source} /></td>
+                        <td className="px-2 py-1">
+                          <SourceBadge source={p.source} />
+                        </td>
                         <td className="px-2 py-1 text-right font-mono tabular-nums">
-                          {p.market_price_cents ? formatMoney(p.market_price_cents, p.currency) : "—"}
+                          {p.market_price_cents
+                            ? formatMoney(p.market_price_cents, p.currency)
+                            : "—"}
                         </td>
                         <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
                           {p.mid_price_cents ? formatMoney(p.mid_price_cents, p.currency) : "—"}
@@ -371,8 +410,12 @@ export function CardDetailPage() {
                       <td className="px-2 py-1 text-right font-mono tabular-nums">
                         {formatMoney(gp.price_cents, gp.currency)}
                       </td>
-                      <td className="px-2 py-1 text-[var(--color-muted-foreground)]">{gp.sale_type}</td>
-                      <td className="px-2 py-1"><SourceBadge source={gp.source} /></td>
+                      <td className="px-2 py-1 text-[var(--color-muted-foreground)]">
+                        {gp.sale_type}
+                      </td>
+                      <td className="px-2 py-1">
+                        <SourceBadge source={gp.source} />
+                      </td>
                     </tr>
                   ))}
                 </tbody>

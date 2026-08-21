@@ -37,9 +37,7 @@ export function PriceCell({
       : "";
 
   return (
-    <span
-      className={`font-mono tabular-nums ${colorClass} ${flashClass} ${className}`}
-    >
+    <span className={`font-mono tabular-nums ${colorClass} ${flashClass} ${className}`}>
       {format(value)}
     </span>
   );

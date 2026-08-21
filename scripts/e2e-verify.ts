@@ -1,3 +1,5 @@
+import { existsSync, mkdirSync } from "node:fs";
+import { join } from "node:path";
 /**
  * ARCA End-to-End Verification Script
  * Tests all pages via Playwright, captures screenshots, reports issues.
@@ -6,8 +8,7 @@
  * Or:  bun run scripts/e2e-verify.ts
  */
 import { chromium, firefox, webkit } from "playwright";
-import { existsSync, mkdirSync } from "node:fs";
-import { join } from "node:path";
+import { type CdpPage, type CdpParams, type CdpTarget, errorMessage } from "./cdp-types";
 
 const BASE_URL = "http://localhost:5173";
 const SCREENSHOTS_DIR = join(import.meta.dir, "..", "screenshots", "e2e");
@@ -78,7 +79,11 @@ async function main() {
 
     // Sign up a fresh user
     console.log("\n2. Sign Up");
-    const signupLink = page.locator('button:has-text("Sign up"), a:has-text("Sign up"), button:has-text("Create"), a:has-text("Create")').first();
+    const signupLink = page
+      .locator(
+        'button:has-text("Sign up"), a:has-text("Sign up"), button:has-text("Create"), a:has-text("Create")',
+      )
+      .first();
     if (await signupLink.isVisible({ timeout: 2000 })) {
       await signupLink.click();
       await page.waitForTimeout(500);
@@ -99,12 +104,16 @@ async function main() {
 
     // Check if we're now on the dashboard (empty state)
     const currentUrl = page.url();
-    if (currentUrl.includes("/dashboard") || currentUrl === BASE_URL + "/") {
+    if (currentUrl.includes("/dashboard") || currentUrl === `${BASE_URL}/`) {
       log("pass", "Signup", "Redirected to dashboard after signup");
     } else {
       // Maybe we're on the empty state
       const bodyText = await page.locator("body").textContent();
-      if (bodyText?.includes("Welcome to ARCA") || bodyText?.includes("Create") || bodyText?.includes("Portfolio")) {
+      if (
+        bodyText?.includes("Welcome to ARCA") ||
+        bodyText?.includes("Create") ||
+        bodyText?.includes("Portfolio")
+      ) {
         log("pass", "Signup", "On dashboard/empty state after signup");
       } else {
         log("warn", "Signup", `After signup, on: ${currentUrl}`);
@@ -115,13 +124,17 @@ async function main() {
     // 3. DASHBOARD — Empty State
     // ═══════════════════════════════════════════════
     console.log("\n3. Dashboard (Empty State)");
-    await page.goto(BASE_URL + "/dashboard", { waitUntil: "networkidle", timeout: 10000 });
+    await page.goto(`${BASE_URL}/dashboard`, { waitUntil: "networkidle", timeout: 10000 });
     await page.waitForTimeout(1000);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "04-dashboard-empty.png") });
 
     const dashboardText = await page.locator("body").textContent();
     if (dashboardText?.includes("Welcome to ARCA") || dashboardText?.includes("Create")) {
-      log("pass", "Dashboard", "Empty state shown correctly — 'Welcome to ARCA' + Create Portfolio");
+      log(
+        "pass",
+        "Dashboard",
+        "Empty state shown correctly — 'Welcome to ARCA' + Create Portfolio",
+      );
     } else if (dashboardText?.includes("Portfolio")) {
       log("pass", "Dashboard", "Dashboard loaded with portfolio content");
     } else {
@@ -150,7 +163,7 @@ async function main() {
     // 4. DASHBOARD — With Portfolio
     // ═══════════════════════════════════════════════
     console.log("\n4. Dashboard (With Portfolio)");
-    await page.goto(BASE_URL + "/dashboard", { waitUntil: "networkidle", timeout: 10000 });
+    await page.goto(`${BASE_URL}/dashboard`, { waitUntil: "networkidle", timeout: 10000 });
     await page.waitForTimeout(1500);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "06-dashboard-loaded.png") });
 
@@ -175,7 +188,7 @@ async function main() {
     // 5. CARDS PAGE
     // ═══════════════════════════════════════════════
     console.log("\n5. Cards Page");
-    await page.goto(BASE_URL + "/cards", { waitUntil: "networkidle", timeout: 15000 });
+    await page.goto(`${BASE_URL}/cards`, { waitUntil: "networkidle", timeout: 15000 });
     await page.waitForTimeout(2000);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "07-cards-grid.png") });
 
@@ -214,7 +227,10 @@ async function main() {
     }
 
     // Check results count
-    const resultsText = await page.locator("text=/\\d+ cards found/").textContent().catch(() => "");
+    const resultsText = await page
+      .locator("text=/\\d+ cards found/")
+      .textContent()
+      .catch(() => "");
     if (resultsText) {
       log("pass", "Cards", `Results count shown: "${resultsText}"`);
     }
@@ -223,11 +239,17 @@ async function main() {
     await searchInput.fill("Charizard");
     await page.waitForTimeout(1000);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "08-cards-search.png") });
-    const searchResults = await page.locator("text=/\\d+ cards found/").textContent().catch(() => "");
+    const searchResults = await page
+      .locator("text=/\\d+ cards found/")
+      .textContent()
+      .catch(() => "");
     log("pass", "Cards", `Search for 'Charizard': ${searchResults || "results shown"}`);
 
     // Test list view toggle
-    const listBtn = page.locator('button').filter({ has: page.locator('[class*="lucide"]') }).nth(1);
+    const listBtn = page
+      .locator("button")
+      .filter({ has: page.locator('[class*="lucide"]') })
+      .nth(1);
     if (await listBtn.isVisible()) {
       await listBtn.click();
       await page.waitForTimeout(500);
@@ -269,7 +291,7 @@ async function main() {
       }
 
       // Check card image
-      const cardImg = page.locator('img[alt]').first();
+      const cardImg = page.locator("img[alt]").first();
       if (await cardImg.isVisible()) {
         log("pass", "CardDetail", "Card image loaded");
       } else {
@@ -310,7 +332,7 @@ async function main() {
     // 7. TRADES/TRANSACTIONS PAGE
     // ═══════════════════════════════════════════════
     console.log("\n7. Transactions Page");
-    await page.goto(BASE_URL + "/transactions", { waitUntil: "networkidle", timeout: 10000 });
+    await page.goto(`${BASE_URL}/transactions`, { waitUntil: "networkidle", timeout: 10000 });
     await page.waitForTimeout(1500);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "11-transactions.png") });
 
@@ -322,7 +344,9 @@ async function main() {
     }
 
     // Check filter pills
-    const filterBtns = page.locator('button:has-text("ALL"), button:has-text("BUY"), button:has-text("SELL")');
+    const filterBtns = page.locator(
+      'button:has-text("ALL"), button:has-text("BUY"), button:has-text("SELL")',
+    );
     if ((await filterBtns.count()) >= 3) {
       log("pass", "Transactions", "ALL/BUY/SELL filter pills visible");
     }
@@ -337,12 +361,16 @@ async function main() {
     // 8. ANALYTICS PAGE
     // ═══════════════════════════════════════════════
     console.log("\n8. Analytics Page");
-    await page.goto(BASE_URL + "/analytics", { waitUntil: "networkidle", timeout: 10000 });
+    await page.goto(`${BASE_URL}/analytics`, { waitUntil: "networkidle", timeout: 10000 });
     await page.waitForTimeout(1500);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "12-analytics.png") });
 
     const analyticsContent = await page.locator("body").textContent();
-    if (analyticsContent?.includes("Concentration") || analyticsContent?.includes("analytics") || analyticsContent?.includes("Loading")) {
+    if (
+      analyticsContent?.includes("Concentration") ||
+      analyticsContent?.includes("analytics") ||
+      analyticsContent?.includes("Loading")
+    ) {
       log("pass", "Analytics", "Analytics page loaded");
     } else {
       log("warn", "Analytics", "Analytics content unclear");
@@ -352,12 +380,16 @@ async function main() {
     // 9. IMPORT PAGE
     // ═══════════════════════════════════════════════
     console.log("\n9. Import Page");
-    await page.goto(BASE_URL + "/import", { waitUntil: "networkidle", timeout: 10000 });
+    await page.goto(`${BASE_URL}/import`, { waitUntil: "networkidle", timeout: 10000 });
     await page.waitForTimeout(1000);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "13-import.png") });
 
     const importContent = await page.locator("body").textContent();
-    if (importContent?.includes("Import") || importContent?.includes("CSV") || importContent?.includes("upload")) {
+    if (
+      importContent?.includes("Import") ||
+      importContent?.includes("CSV") ||
+      importContent?.includes("upload")
+    ) {
       log("pass", "Import", "Import page loaded with upload UI");
     }
 
@@ -365,12 +397,16 @@ async function main() {
     // 10. SETTINGS PAGE
     // ═══════════════════════════════════════════════
     console.log("\n10. Settings Page");
-    await page.goto(BASE_URL + "/settings", { waitUntil: "networkidle", timeout: 10000 });
+    await page.goto(`${BASE_URL}/settings`, { waitUntil: "networkidle", timeout: 10000 });
     await page.waitForTimeout(1500);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "14-settings.png") });
 
     const settingsContent = await page.locator("body").textContent();
-    if (settingsContent?.includes("Settings") || settingsContent?.includes("Sources") || settingsContent?.includes("API")) {
+    if (
+      settingsContent?.includes("Settings") ||
+      settingsContent?.includes("Sources") ||
+      settingsContent?.includes("API")
+    ) {
       log("pass", "Settings", "Settings page loaded");
     }
 
@@ -443,9 +479,8 @@ async function main() {
         log("warn", "Console", `Error: ${err.slice(0, 100)}`);
       }
     }
-
-  } catch (e: any) {
-    log("fail", "E2E", `Fatal error: ${e.message}`);
+  } catch (e) {
+    log("fail", "E2E", `Fatal error: ${errorMessage(e)}`);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "99-error.png") }).catch(() => {});
   }
 
@@ -454,7 +489,7 @@ async function main() {
   // ═══════════════════════════════════════════════
   // SUMMARY
   // ═══════════════════════════════════════════════
-  console.log("\n" + "═".repeat(60));
+  console.log(`\n${"═".repeat(60)}`);
   console.log("E2E VERIFICATION SUMMARY");
   console.log("═".repeat(60));
 
@@ -467,14 +502,14 @@ async function main() {
   if (fails > 0) {
     console.log("FAILURES:");
     for (const r of results.filter((r) => r.status === "fail")) {
-      console.log(`  ✗ [${r.page}] ${r.message}`);
+      console.log(`  ✗ [${r.page}] ${errorMessage(r)}`);
     }
   }
 
   if (warns > 0) {
     console.log("\nWARNINGS:");
     for (const r of results.filter((r) => r.status === "warn")) {
-      console.log(`  ⚠ [${r.page}] ${r.message}`);
+      console.log(`  ⚠ [${r.page}] ${errorMessage(r)}`);
     }
   }
 

@@ -37,8 +37,8 @@ interface SetInfo {
 }
 
 function formatCompact(cents: number): string {
-  if (Math.abs(cents) >= 10_000_00) return "$" + (cents / 100_00).toFixed(1) + "K";
-  return "$" + (cents / 100).toFixed(0);
+  if (Math.abs(cents) >= 10_000_00) return `$${(cents / 100_00).toFixed(1)}K`;
+  return `$${(cents / 100).toFixed(0)}`;
 }
 
 /** The first thing a brand-new user (no portfolio yet) sees — relocated from the Portfolio page. */
@@ -157,7 +157,10 @@ export function OverviewPage() {
     data: setsData,
     loading: setsLoading,
     error: setsError,
-  } = usePolling<{ data: SetInfo[] }>(() => api.get<{ data: SetInfo[] }>("/market/sets?limit=50"), 300_000);
+  } = usePolling<{ data: SetInfo[] }>(
+    () => api.get<{ data: SetInfo[] }>("/market/sets?limit=50"),
+    300_000,
+  );
 
   const portfolio = portfolios?.[0];
   const holdings = portfolio?.holdings ?? [];
@@ -201,9 +204,7 @@ export function OverviewPage() {
                 icon={Wallet}
                 message="Your portfolio value, cost basis, and P&L will appear here once you add your first card."
                 ctaLabel={isFirstRun ? "Create a portfolio" : "Add your first card"}
-                {...(isFirstRun
-                  ? { onCtaClick: openCreatePortfolio }
-                  : { ctaHref: "/portfolio" })}
+                {...(isFirstRun ? { onCtaClick: openCreatePortfolio } : { ctaHref: "/portfolio" })}
               />
             ) : (
               <div className="divide-y divide-[var(--color-border)]">
@@ -354,13 +355,89 @@ export function OverviewPage() {
 /** Categorize sets by era and compute aggregate stats. */
 function categorizeByEra(sets: SetInfo[]) {
   const eraKeywords: { label: string; keywords: string[] }[] = [
-    { label: "Vintage", keywords: ["base", "jungle", "fossil", "rocket", "gym", "neo", "expedition", "aquapolis", "skyridge"] },
+    {
+      label: "Vintage",
+      keywords: [
+        "base",
+        "jungle",
+        "fossil",
+        "rocket",
+        "gym",
+        "neo",
+        "expedition",
+        "aquapolis",
+        "skyridge",
+      ],
+    },
     { label: "Ex Era", keywords: ["ex "] },
     { label: "DP / Platinum", keywords: ["diamond", "pearl", "platinum", "pop"] },
-    { label: "BW / XY", keywords: ["black", "white", "xy", "flashfire", "phantom", "roaring", "primal", "ancient origins", "breakthrough", "breakpoint", "fates collide", "steam siege", "evolutions"] },
-    { label: "Sun & Moon", keywords: ["sun", "moon", "ultra prism", "burning", "celestial", "cosmic", "unified", "unbroken", "hidden fates", "detective"] },
-    { label: "Sword & Shield", keywords: ["sword", "shield", "vivid", "chilling", "evolving", "fusion", "brilliant", "astral", "lost origin", "silver tempest", "crown zenith", "champion"] },
-    { label: "Scarlet & Violet", keywords: ["scarlet", "violet", "paldea", "obsidian", "151", "paradox", "temporal", "twilight", "shrouded", "stellar", "surging", "prismatic"] },
+    {
+      label: "BW / XY",
+      keywords: [
+        "black",
+        "white",
+        "xy",
+        "flashfire",
+        "phantom",
+        "roaring",
+        "primal",
+        "ancient origins",
+        "breakthrough",
+        "breakpoint",
+        "fates collide",
+        "steam siege",
+        "evolutions",
+      ],
+    },
+    {
+      label: "Sun & Moon",
+      keywords: [
+        "sun",
+        "moon",
+        "ultra prism",
+        "burning",
+        "celestial",
+        "cosmic",
+        "unified",
+        "unbroken",
+        "hidden fates",
+        "detective",
+      ],
+    },
+    {
+      label: "Sword & Shield",
+      keywords: [
+        "sword",
+        "shield",
+        "vivid",
+        "chilling",
+        "evolving",
+        "fusion",
+        "brilliant",
+        "astral",
+        "lost origin",
+        "silver tempest",
+        "crown zenith",
+        "champion",
+      ],
+    },
+    {
+      label: "Scarlet & Violet",
+      keywords: [
+        "scarlet",
+        "violet",
+        "paldea",
+        "obsidian",
+        "151",
+        "paradox",
+        "temporal",
+        "twilight",
+        "shrouded",
+        "stellar",
+        "surging",
+        "prismatic",
+      ],
+    },
   ];
 
   const result: { label: string; setCount: number; avgPrice: number; totalValue: number }[] = [];
@@ -369,15 +446,13 @@ function categorizeByEra(sets: SetInfo[]) {
   for (const era of eraKeywords) {
     const eraSets = sets.filter(
       (s) =>
-        !assigned.has(s.set_code) &&
-        era.keywords.some((k) => s.set_name.toLowerCase().includes(k)),
+        !assigned.has(s.set_code) && era.keywords.some((k) => s.set_name.toLowerCase().includes(k)),
     );
     for (const s of eraSets) assigned.add(s.set_code);
 
     if (eraSets.length > 0) {
       const totalValue = eraSets.reduce((sum, s) => sum + s.total_value_cents, 0);
-      const avgPrice =
-        eraSets.reduce((sum, s) => sum + s.avg_price_cents, 0) / eraSets.length;
+      const avgPrice = eraSets.reduce((sum, s) => sum + s.avg_price_cents, 0) / eraSets.length;
       result.push({ label: era.label, setCount: eraSets.length, avgPrice, totalValue });
     }
   }

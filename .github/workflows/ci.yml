@@ -36,11 +36,8 @@ jobs:
       # `--no-errors-on-unmatched` is load-bearing, not tidiness: biome exits 1 when it processes no
       # files, and a ticket-only change touches nothing it lints. Without it every ticket the
       # composer files would fail lint for having no code in it.
-      - name: Lint the files this change touches
-        run: >-
-          bunx biome check --changed
-          --since=origin/${{ github.base_ref || 'master' }}
-          --no-errors-on-unmatched .
+      - name: Lint
+        run: bunx biome check .
 
   typecheck:
     name: Typecheck

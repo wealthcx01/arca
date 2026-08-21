@@ -18,12 +18,12 @@ interface SetsResponse {
 }
 
 function formatPrice(cents: number): string {
-  return "$" + (cents / 100).toFixed(2);
+  return `$${(cents / 100).toFixed(2)}`;
 }
 
 function formatValue(cents: number): string {
-  if (cents >= 100000) return "$" + (cents / 100000).toFixed(1) + "K";
-  return "$" + (cents / 100).toFixed(0);
+  if (cents >= 100000) return `$${(cents / 100000).toFixed(1)}K`;
+  return `$${(cents / 100).toFixed(0)}`;
 }
 
 export function SetPerformancePanel() {
@@ -78,7 +78,10 @@ export function SetPerformancePanel() {
           <tbody className="divide-y divide-[var(--color-border)]">
             {loading && sets.length === 0 ? (
               <tr>
-                <td colSpan={4} className="py-4 text-center text-[10px] text-[var(--color-muted-foreground)]">
+                <td
+                  colSpan={4}
+                  className="py-4 text-center text-[10px] text-[var(--color-muted-foreground)]"
+                >
                   Loading...
                 </td>
               </tr>
@@ -87,11 +90,11 @@ export function SetPerformancePanel() {
                 <tr
                   key={s.set_code}
                   className="cursor-pointer hover:bg-[var(--color-muted)]"
-                  onClick={() => (window.location.href = `/sets?set=${s.set_code}`)}
+                  onClick={() => {
+                    window.location.href = `/sets?set=${s.set_code}`;
+                  }}
                 >
-                  <td className="max-w-[140px] truncate px-2 py-1 font-medium">
-                    {s.set_name}
-                  </td>
+                  <td className="max-w-[140px] truncate px-2 py-1 font-medium">{s.set_name}</td>
                   <td className="px-2 py-1 text-right font-mono tabular-nums">
                     {formatPrice(s.avg_price_cents)}
                   </td>

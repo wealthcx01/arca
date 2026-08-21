@@ -29,12 +29,14 @@ function captureTarget(target: CDPTarget, filename: string): Promise<boolean> {
     let msgId = 0;
     const timeout = setTimeout(() => {
       console.log(`    Timeout for ${target.title}`);
-      try { ws.close(); } catch {}
+      try {
+        ws.close();
+      } catch {}
       resolve(false);
     }, 20000);
 
     ws.onopen = () => {
-      console.log(`    Connected, enabling Page domain...`);
+      console.log("    Connected, enabling Page domain...");
       // First enable Page domain
       ws.send(JSON.stringify({ id: ++msgId, method: "Page.enable", params: {} }));
     };
@@ -43,12 +45,14 @@ function captureTarget(target: CDPTarget, filename: string): Promise<boolean> {
       const msg = JSON.parse(String(event.data));
       if (msg.id === 1) {
         // Page.enable response, now capture
-        console.log(`    Page enabled, capturing screenshot...`);
-        ws.send(JSON.stringify({
-          id: ++msgId,
-          method: "Page.captureScreenshot",
-          params: { format: "png" },
-        }));
+        console.log("    Page enabled, capturing screenshot...");
+        ws.send(
+          JSON.stringify({
+            id: ++msgId,
+            method: "Page.captureScreenshot",
+            params: { format: "png" },
+          }),
+        );
       } else if (msg.id === 2) {
         if (msg.result?.data) {
           const buffer = Buffer.from(msg.result.data, "base64");
@@ -58,7 +62,7 @@ function captureTarget(target: CDPTarget, filename: string): Promise<boolean> {
           ws.close();
           resolve(true);
         } else {
-          console.log(`    Screenshot error:`, JSON.stringify(msg.error || msg).slice(0, 200));
+          console.log("    Screenshot error:", JSON.stringify(msg.error || msg).slice(0, 200));
           clearTimeout(timeout);
           ws.close();
           resolve(false);
@@ -96,7 +100,11 @@ async function main() {
   console.log("\n--- Capturing screenshots ---\n");
 
   for (const page of pages) {
-    if (!page.title || page.title === "Renderer service host" || page.title === "Client Service Module Starter") {
+    if (
+      !page.title ||
+      page.title === "Renderer service host" ||
+      page.title === "Client Service Module Starter"
+    ) {
       continue;
     }
 

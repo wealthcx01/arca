@@ -180,9 +180,7 @@ export function computeAllArcaScores(): number {
 
     db.update(cardAnalytics)
       .set({ arca_score: score, updated_at: new Date() })
-      .where(
-        and(eq(cardAnalytics.card_id, card_id), eq(cardAnalytics.currency, currency)),
-      )
+      .where(and(eq(cardAnalytics.card_id, card_id), eq(cardAnalytics.currency, currency)))
       .run();
 
     count++;

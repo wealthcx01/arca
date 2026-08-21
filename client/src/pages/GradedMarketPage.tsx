@@ -33,7 +33,7 @@ interface SetsResponse {
 
 function formatPrice(cents: number): string {
   if (!cents) return "—";
-  return "$" + (cents / 100).toFixed(2);
+  return `$${(cents / 100).toFixed(2)}`;
 }
 
 // Group graded data by card_id to create a row per card with grade columns
@@ -148,7 +148,8 @@ export function GradedMarketPage() {
                     colSpan={3 + gradeColumns.length}
                     className="py-8 text-center text-[10px] text-[var(--color-muted-foreground)]"
                   >
-                    No graded price data available. Add BYOK keys for pricing providers that support graded data.
+                    No graded price data available. Add BYOK keys for pricing providers that support
+                    graded data.
                   </td>
                 </tr>
               ) : (
@@ -156,11 +157,11 @@ export function GradedMarketPage() {
                   <tr
                     key={row.id}
                     className="cursor-pointer hover:bg-[var(--color-muted)]"
-                    onClick={() => (window.location.href = `/cards/${row.id}`)}
+                    onClick={() => {
+                      window.location.href = `/cards/${row.id}`;
+                    }}
                   >
-                    <td className="max-w-[160px] truncate px-2 py-1 font-medium">
-                      {row.name}
-                    </td>
+                    <td className="max-w-[160px] truncate px-2 py-1 font-medium">{row.name}</td>
                     <td className="max-w-[120px] truncate px-2 py-1 text-[var(--color-muted-foreground)]">
                       {row.set_name}
                     </td>
@@ -171,14 +172,19 @@ export function GradedMarketPage() {
                       const cell = row.grades[g];
                       if (!cell) {
                         return (
-                          <td key={g} className="px-2 py-1 text-right text-[var(--color-muted-foreground)]">
+                          <td
+                            key={g}
+                            className="px-2 py-1 text-right text-[var(--color-muted-foreground)]"
+                          >
                             —
                           </td>
                         );
                       }
                       return (
                         <td key={g} className="px-2 py-1 text-right">
-                          <div className="font-mono tabular-nums">{formatPrice(cell.price_cents)}</div>
+                          <div className="font-mono tabular-nums">
+                            {formatPrice(cell.price_cents)}
+                          </div>
                           <div
                             className={`text-[9px] font-mono tabular-nums ${
                               cell.premium_pct > 0

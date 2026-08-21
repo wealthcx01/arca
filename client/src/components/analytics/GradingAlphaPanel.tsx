@@ -79,7 +79,9 @@ export function GradingAlphaPanel({ cardId }: GradingAlphaPanelProps) {
                 <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
                   {formatMoney(item.grading_cost_cents, "USD")}
                 </td>
-                <td className={`px-2 py-1 text-right font-mono font-bold tabular-nums ${alphaColor}`}>
+                <td
+                  className={`px-2 py-1 text-right font-mono font-bold tabular-nums ${alphaColor}`}
+                >
                   {item.alpha_bp > 0 ? "+" : ""}
                   {alphaPct}%
                 </td>

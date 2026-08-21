@@ -11,14 +11,10 @@
 
 import { and, eq, sql } from "drizzle-orm";
 import { getDb } from "../db/index.ts";
+import { cards } from "../modules/cards/schema.ts";
 import { conflate } from "../modules/pricing/conflation.ts";
 import type { PriceResult } from "../modules/pricing/providers/types.ts";
-import { cards } from "../modules/cards/schema.ts";
-import {
-  cardPrices,
-  gradedPrices,
-  priceHistory,
-} from "../modules/pricing/schema.ts";
+import { cardPrices, gradedPrices, priceHistory } from "../modules/pricing/schema.ts";
 import { createId } from "../src/lib/nanoid.ts";
 
 const TCGDEX_BASE = "https://api.tcgdex.net/v2/en";
@@ -262,12 +258,7 @@ function generateGradedPrices(): void {
       market_price_cents: cardPrices.market_price_cents,
     })
     .from(cardPrices)
-    .where(
-      and(
-        eq(cardPrices.conflated_rank, 1),
-        eq(cardPrices.currency, "USD"),
-      ),
-    )
+    .where(and(eq(cardPrices.conflated_rank, 1), eq(cardPrices.currency, "USD")))
     .all()
     .filter((c) => c.market_price_cents && c.market_price_cents > 500); // Only cards > $5
 

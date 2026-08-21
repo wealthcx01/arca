@@ -29,11 +29,7 @@ const sizeClasses = {
   lg: "text-sm px-3 py-1.5 min-w-[44px]",
 };
 
-export function ArcaScoreBadge({
-  score,
-  size = "md",
-  showLabel = false,
-}: ArcaScoreBadgeProps) {
+export function ArcaScoreBadge({ score, size = "md", showLabel = false }: ArcaScoreBadgeProps) {
   if (score == null) {
     return (
       <span
@@ -51,9 +47,7 @@ export function ArcaScoreBadge({
     >
       {score}
       {showLabel && (
-        <span className="text-[0.75em] font-normal opacity-80">
-          {getScoreLabel(score)}
-        </span>
+        <span className="text-[0.75em] font-normal opacity-80">{getScoreLabel(score)}</span>
       )}
     </span>
   );

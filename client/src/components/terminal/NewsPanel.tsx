@@ -21,7 +21,7 @@ interface AlertsResponse {
 }
 
 function formatPrice(cents: number): string {
-  return "$" + (cents / 100).toFixed(2);
+  return `$${(cents / 100).toFixed(2)}`;
 }
 
 interface NewsPanelProps {
@@ -67,15 +67,16 @@ export function NewsPanel({ onCardSelect }: NewsPanelProps = {}) {
         ) : (
           alerts.map((a) => {
             const isUp = a.pct_change > 0;
-            const color = isUp
-              ? "text-[var(--color-positive)]"
-              : "text-[var(--color-negative)]";
+            const color = isUp ? "text-[var(--color-positive)]" : "text-[var(--color-negative)]";
             const sign = isUp ? "+" : "";
 
             return (
               <button
                 key={a.id}
-                onClick={() => onCardSelect ? onCardSelect(a.id, a.name) : (window.location.href = `/cards/${a.id}`)}
+                onClick={() => {
+                  if (onCardSelect) onCardSelect(a.id, a.name);
+                  else window.location.href = `/cards/${a.id}`;
+                }}
                 className="flex w-full items-center justify-between px-2 py-1.5 text-[11px] text-left hover:bg-[var(--color-muted)]"
               >
                 <div className="min-w-0 flex-1">
@@ -87,7 +88,8 @@ export function NewsPanel({ onCardSelect }: NewsPanelProps = {}) {
                 <div className="shrink-0 text-right">
                   <div className="font-mono tabular-nums">{formatPrice(a.current_price_cents)}</div>
                   <div className={`font-mono tabular-nums text-[10px] ${color}`}>
-                    {sign}{a.pct_change.toFixed(1)}%
+                    {sign}
+                    {a.pct_change.toFixed(1)}%
                   </div>
                 </div>
               </button>

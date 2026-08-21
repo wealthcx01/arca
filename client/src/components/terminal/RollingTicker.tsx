@@ -15,7 +15,7 @@ interface TickerResponse {
 }
 
 function formatPrice(cents: number): string {
-  return "$" + (cents / 100).toFixed(2);
+  return `$${(cents / 100).toFixed(2)}`;
 }
 
 export function RollingTicker() {
@@ -44,9 +44,7 @@ export function RollingTicker() {
       <div className="ticker-track flex whitespace-nowrap">
         {doubled.map((item, i) => {
           const isUp = item.change_cents >= 0;
-          const color = isUp
-            ? "text-[var(--color-positive)]"
-            : "text-[var(--color-negative)]";
+          const color = isUp ? "text-[var(--color-positive)]" : "text-[var(--color-negative)]";
           const sign = isUp ? "+" : "";
 
           return (
@@ -54,14 +52,13 @@ export function RollingTicker() {
               key={`${item.name}-${i}`}
               className="mx-3 inline-flex items-center gap-1.5 text-[11px]"
             >
-              <span className="font-medium text-[var(--color-foreground)]">
-                {item.name}
-              </span>
+              <span className="font-medium text-[var(--color-foreground)]">{item.name}</span>
               <span className="font-mono tabular-nums text-[var(--color-foreground)]">
                 {formatPrice(item.price_cents)}
               </span>
               <span className={`font-mono tabular-nums ${color}`}>
-                {sign}{item.change_pct.toFixed(1)}%
+                {sign}
+                {item.change_pct.toFixed(1)}%
               </span>
             </span>
           );

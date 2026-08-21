@@ -123,7 +123,9 @@ async function seed() {
     } else {
       console.error("   Cause: the Pokemon TCG API returned an empty result set on page 1.");
     }
-    console.error("   Check: your network connection, the API_KEY in db/seed.ts, and https://api.pokemontcg.io status.");
+    console.error(
+      "   Check: your network connection, the API_KEY in db/seed.ts, and https://api.pokemontcg.io status.",
+    );
     process.exit(1);
   }
 

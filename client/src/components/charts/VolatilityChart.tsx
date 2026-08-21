@@ -2,12 +2,12 @@
  * Historical volatility line chart with ATR visualization.
  */
 
-import { type IChartApi, type Time, AreaSeries } from "lightweight-charts";
+import { AreaSeries, type IChartApi, type Time } from "lightweight-charts";
 import { useEffect, useState } from "react";
 import { api } from "../../lib/api";
 import { LightweightChart } from "./LightweightChart";
 import type { ChartPeriod, LineData } from "./types";
-import { getChartTheme, PERIOD_DAYS } from "./types";
+import { PERIOD_DAYS, getChartTheme } from "./types";
 
 interface VolatilityChartProps {
   cardId: string;
@@ -34,7 +34,7 @@ export function VolatilityChart({
         `/analytics/${cardId}/indicators?days=${days}&currency=${currency}&indicators=ATR_14`,
       )
       .then((res) => {
-        const atr = res.data["ATR_14"];
+        const atr = res.data.ATR_14;
         if (atr) {
           setAtrData(
             atr.map((v) => ({

@@ -1,4 +1,4 @@
-import { type IChartApi, type Time, AreaSeries } from "lightweight-charts";
+import { AreaSeries, type IChartApi, type Time } from "lightweight-charts";
 import { useEffect, useState } from "react";
 import {
   Bar,
@@ -66,7 +66,16 @@ interface PortfolioRisk {
   avg_arca_score: number;
 }
 
-const COLORS = ["#2563eb", "#7c3aed", "#db2777", "#ea580c", "#16a34a", "#0891b2", "#4f46e5", "#c026d3"];
+const COLORS = [
+  "#2563eb",
+  "#7c3aed",
+  "#db2777",
+  "#ea580c",
+  "#16a34a",
+  "#0891b2",
+  "#4f46e5",
+  "#c026d3",
+];
 
 export function AnalyticsPage() {
   const { toast } = useToast();
@@ -100,7 +109,7 @@ export function AnalyticsPage() {
       .then((res) => setScreenerData(res.data))
       .catch(() => toast.error("Failed to load screener"))
       .finally(() => setScreenerLoading(false));
-  }, [tab, screenerSort]);
+  }, [tab, screenerSort, toast]);
 
   // Load portfolios for portfolio tab
   useEffect(() => {
@@ -146,9 +155,7 @@ export function AnalyticsPage() {
         </div>
       </div>
 
-      {tab === "market" && (
-        <MarketTab marketIndex={marketIndex} isDark={isDark} />
-      )}
+      {tab === "market" && <MarketTab marketIndex={marketIndex} isDark={isDark} />}
       {tab === "screener" && (
         <ScreenerTab
           data={screenerData}
@@ -221,11 +228,7 @@ function MarketTab({ marketIndex, isDark }: { marketIndex: MarketIndexPoint[]; i
                   value={formatMoney(latest.total_market_cap_cents, "USD")}
                 />
                 <StatCard label="Cards Tracked" value={String(latest.card_count)} />
-                <StatCard
-                  label="Data Points"
-                  value={String(marketIndex.length)}
-                  subtitle="days"
-                />
+                <StatCard label="Data Points" value={String(marketIndex.length)} subtitle="days" />
               </>
             );
           })()}
@@ -310,17 +313,27 @@ function ScreenerTab({
             </thead>
             <tbody>
               {data.map((card) => (
-                <tr key={card.id} className="border-t border-[var(--color-border)] hover:bg-[var(--color-muted)]">
+                <tr
+                  key={card.id}
+                  className="border-t border-[var(--color-border)] hover:bg-[var(--color-muted)]"
+                >
                   <td className="px-2 py-1">
-                    <a href={`/cards/${card.id}`} className="font-medium hover:text-[var(--color-primary)]">
+                    <a
+                      href={`/cards/${card.id}`}
+                      className="font-medium hover:text-[var(--color-primary)]"
+                    >
                       {card.name}
                     </a>
                   </td>
                   <td className="px-2 py-1 text-[var(--color-muted-foreground)]">
-                    {card.set_name?.length > 15 ? card.set_name.slice(0, 15) + "..." : card.set_name}
+                    {card.set_name?.length > 15
+                      ? `${card.set_name.slice(0, 15)}...`
+                      : card.set_name}
                   </td>
                   <td className="px-2 py-1 text-right font-mono tabular-nums">
-                    {card.market_price_cents ? formatMoney(card.market_price_cents, card.currency || "USD") : "—"}
+                    {card.market_price_cents
+                      ? formatMoney(card.market_price_cents, card.currency || "USD")
+                      : "—"}
                   </td>
                   <td className="px-2 py-1 text-center">
                     <ArcaScoreBadge score={card.arca_score} size="sm" />
@@ -329,17 +342,30 @@ function ScreenerTab({
                     {card.sharpe_e6 != null ? (card.sharpe_e6 / 1_000_000).toFixed(2) : "—"}
                   </td>
                   <td className="px-2 py-1 text-right font-mono tabular-nums">
-                    {card.volatility_e6 != null ? (card.volatility_e6 / 1_000_000 * 100).toFixed(0) + "%" : "—"}
+                    {card.volatility_e6 != null
+                      ? `${((card.volatility_e6 / 1_000_000) * 100).toFixed(0)}%`
+                      : "—"}
                   </td>
                   <td className="px-2 py-1 text-right font-mono tabular-nums">
                     {card.liquidity_score ?? "—"}
                   </td>
                   <td className="px-2 py-1 text-right font-mono tabular-nums">
                     {card.trend_score != null ? (
-                      <span className={card.trend_score > 0 ? "text-[var(--color-positive)]" : card.trend_score < 0 ? "text-[var(--color-negative)]" : ""}>
-                        {card.trend_score > 0 ? "+" : ""}{card.trend_score}
+                      <span
+                        className={
+                          card.trend_score > 0
+                            ? "text-[var(--color-positive)]"
+                            : card.trend_score < 0
+                              ? "text-[var(--color-negative)]"
+                              : ""
+                        }
+                      >
+                        {card.trend_score > 0 ? "+" : ""}
+                        {card.trend_score}
                       </span>
-                    ) : "—"}
+                    ) : (
+                      "—"
+                    )}
                   </td>
                 </tr>
               ))}
@@ -380,7 +406,9 @@ function PortfolioTab({
         className="rounded-md border border-[var(--color-border)] bg-[var(--color-card)] px-3 py-1.5 text-sm"
       >
         {portfolios.map((p) => (
-          <option key={p.id} value={p.id}>{p.name}</option>
+          <option key={p.id} value={p.id}>
+            {p.name}
+          </option>
         ))}
       </select>
 
@@ -391,27 +419,24 @@ function PortfolioTab({
             <StatCard label="Avg ARCA Score" value={String(risk.avg_arca_score)} />
             <StatCard
               label="Portfolio Vol"
-              value={(risk.weighted_volatility_e6 / 1_000_000 * 100).toFixed(1) + "%"}
+              value={`${((risk.weighted_volatility_e6 / 1_000_000) * 100).toFixed(1)}%`}
               subtitle="annual"
             />
-            <StatCard
-              label="Wtd Sharpe"
-              value={(risk.weighted_sharpe_e6 / 1_000_000).toFixed(2)}
-            />
+            <StatCard label="Wtd Sharpe" value={(risk.weighted_sharpe_e6 / 1_000_000).toFixed(2)} />
           </div>
 
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
             <StatCard
               label="Max Drawdown"
-              value={(risk.max_drawdown_bp / 100).toFixed(1) + "%"}
+              value={`${(risk.max_drawdown_bp / 100).toFixed(1)}%`}
               color={risk.max_drawdown_bp > 2000 ? "text-[var(--color-negative)]" : ""}
             />
             <StatCard
               label="Top 5 Concentration"
-              value={(risk.top5_concentration_bp / 100).toFixed(1) + "%"}
+              value={`${(risk.top5_concentration_bp / 100).toFixed(1)}%`}
               color={risk.top5_concentration_bp > 6000 ? "text-[var(--color-negative)]" : ""}
             />
-            <StatCard label="Diversification" value={risk.diversification_ratio + "%"} />
+            <StatCard label="Diversification" value={`${risk.diversification_ratio}%`} />
             <StatCard label="Unique Cards" value={String(risk.card_count)} />
           </div>
 
@@ -437,7 +462,9 @@ function PortfolioTab({
                         <Cell key={i} fill={COLORS[i % COLORS.length]} />
                       ))}
                     </Pie>
-                    <Tooltip formatter={(v: unknown) => formatMoney(Math.round(Number(v) * 100), currency)} />
+                    <Tooltip
+                      formatter={(v: unknown) => formatMoney(Math.round(Number(v) * 100), currency)}
+                    />
                     <Legend />
                   </PieChart>
                 </ResponsiveContainer>
@@ -467,9 +494,7 @@ function StatCard({
         {label}
       </p>
       <p className={`mt-1 text-lg font-bold tabular-nums ${color || ""}`}>{value}</p>
-      {subtitle && (
-        <p className="text-[10px] text-[var(--color-muted-foreground)]">{subtitle}</p>
-      )}
+      {subtitle && <p className="text-[10px] text-[var(--color-muted-foreground)]">{subtitle}</p>}
     </div>
   );
 }

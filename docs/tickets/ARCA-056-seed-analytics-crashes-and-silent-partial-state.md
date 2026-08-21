@@ -1,6 +1,6 @@
 # ARCA-56 — `seed-analytics.ts` crashes in its own summary step; a partial run leaves Analytics silently broken
 
-**Status:** Todo · **Area:** Analytics/Setup · **Depends on:** —
+**Status:** Part A fixed under ARCA-65 ·  **Area:** Analytics/Setup · **Depends on:** —
 
 ## Why this matters (for the founder)
 This is one of the six documented setup commands (`CLAUDE.md` Quick Start). It takes several
@@ -62,6 +62,15 @@ market-wide data but reflect a handful of cards.
 **Reproduce:** `bun run scripts/seed-analytics.ts` from repo root; observe the stack trace after
 "Analytics seed complete!". To see Part B, interrupt the script mid-run (e.g. Ctrl-C during step 3)
 and load `/analytics` in the app afterward.
+
+> **Part A (the crash) was fixed in passing by ARCA-65, 2026-08-21.** Removing the four `as any`
+> casts from the summary block required calling the API correctly, and the correct call is exactly
+> what this ticket asked for. Demonstrated both ways: `db.all(sql`…`)` returns `[{"cnt":0}]`, while
+> the old `{sql, args}` form throws `query.getSQL is not a function`.
+>
+> **Part B is still open** — a partial or interrupted run still leaves the Analytics page showing
+> numbers that look market-wide and are not. That is the half that matters to a founder, and nothing
+> here touched it.
 
 ## Scope
 - Fix `scripts/seed-analytics.ts`'s summary block to use Drizzle's query builder (or `sqlite`'s raw

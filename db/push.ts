@@ -404,32 +404,24 @@ db.exec("CREATE INDEX IF NOT EXISTS idx_watchlists_user_id ON watchlists(user_id
 db.exec(
   "CREATE INDEX IF NOT EXISTS idx_watchlist_items_watchlist_id ON watchlist_items(watchlist_id)",
 );
-db.exec(
-  "CREATE INDEX IF NOT EXISTS idx_watchlist_items_card_id ON watchlist_items(card_id)",
-);
+db.exec("CREATE INDEX IF NOT EXISTS idx_watchlist_items_card_id ON watchlist_items(card_id)");
 
 // Analytics indexes
 db.exec(
   "CREATE UNIQUE INDEX IF NOT EXISTS idx_ohlc_card_date ON card_ohlc_daily(card_id, currency, date)",
 );
-db.exec(
-  "CREATE INDEX IF NOT EXISTS idx_ohlc_date ON card_ohlc_daily(date)",
-);
+db.exec("CREATE INDEX IF NOT EXISTS idx_ohlc_date ON card_ohlc_daily(date)");
 db.exec(
   "CREATE UNIQUE INDEX IF NOT EXISTS idx_indicators_card_date ON technical_indicators(card_id, currency, date, indicator)",
 );
 db.exec(
   "CREATE UNIQUE INDEX IF NOT EXISTS idx_card_analytics_card ON card_analytics(card_id, currency)",
 );
-db.exec(
-  "CREATE INDEX IF NOT EXISTS idx_card_analytics_score ON card_analytics(arca_score)",
-);
+db.exec("CREATE INDEX IF NOT EXISTS idx_card_analytics_score ON card_analytics(arca_score)");
 db.exec(
   "CREATE UNIQUE INDEX IF NOT EXISTS idx_pop_reports_card_grade ON pop_reports(card_id, grading_company, grade)",
 );
-db.exec(
-  "CREATE INDEX IF NOT EXISTS idx_market_news_published ON market_news(published_at)",
-);
+db.exec("CREATE INDEX IF NOT EXISTS idx_market_news_published ON market_news(published_at)");
 
 console.log("✅ All tables created successfully");
 console.log(`📁 Database: ${DB_PATH}`);

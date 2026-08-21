@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DataPanel } from "../components/terminal/DataPanel";
-import { DataTable, type Column } from "../components/terminal/DataTable";
+import { type Column, DataTable } from "../components/terminal/DataTable";
 import { usePolling } from "../hooks/usePolling";
 import { api } from "../lib/api";
 
@@ -33,7 +33,7 @@ interface SetsResponse {
 
 function formatPrice(cents: number): string {
   if (!cents) return "—";
-  return "$" + (cents / 100).toFixed(2);
+  return `$${(cents / 100).toFixed(2)}`;
 }
 
 const rankingTabs = [
@@ -80,9 +80,7 @@ export function ScreenerPage() {
     items = [...items].sort((a, b) => b.current_price_cents - a.current_price_cents);
   } else {
     // Biggest Movers (abs)
-    items = [...items].sort(
-      (a, b) => Math.abs(b.pct_change) - Math.abs(a.pct_change),
-    );
+    items = [...items].sort((a, b) => Math.abs(b.pct_change) - Math.abs(a.pct_change));
   }
 
   const columns: Column<MoverItem>[] = [
@@ -129,7 +127,8 @@ export function ScreenerPage() {
         const sign = isUp ? "+" : "";
         return (
           <span className={`font-mono tabular-nums ${color}`}>
-            {sign}{formatPrice(row.change_cents)}
+            {sign}
+            {formatPrice(row.change_cents)}
           </span>
         );
       },
@@ -146,7 +145,8 @@ export function ScreenerPage() {
         const sign = isUp ? "+" : "";
         return (
           <span className={`font-mono font-semibold tabular-nums ${color}`}>
-            {sign}{row.pct_change.toFixed(1)}%
+            {sign}
+            {row.pct_change.toFixed(1)}%
           </span>
         );
       },
@@ -250,7 +250,9 @@ export function ScreenerPage() {
             columns={columns}
             data={items}
             rowKey={(r) => r.id}
-            onRowClick={(r) => (window.location.href = `/cards/${r.id}`)}
+            onRowClick={(r) => {
+              window.location.href = `/cards/${r.id}`;
+            }}
             maxHeight="calc(100vh - 280px)"
             emptyMessage="No data matching filters. Try adjusting period or filters."
           />

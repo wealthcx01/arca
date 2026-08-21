@@ -13,11 +13,11 @@
 import { and, eq, sql } from "drizzle-orm";
 import { getDb } from "../../db/index.ts";
 import { scheduler } from "../../src/lib/scheduler.ts";
-import { computeAllCardAnalytics } from "./card-analytics.ts";
 import { computeAllArcaScores } from "./arca-score.ts";
+import { computeAllCardAnalytics } from "./card-analytics.ts";
 import { computeAllGradingAlpha } from "./grading-alpha.ts";
-import type { OHLCBar, IndicatorPoint } from "./indicators.ts";
-import { sma, ema, rsi, macd, bollingerBands, atr, roc } from "./indicators.ts";
+import type { IndicatorPoint, OHLCBar } from "./indicators.ts";
+import { atr, bollingerBands, ema, macd, roc, rsi, sma } from "./indicators.ts";
 import { computeMarketIndex } from "./market-index.ts";
 import { dailyOHLCJob } from "./ohlc.ts";
 import { cardOhlcDaily, technicalIndicators } from "./schema.ts";
@@ -73,9 +73,7 @@ function computeIndicatorsForCard(cardId: string, currency: string): void {
       close_cents: cardOhlcDaily.close_cents,
     })
     .from(cardOhlcDaily)
-    .where(
-      and(eq(cardOhlcDaily.card_id, cardId), eq(cardOhlcDaily.currency, currency)),
-    )
+    .where(and(eq(cardOhlcDaily.card_id, cardId), eq(cardOhlcDaily.currency, currency)))
     .orderBy(cardOhlcDaily.date)
     .all();
 

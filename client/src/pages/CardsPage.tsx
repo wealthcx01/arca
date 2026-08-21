@@ -45,7 +45,7 @@ export function CardsPage() {
       .get<{ data: SetInfo[] }>("/cards/sets")
       .then((res) => setSets(res.data))
       .catch((err) => toast.error(err.message || "Failed to load sets"));
-  }, []);
+  }, [toast]);
 
   // Load cards
   useEffect(() => {
@@ -66,7 +66,7 @@ export function CardsPage() {
       })
       .catch((err) => toast.error(err.message || "Failed to load cards"))
       .finally(() => setLoading(false));
-  }, [query, setFilter, rarityFilter, supertypeFilter, page]);
+  }, [query, setFilter, rarityFilter, supertypeFilter, page, toast]);
 
   const totalPages = Math.ceil(total / limit);
 

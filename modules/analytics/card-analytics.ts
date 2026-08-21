@@ -161,7 +161,8 @@ export function trendScore(bars: OHLCBar[]): number {
   const rsiValues = rsi(bars, 14);
   if (rsiValues.length > 0) {
     const lastRsi = rsiValues[rsiValues.length - 1]!.value_e6 / SCALE;
-    if (lastRsi > 70) score += 20; // Overbought but bullish momentum
+    if (lastRsi > 70)
+      score += 20; // Overbought but bullish momentum
     else if (lastRsi > 50) score += 33;
     else if (lastRsi < 30) score -= 20;
     else score -= 33;
@@ -192,9 +193,7 @@ export function vwapProxy(cardId: string, currency: string): number {
       market_price_cents: cardPrices.market_price_cents,
     })
     .from(cardPrices)
-    .where(
-      and(eq(cardPrices.card_id, cardId), eq(cardPrices.currency, currency)),
-    )
+    .where(and(eq(cardPrices.card_id, cardId), eq(cardPrices.currency, currency)))
     .all();
 
   if (prices.length === 0) return 0;
@@ -229,9 +228,7 @@ export function computeCardAnalytics(cardId: string, currency: string): void {
       close_cents: cardOhlcDaily.close_cents,
     })
     .from(cardOhlcDaily)
-    .where(
-      and(eq(cardOhlcDaily.card_id, cardId), eq(cardOhlcDaily.currency, currency)),
-    )
+    .where(and(eq(cardOhlcDaily.card_id, cardId), eq(cardOhlcDaily.currency, currency)))
     .orderBy(cardOhlcDaily.date)
     .all();
 
@@ -252,9 +249,7 @@ export function computeCardAnalytics(cardId: string, currency: string): void {
 
   // Upsert card_analytics
   db.delete(cardAnalytics)
-    .where(
-      and(eq(cardAnalytics.card_id, cardId), eq(cardAnalytics.currency, currency)),
-    )
+    .where(and(eq(cardAnalytics.card_id, cardId), eq(cardAnalytics.currency, currency)))
     .run();
 
   db.insert(cardAnalytics)

@@ -26,12 +26,7 @@ marketRouter.get("/overview", (c) => {
     .get();
 
   // Latest FX rates
-  const latestFx = db
-    .select()
-    .from(fxRates)
-    .orderBy(desc(fxRates.fetched_at))
-    .limit(20)
-    .all();
+  const latestFx = db.select().from(fxRates).orderBy(desc(fxRates.fetched_at)).limit(20).all();
 
   const fxMap: Record<string, { rate: number; base: string; quote: string }> = {};
   for (const r of latestFx) {
@@ -139,7 +134,8 @@ marketRouter.get("/movers", (c) => {
 
   const orderBy = sort === "abs_change" ? "abs_change_cents" : "abs_pct_change";
 
-  const results = db.all(sql.raw(`
+  const results = db.all(
+    sql.raw(`
     SELECT
       c.id,
       c.name,
@@ -176,7 +172,8 @@ marketRouter.get("/movers", (c) => {
       ${rarityFilter}
     ORDER BY ${orderBy} DESC
     LIMIT ${limit}
-  `));
+  `),
+  );
 
   return c.json({ data: results, period, days });
 });
@@ -290,7 +287,8 @@ marketRouter.get("/graded", (c) => {
   let setFilter = "";
   if (set) setFilter = `AND c.set_code = '${set.replace(/'/g, "''")}'`;
 
-  const results = db.all(sql.raw(`
+  const results = db.all(
+    sql.raw(`
     SELECT
       c.id,
       c.name,
@@ -314,7 +312,8 @@ marketRouter.get("/graded", (c) => {
       ${setFilter}
     ORDER BY gp.price_cents DESC
     LIMIT ${limit}
-  `));
+  `),
+  );
 
   return c.json({ data: results });
 });

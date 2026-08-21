@@ -73,10 +73,7 @@ export function DivergencePanel() {
             return (
               <tr key={item.id} className="border-t border-[var(--color-border)]">
                 <td className="px-2 py-1">
-                  <a
-                    href={`/cards/${item.id}`}
-                    className="hover:text-[var(--color-primary)]"
-                  >
+                  <a href={`/cards/${item.id}`} className="hover:text-[var(--color-primary)]">
                     <div className="font-medium">{item.name}</div>
                     <div className="text-[9px] text-[var(--color-muted-foreground)]">
                       {item.set_name}
@@ -89,7 +86,9 @@ export function DivergencePanel() {
                 <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
                   {formatMoney(item.max_price_cents, "USD")}
                 </td>
-                <td className={`px-2 py-1 text-right font-mono font-bold tabular-nums ${confColor}`}>
+                <td
+                  className={`px-2 py-1 text-right font-mono font-bold tabular-nums ${confColor}`}
+                >
                   {item.spread_pct.toFixed(0)}%
                 </td>
                 <td className="px-2 py-1 text-right font-mono text-[10px] text-[var(--color-muted-foreground)]">

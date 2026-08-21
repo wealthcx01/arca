@@ -1,7 +1,7 @@
 import { Edit3, Plus, Star, Trash2, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { DataPanel } from "../components/terminal/DataPanel";
-import { DataTable, type Column } from "../components/terminal/DataTable";
+import { type Column, DataTable } from "../components/terminal/DataTable";
 import { PriceChartPanel } from "../components/terminal/PriceChartPanel";
 import { useToast } from "../components/ui/Toaster";
 import { api } from "../lib/api";
@@ -38,7 +38,7 @@ interface WatchlistsResponse {
 
 function formatPrice(cents: number): string {
   if (!cents) return "—";
-  return "$" + (cents / 100).toFixed(2);
+  return `$${(cents / 100).toFixed(2)}`;
 }
 
 export function WatchlistPage() {
@@ -53,7 +53,9 @@ export function WatchlistPage() {
   const [selectedCardName, setSelectedCardName] = useState<string | undefined>();
   const [showAddCard, setShowAddCard] = useState(false);
   const [addCardQuery, setAddCardQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<{ id: string; name: string; set_name: string }[]>([]);
+  const [searchResults, setSearchResults] = useState<
+    { id: string; name: string; set_name: string }[]
+  >([]);
 
   // Load watchlists
   useEffect(() => {
@@ -61,13 +63,17 @@ export function WatchlistPage() {
       .get<WatchlistsResponse>("/watchlist")
       .then((res) => {
         setWatchlists(res.data);
-        if (res.data.length > 0 && !activeId) {
-          setActiveId(res.data[0]!.id);
-        }
+        // ARCA-65: decide against CURRENT state rather than the closure's copy.
+        //
+        // This read `activeId` from the closure, so the rule wanted it as a dependency — and adding
+        // it would have refetched the whole watchlist list every time the user selected a different
+        // watchlist. The functional form asks React for the current value instead: no dependency,
+        // same behaviour, and no stale-closure risk either.
+        setActiveId((current) => current || res.data[0]?.id || null);
       })
       .catch((e) => toast.error(e.message))
       .finally(() => setLoading(false));
-  }, []);
+  }, [toast]);
 
   // Load active watchlist detail
   useEffect(() => {
@@ -79,12 +85,14 @@ export function WatchlistPage() {
       .get<WatchlistDetail>(`/watchlist/${activeId}`)
       .then(setDetail)
       .catch((e) => toast.error(e.message));
-  }, [activeId]);
+  }, [activeId, toast]);
 
   const handleCreate = async () => {
     if (!newName.trim()) return;
     try {
-      const res = await api.post<{ data: WatchlistSummary }>("/watchlist", { name: newName.trim() });
+      const res = await api.post<{ data: WatchlistSummary }>("/watchlist", {
+        name: newName.trim(),
+      });
       setWatchlists((prev) => [...prev, { ...res.data, item_count: 0 }]);
       setActiveId(res.data.id);
       setShowCreate(false);
@@ -160,9 +168,7 @@ export function WatchlistPage() {
     {
       key: "set_name",
       label: "Set",
-      render: (row) => (
-        <span className="text-[var(--color-muted-foreground)]">{row.set_name}</span>
-      ),
+      render: (row) => <span className="text-[var(--color-muted-foreground)]">{row.set_name}</span>,
     },
     {
       key: "rarity",
@@ -249,31 +255,37 @@ export function WatchlistPage() {
               </div>
             ) : (
               watchlists.map((wl) => (
+                // ARCA-65. This row was a div wearing role="button" + tabIndex + a hand-rolled
+                // Enter handler. It could not simply become a <button>, because it contains the
+                // delete button and nesting buttons is invalid HTML — which is probably why it was
+                // written this way in the first place.
+                //
+                // So the row is a plain container and the SELECTABLE part is its own button. Real
+                // buttons get Space as well as Enter, the focus ring, and the right semantics for
+                // free, and the delete button is now a sibling rather than an illegal child.
                 <div
                   key={wl.id}
-                  className={`flex cursor-pointer items-center justify-between px-2 py-1.5 transition-colors ${
+                  className={`flex items-center justify-between transition-colors ${
                     activeId === wl.id
                       ? "bg-[var(--color-highlight)]"
                       : "hover:bg-[var(--color-muted)]"
                   }`}
-                  onClick={() => setActiveId(wl.id)}
-                  onKeyDown={(e) => e.key === "Enter" && setActiveId(wl.id)}
-                  role="button"
-                  tabIndex={0}
                 >
-                  <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => setActiveId(wl.id)}
+                    className="flex flex-1 cursor-pointer items-center gap-1.5 px-2 py-1.5 text-left"
+                  >
                     <Star size={11} className="text-[var(--color-primary)]" />
                     <span className="text-[11px] font-medium">{wl.name}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
+                  </button>
+                  <div className="flex items-center gap-1 pr-2">
                     <span className="text-[9px] text-[var(--color-muted-foreground)]">
                       {wl.item_count}
                     </span>
                     <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleDelete(wl.id);
-                      }}
+                      type="button"
+                      onClick={() => handleDelete(wl.id)}
                       className="rounded p-0.5 text-[var(--color-muted-foreground)] hover:text-[var(--color-destructive)]"
                     >
                       <Trash2 size={10} />
@@ -293,7 +305,6 @@ export function WatchlistPage() {
                 onKeyDown={(e) => e.key === "Enter" && handleCreate()}
                 placeholder="Watchlist name..."
                 className="w-full rounded border border-[var(--color-input)] bg-[var(--color-background)] px-2 py-1 text-[11px]"
-                autoFocus
               />
               <div className="mt-1 flex gap-1">
                 <button
@@ -314,9 +325,7 @@ export function WatchlistPage() {
         </DataPanel>
 
         {/* Price chart for selected card */}
-        {selectedCardId && (
-          <PriceChartPanel cardId={selectedCardId} cardName={selectedCardName} />
-        )}
+        {selectedCardId && <PriceChartPanel cardId={selectedCardId} cardName={selectedCardName} />}
       </div>
 
       {/* Right: Watchlist items */}
@@ -343,7 +352,6 @@ export function WatchlistPage() {
                 onChange={(e) => handleSearchCards(e.target.value)}
                 placeholder="Search by card name..."
                 className="w-full rounded border border-[var(--color-input)] bg-[var(--color-background)] px-2 py-1 text-[11px]"
-                autoFocus
               />
               {searchResults.length > 0 && (
                 <div className="mt-1 max-h-[200px] divide-y divide-[var(--color-border)] overflow-auto rounded border border-[var(--color-border)]">

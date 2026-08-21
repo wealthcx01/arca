@@ -4,25 +4,19 @@
  */
 
 import {
+  AreaSeries,
+  CandlestickSeries,
   type IChartApi,
   type ISeriesApi,
+  LineSeries,
   type SeriesType,
   type Time,
-  CandlestickSeries,
-  LineSeries,
-  AreaSeries,
 } from "lightweight-charts";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { api } from "../../lib/api";
-import { LightweightChart } from "./LightweightChart";
 import { ChartControls } from "./ChartControls";
-import type {
-  ChartPeriod,
-  ChartType,
-  IndicatorType,
-  OHLCData,
-  LineData,
-} from "./types";
+import { LightweightChart } from "./LightweightChart";
+import type { ChartPeriod, ChartType, IndicatorType, LineData, OHLCData } from "./types";
 import { PERIOD_DAYS, getChartTheme } from "./types";
 
 interface CandlestickChartProps {
@@ -68,9 +62,15 @@ export function CandlestickChart({
     setLoading(true);
     const days = PERIOD_DAYS[period];
     api
-      .get<{ data: Array<{ date: string; open_cents: number; high_cents: number; low_cents: number; close_cents: number }> }>(
-        `/analytics/${cardId}/ohlc?days=${days}&currency=${currency}`,
-      )
+      .get<{
+        data: Array<{
+          date: string;
+          open_cents: number;
+          high_cents: number;
+          low_cents: number;
+          close_cents: number;
+        }>;
+      }>(`/analytics/${cardId}/ohlc?days=${days}&currency=${currency}`)
       .then((res) => {
         const mapped: OHLCData[] = res.data.map((d) => ({
           time: d.date,
@@ -113,6 +113,12 @@ export function CandlestickChart({
   }, [cardId, activeIndicators, period, currency]);
 
   // Build chart when data changes
+  // rebuildSeries is a function declaration and biome does not look inside it, so it reports
+  // these four dependencies as unnecessary. Its body reads all of them directly. Removing them
+  // would stop the chart rebuilding when the data, the chart type or the palette changes —
+  // verified by reading rebuildSeries, not assumed. The directive must sit on the line directly
+  // above the hook, so it goes last.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: false positive, see above
   const handleChart = useCallback(
     (chart: IChartApi) => {
       chartRef.current = chart;
@@ -121,6 +127,12 @@ export function CandlestickChart({
     [ohlcData, indicatorData, chartType, theme],
   );
 
+  // rebuildSeries is a function declaration and biome does not look inside it, so it reports
+  // these four dependencies as unnecessary. Its body reads all of them directly. Removing them
+  // would stop the chart rebuilding when the data, the chart type or the palette changes —
+  // verified by reading rebuildSeries, not assumed. The directive must sit on the line directly
+  // above the hook, so it goes last.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: false positive, see above
   useEffect(() => {
     if (chartRef.current) {
       rebuildSeries(chartRef.current);
@@ -130,10 +142,18 @@ export function CandlestickChart({
   function rebuildSeries(chart: IChartApi) {
     // Remove old series
     if (mainSeriesRef.current) {
-      try { chart.removeSeries(mainSeriesRef.current); } catch { /* already removed */ }
+      try {
+        chart.removeSeries(mainSeriesRef.current);
+      } catch {
+        /* already removed */
+      }
     }
     for (const [, series] of indicatorSeriesRef.current) {
-      try { chart.removeSeries(series); } catch { /* already removed */ }
+      try {
+        chart.removeSeries(series);
+      } catch {
+        /* already removed */
+      }
     }
     indicatorSeriesRef.current.clear();
     mainSeriesRef.current = null;
@@ -150,7 +170,13 @@ export function CandlestickChart({
         wickDownColor: theme.downColor,
       });
       series.setData(
-        ohlcData.map((d) => ({ time: d.time as Time, open: d.open, high: d.high, low: d.low, close: d.close })),
+        ohlcData.map((d) => ({
+          time: d.time as Time,
+          open: d.open,
+          high: d.high,
+          low: d.low,
+          close: d.close,
+        })),
       );
       mainSeriesRef.current = series;
     } else if (chartType === "line") {
@@ -195,7 +221,10 @@ export function CandlestickChart({
 
   if (loading && ohlcData.length === 0) {
     return (
-      <div className="flex items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-card)]" style={{ height }}>
+      <div
+        className="flex items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-card)]"
+        style={{ height }}
+      >
         <span className="text-xs text-[var(--color-muted-foreground)]">Loading chart...</span>
       </div>
     );
@@ -203,7 +232,10 @@ export function CandlestickChart({
 
   if (ohlcData.length === 0) {
     return (
-      <div className="flex items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-card)]" style={{ height }}>
+      <div
+        className="flex items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-card)]"
+        style={{ height }}
+      >
         <span className="text-xs text-[var(--color-muted-foreground)]">No OHLC data available</span>
       </div>
     );
