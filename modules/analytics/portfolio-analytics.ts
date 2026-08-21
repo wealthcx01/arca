@@ -126,7 +126,10 @@ export function computePortfolioRisk(portfolioId: string): PortfolioRiskMetrics 
 
   // Diversification: unique cards / max possible. Simple ratio 0-100.
   const uniqueCards = new Set(positions.map((p) => p.card_id)).size;
-  const diversification = Math.min(100, Math.round((uniqueCards / Math.max(1, positions.length)) * 100));
+  const diversification = Math.min(
+    100,
+    Math.round((uniqueCards / Math.max(1, positions.length)) * 100),
+  );
 
   return {
     total_value_cents: totalValue,

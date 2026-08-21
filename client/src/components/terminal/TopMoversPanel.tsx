@@ -100,7 +100,11 @@ export function TopMoversPanel({ onCardSelect }: TopMoversPanelProps = {}) {
               gainers.slice(0, 10).map((m) => (
                 <button
                   key={m.id}
-                  onClick={() => onCardSelect ? onCardSelect(m.id, m.name) : (window.location.href = `/cards/${m.id}`)}
+                  onClick={() =>
+                    onCardSelect
+                      ? onCardSelect(m.id, m.name)
+                      : (window.location.href = `/cards/${m.id}`)
+                  }
                   className="flex w-full items-center justify-between px-2 py-1 text-[11px] text-left hover:bg-[var(--color-muted)]"
                 >
                   <span className="max-w-[45%] truncate font-medium">{m.name}</span>
@@ -132,7 +136,11 @@ export function TopMoversPanel({ onCardSelect }: TopMoversPanelProps = {}) {
               losers.slice(0, 10).map((m) => (
                 <button
                   key={m.id}
-                  onClick={() => onCardSelect ? onCardSelect(m.id, m.name) : (window.location.href = `/cards/${m.id}`)}
+                  onClick={() =>
+                    onCardSelect
+                      ? onCardSelect(m.id, m.name)
+                      : (window.location.href = `/cards/${m.id}`)
+                  }
                   className="flex w-full items-center justify-between px-2 py-1 text-[11px] text-left hover:bg-[var(--color-muted)]"
                 >
                   <span className="max-w-[45%] truncate font-medium">{m.name}</span>

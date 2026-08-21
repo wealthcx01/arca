@@ -104,9 +104,7 @@ export function generateOHLCForDate(date: string): number {
       )
       .run();
 
-    db.insert(cardOhlcDaily)
-      .values(ohlc)
-      .run();
+    db.insert(cardOhlcDaily).values(ohlc).run();
 
     count++;
   }

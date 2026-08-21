@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DataPanel } from "../components/terminal/DataPanel";
-import { DataTable, type Column } from "../components/terminal/DataTable";
+import { type Column, DataTable } from "../components/terminal/DataTable";
 import { usePolling } from "../hooks/usePolling";
 import { api } from "../lib/api";
 
@@ -31,18 +31,14 @@ const columns: Column<AlertItem>[] = [
     label: "Card",
     sortable: true,
     sortFn: (a, b) => a.name.localeCompare(b.name),
-    render: (row) => (
-      <span className="font-medium">{row.name}</span>
-    ),
+    render: (row) => <span className="font-medium">{row.name}</span>,
   },
   {
     key: "set_name",
     label: "Set",
     sortable: true,
     sortFn: (a, b) => a.set_name.localeCompare(b.set_name),
-    render: (row) => (
-      <span className="text-[var(--color-muted-foreground)]">{row.set_name}</span>
-    ),
+    render: (row) => <span className="text-[var(--color-muted-foreground)]">{row.set_name}</span>,
   },
   {
     key: "rarity",
@@ -70,7 +66,9 @@ const columns: Column<AlertItem>[] = [
     sortable: true,
     sortFn: (a, b) => a.current_price_cents - b.current_price_cents,
     render: (row) => (
-      <span className="font-mono font-semibold tabular-nums">{formatPrice(row.current_price_cents)}</span>
+      <span className="font-mono font-semibold tabular-nums">
+        {formatPrice(row.current_price_cents)}
+      </span>
     ),
   },
   {
@@ -85,7 +83,8 @@ const columns: Column<AlertItem>[] = [
       const sign = isUp ? "+" : "";
       return (
         <span className={`font-mono font-semibold tabular-nums ${color}`}>
-          {sign}{row.pct_change.toFixed(1)}%
+          {sign}
+          {row.pct_change.toFixed(1)}%
         </span>
       );
     },
@@ -175,8 +174,8 @@ export function MarketNewsPage() {
 
         <DataPanel title="About Alerts">
           <div className="px-2 py-3 text-[10px] leading-relaxed text-[var(--color-muted-foreground)]">
-            Cards with &gt;5% price movement within the selected period are flagged as alerts.
-            Price data is sourced from multiple providers and conflated for accuracy.
+            Cards with &gt;5% price movement within the selected period are flagged as alerts. Price
+            data is sourced from multiple providers and conflated for accuracy.
           </div>
         </DataPanel>
       </div>

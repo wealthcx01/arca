@@ -8,15 +8,10 @@ import { getDb } from "../../db/index.ts";
 import { cards } from "../cards/schema.ts";
 import { cardPrices } from "../pricing/schema.ts";
 import { computeGradingAlpha } from "./grading-alpha.ts";
+import { runDailyAnalytics } from "./jobs.ts";
 import { backfillOHLC } from "./ohlc.ts";
 import { computePortfolioRisk } from "./portfolio-analytics.ts";
-import { runDailyAnalytics } from "./jobs.ts";
-import {
-  cardAnalytics,
-  cardOhlcDaily,
-  marketIndexDaily,
-  technicalIndicators,
-} from "./schema.ts";
+import { cardAnalytics, cardOhlcDaily, marketIndexDaily, technicalIndicators } from "./schema.ts";
 
 export const analyticsRouter = new Hono();
 
@@ -106,9 +101,7 @@ analyticsRouter.get("/:cardId/summary", (c) => {
   const analytics = db
     .select()
     .from(cardAnalytics)
-    .where(
-      and(eq(cardAnalytics.card_id, cardId), eq(cardAnalytics.currency, currency)),
-    )
+    .where(and(eq(cardAnalytics.card_id, cardId), eq(cardAnalytics.currency, currency)))
     .get();
 
   if (!analytics) {
@@ -181,7 +174,8 @@ analyticsRouter.get("/screener", (c) => {
   };
   const sortCol = validSorts[sort] || "ca.arca_score";
 
-  const data = db.all(sql.raw(`
+  const data = db.all(
+    sql.raw(`
     SELECT
       c.id,
       c.name,
@@ -208,7 +202,8 @@ analyticsRouter.get("/screener", (c) => {
       ${rarityFilter}
     ORDER BY COALESCE(${sortCol}, 0) ${order}
     LIMIT ${limit}
-  `));
+  `),
+  );
 
   return c.json({ data });
 });
@@ -286,10 +281,7 @@ analyticsRouter.post("/refresh", async (c) => {
     await runDailyAnalytics();
     return c.json({ status: "ok", message: "Analytics pipeline completed" });
   } catch (err) {
-    return c.json(
-      { error: err instanceof Error ? err.message : "Analytics refresh failed" },
-      500,
-    );
+    return c.json({ error: err instanceof Error ? err.message : "Analytics refresh failed" }, 500);
   }
 });
 

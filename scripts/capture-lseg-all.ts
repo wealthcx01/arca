@@ -67,8 +67,13 @@ async function analyzeTarget(target: any, index: number) {
       const ss = await page.send("Page.captureScreenshot", { format: "png" });
       if (ss.data) {
         const buf = Buffer.from(ss.data, "base64");
-        if (buf.length > 1000) { // Skip trivially small screenshots
-          const safeName = target.title.replace(/[^a-zA-Z0-9 -]/g, "").replace(/\s+/g, "-").toLowerCase().slice(0, 50);
+        if (buf.length > 1000) {
+          // Skip trivially small screenshots
+          const safeName = target.title
+            .replace(/[^a-zA-Z0-9 -]/g, "")
+            .replace(/\s+/g, "-")
+            .toLowerCase()
+            .slice(0, 50);
           writeFileSync(join(SCREENSHOTS_DIR, `lseg-${safeName}.png`), buf);
           screenshotSaved = true;
           console.log(`  Screenshot: ${safeName}.png (${(buf.length / 1024).toFixed(0)} KB)`);
@@ -226,7 +231,9 @@ async function main() {
       // Print key findings
       if (analysis.colors) {
         console.log(`  BG: ${analysis.colors.background} | FG: ${analysis.colors.color}`);
-        console.log(`  Font: ${analysis.colors.fontFamily?.slice(0, 60)} @ ${analysis.colors.fontSize}`);
+        console.log(
+          `  Font: ${analysis.colors.fontFamily?.slice(0, 60)} @ ${analysis.colors.fontSize}`,
+        );
       }
       if (analysis.viewport) {
         console.log(`  Viewport: ${analysis.viewport.w}x${analysis.viewport.h}`);
@@ -252,10 +259,7 @@ async function main() {
   }
 
   // Save full analysis
-  writeFileSync(
-    join(ANALYSIS_DIR, "lseg-ui-analysis.json"),
-    JSON.stringify(fullAnalysis, null, 2)
-  );
+  writeFileSync(join(ANALYSIS_DIR, "lseg-ui-analysis.json"), JSON.stringify(fullAnalysis, null, 2));
   console.log(`\n\nFull analysis saved to: ${join(ANALYSIS_DIR, "lseg-ui-analysis.json")}`);
 
   // Generate summary report
@@ -311,7 +315,9 @@ function generateReport(analyses: any[]): string {
     }
     if (a.uiPatterns) {
       const p = a.uiPatterns;
-      lines.push(`- UI Patterns: search=${p.hasSearchBar}, tabs=${p.hasTabs}, cards=${p.hasCards}, charts=${p.hasCharts}, sidebar=${p.hasSidebar}, toolbar=${p.hasToolbar}`);
+      lines.push(
+        `- UI Patterns: search=${p.hasSearchBar}, tabs=${p.hasTabs}, cards=${p.hasCards}, charts=${p.hasCharts}, sidebar=${p.hasSidebar}, toolbar=${p.hasToolbar}`,
+      );
     }
     if (a.tables?.length) {
       lines.push(`- Data grids: ${a.tables.length}`);

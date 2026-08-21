@@ -26,10 +26,7 @@ interface ETLResult {
 /**
  * Run a single ETL pipeline with retry and logging.
  */
-export async function runETL(
-  source: ETLSource,
-  options: ETLOptions = {},
-): Promise<ETLResult> {
+export async function runETL(source: ETLSource, options: ETLOptions = {}): Promise<ETLResult> {
   const { maxRetries = 3, retryDelayMs = 2000 } = options;
   const startTime = Date.now();
   let lastError: string | null = null;

@@ -1,3 +1,5 @@
+import { existsSync, mkdirSync } from "node:fs";
+import { join } from "node:path";
 /**
  * Capture LSEG Workspace UI screenshots for design reference.
  * Run with: cd client && bunx playwright test ../scripts/capture-lseg-ui.ts
@@ -6,8 +8,6 @@
  * screenshots of the professional market data terminal interface.
  */
 import { chromium } from "@playwright/test";
-import { existsSync, mkdirSync } from "node:fs";
-import { join } from "node:path";
 
 const SCREENSHOTS_DIR = join(import.meta.dir, "..", "screenshots", "lseg-reference");
 

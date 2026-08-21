@@ -1,8 +1,8 @@
-import { and, eq, sql, desc } from "drizzle-orm";
+import { and, desc, eq, sql } from "drizzle-orm";
 import { Hono } from "hono";
 import { getCookie } from "hono/cookie";
-import { getDb } from "../../db/index.ts";
 import { getSession } from "../../db/auth.ts";
+import { getDb } from "../../db/index.ts";
 import { cards } from "../cards/schema.ts";
 import { cardPrices } from "../pricing/schema.ts";
 import { watchlistItems, watchlists } from "./schema.ts";
@@ -208,9 +208,7 @@ watchlistRouter.post("/:id/items", async (c) => {
   const existing = db
     .select()
     .from(watchlistItems)
-    .where(
-      and(eq(watchlistItems.watchlist_id, id), eq(watchlistItems.card_id, body.card_id)),
-    )
+    .where(and(eq(watchlistItems.watchlist_id, id), eq(watchlistItems.card_id, body.card_id)))
     .get();
 
   if (existing) return c.json({ error: "Card already in watchlist" }, 409);

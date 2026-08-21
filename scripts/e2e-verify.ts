@@ -1,3 +1,5 @@
+import { existsSync, mkdirSync } from "node:fs";
+import { join } from "node:path";
 /**
  * ARCA End-to-End Verification Script
  * Tests all pages via Playwright, captures screenshots, reports issues.
@@ -6,8 +8,6 @@
  * Or:  bun run scripts/e2e-verify.ts
  */
 import { chromium, firefox, webkit } from "playwright";
-import { existsSync, mkdirSync } from "node:fs";
-import { join } from "node:path";
 
 const BASE_URL = "http://localhost:5173";
 const SCREENSHOTS_DIR = join(import.meta.dir, "..", "screenshots", "e2e");
@@ -78,7 +78,11 @@ async function main() {
 
     // Sign up a fresh user
     console.log("\n2. Sign Up");
-    const signupLink = page.locator('button:has-text("Sign up"), a:has-text("Sign up"), button:has-text("Create"), a:has-text("Create")').first();
+    const signupLink = page
+      .locator(
+        'button:has-text("Sign up"), a:has-text("Sign up"), button:has-text("Create"), a:has-text("Create")',
+      )
+      .first();
     if (await signupLink.isVisible({ timeout: 2000 })) {
       await signupLink.click();
       await page.waitForTimeout(500);
@@ -104,7 +108,11 @@ async function main() {
     } else {
       // Maybe we're on the empty state
       const bodyText = await page.locator("body").textContent();
-      if (bodyText?.includes("Welcome to ARCA") || bodyText?.includes("Create") || bodyText?.includes("Portfolio")) {
+      if (
+        bodyText?.includes("Welcome to ARCA") ||
+        bodyText?.includes("Create") ||
+        bodyText?.includes("Portfolio")
+      ) {
         log("pass", "Signup", "On dashboard/empty state after signup");
       } else {
         log("warn", "Signup", `After signup, on: ${currentUrl}`);
@@ -121,7 +129,11 @@ async function main() {
 
     const dashboardText = await page.locator("body").textContent();
     if (dashboardText?.includes("Welcome to ARCA") || dashboardText?.includes("Create")) {
-      log("pass", "Dashboard", "Empty state shown correctly — 'Welcome to ARCA' + Create Portfolio");
+      log(
+        "pass",
+        "Dashboard",
+        "Empty state shown correctly — 'Welcome to ARCA' + Create Portfolio",
+      );
     } else if (dashboardText?.includes("Portfolio")) {
       log("pass", "Dashboard", "Dashboard loaded with portfolio content");
     } else {
@@ -214,7 +226,10 @@ async function main() {
     }
 
     // Check results count
-    const resultsText = await page.locator("text=/\\d+ cards found/").textContent().catch(() => "");
+    const resultsText = await page
+      .locator("text=/\\d+ cards found/")
+      .textContent()
+      .catch(() => "");
     if (resultsText) {
       log("pass", "Cards", `Results count shown: "${resultsText}"`);
     }
@@ -223,11 +238,17 @@ async function main() {
     await searchInput.fill("Charizard");
     await page.waitForTimeout(1000);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "08-cards-search.png") });
-    const searchResults = await page.locator("text=/\\d+ cards found/").textContent().catch(() => "");
+    const searchResults = await page
+      .locator("text=/\\d+ cards found/")
+      .textContent()
+      .catch(() => "");
     log("pass", "Cards", `Search for 'Charizard': ${searchResults || "results shown"}`);
 
     // Test list view toggle
-    const listBtn = page.locator('button').filter({ has: page.locator('[class*="lucide"]') }).nth(1);
+    const listBtn = page
+      .locator("button")
+      .filter({ has: page.locator('[class*="lucide"]') })
+      .nth(1);
     if (await listBtn.isVisible()) {
       await listBtn.click();
       await page.waitForTimeout(500);
@@ -269,7 +290,7 @@ async function main() {
       }
 
       // Check card image
-      const cardImg = page.locator('img[alt]').first();
+      const cardImg = page.locator("img[alt]").first();
       if (await cardImg.isVisible()) {
         log("pass", "CardDetail", "Card image loaded");
       } else {
@@ -322,7 +343,9 @@ async function main() {
     }
 
     // Check filter pills
-    const filterBtns = page.locator('button:has-text("ALL"), button:has-text("BUY"), button:has-text("SELL")');
+    const filterBtns = page.locator(
+      'button:has-text("ALL"), button:has-text("BUY"), button:has-text("SELL")',
+    );
     if ((await filterBtns.count()) >= 3) {
       log("pass", "Transactions", "ALL/BUY/SELL filter pills visible");
     }
@@ -342,7 +365,11 @@ async function main() {
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "12-analytics.png") });
 
     const analyticsContent = await page.locator("body").textContent();
-    if (analyticsContent?.includes("Concentration") || analyticsContent?.includes("analytics") || analyticsContent?.includes("Loading")) {
+    if (
+      analyticsContent?.includes("Concentration") ||
+      analyticsContent?.includes("analytics") ||
+      analyticsContent?.includes("Loading")
+    ) {
       log("pass", "Analytics", "Analytics page loaded");
     } else {
       log("warn", "Analytics", "Analytics content unclear");
@@ -357,7 +384,11 @@ async function main() {
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "13-import.png") });
 
     const importContent = await page.locator("body").textContent();
-    if (importContent?.includes("Import") || importContent?.includes("CSV") || importContent?.includes("upload")) {
+    if (
+      importContent?.includes("Import") ||
+      importContent?.includes("CSV") ||
+      importContent?.includes("upload")
+    ) {
       log("pass", "Import", "Import page loaded with upload UI");
     }
 
@@ -370,7 +401,11 @@ async function main() {
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "14-settings.png") });
 
     const settingsContent = await page.locator("body").textContent();
-    if (settingsContent?.includes("Settings") || settingsContent?.includes("Sources") || settingsContent?.includes("API")) {
+    if (
+      settingsContent?.includes("Settings") ||
+      settingsContent?.includes("Sources") ||
+      settingsContent?.includes("API")
+    ) {
       log("pass", "Settings", "Settings page loaded");
     }
 
@@ -443,7 +478,6 @@ async function main() {
         log("warn", "Console", `Error: ${err.slice(0, 100)}`);
       }
     }
-
   } catch (e: any) {
     log("fail", "E2E", `Fatal error: ${e.message}`);
     await page.screenshot({ path: join(SCREENSHOTS_DIR, "99-error.png") }).catch(() => {});

@@ -2,12 +2,12 @@
  * Historical volatility line chart with ATR visualization.
  */
 
-import { type IChartApi, type Time, AreaSeries } from "lightweight-charts";
+import { AreaSeries, type IChartApi, type Time } from "lightweight-charts";
 import { useEffect, useState } from "react";
 import { api } from "../../lib/api";
 import { LightweightChart } from "./LightweightChart";
 import type { ChartPeriod, LineData } from "./types";
-import { getChartTheme, PERIOD_DAYS } from "./types";
+import { PERIOD_DAYS, getChartTheme } from "./types";
 
 interface VolatilityChartProps {
   cardId: string;

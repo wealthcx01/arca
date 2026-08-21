@@ -29,7 +29,9 @@ function captureTarget(target: CDPTarget, filename: string): Promise<boolean> {
     let msgId = 0;
     const timeout = setTimeout(() => {
       console.log(`    Timeout for ${target.title}`);
-      try { ws.close(); } catch {}
+      try {
+        ws.close();
+      } catch {}
       resolve(false);
     }, 20000);
 
@@ -44,11 +46,13 @@ function captureTarget(target: CDPTarget, filename: string): Promise<boolean> {
       if (msg.id === 1) {
         // Page.enable response, now capture
         console.log(`    Page enabled, capturing screenshot...`);
-        ws.send(JSON.stringify({
-          id: ++msgId,
-          method: "Page.captureScreenshot",
-          params: { format: "png" },
-        }));
+        ws.send(
+          JSON.stringify({
+            id: ++msgId,
+            method: "Page.captureScreenshot",
+            params: { format: "png" },
+          }),
+        );
       } else if (msg.id === 2) {
         if (msg.result?.data) {
           const buffer = Buffer.from(msg.result.data, "base64");
@@ -96,7 +100,11 @@ async function main() {
   console.log("\n--- Capturing screenshots ---\n");
 
   for (const page of pages) {
-    if (!page.title || page.title === "Renderer service host" || page.title === "Client Service Module Starter") {
+    if (
+      !page.title ||
+      page.title === "Renderer service host" ||
+      page.title === "Client Service Module Starter"
+    ) {
       continue;
     }
 

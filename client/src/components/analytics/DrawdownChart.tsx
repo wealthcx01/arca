@@ -2,11 +2,11 @@
  * Drawdown (underwater) chart — shows drawdown from peak over time.
  */
 
-import { type IChartApi, type Time, AreaSeries, LineSeries } from "lightweight-charts";
+import { AreaSeries, type IChartApi, LineSeries, type Time } from "lightweight-charts";
 import { useEffect, useState } from "react";
 import { api } from "../../lib/api";
 import { LightweightChart } from "../charts/LightweightChart";
-import { getChartTheme, PERIOD_DAYS, type ChartPeriod } from "../charts/types";
+import { type ChartPeriod, PERIOD_DAYS, getChartTheme } from "../charts/types";
 
 interface DrawdownChartProps {
   cardId: string;
@@ -52,9 +52,7 @@ export function DrawdownChart({
         className="flex items-center justify-center rounded border border-[var(--color-border)] bg-[var(--color-card)]"
         style={{ height }}
       >
-        <span className="text-[10px] text-[var(--color-muted-foreground)]">
-          Drawdown — No data
-        </span>
+        <span className="text-[10px] text-[var(--color-muted-foreground)]">Drawdown — No data</span>
       </div>
     );
   }

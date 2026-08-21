@@ -2,17 +2,12 @@
  * Separate indicator pane below the main chart — RSI, MACD.
  */
 
-import {
-  type IChartApi,
-  type Time,
-  LineSeries,
-  HistogramSeries,
-} from "lightweight-charts";
+import { HistogramSeries, type IChartApi, LineSeries, type Time } from "lightweight-charts";
 import { useEffect, useState } from "react";
 import { api } from "../../lib/api";
 import { LightweightChart } from "./LightweightChart";
 import type { LineData } from "./types";
-import { getChartTheme, PERIOD_DAYS, type ChartPeriod } from "./types";
+import { type ChartPeriod, PERIOD_DAYS, getChartTheme } from "./types";
 
 interface IndicatorPaneProps {
   cardId: string;
@@ -36,8 +31,7 @@ export function IndicatorPane({
 
   useEffect(() => {
     const days = PERIOD_DAYS[period];
-    const indicators =
-      indicator === "MACD" ? "MACD,MACD_SIGNAL,MACD_HIST" : indicator;
+    const indicators = indicator === "MACD" ? "MACD,MACD_SIGNAL,MACD_HIST" : indicator;
 
     api
       .get<{ data: Record<string, Array<{ date: string; value_e6: number }>> }>(
@@ -138,9 +132,7 @@ export function IndicatorPane({
   };
 
   const hasData =
-    indicator === "RSI_14"
-      ? (data["RSI_14"]?.length ?? 0) > 0
-      : (data["MACD"]?.length ?? 0) > 0;
+    indicator === "RSI_14" ? (data["RSI_14"]?.length ?? 0) > 0 : (data["MACD"]?.length ?? 0) > 0;
 
   if (!hasData) {
     return (

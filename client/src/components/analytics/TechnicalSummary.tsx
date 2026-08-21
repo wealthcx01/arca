@@ -2,7 +2,7 @@
  * Technical summary panel — RSI gauge, MACD signal, trend arrow, SMA crossover.
  */
 
-import { TrendingDown, TrendingUp, Minus } from "lucide-react";
+import { Minus, TrendingDown, TrendingUp } from "lucide-react";
 
 interface TechnicalSummaryProps {
   rsi?: number; // 0-100
@@ -90,7 +90,10 @@ export function TechnicalSummary({
         <span className="text-[10px] uppercase text-[var(--color-muted-foreground)]">Trend</span>
         <span className="flex items-center gap-1">
           {trendIcon}
-          <span className="font-mono text-xs tabular-nums">{trendScore > 0 ? "+" : ""}{trendScore}</span>
+          <span className="font-mono text-xs tabular-nums">
+            {trendScore > 0 ? "+" : ""}
+            {trendScore}
+          </span>
         </span>
       </div>
 

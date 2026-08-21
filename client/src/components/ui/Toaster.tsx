@@ -1,5 +1,5 @@
-import { type ReactNode, createContext, useCallback, useContext, useState } from "react";
 import { X } from "lucide-react";
+import { type ReactNode, createContext, useCallback, useContext, useState } from "react";
 
 interface Toast {
   id: number;

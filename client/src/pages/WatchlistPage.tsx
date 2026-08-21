@@ -1,7 +1,7 @@
 import { Edit3, Plus, Star, Trash2, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { DataPanel } from "../components/terminal/DataPanel";
-import { DataTable, type Column } from "../components/terminal/DataTable";
+import { type Column, DataTable } from "../components/terminal/DataTable";
 import { PriceChartPanel } from "../components/terminal/PriceChartPanel";
 import { useToast } from "../components/ui/Toaster";
 import { api } from "../lib/api";
@@ -53,7 +53,9 @@ export function WatchlistPage() {
   const [selectedCardName, setSelectedCardName] = useState<string | undefined>();
   const [showAddCard, setShowAddCard] = useState(false);
   const [addCardQuery, setAddCardQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<{ id: string; name: string; set_name: string }[]>([]);
+  const [searchResults, setSearchResults] = useState<
+    { id: string; name: string; set_name: string }[]
+  >([]);
 
   // Load watchlists
   useEffect(() => {
@@ -84,7 +86,9 @@ export function WatchlistPage() {
   const handleCreate = async () => {
     if (!newName.trim()) return;
     try {
-      const res = await api.post<{ data: WatchlistSummary }>("/watchlist", { name: newName.trim() });
+      const res = await api.post<{ data: WatchlistSummary }>("/watchlist", {
+        name: newName.trim(),
+      });
       setWatchlists((prev) => [...prev, { ...res.data, item_count: 0 }]);
       setActiveId(res.data.id);
       setShowCreate(false);
@@ -160,9 +164,7 @@ export function WatchlistPage() {
     {
       key: "set_name",
       label: "Set",
-      render: (row) => (
-        <span className="text-[var(--color-muted-foreground)]">{row.set_name}</span>
-      ),
+      render: (row) => <span className="text-[var(--color-muted-foreground)]">{row.set_name}</span>,
     },
     {
       key: "rarity",
@@ -314,9 +316,7 @@ export function WatchlistPage() {
         </DataPanel>
 
         {/* Price chart for selected card */}
-        {selectedCardId && (
-          <PriceChartPanel cardId={selectedCardId} cardName={selectedCardName} />
-        )}
+        {selectedCardId && <PriceChartPanel cardId={selectedCardId} cardName={selectedCardName} />}
       </div>
 
       {/* Right: Watchlist items */}

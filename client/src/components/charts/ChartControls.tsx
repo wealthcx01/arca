@@ -79,9 +79,10 @@ export function ChartControls({
       <div className="flex gap-1">
         {INDICATORS.map((ind) => {
           // For BB, check both BB_UPPER and BB_LOWER
-          const isActive = ind.value === "BB_UPPER"
-            ? activeIndicators.includes("BB_UPPER")
-            : activeIndicators.includes(ind.value);
+          const isActive =
+            ind.value === "BB_UPPER"
+              ? activeIndicators.includes("BB_UPPER")
+              : activeIndicators.includes(ind.value);
 
           return (
             <button

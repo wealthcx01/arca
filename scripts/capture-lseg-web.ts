@@ -17,15 +17,22 @@ function cdpSession(wsUrl: string): Promise<{
     let msgId = 0;
     const pending = new Map<number, { resolve: (v: any) => void; reject: (e: any) => void }>();
 
-    ws.onopen = () => resolve({
-      send: (method: string, params: any = {}) => new Promise((res, rej) => {
-        const id = ++msgId;
-        pending.set(id, { resolve: res, reject: rej });
-        ws.send(JSON.stringify({ id, method, params }));
-        setTimeout(() => { if (pending.has(id)) { pending.delete(id); rej(new Error(`timeout: ${method}`)); } }, 30000);
-      }),
-      close: () => ws.close(),
-    });
+    ws.onopen = () =>
+      resolve({
+        send: (method: string, params: any = {}) =>
+          new Promise((res, rej) => {
+            const id = ++msgId;
+            pending.set(id, { resolve: res, reject: rej });
+            ws.send(JSON.stringify({ id, method, params }));
+            setTimeout(() => {
+              if (pending.has(id)) {
+                pending.delete(id);
+                rej(new Error(`timeout: ${method}`));
+              }
+            }, 30000);
+          }),
+        close: () => ws.close(),
+      });
 
     ws.onmessage = (event) => {
       const msg = JSON.parse(String(event.data));
@@ -58,7 +65,11 @@ async function screenshot(page: any, filename: string): Promise<boolean> {
 
 async function evalJS(page: any, expression: string): Promise<any> {
   try {
-    const result = await page.send("Runtime.evaluate", { expression, returnByValue: true, awaitPromise: true });
+    const result = await page.send("Runtime.evaluate", {
+      expression,
+      returnByValue: true,
+      awaitPromise: true,
+    });
     return result?.result?.value;
   } catch (e: any) {
     console.log(`  Eval failed: ${e.message?.slice(0, 80)}`);
@@ -72,11 +83,15 @@ async function main() {
   // Find the "Refinitiv Market Monitor Asia" tab
   const resp = await fetch(`${CDP_URL}/json`);
   const targets = await resp.json();
-  const lsegTab = targets.find((t: any) => t.title?.includes("Refinitiv Market Monitor") && t.webSocketDebuggerUrl);
+  const lsegTab = targets.find(
+    (t: any) => t.title?.includes("Refinitiv Market Monitor") && t.webSocketDebuggerUrl,
+  );
 
   if (!lsegTab) {
     console.log("ERROR: No LSEG web tab found. Available pages:");
-    targets.filter((t: any) => t.type === "page").forEach((t: any) => console.log(`  "${t.title}"`));
+    targets
+      .filter((t: any) => t.type === "page")
+      .forEach((t: any) => console.log(`  "${t.title}"`));
     return;
   }
 
@@ -92,7 +107,9 @@ async function main() {
 
   // Step 2: Fill login and submit
   console.log("\n2. Logging in...");
-  const loginResult = await evalJS(page, `
+  const loginResult = await evalJS(
+    page,
+    `
     (function() {
       var inputs = document.querySelectorAll('input');
       var filled = [];
@@ -132,17 +149,20 @@ async function main() {
       }
       return JSON.stringify(filled);
     })()
-  `);
+  `,
+  );
   console.log(`  Login attempt: ${loginResult}`);
 
   // Wait for page to load after login
   console.log("  Waiting for app to load...");
-  await new Promise(r => setTimeout(r, 10000));
+  await new Promise((r) => setTimeout(r, 10000));
   await screenshot(page, "02-after-login.png");
 
   // Step 3: Get page info
   console.log("\n3. Analyzing loaded page...");
-  const pageInfo = await evalJS(page, `
+  const pageInfo = await evalJS(
+    page,
+    `
     JSON.stringify({
       title: document.title,
       url: location.href,
@@ -155,7 +175,8 @@ async function main() {
       }),
       hasFrameset: !!document.querySelector('frameset'),
     })
-  `);
+  `,
+  );
 
   if (pageInfo) {
     const info = JSON.parse(pageInfo);
@@ -165,7 +186,7 @@ async function main() {
     console.log(`  Frames: ${info.allFrames?.length || 0}`);
     if (info.allFrames?.length) {
       for (const f of info.allFrames) {
-        console.log(`    - ${f.name || f.id || 'unnamed'}: ${f.src}`);
+        console.log(`    - ${f.name || f.id || "unnamed"}: ${f.src}`);
       }
     }
     console.log(`  Links: ${info.allLinks?.length || 0}`);
@@ -181,14 +202,29 @@ async function main() {
   // Step 4: Try to navigate within the app
   console.log("\n4. Navigating sections...");
   const sections = [
-    "Home", "Markets", "Company", "News", "Charting", "Chart",
-    "Portfolio", "Search", "Watchlist", "Monitor", "Quote",
-    "Screener", "Analysis", "FX", "Commodities", "Fixed Income"
+    "Home",
+    "Markets",
+    "Company",
+    "News",
+    "Charting",
+    "Chart",
+    "Portfolio",
+    "Search",
+    "Watchlist",
+    "Monitor",
+    "Quote",
+    "Screener",
+    "Analysis",
+    "FX",
+    "Commodities",
+    "Fixed Income",
   ];
 
   let idx = 3;
   for (const section of sections) {
-    const clickResult = await evalJS(page, `
+    const clickResult = await evalJS(
+      page,
+      `
       (function() {
         var all = document.querySelectorAll('a, button, span, div, li, td');
         for (var i = 0; i < all.length; i++) {
@@ -201,11 +237,12 @@ async function main() {
         }
         return 'not found';
       })()
-    `);
+    `,
+    );
 
-    if (clickResult && clickResult !== 'not found') {
+    if (clickResult && clickResult !== "not found") {
       console.log(`  ${section}: ${clickResult}`);
-      await new Promise(r => setTimeout(r, 3000));
+      await new Promise((r) => setTimeout(r, 3000));
       const fname = `${String(idx).padStart(2, "0")}-${section.toLowerCase().replace(/\s+/g, "-")}.png`;
       await screenshot(page, fname);
       idx++;
@@ -218,7 +255,9 @@ async function main() {
 
   // Extract design analysis
   console.log("\n6. Design analysis...");
-  const design = await evalJS(page, `
+  const design = await evalJS(
+    page,
+    `
     JSON.stringify({
       bgColor: getComputedStyle(document.body || document.documentElement).backgroundColor,
       fgColor: getComputedStyle(document.body || document.documentElement).color,
@@ -230,7 +269,8 @@ async function main() {
       inputs: document.querySelectorAll('input').length,
       buttons: document.querySelectorAll('button').length,
     })
-  `);
+  `,
+  );
   if (design) {
     const d = JSON.parse(design);
     console.log(`  Background: ${d.bgColor}`);

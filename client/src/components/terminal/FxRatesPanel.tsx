@@ -57,9 +57,7 @@ export function FxRatesPanel({ hasPortfolio = true, onCreatePortfolio }: FxRates
           icon={Coins}
           message="FX rates convert card prices into your base currency. They'll appear here once your base currency is set and rates have synced."
           ctaLabel="Set base currency"
-          {...(hasPortfolio
-            ? { ctaHref: "/portfolio" }
-            : { onCtaClick: onCreatePortfolio })}
+          {...(hasPortfolio ? { ctaHref: "/portfolio" } : { onCtaClick: onCreatePortfolio })}
         />
       </DataPanel>
     );
@@ -81,9 +79,7 @@ export function FxRatesPanel({ hasPortfolio = true, onCreatePortfolio }: FxRates
               <span className="font-medium">
                 {r.base}/{r.quote}
               </span>
-              <span className="font-mono tabular-nums">
-                {(r.rate / 1_000_000).toFixed(4)}
-              </span>
+              <span className="font-mono tabular-nums">{(r.rate / 1_000_000).toFixed(4)}</span>
             </div>
           ))
         )}

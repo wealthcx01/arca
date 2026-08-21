@@ -82,7 +82,18 @@ export function TransactionsPage() {
   };
 
   const handleExport = () => {
-    const headers = ["Date", "Card", "Set", "Type", "Qty", "Price", "Currency", "Fees", "Condition", "Source"];
+    const headers = [
+      "Date",
+      "Card",
+      "Set",
+      "Type",
+      "Qty",
+      "Price",
+      "Currency",
+      "Fees",
+      "Condition",
+      "Source",
+    ];
     const rows = transactions.map((t) => [
       new Date(t.trade_date).toISOString().split("T")[0],
       t.card.name,
@@ -132,8 +143,10 @@ export function TransactionsPage() {
         case "price":
           return dir * (a.price_cents - b.price_cents);
         case "total": {
-          const aTotal = a.price_cents * a.quantity + a.shipping_cents + a.fees_cents + a.taxes_cents;
-          const bTotal = b.price_cents * b.quantity + b.shipping_cents + b.fees_cents + b.taxes_cents;
+          const aTotal =
+            a.price_cents * a.quantity + a.shipping_cents + a.fees_cents + a.taxes_cents;
+          const bTotal =
+            b.price_cents * b.quantity + b.shipping_cents + b.fees_cents + b.taxes_cents;
           return dir * (aTotal - bTotal);
         }
         default:
@@ -148,7 +161,11 @@ export function TransactionsPage() {
 
   const SortIcon = ({ field }: { field: SortField }) => {
     if (sortField !== field) return null;
-    return sortDir === "asc" ? <ArrowUp size={10} className="inline ml-0.5" /> : <ArrowDown size={10} className="inline ml-0.5" />;
+    return sortDir === "asc" ? (
+      <ArrowUp size={10} className="inline ml-0.5" />
+    ) : (
+      <ArrowDown size={10} className="inline ml-0.5" />
+    );
   };
 
   return (
@@ -210,22 +227,40 @@ export function TransactionsPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-[var(--color-border)] text-left text-xs font-medium uppercase tracking-wider text-[var(--color-muted-foreground)]">
-                    <th className="cursor-pointer select-none px-4 py-2 hover:text-[var(--color-foreground)]" onClick={() => handleSort("date")}>
+                    <th
+                      className="cursor-pointer select-none px-4 py-2 hover:text-[var(--color-foreground)]"
+                      onClick={() => handleSort("date")}
+                    >
                       Date <SortIcon field="date" />
                     </th>
-                    <th className="cursor-pointer select-none px-3 py-2 hover:text-[var(--color-foreground)]" onClick={() => handleSort("name")}>
+                    <th
+                      className="cursor-pointer select-none px-3 py-2 hover:text-[var(--color-foreground)]"
+                      onClick={() => handleSort("name")}
+                    >
                       Card <SortIcon field="name" />
                     </th>
-                    <th className="cursor-pointer select-none px-3 py-2 hover:text-[var(--color-foreground)]" onClick={() => handleSort("type")}>
+                    <th
+                      className="cursor-pointer select-none px-3 py-2 hover:text-[var(--color-foreground)]"
+                      onClick={() => handleSort("type")}
+                    >
                       Type <SortIcon field="type" />
                     </th>
-                    <th className="cursor-pointer select-none px-3 py-2 hover:text-[var(--color-foreground)]" onClick={() => handleSort("qty")}>
+                    <th
+                      className="cursor-pointer select-none px-3 py-2 hover:text-[var(--color-foreground)]"
+                      onClick={() => handleSort("qty")}
+                    >
                       Qty <SortIcon field="qty" />
                     </th>
-                    <th className="cursor-pointer select-none px-3 py-2 hover:text-[var(--color-foreground)]" onClick={() => handleSort("price")}>
+                    <th
+                      className="cursor-pointer select-none px-3 py-2 hover:text-[var(--color-foreground)]"
+                      onClick={() => handleSort("price")}
+                    >
                       Price <SortIcon field="price" />
                     </th>
-                    <th className="cursor-pointer select-none px-3 py-2 hover:text-[var(--color-foreground)]" onClick={() => handleSort("total")}>
+                    <th
+                      className="cursor-pointer select-none px-3 py-2 hover:text-[var(--color-foreground)]"
+                      onClick={() => handleSort("total")}
+                    >
                       Total <SortIcon field="total" />
                     </th>
                     <th className="px-3 py-2">Fees</th>
@@ -241,7 +276,9 @@ export function TransactionsPage() {
                       <tr
                         key={t.id}
                         className={`border-b border-[var(--color-border)] last:border-0 hover:bg-[var(--color-muted)] ${
-                          idx % 2 === 1 ? "bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]" : ""
+                          idx % 2 === 1
+                            ? "bg-[color-mix(in_srgb,var(--color-muted)_30%,transparent)]"
+                            : ""
                         }`}
                       >
                         <td className="px-4 py-2 tabular-nums text-[var(--color-muted-foreground)]">
@@ -289,7 +326,10 @@ export function TransactionsPage() {
                         </td>
                         <td className="px-3 py-2 tabular-nums text-[var(--color-muted-foreground)]">
                           {t.fees_cents + t.shipping_cents + t.taxes_cents > 0
-                            ? formatMoney(t.fees_cents + t.shipping_cents + t.taxes_cents, t.currency)
+                            ? formatMoney(
+                                t.fees_cents + t.shipping_cents + t.taxes_cents,
+                                t.currency,
+                              )
                             : "—"}
                         </td>
                         <td className="px-3 py-2 text-xs text-[var(--color-muted-foreground)]">
@@ -331,9 +371,7 @@ export function TransactionsPage() {
                   .filter((p) => p === 1 || p === totalPages || Math.abs(p - page) <= 1)
                   .map((p, idx, arr) => (
                     <span key={p}>
-                      {idx > 0 && arr[idx - 1] !== p - 1 && (
-                        <span className="px-1">…</span>
-                      )}
+                      {idx > 0 && arr[idx - 1] !== p - 1 && <span className="px-1">…</span>}
                       <button
                         onClick={() => setPage(p)}
                         className={`rounded px-2 py-0.5 ${

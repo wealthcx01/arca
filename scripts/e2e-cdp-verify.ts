@@ -39,7 +39,11 @@ async function connectToTarget(wsUrl: string): Promise<WebSocket> {
 }
 
 let msgId = 0;
-function sendCommand(ws: WebSocket, method: string, params: Record<string, any> = {}): Promise<any> {
+function sendCommand(
+  ws: WebSocket,
+  method: string,
+  params: Record<string, any> = {},
+): Promise<any> {
   return new Promise((resolve, reject) => {
     const id = ++msgId;
     const timeout = setTimeout(() => reject(new Error(`Timeout: ${method}`)), 30000);
@@ -60,7 +64,10 @@ function sendCommand(ws: WebSocket, method: string, params: Record<string, any> 
 
 async function waitForEvent(ws: WebSocket, eventName: string, timeoutMs = 15000): Promise<any> {
   return new Promise((resolve, reject) => {
-    const timeout = setTimeout(() => reject(new Error(`Timeout waiting for ${eventName}`)), timeoutMs);
+    const timeout = setTimeout(
+      () => reject(new Error(`Timeout waiting for ${eventName}`)),
+      timeoutMs,
+    );
     const handler = (event: MessageEvent) => {
       const data = JSON.parse(String(event.data));
       if (data.method === eventName) {
@@ -119,7 +126,11 @@ async function main() {
   } catch {
     // Find an expendable tab
     const expendable = targets.find(
-      (t: any) => t.type === "page" && (t.url?.includes("about:blank") || t.url?.includes("newtab") || t.title?.includes("Notification")),
+      (t: any) =>
+        t.type === "page" &&
+        (t.url?.includes("about:blank") ||
+          t.url?.includes("newtab") ||
+          t.title?.includes("Notification")),
     );
     if (expendable) {
       targetInfo = expendable;
@@ -151,14 +162,17 @@ async function main() {
     await navigateAndWait(ws, BASE_URL);
     await tryScreenshot(ws, "01-login.png");
 
-    const loginCheck = await evaluateExpression(ws, `
+    const loginCheck = await evaluateExpression(
+      ws,
+      `
       JSON.stringify({
         hasEmailInput: !!document.querySelector('input[type="email"]'),
         hasPasswordInput: !!document.querySelector('input[type="password"]'),
         title: document.querySelector('h1, h2')?.textContent || '',
         hasSubmitBtn: !!document.querySelector('button[type="submit"]'),
       })
-    `);
+    `,
+    );
     const login = JSON.parse(loginCheck);
     if (login.hasEmailInput && login.hasPasswordInput) {
       log("pass", "Login", "Login form with email + password inputs");
@@ -179,16 +193,21 @@ async function main() {
     const testPassword = "test1234test";
 
     // Click sign up link if present
-    await evaluateExpression(ws, `
+    await evaluateExpression(
+      ws,
+      `
       const link = document.querySelector('button[class*="text-"], a[class*="text-"]');
       const allBtns = [...document.querySelectorAll('button, a')];
       const signupBtn = allBtns.find(b => /sign.?up|create.?account|register/i.test(b.textContent));
       if (signupBtn) signupBtn.click();
-    `);
+    `,
+    );
     await new Promise((r) => setTimeout(r, 1000));
 
     // Fill signup form
-    await evaluateExpression(ws, `
+    await evaluateExpression(
+      ws,
+      `
       const nameInput = document.querySelector('input[type="text"]');
       if (nameInput) {
         nameInput.value = 'E2E Tester';
@@ -204,14 +223,18 @@ async function main() {
         pwInput.value = '${testPassword}';
         pwInput.dispatchEvent(new Event('input', { bubbles: true }));
       }
-    `);
+    `,
+    );
     await tryScreenshot(ws, "02-signup-filled.png");
 
     // Submit
-    await evaluateExpression(ws, `
+    await evaluateExpression(
+      ws,
+      `
       const btn = document.querySelector('button[type="submit"]');
       if (btn) btn.click();
-    `);
+    `,
+    );
     await new Promise((r) => setTimeout(r, 3000));
     await tryScreenshot(ws, "03-after-signup.png");
 
@@ -229,7 +252,9 @@ async function main() {
     await navigateAndWait(ws, `${BASE_URL}/dashboard`);
     await tryScreenshot(ws, "04-dashboard.png");
 
-    const dashCheck = await evaluateExpression(ws, `
+    const dashCheck = await evaluateExpression(
+      ws,
+      `
       JSON.stringify({
         bodyText: document.body.textContent?.substring(0, 500) || '',
         hasMonoFont: !!document.querySelector('.font-mono'),
@@ -237,21 +262,28 @@ async function main() {
         hasTable: !!document.querySelector('table'),
         url: window.location.href,
       })
-    `);
+    `,
+    );
     const dash = JSON.parse(dashCheck);
 
     if (dash.bodyText.includes("Welcome to ARCA") || dash.bodyText.includes("Create")) {
       log("pass", "Dashboard", "Empty state displayed correctly");
       // Create a portfolio
-      await evaluateExpression(ws, `
+      await evaluateExpression(
+        ws,
+        `
         const btn = [...document.querySelectorAll('button')].find(b => b.textContent.includes('Create Portfolio'));
         if (btn) btn.click();
-      `);
+      `,
+      );
       await new Promise((r) => setTimeout(r, 1000));
-      await evaluateExpression(ws, `
+      await evaluateExpression(
+        ws,
+        `
         const submit = [...document.querySelectorAll('button')].find(b => b.textContent.includes('Create'));
         if (submit) submit.click();
-      `);
+      `,
+      );
       await new Promise((r) => setTimeout(r, 2000));
       await navigateAndWait(ws, `${BASE_URL}/dashboard`);
       await tryScreenshot(ws, "05-dashboard-with-portfolio.png");
@@ -271,7 +303,9 @@ async function main() {
     await navigateAndWait(ws, `${BASE_URL}/cards`);
     await tryScreenshot(ws, "06-cards-grid.png");
 
-    const cardsCheck = await evaluateExpression(ws, `
+    const cardsCheck = await evaluateExpression(
+      ws,
+      `
       JSON.stringify({
         title: document.querySelector('h1')?.textContent || '',
         hasSearch: !!document.querySelector('input[placeholder*="Search"]'),
@@ -280,7 +314,8 @@ async function main() {
         resultsText: document.body.textContent?.match(/\\d+ cards? found/)?.[0] || '',
         hasGrid: document.querySelectorAll('[class*="grid"]').length > 0,
       })
-    `);
+    `,
+    );
     const cards = JSON.parse(cardsCheck);
 
     if (cards.title.includes("Card Database")) {
@@ -308,18 +343,24 @@ async function main() {
     }
 
     // Search for Charizard
-    await evaluateExpression(ws, `
+    await evaluateExpression(
+      ws,
+      `
       const search = document.querySelector('input[placeholder*="Search"]');
       if (search) {
         search.value = 'Charizard';
         search.dispatchEvent(new Event('input', { bubbles: true }));
       }
-    `);
+    `,
+    );
     await new Promise((r) => setTimeout(r, 1500));
     await tryScreenshot(ws, "07-cards-search.png");
-    const searchResult = await evaluateExpression(ws, `
+    const searchResult = await evaluateExpression(
+      ws,
+      `
       document.body.textContent?.match(/\\d+ cards? found/)?.[0] || 'results shown'
-    `);
+    `,
+    );
     log("pass", "Cards", `Search 'Charizard': ${searchResult}`);
 
     // ═══════════════════════════════════════════════
@@ -327,14 +368,19 @@ async function main() {
     // ═══════════════════════════════════════════════
     console.log("\n5. Card Detail");
     // Click first card link
-    await evaluateExpression(ws, `
+    await evaluateExpression(
+      ws,
+      `
       const link = document.querySelector('a[href^="/cards/"]');
       if (link) link.click();
-    `);
+    `,
+    );
     await new Promise((r) => setTimeout(r, 3000));
     await tryScreenshot(ws, "08-card-detail.png");
 
-    const detailCheck = await evaluateExpression(ws, `
+    const detailCheck = await evaluateExpression(
+      ws,
+      `
       JSON.stringify({
         cardName: document.querySelector('h1')?.textContent || '',
         hasImage: !!document.querySelector('img[alt]'),
@@ -344,7 +390,8 @@ async function main() {
         tableCount: document.querySelectorAll('table').length,
         url: window.location.href,
       })
-    `);
+    `,
+    );
     const detail = JSON.parse(detailCheck);
 
     if (detail.url.includes("/cards/")) {
@@ -372,7 +419,9 @@ async function main() {
     await navigateAndWait(ws, `${BASE_URL}/transactions`);
     await tryScreenshot(ws, "09-transactions.png");
 
-    const txCheck = await evaluateExpression(ws, `
+    const txCheck = await evaluateExpression(
+      ws,
+      `
       JSON.stringify({
         title: document.querySelector('h1')?.textContent || '',
         hasFilters: [...document.querySelectorAll('button')].filter(b => ['ALL','BUY','SELL'].includes(b.textContent.trim())).length,
@@ -380,7 +429,8 @@ async function main() {
         hasTable: !!document.querySelector('table'),
         emptyState: document.body.textContent?.includes('No transactions') || false,
       })
-    `);
+    `,
+    );
     const tx = JSON.parse(txCheck);
 
     if (tx.title.includes("Transaction")) {
@@ -405,10 +455,17 @@ async function main() {
     await navigateAndWait(ws, `${BASE_URL}/analytics`);
     await tryScreenshot(ws, "10-analytics.png");
 
-    const analyticsCheck = await evaluateExpression(ws, `
+    const analyticsCheck = await evaluateExpression(
+      ws,
+      `
       document.body.textContent?.substring(0, 300) || ''
-    `);
-    if (analyticsCheck.includes("Concentration") || analyticsCheck.includes("Analytics") || analyticsCheck.includes("Loading")) {
+    `,
+    );
+    if (
+      analyticsCheck.includes("Concentration") ||
+      analyticsCheck.includes("Analytics") ||
+      analyticsCheck.includes("Loading")
+    ) {
       log("pass", "Analytics", "Analytics page loaded");
     } else {
       log("warn", "Analytics", "Analytics content unclear");
@@ -421,12 +478,15 @@ async function main() {
     await navigateAndWait(ws, `${BASE_URL}/import`);
     await tryScreenshot(ws, "11-import.png");
 
-    const importCheck = await evaluateExpression(ws, `
+    const importCheck = await evaluateExpression(
+      ws,
+      `
       JSON.stringify({
         hasUpload: !!document.querySelector('input[type="file"]') || document.body.textContent?.includes('Import') || false,
         hasCSV: document.body.textContent?.includes('CSV') || false,
       })
-    `);
+    `,
+    );
     const imp = JSON.parse(importCheck);
     if (imp.hasUpload || imp.hasCSV) {
       log("pass", "Import", "Import page with upload UI");
@@ -439,14 +499,17 @@ async function main() {
     await navigateAndWait(ws, `${BASE_URL}/settings`);
     await tryScreenshot(ws, "12-settings.png");
 
-    const settingsCheck = await evaluateExpression(ws, `
+    const settingsCheck = await evaluateExpression(
+      ws,
+      `
       JSON.stringify({
         hasSettings: document.body.textContent?.includes('Settings') || false,
         hasSources: document.body.textContent?.includes('Sources') || false,
         hasApiKey: document.body.textContent?.includes('API Key') || false,
         badgeCount: document.querySelectorAll('span[class*="rounded"][class*="font-medium"]').length,
       })
-    `);
+    `,
+    );
     const settings = JSON.parse(settingsCheck);
     if (settings.hasSettings) {
       log("pass", "Settings", "Settings page loaded");
@@ -465,12 +528,15 @@ async function main() {
     // 10. THEME TOGGLE
     // ═══════════════════════════════════════════════
     console.log("\n10. Theme Toggle");
-    const themeCheck = await evaluateExpression(ws, `
+    const themeCheck = await evaluateExpression(
+      ws,
+      `
       JSON.stringify({
         isDark: document.documentElement.classList.contains('dark'),
         htmlClasses: document.documentElement.className,
       })
-    `);
+    `,
+    );
     const theme = JSON.parse(themeCheck);
     if (theme.isDark) {
       log("pass", "Theme", "Diamond (dark) theme active");
@@ -479,20 +545,29 @@ async function main() {
     }
 
     // Toggle theme
-    await evaluateExpression(ws, `
+    await evaluateExpression(
+      ws,
+      `
       const themeBtn = [...document.querySelectorAll('button')].find(b => /Diamond|Pearl/i.test(b.textContent));
       if (themeBtn) themeBtn.click();
-    `);
+    `,
+    );
     await new Promise((r) => setTimeout(r, 500));
-    const afterToggle = await evaluateExpression(ws, `document.documentElement.classList.contains('dark')`);
+    const afterToggle = await evaluateExpression(
+      ws,
+      `document.documentElement.classList.contains('dark')`,
+    );
     if (afterToggle !== theme.isDark) {
       log("pass", "Theme", `Toggled to ${afterToggle ? "Diamond" : "Pearl"} theme`);
       await tryScreenshot(ws, "13-pearl-theme.png");
       // Toggle back
-      await evaluateExpression(ws, `
+      await evaluateExpression(
+        ws,
+        `
         const themeBtn = [...document.querySelectorAll('button')].find(b => /Diamond|Pearl/i.test(b.textContent));
         if (themeBtn) themeBtn.click();
-      `);
+      `,
+      );
     } else {
       log("warn", "Theme", "Theme toggle didn't change");
     }
@@ -501,7 +576,9 @@ async function main() {
     // 11. SIDEBAR NAVIGATION
     // ═══════════════════════════════════════════════
     console.log("\n11. Sidebar Navigation");
-    const navCheck = await evaluateExpression(ws, `
+    const navCheck = await evaluateExpression(
+      ws,
+      `
       const navItems = ['Portfolio', 'Cards', 'Trades', 'Analytics', 'Import', 'Settings'];
       const aside = document.querySelector('aside');
       const links = aside ? [...aside.querySelectorAll('a')] : [];
@@ -511,7 +588,8 @@ async function main() {
       }));
       const brokenPortfolio = !!document.querySelector('a[href="/portfolio"]');
       JSON.stringify({ found, brokenPortfolio });
-    `);
+    `,
+    );
     const nav = JSON.parse(navCheck);
     for (const item of nav.found) {
       if (item.visible) {
@@ -525,7 +603,6 @@ async function main() {
     } else {
       log("fail", "Nav", "Broken /portfolio link still exists");
     }
-
   } catch (e: any) {
     log("fail", "E2E", `Error: ${e.message}`);
   }

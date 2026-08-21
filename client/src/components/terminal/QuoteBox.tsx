@@ -1,4 +1,4 @@
-import { PriceCell, ChangeDisplay } from "./PriceCell";
+import { ChangeDisplay, PriceCell } from "./PriceCell";
 
 interface QuoteBoxProps {
   name: string;

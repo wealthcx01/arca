@@ -4,12 +4,12 @@
  */
 
 import {
+  ColorType,
+  CrosshairMode,
   type IChartApi,
   type ISeriesApi,
   type SeriesType,
   createChart,
-  ColorType,
-  CrosshairMode,
 } from "lightweight-charts";
 import { useEffect, useRef } from "react";
 import type { ChartTheme } from "./types";
@@ -91,11 +91,5 @@ export function LightweightChart({
     });
   }, [theme]);
 
-  return (
-    <div
-      ref={containerRef}
-      className={`w-full ${className}`}
-      style={{ minHeight: height }}
-    />
-  );
+  return <div ref={containerRef} className={`w-full ${className}`} style={{ minHeight: height }} />;
 }

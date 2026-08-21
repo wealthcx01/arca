@@ -47,7 +47,10 @@ export function computeMarketIndex(date: string): void {
 
   // Index value: relative to first day
   const firstDay = db
-    .select({ index_value_e6: marketIndexDaily.index_value_e6, total_market_cap_cents: marketIndexDaily.total_market_cap_cents })
+    .select({
+      index_value_e6: marketIndexDaily.index_value_e6,
+      total_market_cap_cents: marketIndexDaily.total_market_cap_cents,
+    })
     .from(marketIndexDaily)
     .orderBy(marketIndexDaily.date)
     .limit(1)

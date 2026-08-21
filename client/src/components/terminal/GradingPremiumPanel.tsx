@@ -79,16 +79,17 @@ export function GradingPremiumPanel() {
           <tbody className="divide-y divide-[var(--color-border)]">
             {loading && items.length === 0 ? (
               <tr>
-                <td colSpan={5} className="py-4 text-center text-[10px] text-[var(--color-muted-foreground)]">
+                <td
+                  colSpan={5}
+                  className="py-4 text-center text-[10px] text-[var(--color-muted-foreground)]"
+                >
                   Loading...
                 </td>
               </tr>
             ) : (
               items.map((item, i) => (
                 <tr key={`${item.id}-${item.grade}-${i}`} className="hover:bg-[var(--color-muted)]">
-                  <td className="max-w-[100px] truncate px-2 py-1 font-medium">
-                    {item.name}
-                  </td>
+                  <td className="max-w-[100px] truncate px-2 py-1 font-medium">{item.name}</td>
                   <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
                     {formatPrice(item.raw_price_cents)}
                   </td>

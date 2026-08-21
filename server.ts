@@ -6,18 +6,18 @@ import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { getDb } from "./db";
 import { getSession } from "./db/auth";
+import { analyticsRouter } from "./modules/analytics/handlers";
+import { registerAnalyticsJobs } from "./modules/analytics/jobs";
 import { authRouter } from "./modules/auth/handlers";
 import { cardsRouter } from "./modules/cards/handlers";
 import { registerCardJobs } from "./modules/cards/jobs";
+import { marketRouter } from "./modules/market/handlers";
+import { newsRouter } from "./modules/news/handlers";
 import { performanceRouter } from "./modules/performance/handlers";
 import { registerPerformanceJobs } from "./modules/performance/jobs";
 import { portfolioRouter } from "./modules/portfolio/handlers";
 import { pricingRouter } from "./modules/pricing/handlers";
 import { registerPricingJobs } from "./modules/pricing/jobs";
-import { analyticsRouter } from "./modules/analytics/handlers";
-import { registerAnalyticsJobs } from "./modules/analytics/jobs";
-import { marketRouter } from "./modules/market/handlers";
-import { newsRouter } from "./modules/news/handlers";
 import { psaRouter } from "./modules/psa/handlers";
 import { watchlistRouter } from "./modules/watchlist/handlers";
 
@@ -85,7 +85,18 @@ app.route("/api/watchlist", watchlistRouter);
 // System status
 app.get("/api/system/status", (c) => {
   return c.json({
-    modules: ["auth", "cards", "portfolio", "pricing", "performance", "psa", "market", "analytics", "news", "watchlist"],
+    modules: [
+      "auth",
+      "cards",
+      "portfolio",
+      "pricing",
+      "performance",
+      "psa",
+      "market",
+      "analytics",
+      "news",
+      "watchlist",
+    ],
     database: "connected",
     uptime: process.uptime(),
   });

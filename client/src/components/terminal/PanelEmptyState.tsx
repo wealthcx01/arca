@@ -33,7 +33,10 @@ export function PanelEmptyState({
           {ctaLabel}
         </button>
       ) : (
-        <a href={ctaHref} className="text-[11px] font-medium text-[var(--color-primary)] hover:underline">
+        <a
+          href={ctaHref}
+          className="text-[11px] font-medium text-[var(--color-primary)] hover:underline"
+        >
           {ctaLabel}
         </a>
       )}
