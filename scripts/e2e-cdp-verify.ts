@@ -47,11 +47,7 @@ async function connectToTarget(wsUrl: string): Promise<WebSocket> {
 }
 
 let msgId = 0;
-function sendCommand(
-  ws: WebSocket,
-  method: string,
-  params: Record<string, any> = {},
-): Promise<unknown> {
+function sendCommand(ws: WebSocket, method: string, params: CdpParams = {}): Promise<unknown> {
   return new Promise((resolve, reject) => {
     const id = ++msgId;
     const timeout = setTimeout(() => reject(new Error(`Timeout: ${method}`)), 30000);

@@ -242,8 +242,8 @@ export function SetsErasPage() {
                     key={card.id}
                     className="cursor-pointer hover:bg-[var(--color-muted)]"
                     onClick={() => {
-                    window.location.href = `/cards/${card.id}`;
-                  }}
+                      window.location.href = `/cards/${card.id}`;
+                    }}
                   >
                     <td className="px-2 py-1 font-mono text-[var(--color-muted-foreground)]">
                       {card.card_number}

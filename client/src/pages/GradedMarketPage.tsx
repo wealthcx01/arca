@@ -158,8 +158,8 @@ export function GradedMarketPage() {
                     key={row.id}
                     className="cursor-pointer hover:bg-[var(--color-muted)]"
                     onClick={() => {
-                    window.location.href = `/cards/${row.id}`;
-                  }}
+                      window.location.href = `/cards/${row.id}`;
+                    }}
                   >
                     <td className="max-w-[160px] truncate px-2 py-1 font-medium">{row.name}</td>
                     <td className="max-w-[120px] truncate px-2 py-1 text-[var(--color-muted-foreground)]">

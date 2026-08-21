@@ -50,3 +50,43 @@ export function errorMessage(e: unknown): string {
   if (e instanceof Error) return e.message;
   return typeof e === "string" ? e : String(e);
 }
+
+/**
+ * What the LSEG capture script's injected page script returns (ARCA-65).
+ *
+ * The expression is written in this repository — `capture-lseg-all.ts` builds the very JS that
+ * produces this object — so its shape was never unknown. Writing it down is the point: a rename in
+ * the injected script and a stale read here now disagree at compile time rather than printing
+ * `undefined` into a report nobody re-reads.
+ */
+export interface LsegNavItem {
+  text?: string;
+}
+
+export interface LsegHeading {
+  tag?: string;
+  text?: string;
+}
+
+export interface LsegAnalysis {
+  target?: string;
+  title?: string;
+  url?: string;
+  dir?: string;
+  error?: string;
+  navItems?: LsegNavItem[];
+  headings?: LsegHeading[];
+  uniqueColors?: string[];
+  cssVars?: Record<string, string>;
+  uiPatterns?: {
+    hasSearchBar?: boolean;
+    hasTabs?: boolean;
+    hasCards?: boolean;
+    hasCharts?: boolean;
+    hasSidebar?: boolean;
+    hasToolbar?: boolean;
+  };
+  tables?: { tag?: string; class?: string; rows?: number; cols?: number }[];
+  viewport?: { w?: number; h?: number };
+  colors?: { background?: string; color?: string; fontFamily?: string; fontSize?: string };
+}
