@@ -35,9 +35,10 @@ someone else's service is slow is not a gate — the same reason ARCA-34's test 
 ## Acceptance criteria
 - [x] The suite runs on every PR against a committed catalog fixture, with **no external network
       call** — `scripts/fixtures/cards.json` (12 cards, 3 sets) loaded by `scripts/seed-fixture.ts`.
-- [ ] **It fails when the set name is missing — not verified by removing it.** The suite passes on a
-      correct build; I did not break the page on purpose to watch it go red, so its ability to
-      *detect* the regression is argued rather than demonstrated. Left unticked deliberately.
+- [x] **It fails when the set name is missing — demonstrated, not argued.** The set-name `<p>` was
+      removed from `CardsPage.tsx`, the suite was run, and *"shows set name on every card"* failed
+      on `locator.textContent` while the list-view and detail-page tests correctly still passed —
+      the regression was localised, not a blanket red. Reverted, and 26/26 green again.
 - [x] Screenshots and the HTML report upload on failure, plus the last 50 lines of both server logs.
 - [x] ARCA-34's fifth criterion can now be ticked.
 
