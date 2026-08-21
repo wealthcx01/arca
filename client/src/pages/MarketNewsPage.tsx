@@ -142,7 +142,9 @@ export function MarketNewsPage() {
             columns={columns}
             data={alerts}
             rowKey={(r) => r.id}
-            onRowClick={(r) => (window.location.href = `/cards/${r.id}`)}
+            onRowClick={(r) => {
+              window.location.href = `/cards/${r.id}`;
+            }}
             maxHeight="calc(100vh - 200px)"
             emptyMessage="No significant price movements found"
           />

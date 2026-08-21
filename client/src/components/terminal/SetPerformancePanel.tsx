@@ -90,7 +90,9 @@ export function SetPerformancePanel() {
                 <tr
                   key={s.set_code}
                   className="cursor-pointer hover:bg-[var(--color-muted)]"
-                  onClick={() => (window.location.href = `/sets?set=${s.set_code}`)}
+                  onClick={() => {
+                    window.location.href = `/sets?set=${s.set_code}`;
+                  }}
                 >
                   <td className="max-w-[140px] truncate px-2 py-1 font-medium">{s.set_name}</td>
                   <td className="px-2 py-1 text-right font-mono tabular-nums">

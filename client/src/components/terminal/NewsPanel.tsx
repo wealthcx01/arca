@@ -73,11 +73,10 @@ export function NewsPanel({ onCardSelect }: NewsPanelProps = {}) {
             return (
               <button
                 key={a.id}
-                onClick={() =>
-                  onCardSelect
-                    ? onCardSelect(a.id, a.name)
-                    : (window.location.href = `/cards/${a.id}`)
-                }
+                onClick={() => {
+                  if (onCardSelect) onCardSelect(a.id, a.name);
+                  else window.location.href = `/cards/${a.id}`;
+                }}
                 className="flex w-full items-center justify-between px-2 py-1.5 text-[11px] text-left hover:bg-[var(--color-muted)]"
               >
                 <div className="min-w-0 flex-1">

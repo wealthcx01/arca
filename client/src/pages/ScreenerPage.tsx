@@ -250,7 +250,9 @@ export function ScreenerPage() {
             columns={columns}
             data={items}
             rowKey={(r) => r.id}
-            onRowClick={(r) => (window.location.href = `/cards/${r.id}`)}
+            onRowClick={(r) => {
+              window.location.href = `/cards/${r.id}`;
+            }}
             maxHeight="calc(100vh - 280px)"
             emptyMessage="No data matching filters. Try adjusting period or filters."
           />
