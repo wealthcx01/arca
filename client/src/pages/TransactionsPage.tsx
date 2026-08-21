@@ -53,7 +53,7 @@ export function TransactionsPage() {
       })
       .catch((err) => toast.error(err.message || "Failed to load portfolios"))
       .finally(() => setLoading(false));
-  }, []);
+  }, [toast]);
 
   const loadTransactions = useCallback(() => {
     if (!activeId) return;
@@ -65,7 +65,7 @@ export function TransactionsPage() {
         setPage(1);
       })
       .catch((err) => toast.error(err.message || "Failed to load transactions"));
-  }, [activeId, typeFilter]);
+  }, [activeId, typeFilter, toast]);
 
   useEffect(() => {
     loadTransactions();

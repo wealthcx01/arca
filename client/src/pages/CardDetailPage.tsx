@@ -127,7 +127,7 @@ export function CardDetailPage() {
         setAnalytics(analyticsR.status === "fulfilled" ? analyticsR.value : null);
       })
       .finally(() => setLoading(false));
-  }, [cardId]);
+  }, [cardId, toast]);
 
   if (loading) return <CardDetailSkeleton />;
   if (error || !card) {

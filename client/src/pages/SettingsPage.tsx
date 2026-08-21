@@ -41,7 +41,7 @@ export function SettingsPage() {
     ])
       .catch((err) => toast.error(err.message || "Failed to load settings"))
       .finally(() => setLoading(false));
-  }, []);
+  }, [toast]);
 
   useEffect(() => {
     loadData();

@@ -113,6 +113,12 @@ export function CandlestickChart({
   }, [cardId, activeIndicators, period, currency]);
 
   // Build chart when data changes
+  // rebuildSeries is a function declaration and biome does not look inside it, so it reports
+  // these four dependencies as unnecessary. Its body reads all of them directly. Removing them
+  // would stop the chart rebuilding when the data, the chart type or the palette changes —
+  // verified by reading rebuildSeries, not assumed. The directive must sit on the line directly
+  // above the hook, so it goes last.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: false positive, see above
   const handleChart = useCallback(
     (chart: IChartApi) => {
       chartRef.current = chart;
@@ -121,6 +127,12 @@ export function CandlestickChart({
     [ohlcData, indicatorData, chartType, theme],
   );
 
+  // rebuildSeries is a function declaration and biome does not look inside it, so it reports
+  // these four dependencies as unnecessary. Its body reads all of them directly. Removing them
+  // would stop the chart rebuilding when the data, the chart type or the palette changes —
+  // verified by reading rebuildSeries, not assumed. The directive must sit on the line directly
+  // above the hook, so it goes last.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: false positive, see above
   useEffect(() => {
     if (chartRef.current) {
       rebuildSeries(chartRef.current);

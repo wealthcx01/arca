@@ -82,7 +82,7 @@ export function DashboardPage() {
       })
       .catch((err) => toast.error(err.message || "Failed to load portfolios"))
       .finally(() => setLoading(false));
-  }, []);
+  }, [toast]);
 
   useEffect(() => {
     if (!activePortfolioId) return;
@@ -92,7 +92,7 @@ export function DashboardPage() {
       .then(setData)
       .catch((err) => toast.error(err.message || "Failed to load portfolio"))
       .finally(() => setLoading(false));
-  }, [activePortfolioId]);
+  }, [activePortfolioId, toast]);
 
   if (loading) {
     return <DashboardSkeleton />;

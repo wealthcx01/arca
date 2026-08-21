@@ -1,5 +1,5 @@
 import { X } from "lucide-react";
-import { type ReactNode, createContext, useCallback, useContext, useState } from "react";
+import { type ReactNode, createContext, useCallback, useContext, useMemo, useState } from "react";
 
 interface Toast {
   id: number;
@@ -34,11 +34,28 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     setToasts((prev) => prev.filter((t) => t.id !== id));
   }, []);
 
-  const toast = {
-    error: (message: string) => addToast(message, "error"),
-    success: (message: string) => addToast(message, "success"),
-    info: (message: string) => addToast(message, "info"),
-  };
+  // ARCA-65. Both of these were fresh objects on every render, which had two costs.
+  //
+  // The visible one: the context value changed identity on every ToastProvider render, so every
+  // consumer re-rendered whenever any toast appeared or expired — the provider re-renders on its own
+  // `toasts` state.
+  //
+  // The one that blocked this ticket: `toast` could not honestly be named as an effect dependency
+  // anywhere, because doing so would re-run that effect on every provider render. Several pages
+  // load their data in a `[]` effect and call `toast.error` in the failure path; naming it there
+  // without this would have turned "load once" into "reload whenever a toast appears".
+  //
+  // addToast is already stable, so both memos have a genuinely constant identity.
+  const toast = useMemo(
+    () => ({
+      error: (message: string) => addToast(message, "error"),
+      success: (message: string) => addToast(message, "success"),
+      info: (message: string) => addToast(message, "info"),
+    }),
+    [addToast],
+  );
+
+  const contextValue = useMemo(() => ({ toast }), [toast]);
 
   const borderColor = {
     error: "border-l-[var(--color-negative)]",
@@ -47,7 +64,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <ToastContext.Provider value={{ toast }}>
+    <ToastContext.Provider value={contextValue}>
       {children}
       {/* Toast container */}
       <div className="fixed bottom-4 right-4 z-[9999] flex flex-col gap-2">

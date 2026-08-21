@@ -109,7 +109,7 @@ export function AnalyticsPage() {
       .then((res) => setScreenerData(res.data))
       .catch(() => toast.error("Failed to load screener"))
       .finally(() => setScreenerLoading(false));
-  }, [tab, screenerSort]);
+  }, [tab, screenerSort, toast]);
 
   // Load portfolios for portfolio tab
   useEffect(() => {
