@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T14:22:51Z",
+  "ended_at": "2026-08-26T14:39:40Z",
+  "trigger": "scheduled",
+  "outcome": "blocked",
+  "summary_md": "The lane couldn't get this past its own validation in 2 rounds — tests: your change introduced 2 lint problem(s) on the lines it wrote. No PR opened; it needs a human.",
+  "tickets_touched": [
+    "ARCA-063-refresh-market-wide-prices"
+  ],
+  "error_detail": "The lane couldn't get this past its own validation in 2 rounds — tests: your change introduced 2 lint problem(s) on the lines it wrote. No PR opened; it needs a human.",
+  "pr_url": null,
+  "ticket": "ARCA-063-refresh-market-wide-prices",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — tests: your change introduced 2 lint problem(s) on the lines it wrote. No PR opened; it needs a human.",
+  "started": "2026-08-26T14:22:51Z",
+  "finished": "2026-08-26T14:39:40Z",
+  "repo": "wealthcx01/arca"
+}
