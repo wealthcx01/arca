@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T12:19:18Z",
+  "ended_at": "2026-08-26T12:30:36Z",
+  "trigger": "scheduled",
+  "outcome": "blocked",
+  "summary_md": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: MarketNewsPanel.tsx renders item.url as a raw <a href> with no scheme check; POST /api/news has no auth middleware, so anyone can insert a javascript:/data: url that runs in a logged-in user's session when clicked (stored XSS). No PR opened; it needs a human.",
+  "tickets_touched": [
+    "ARCA-055-news-tab-shows-alerts-not-news"
+  ],
+  "error_detail": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: MarketNewsPanel.tsx renders item.url as a raw <a href> with no scheme check; POST /api/news has no auth middleware, so anyone can insert a javascript:/data: url that runs in a logged-in user's session when clicked (stored XSS). No PR opened; it needs a human.",
+  "pr_url": null,
+  "ticket": "ARCA-055-news-tab-shows-alerts-not-news",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: MarketNewsPanel.tsx renders item.url as a raw <a href> with no scheme check; POST /api/news has no auth middleware, so anyone can insert a javascript:/data: url that runs in a logged-in user's session when clicked (stored XSS). No PR opened; it needs a human.",
+  "started": "2026-08-26T12:19:18Z",
+  "finished": "2026-08-26T12:30:36Z",
+  "repo": "wealthcx01/arca"
+}
