@@ -13,6 +13,7 @@ import { and, eq, sql } from "drizzle-orm";
 import { getDb } from "../db/index.ts";
 import { cards } from "../modules/cards/schema.ts";
 import { conflate } from "../modules/pricing/conflation.ts";
+import { updateProviderStatus } from "../modules/pricing/jobs.ts";
 import type { PriceResult } from "../modules/pricing/providers/types.ts";
 import { cardPrices, gradedPrices, priceHistory } from "../modules/pricing/schema.ts";
 import { createId } from "../src/lib/nanoid.ts";
@@ -431,6 +432,7 @@ async function main() {
   // Step 2: Persist prices and generate history
   console.log("Step 2: Persisting prices + generating 30-day history...");
   persistAndGenerateHistory(prices);
+  updateProviderStatus("tcgdex", "ok", prices.length, null);
   console.log("  Done.\n");
 
   // Step 3: Run conflation (needed before graded prices)

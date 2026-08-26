@@ -60,7 +60,7 @@ function getHeldCardRefs(): CardRef[] {
 }
 
 /** Update provider status in the database. */
-function updateProviderStatus(
+export function updateProviderStatus(
   provider: string,
   status: string,
   cardsSynced: number,
