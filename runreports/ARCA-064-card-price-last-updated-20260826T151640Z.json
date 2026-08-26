@@ -1,0 +1,19 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T15:16:38Z",
+  "ended_at": null,
+  "trigger": "scheduled",
+  "outcome": null,
+  "summary_md": "Lane claimed the ticket and started work.",
+  "tickets_touched": [
+    "ARCA-064-card-price-last-updated"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-064-card-price-last-updated",
+  "lane": "arca",
+  "status": "working",
+  "summary": "Lane claimed the ticket and started work.",
+  "started": "2026-08-26T15:16:38Z",
+  "repo": "wealthcx01/arca"
+}
