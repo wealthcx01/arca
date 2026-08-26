@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T13:21:07Z",
+  "ended_at": "2026-08-26T13:44:38Z",
+  "trigger": "scheduled",
+  "outcome": "opened-pr",
+  "summary_md": "Added a reusable CardImage component (muted background + Lucide ImageOff icon) and wired it into CardSearch, CardsPage (grid + list), and CardDetailPage so missing or broken card images always show the same on-brand placeholder instead of a blank gap, a text label, or a broken-image icon. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Booted dev server (backend :3001, frontend :5174), signed up a test user, and drove Chromium via Playwright. Verified CardImage placeholder (muted box + ImageOff icon, no layout shift) renders correctly on CardsPage grid and list views for cards with null image_url (Test Pikachu, Test Charmander), on CardDetailPage's hero image, and on real cards (Charizard etc.) when image requests were intercepted/aborted to simulate broken URLs. No broken native <img> icons appeared, no client console errors from the image-loading path, no server errors. Unrelated pre-existing 404s (pricing/analytics endpoints with no seeded data for test cards) observed but out of scope for this image-placeholder change..",
+  "tickets_touched": [
+    "ARCA-060-placeholder-image-cards"
+  ],
+  "error_detail": null,
+  "pr_url": "https://github.com/wealthcx01/arca/pull/79",
+  "ticket": "ARCA-060-placeholder-image-cards",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "Added a reusable CardImage component (muted background + Lucide ImageOff icon) and wired it into CardSearch, CardsPage (grid + list), and CardDetailPage so missing or broken card images always show the same on-brand placeholder instead of a blank gap, a text label, or a broken-image icon. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Booted dev server (backend :3001, frontend :5174), signed up a test user, and drove Chromium via Playwright. Verified CardImage placeholder (muted box + ImageOff icon, no layout shift) renders correctly on CardsPage grid and list views for cards with null image_url (Test Pikachu, Test Charmander), on CardDetailPage's hero image, and on real cards (Charizard etc.) when image requests were intercepted/aborted to simulate broken URLs. No broken native <img> icons appeared, no client console errors from the image-loading path, no server errors. Unrelated pre-existing 404s (pricing/analytics endpoints with no seeded data for test cards) observed but out of scope for this image-placeholder change..",
+  "started": "2026-08-26T13:21:07Z",
+  "finished": "2026-08-26T13:44:38Z",
+  "repo": "wealthcx01/arca"
+}
