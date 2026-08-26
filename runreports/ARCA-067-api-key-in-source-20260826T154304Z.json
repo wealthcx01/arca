@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T15:43:03Z",
+  "ended_at": "2026-08-26T15:43:04Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good, that gives me the existing pattern to reference. I have enough to write the plan.  ## Plan for ARCA-67  **1. Code changes (small, mechanical)** - `db/seed.ts:15` and `modules/cards/jobs.ts:6`: replace `const API_KEY = \"2248c117-…\"` with `const API_KEY = process.env.POKEMON_TCG_API_KEY;` followed by a guard that throws a named, actionable error if unset — mirroring the existing pattern in `src/lib/crypto.ts` (`ARCA_ENCRYPTION_KEY must be set...`). Something like: `if (!API_KEY) throw new Error(\"POKEMON_TCG_API_KEY must be set — see .env.example\")`. This makes a missing key fail loud",
+  "tickets_touched": [
+    "ARCA-067-api-key-in-source"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-067-api-key-in-source",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good, that gives me the existing pattern to reference. I have enough to write the plan.  ## Plan for ARCA-67  **1. Code changes (small, mechanical)** - `db/seed.ts:15` and `modules/cards/jobs.ts:6`: replace `const API_KEY = \"2248c117-…\"` with `const API_KEY = process.env.POKEMON_TCG_API_KEY;` followed by a guard that throws a named, actionable error if unset — mirroring the existing pattern in `src/lib/crypto.ts` (`ARCA_ENCRYPTION_KEY must be set...`). Something like: `if (!API_KEY) throw new Error(\"POKEMON_TCG_API_KEY must be set — see .env.example\")`. This makes a missing key fail loud",
+  "started": "2026-08-26T15:43:03Z",
+  "finished": "2026-08-26T15:43:04Z",
+  "repo": "wealthcx01/arca"
+}
