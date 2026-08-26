@@ -44,3 +44,5 @@ Smallest correct change: replace the card-selection step in `syncPrices()` so it
 - [ ] coverage: existing `modules/pricing/handlers.test.ts` suite still passes unchanged (route ordering / API key handler behavior untouched by this change).
 
 <!-- foundry-ticket: 00639e871618ea93 -->
+
+<!-- foundry-ticket: 00639e871618ea93 -->
