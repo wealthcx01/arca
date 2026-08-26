@@ -1,5 +1,6 @@
-import { ChevronLeft, ChevronRight, Grid3X3, ImageOff, List, Search } from "lucide-react";
+import { ChevronLeft, ChevronRight, Grid3X3, List, Search } from "lucide-react";
 import { useEffect, useState } from "react";
+import { CardImage } from "../components/ui/CardImage";
 import { CardsGridSkeleton } from "../components/ui/Skeleton";
 import { useToast } from "../components/ui/Toaster";
 import { api } from "../lib/api";
@@ -173,18 +174,11 @@ export function CardsPage() {
               href={`/cards/${card.id}`}
               className="group overflow-hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] transition-shadow hover:shadow-md"
             >
-              {card.image_url ? (
-                <img
-                  src={card.image_url}
-                  alt={card.name}
-                  className="aspect-[2.5/3.5] w-full object-cover"
-                  loading="lazy"
-                />
-              ) : (
-                <div className="flex aspect-[2.5/3.5] items-center justify-center bg-[var(--color-muted)] text-xs text-[var(--color-muted-foreground)]">
-                  No Image
-                </div>
-              )}
+              <CardImage
+                src={card.image_url}
+                alt={card.name}
+                className="aspect-[2.5/3.5] w-full object-cover"
+              />
               <div className="p-2">
                 <p className="truncate text-xs font-medium" title={card.name}>
                   {card.name}
@@ -219,14 +213,12 @@ export function CardsPage() {
                 >
                   <td className="px-4 py-2">
                     <a href={`/cards/${card.id}`} className="flex items-center gap-2">
-                      {card.image_url && (
-                        <img
-                          src={card.image_url}
-                          alt=""
-                          className="h-8 w-6 rounded object-cover"
-                          loading="lazy"
-                        />
-                      )}
+                      <CardImage
+                        src={card.image_url}
+                        alt=""
+                        className="h-8 w-6 rounded object-cover"
+                        iconSize={14}
+                      />
                       <span className="font-medium">{card.name}</span>
                     </a>
                   </td>
