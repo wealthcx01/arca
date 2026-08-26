@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T15:16:38Z",
+  "ended_at": "2026-08-26T15:42:24Z",
+  "trigger": "scheduled",
+  "outcome": "opened-pr",
+  "summary_md": "Replaced 8 forbidden non-null assertions (biome lint/style/noNonNullAssertion) with optional chaining on the exact new lines from the ARCA-64 diff, in modules/pricing/handlers.test.ts and scripts/e2e-playwright.pw.ts, without touching test assertions or any pre-existing lint debt in those same files. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 2 of 2 (earlier rounds failed — round 1: tests: your change introduced 8 lint problem(s) on the lines it wrote) against them plus tests, /review review pass (0 critical) and /qa: Booted backend (bun server.ts on :3001) and frontend (vite on :5173) headlessly, seeded the fixture card, and ran the shipped Playwright e2e test (scripts/e2e-playwright.pw.ts, ARCA-64 regression) — passed. Also manually verified via headless Chromium: fresh price rows on the CardDetailPage show 'updated just now' in the Best Price (conflated), All Sources, and Graded Prices panels; forcing a stale fetched_at (10 days old) correctly flips that field to the 'no recent update' badge while unaffected fresh fields keep showing their relative time, confirming per-field freshness independence. No visual/layout issues found..",
+  "tickets_touched": [
+    "ARCA-064-card-price-last-updated"
+  ],
+  "error_detail": null,
+  "pr_url": "https://github.com/wealthcx01/arca/pull/81",
+  "ticket": "ARCA-064-card-price-last-updated",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "Replaced 8 forbidden non-null assertions (biome lint/style/noNonNullAssertion) with optional chaining on the exact new lines from the ARCA-64 diff, in modules/pricing/handlers.test.ts and scripts/e2e-playwright.pw.ts, without touching test assertions or any pre-existing lint debt in those same files. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 2 of 2 (earlier rounds failed — round 1: tests: your change introduced 8 lint problem(s) on the lines it wrote) against them plus tests, /review review pass (0 critical) and /qa: Booted backend (bun server.ts on :3001) and frontend (vite on :5173) headlessly, seeded the fixture card, and ran the shipped Playwright e2e test (scripts/e2e-playwright.pw.ts, ARCA-64 regression) — passed. Also manually verified via headless Chromium: fresh price rows on the CardDetailPage show 'updated just now' in the Best Price (conflated), All Sources, and Graded Prices panels; forcing a stale fetched_at (10 days old) correctly flips that field to the 'no recent update' badge while unaffected fresh fields keep showing their relative time, confirming per-field freshness independence. No visual/layout issues found..",
+  "started": "2026-08-26T15:16:38Z",
+  "finished": "2026-08-26T15:42:24Z",
+  "repo": "wealthcx01/arca"
+}
