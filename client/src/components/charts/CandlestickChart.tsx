@@ -17,7 +17,7 @@ import { api } from "../../lib/api";
 import { ChartControls } from "./ChartControls";
 import { LightweightChart } from "./LightweightChart";
 import type { ChartPeriod, ChartType, IndicatorType, LineData, OHLCData } from "./types";
-import { PERIOD_DAYS, getChartTheme } from "./types";
+import { PERIOD_DAYS, getChartTheme, getIndicatorColors } from "./types";
 
 interface CandlestickChartProps {
   cardId: string;
@@ -26,16 +26,6 @@ interface CandlestickChartProps {
   isDark?: boolean;
   showControls?: boolean;
 }
-
-const INDICATOR_COLORS: Record<string, string> = {
-  SMA_10: "#f59e0b",
-  SMA_20: "#3b82f6",
-  SMA_50: "#8b5cf6",
-  EMA_12: "#06b6d4",
-  EMA_26: "#ec4899",
-  BB_UPPER: "#94a3b8",
-  BB_LOWER: "#94a3b8",
-};
 
 export function CandlestickChart({
   cardId,
@@ -56,6 +46,7 @@ export function CandlestickChart({
   const indicatorSeriesRef = useRef<Map<string, ISeriesApi<"Line">>>(new Map());
 
   const theme = getChartTheme(isDark);
+  const indicatorColors = getIndicatorColors(isDark);
 
   // Fetch OHLC data
   useEffect(() => {
@@ -201,7 +192,7 @@ export function CandlestickChart({
     for (const [name, data] of Object.entries(indicatorData)) {
       if (!name.startsWith("SMA") && !name.startsWith("EMA") && !name.startsWith("BB")) continue;
       const series = chart.addSeries(LineSeries, {
-        color: INDICATOR_COLORS[name] || "#94a3b8",
+        color: indicatorColors[name] || theme.secondaryColor,
         lineWidth: 1,
         priceLineVisible: false,
         lastValueVisible: false,

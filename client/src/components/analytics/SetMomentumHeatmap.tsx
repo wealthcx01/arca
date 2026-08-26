@@ -50,11 +50,17 @@ export function SetMomentumHeatmap() {
         const intensity = Math.min(1, Math.abs(trend) / 50);
         const isPositive = trend >= 0;
 
+        const mixPct = Math.round((0.1 + intensity * 0.5) * 100);
         const bgColor = isPositive
-          ? `rgba(52, 211, 153, ${0.1 + intensity * 0.5})`
-          : `rgba(248, 113, 113, ${0.1 + intensity * 0.5})`;
+          ? `color-mix(in srgb, var(--color-positive) ${mixPct}%, var(--color-card))`
+          : `color-mix(in srgb, var(--color-negative) ${mixPct}%, var(--color-card))`;
 
-        const textColor = intensity > 0.3 ? "white" : "var(--color-foreground)";
+        const textColor =
+          intensity > 0.3
+            ? isPositive
+              ? "var(--color-positive-foreground)"
+              : "var(--color-negative-foreground)"
+            : "var(--color-foreground)";
 
         return (
           <a

@@ -67,7 +67,7 @@ export function PerformanceChart({ portfolioId }: { portfolioId: string }) {
               onClick={() => setPeriod(p)}
               className={`rounded px-2 py-1 text-xs font-medium ${
                 period === p
-                  ? "bg-[var(--color-primary)] text-white"
+                  ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
                   : "text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"
               }`}
             >

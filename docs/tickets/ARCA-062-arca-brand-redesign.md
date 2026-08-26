@@ -1,6 +1,6 @@
 # ARCA-62 — Brand & Visual Identity Redesign: Premium Terminal, Earned Not Decorative
 
-**Status:** Todo · **Area:** Design/Brand · **Depends on:** —
+**Status:** In progress · **Area:** Design/Brand · **Depends on:** —
 
 ## Why this matters (for the founder)
 ARCA currently looks like a developer tool, not something collectors trust with real money. A redesigned identity — grounded in ARCA's real data edge (the ARCA Score, grading alpha, market coverage no one else has) — should make the product feel like a premium financial terminal that has earned its polish, not just applied it.

@@ -1,84 +1,109 @@
 @import "tailwindcss";
 
+/* Self-hosted type system — see docs/brand/design-rationale.md */
+@import "@fontsource-variable/inter/wght.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+
 /*
  * ARCA Design System — Diamond & Pearl Themes
  *
- * Diamond (Dark): Inspired by Dialga's steel-blue armor, midnight navy box art.
- *   Professional dark terminal feel — like LSEG Eikon/Bloomberg.
+ * Palette direction: "earned, not decorative." A restrained bullion-gold accent —
+ * the same visual language as a graded-card slab label — appears only where ARCA
+ * has actually proven something (ARCA Score, grading alpha, primary actions), on
+ * a high-contrast near-black/parchment ground. No corporate blue, no gradients,
+ * no decorative color. Full rationale: docs/brand/design-rationale.md.
  *
- * Pearl (Light): Inspired by Palkia's pearl-white armor, rose-pink gem accents.
- *   Clean, premium feel — warm pearl tones.
+ * Diamond (Dark, default): near-black terminal ground — Bloomberg/LSEG-Eikon
+ *   register — with a muted antique-gold signal color reserved for primary
+ *   actions and score/grade callouts.
+ *
+ * Pearl (Light): warm parchment/certificate-stock ground, same gold signal
+ *   darkened for AA contrast on light backgrounds.
  */
 
 /* ── Pearl Theme (Light, default) ──────────────────────────────── */
 @theme {
-  --color-background: #faf7f5;
-  --color-foreground: #1e1b2e;
-  --color-muted: #f0ece8;
-  --color-muted-foreground: #78717a;
-  --color-border: #e5ddd6;
-  --color-input: #e5ddd6;
-  --color-ring: #b04a82;
-  --color-primary: #b04a82;
-  --color-primary-foreground: #ffffff;
-  --color-positive: #16a34a;
-  --color-negative: #dc2626;
-  --color-warning: #d97706;
-  --color-card: #ffffff;
-  --color-card-foreground: #1e1b2e;
-  --color-sidebar: #f5f0ec;
-  --color-sidebar-foreground: #4a3f5c;
-  --color-accent: #bc85af;
-  --color-accent-foreground: #1e1b2e;
-  --color-highlight: #f5e6ef;
-  --color-destructive: #dc2626;
+  --color-background: #f7f4ec;
+  --color-foreground: #1a1712;
+  --color-muted: #ece5d3;
+  --color-muted-foreground: #6f6754;
+  --color-border: #ddd2b8;
+  --color-input: #ddd2b8;
+  --color-ring: #7a5b1e;
+  --color-primary: #7a5b1e;
+  --color-primary-foreground: #fffdf7;
+  --color-positive: #157347;
+  --color-negative: #b91c1c;
+  --color-warning: #a3620a;
+  --color-positive-foreground: #fffdf7;
+  --color-negative-foreground: #fffdf7;
+  --color-warning-foreground: #fffdf7;
+  --color-card: #fffdf7;
+  --color-card-foreground: #1a1712;
+  --color-sidebar: #efe8d6;
+  --color-sidebar-foreground: #4d4530;
+  --color-accent: #a9863c;
+  --color-accent-foreground: #1a1712;
+  --color-highlight: #f0e2b8;
+  --color-destructive: #b91c1c;
   --color-destructive-foreground: #ffffff;
-  --color-popover: #ffffff;
-  --color-popover-foreground: #1e1b2e;
-  --color-chart-1: #b04a82;
-  --color-chart-2: #8b5cf6;
-  --color-chart-3: #6366f1;
-  --color-chart-4: #16a34a;
-  --color-chart-5: #dc2626;
+  --color-popover: #fffdf7;
+  --color-popover-foreground: #1a1712;
+  --color-chart-1: #7a5b1e;
+  --color-chart-2: #3f5f74;
+  --color-chart-3: #8a6a3f;
+  --color-chart-4: #157347;
+  --color-chart-5: #b91c1c;
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
+  --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", "Inter Variable", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
 }
 
 /* ── Diamond Theme (Dark) ──────────────────────────────────────── */
 .dark {
-  --color-background: #080e1a;
-  --color-foreground: #e2e8f0;
-  --color-muted: #111b2e;
-  --color-muted-foreground: #8899b0;
-  --color-border: #1c2d45;
-  --color-input: #1c2d45;
-  --color-ring: #4a8fe7;
-  --color-primary: #4a8fe7;
-  --color-primary-foreground: #ffffff;
-  --color-positive: #34d399;
-  --color-negative: #f87171;
-  --color-warning: #fbbf24;
-  --color-card: #0d1829;
-  --color-card-foreground: #e2e8f0;
-  --color-sidebar: #060b14;
-  --color-sidebar-foreground: #94a3bb;
-  --color-accent: #13459e;
-  --color-accent-foreground: #e2e8f0;
-  --color-highlight: #1a3a6e;
-  --color-destructive: #dc2626;
-  --color-destructive-foreground: #ffffff;
-  --color-popover: #0d1829;
-  --color-popover-foreground: #e2e8f0;
-  --color-chart-1: #4a8fe7;
-  --color-chart-2: #6366f1;
-  --color-chart-3: #8b5cf6;
-  --color-chart-4: #34d399;
-  --color-chart-5: #f87171;
+  --color-background: #0a0a0a;
+  --color-foreground: #eae6da;
+  --color-muted: #151412;
+  --color-muted-foreground: #8f897a;
+  --color-border: #262420;
+  --color-input: #262420;
+  --color-ring: #c9a860;
+  --color-primary: #c9a860;
+  --color-primary-foreground: #0a0a0a;
+  --color-positive: #3ecf8e;
+  --color-negative: #ef5350;
+  --color-warning: #e0a940;
+  --color-positive-foreground: #0a0a0a;
+  --color-negative-foreground: #0a0a0a;
+  --color-warning-foreground: #0a0a0a;
+  --color-card: #100f0d;
+  --color-card-foreground: #eae6da;
+  --color-sidebar: #060605;
+  --color-sidebar-foreground: #9c9686;
+  --color-accent: #7d6636;
+  --color-accent-foreground: #eae6da;
+  --color-highlight: #241d10;
+  --color-destructive: #ef5350;
+  --color-destructive-foreground: #0a0a0a;
+  --color-popover: #100f0d;
+  --color-popover-foreground: #eae6da;
+  --color-chart-1: #c9a860;
+  --color-chart-2: #6f92a8;
+  --color-chart-3: #9c7a4a;
+  --color-chart-4: #3ecf8e;
+  --color-chart-5: #ef5350;
 }
 
 body {
-  font-family: "Geist", "Inter", system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
   background-color: var(--color-background);
   color: var(--color-foreground);
   -webkit-font-smoothing: antialiased;

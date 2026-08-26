@@ -203,7 +203,7 @@ export function TransactionsPage() {
               onClick={() => setTypeFilter(t)}
               className={`rounded px-3 py-1 text-xs font-medium ${
                 typeFilter === t
-                  ? "bg-[var(--color-primary)] text-white"
+                  ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
                   : "text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"
               }`}
             >
@@ -376,7 +376,7 @@ export function TransactionsPage() {
                         onClick={() => setPage(p)}
                         className={`rounded px-2 py-0.5 ${
                           p === page
-                            ? "bg-[var(--color-primary)] text-white"
+                            ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
                             : "hover:bg-[var(--color-muted)]"
                         }`}
                       >

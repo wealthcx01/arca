@@ -218,7 +218,7 @@ export function ImportPage() {
         <div
           className={`flex flex-col items-center justify-center rounded-lg border-2 border-dashed p-12 transition-colors ${
             dragActive
-              ? "border-[var(--color-primary)] bg-blue-50/50"
+              ? "border-[var(--color-primary)] bg-[var(--color-highlight)]"
               : "border-[var(--color-border)]"
           }`}
           onDragOver={(e) => {
@@ -245,7 +245,7 @@ export function ImportPage() {
           />
           <button
             onClick={() => fileRef.current?.click()}
-            className="mt-4 rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90"
+            className="mt-4 rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-primary-foreground)] hover:opacity-90"
           >
             Choose File
           </button>
@@ -298,7 +298,7 @@ export function ImportPage() {
             <button
               onClick={handleMapping}
               disabled={!mapping.card_name}
-              className="rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 disabled:opacity-50"
+              className="rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-primary-foreground)] hover:opacity-90 disabled:opacity-50"
             >
               Preview Import
             </button>
@@ -337,8 +337,8 @@ export function ImportPage() {
                       <span
                         className={`rounded px-1.5 py-0.5 text-xs font-medium ${
                           row.type === "BUY"
-                            ? "bg-green-100 text-green-700"
-                            : "bg-red-100 text-red-700"
+                            ? "bg-[color-mix(in_srgb,var(--color-positive)_15%,var(--color-card))] text-[var(--color-positive)]"
+                            : "bg-[color-mix(in_srgb,var(--color-negative)_15%,var(--color-card))] text-[var(--color-negative)]"
                         }`}
                       >
                         {row.type}
@@ -364,7 +364,7 @@ export function ImportPage() {
             </button>
             <button
               onClick={handleImport}
-              className="rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90"
+              className="rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-primary-foreground)] hover:opacity-90"
             >
               Import {parsedRows.filter((r) => r.match_status !== "error").length} Transactions
             </button>
@@ -391,7 +391,7 @@ export function ImportPage() {
           <div className="mt-4 flex justify-center gap-2">
             <a
               href="/dashboard"
-              className="rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90"
+              className="rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-primary-foreground)] hover:opacity-90"
             >
               Go to Dashboard
             </a>

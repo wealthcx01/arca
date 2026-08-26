@@ -309,7 +309,7 @@ export function WatchlistPage() {
               <div className="mt-1 flex gap-1">
                 <button
                   onClick={handleCreate}
-                  className="flex-1 rounded bg-[var(--color-primary)] px-2 py-0.5 text-[10px] font-medium text-white"
+                  className="flex-1 rounded bg-[var(--color-primary)] px-2 py-0.5 text-[10px] font-medium text-[var(--color-primary-foreground)]"
                 >
                   Create
                 </button>
@@ -335,7 +335,7 @@ export function WatchlistPage() {
             <h2 className="text-sm font-semibold">{detail?.watchlist?.name ?? "Watchlist"}</h2>
             <button
               onClick={() => setShowAddCard(true)}
-              className="flex items-center gap-1 rounded bg-[var(--color-primary)] px-2 py-0.5 text-[10px] font-medium text-white"
+              className="flex items-center gap-1 rounded bg-[var(--color-primary)] px-2 py-0.5 text-[10px] font-medium text-[var(--color-primary-foreground)]"
             >
               <Plus size={10} />
               Add Card

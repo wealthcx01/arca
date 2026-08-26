@@ -65,7 +65,7 @@ export function PriceChartPanel({ cardId, cardName }: PriceChartPanelProps) {
               onClick={() => setDays(p.value)}
               className={`rounded px-1.5 py-0.5 text-[9px] font-medium ${
                 days === p.value
-                  ? "bg-[var(--color-primary)] text-white"
+                  ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
                   : "text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"
               }`}
             >
