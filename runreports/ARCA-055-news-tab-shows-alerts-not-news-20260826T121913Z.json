@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T12:08:58Z",
+  "ended_at": "2026-08-26T12:19:13Z",
+  "trigger": "scheduled",
+  "outcome": "blocked",
+  "summary_md": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: POST /api/news has zero auth (no session/role check, unlike portfolio/pricing/performance which use the X-User-Id middleware pattern in server.ts). This PR is the first thing that renders that data: MarketNewsPanel.tsx now fetches /news and renders each item.url as a live, target=_blank <a href> to every visitor of /news. Previously /api/news was wired to nothing in the client, so the open write was dormant; this diff turns it into a public phishing/misinformation surface on a financial terminal (fake 'market news' that can move real trading decisions), with no URL scheme validation (javascript:/data: URIs) as a second layer of defense. Needs auth (or at minimum an admin check) on POST /api/news, or URL-scheme allowlisting in MarketNewsPanel before this ships.. No PR opened; it needs a human.",
+  "tickets_touched": [
+    "ARCA-055-news-tab-shows-alerts-not-news"
+  ],
+  "error_detail": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: POST /api/news has zero auth (no session/role check, unlike portfolio/pricing/performance which use the X-User-Id middleware pattern in server.ts). This PR is the first thing that renders that data: MarketNewsPanel.tsx now fetches /news and renders each item.url as a live, target=_blank <a href> to every visitor of /news. Previously /api/news was wired to nothing in the client, so the open write was dormant; this diff turns it into a public phishing/misinformation surface on a financial terminal (fake 'market news' that can move real trading decisions), with no URL scheme validation (javascript:/data: URIs) as a second layer of defense. Needs auth (or at minimum an admin check) on POST /api/news, or URL-scheme allowlisting in MarketNewsPanel before this ships.. No PR opened; it needs a human.",
+  "pr_url": null,
+  "ticket": "ARCA-055-news-tab-shows-alerts-not-news",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: POST /api/news has zero auth (no session/role check, unlike portfolio/pricing/performance which use the X-User-Id middleware pattern in server.ts). This PR is the first thing that renders that data: MarketNewsPanel.tsx now fetches /news and renders each item.url as a live, target=_blank <a href> to every visitor of /news. Previously /api/news was wired to nothing in the client, so the open write was dormant; this diff turns it into a public phishing/misinformation surface on a financial terminal (fake 'market news' that can move real trading decisions), with no URL scheme validation (javascript:/data: URIs) as a second layer of defense. Needs auth (or at minimum an admin check) on POST /api/news, or URL-scheme allowlisting in MarketNewsPanel before this ships.. No PR opened; it needs a human.",
+  "started": "2026-08-26T12:08:58Z",
+  "finished": "2026-08-26T12:19:13Z",
+  "repo": "wealthcx01/arca"
+}
