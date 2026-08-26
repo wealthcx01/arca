@@ -274,6 +274,7 @@ pricingRouter.get("/:cardId/conflated", (c) => {
     low_price_cents: p.low_price_cents,
     mid_price_cents: p.mid_price_cents,
     high_price_cents: p.high_price_cents,
+    fetched_at: p.fetched_at.getTime(),
   }));
 
   const conflated = conflate(priceResults);

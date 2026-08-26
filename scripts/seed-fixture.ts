@@ -25,9 +25,10 @@
 
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { sql } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { getDb } from "../db";
 import { cards } from "../modules/cards/schema";
+import { cardPrices, gradedPrices } from "../modules/pricing/schema";
 
 /** Where the running stack serves static files from. Overridable for a non-default port. */
 const IMAGE_BASE = process.env.FIXTURE_IMAGE_BASE ?? "http://localhost:5173";
@@ -74,6 +75,80 @@ for (const card of fixtures) {
     })
     .run();
   written += 1;
+}
+
+// ARCA-64: the card page's "last updated" labels need a real card_price/graded_price row to render
+// against. The browser suite navigates straight to this fixture card and asserts a freshness label
+// is visible — without this, the pricing panels never mount and that assertion always fails, for a
+// reason that has nothing to do with the freshness feature itself. Re-run-safe like the card loop
+// above: update in place rather than insert a duplicate row each time.
+const priceFixtureCard = db
+  .select({ id: cards.id })
+  .from(cards)
+  .where(eq(cards.external_id, "fixture-base1-1"))
+  .get();
+
+if (priceFixtureCard) {
+  const now = new Date();
+  const cardId = priceFixtureCard.id;
+
+  const existingPrice = db
+    .select({ id: cardPrices.id })
+    .from(cardPrices)
+    .where(
+      and(
+        eq(cardPrices.card_id, cardId),
+        eq(cardPrices.source, "tcgplayer"),
+        eq(cardPrices.variant, "holofoil"),
+      ),
+    )
+    .get();
+  const priceValues = {
+    market_price_cents: 42000,
+    low_price_cents: 35000,
+    mid_price_cents: 40000,
+    high_price_cents: 50000,
+    currency: "USD",
+    fetched_at: now,
+  };
+  if (existingPrice) {
+    db.update(cardPrices).set(priceValues).where(eq(cardPrices.id, existingPrice.id)).run();
+  } else {
+    db.insert(cardPrices)
+      .values({ card_id: cardId, source: "tcgplayer", variant: "holofoil", ...priceValues })
+      .run();
+  }
+
+  const existingGraded = db
+    .select({ id: gradedPrices.id })
+    .from(gradedPrices)
+    .where(
+      and(
+        eq(gradedPrices.card_id, cardId),
+        eq(gradedPrices.grading_company, "PSA"),
+        eq(gradedPrices.grade, "10"),
+      ),
+    )
+    .get();
+  const gradedValues = {
+    price_cents: 150000,
+    currency: "USD",
+    sale_type: "market",
+    fetched_at: now,
+  };
+  if (existingGraded) {
+    db.update(gradedPrices).set(gradedValues).where(eq(gradedPrices.id, existingGraded.id)).run();
+  } else {
+    db.insert(gradedPrices)
+      .values({
+        card_id: cardId,
+        source: "pricecharting",
+        grading_company: "PSA",
+        grade: "10",
+        ...gradedValues,
+      })
+      .run();
+  }
 }
 
 // Count rather than trust the loop: a silent zero here is the failure db/seed.ts was fixed for in
