@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T11:52:17Z",
+  "ended_at": "2026-08-26T12:08:53Z",
+  "trigger": "scheduled",
+  "outcome": "blocked",
+  "summary_md": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: POST /api/news has no auth middleware and zero URL-scheme validation (tracked separately in ARCA-030); this PR is the first thing to render item.url as a live <a href> to every visitor, turning a dormant write-side gap into an exploitable stored-link-injection surface. No PR opened; it needs a human.",
+  "tickets_touched": [
+    "ARCA-055-news-tab-shows-alerts-not-news"
+  ],
+  "error_detail": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: POST /api/news has no auth middleware and zero URL-scheme validation (tracked separately in ARCA-030); this PR is the first thing to render item.url as a live <a href> to every visitor, turning a dormant write-side gap into an exploitable stored-link-injection surface. No PR opened; it needs a human.",
+  "pr_url": null,
+  "ticket": "ARCA-055-news-tab-shows-alerts-not-news",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: POST /api/news has no auth middleware and zero URL-scheme validation (tracked separately in ARCA-030); this PR is the first thing to render item.url as a live <a href> to every visitor, turning a dormant write-side gap into an exploitable stored-link-injection surface. No PR opened; it needs a human.",
+  "started": "2026-08-26T11:52:17Z",
+  "finished": "2026-08-26T12:08:53Z",
+  "repo": "wealthcx01/arca"
+}
