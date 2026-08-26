@@ -1,0 +1,19 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T12:08:58Z",
+  "ended_at": null,
+  "trigger": "scheduled",
+  "outcome": null,
+  "summary_md": "Lane claimed the ticket and started work.",
+  "tickets_touched": [
+    "ARCA-055-news-tab-shows-alerts-not-news"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-055-news-tab-shows-alerts-not-news",
+  "lane": "arca",
+  "status": "working",
+  "summary": "Lane claimed the ticket and started work.",
+  "started": "2026-08-26T12:08:58Z",
+  "repo": "wealthcx01/arca"
+}
