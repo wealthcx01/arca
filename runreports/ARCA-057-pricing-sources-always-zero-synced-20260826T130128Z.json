@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T12:46:43Z",
+  "ended_at": "2026-08-26T13:01:28Z",
+  "trigger": "scheduled",
+  "outcome": "opened-pr",
+  "summary_md": "scripts/seed-prices.ts now calls the exported updateProviderStatus (from modules/pricing/jobs.ts) to write a price_source_status row for tcgdex after seeding, so the Settings panel shows a real synced-card count instead of a hardcoded-looking 0. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: qa-only skill tool errored out in this environment (Skill invocations for qa-only and even an unrelated skill both failed with a generic 'Execute skill' error, no browser tool available via ToolSearch either), so I verified manually instead of via the skill: the app was already running (server on :3001 serving built client + API). Hit the live GET /api/pricing/sources endpoint that the Settings page calls -- it now returns tcgdex with status 'ok', last_sync_at populated, and cards_synced: 856 (matches DB: price_source_status has a real tcgdex row after seeding, card_prices has 871 tcgdex rows). Before this fix that endpoint would default to cards_synced: 0 for any provider missing a price_source_status row. Confirmed client/src/pages/SettingsPage.tsx:111 renders this field verbatim as '{cards_synced} cards synced', so the panel now shows a non-zero synced count instead of always 0. TCGCSV correctly remains idle/0 since seed-prices.ts only seeds tcgdex (out of scope per ticket). Also ran bun test modules/pricing/jobs.test.ts -- all 3 tests pass. No regressions observed; verified through live API + source inspection since headless browser QA wasn't available..",
+  "tickets_touched": [
+    "ARCA-057-pricing-sources-always-zero-synced"
+  ],
+  "error_detail": null,
+  "pr_url": "https://github.com/wealthcx01/arca/pull/77",
+  "ticket": "ARCA-057-pricing-sources-always-zero-synced",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "scripts/seed-prices.ts now calls the exported updateProviderStatus (from modules/pricing/jobs.ts) to write a price_source_status row for tcgdex after seeding, so the Settings panel shows a real synced-card count instead of a hardcoded-looking 0. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: qa-only skill tool errored out in this environment (Skill invocations for qa-only and even an unrelated skill both failed with a generic 'Execute skill' error, no browser tool available via ToolSearch either), so I verified manually instead of via the skill: the app was already running (server on :3001 serving built client + API). Hit the live GET /api/pricing/sources endpoint that the Settings page calls -- it now returns tcgdex with status 'ok', last_sync_at populated, and cards_synced: 856 (matches DB: price_source_status has a real tcgdex row after seeding, card_prices has 871 tcgdex rows). Before this fix that endpoint would default to cards_synced: 0 for any provider missing a price_source_status row. Confirmed client/src/pages/SettingsPage.tsx:111 renders this field verbatim as '{cards_synced} cards synced', so the panel now shows a non-zero synced count instead of always 0. TCGCSV correctly remains idle/0 since seed-prices.ts only seeds tcgdex (out of scope per ticket). Also ran bun test modules/pricing/jobs.test.ts -- all 3 tests pass. No regressions observed; verified through live API + source inspection since headless browser QA wasn't available..",
+  "started": "2026-08-26T12:46:43Z",
+  "finished": "2026-08-26T13:01:28Z",
+  "repo": "wealthcx01/arca"
+}
