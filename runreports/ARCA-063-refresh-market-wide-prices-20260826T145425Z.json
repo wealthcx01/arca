@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T14:39:51Z",
+  "ended_at": "2026-08-26T14:54:25Z",
+  "trigger": "scheduled",
+  "outcome": "blocked",
+  "summary_md": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: BYOK provider sync now fires one unthrottled fetch per catalog card (up to ~1,250+ cards today, ~19k eventually) via jobs.ts:296-341 and each BYOK provider's serial per-card loop, with daily_usage tracked but never read/enforced anywhere (write-only telemetry) — this directly violates the ticket's explicit scope requirement ('make sure the daily provider-usage limits are respected') and AC ('provider daily usage stays within existing limits during a full run'), risking real billing overages/rate-limit bans on paid third-party APIs. No PR opened; it needs a human.",
+  "tickets_touched": [
+    "ARCA-063-refresh-market-wide-prices"
+  ],
+  "error_detail": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: BYOK provider sync now fires one unthrottled fetch per catalog card (up to ~1,250+ cards today, ~19k eventually) via jobs.ts:296-341 and each BYOK provider's serial per-card loop, with daily_usage tracked but never read/enforced anywhere (write-only telemetry) — this directly violates the ticket's explicit scope requirement ('make sure the daily provider-usage limits are respected') and AC ('provider daily usage stays within existing limits during a full run'), risking real billing overages/rate-limit bans on paid third-party APIs. No PR opened; it needs a human.",
+  "pr_url": null,
+  "ticket": "ARCA-063-refresh-market-wide-prices",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: BYOK provider sync now fires one unthrottled fetch per catalog card (up to ~1,250+ cards today, ~19k eventually) via jobs.ts:296-341 and each BYOK provider's serial per-card loop, with daily_usage tracked but never read/enforced anywhere (write-only telemetry) — this directly violates the ticket's explicit scope requirement ('make sure the daily provider-usage limits are respected') and AC ('provider daily usage stays within existing limits during a full run'), risking real billing overages/rate-limit bans on paid third-party APIs. No PR opened; it needs a human.",
+  "started": "2026-08-26T14:39:51Z",
+  "finished": "2026-08-26T14:54:25Z",
+  "repo": "wealthcx01/arca"
+}
