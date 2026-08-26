@@ -1,6 +1,6 @@
 # ARCA-58 — At 375px, 7 of 12 nav destinations are hidden with no scroll affordance
 
-**Status:** Todo · **Area:** Client/UI · **Depends on:** —
+**Status:** In progress · **Area:** Client/UI · **Depends on:** —
 
 ## Why this matters (for the founder)
 At phone width, more than half the product's primary navigation is invisible and there is nothing
