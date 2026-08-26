@@ -1,0 +1,6 @@
+{
+  "ticket": "ARCA-057-pricing-sources-always-zero-synced",
+  "approver": "john.gallagher@wealthcx.com",
+  "released_at": "2026-08-26T12:32:00.000Z",
+  "note": "Releases the lane to begin work it paused on. This marker is unsigned and lives on a ref the lane can write, so it is not evidence a human approved anything — the signed record is in the studio ActiveGraph. See FB-122."
+}
