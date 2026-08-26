@@ -66,6 +66,143 @@ pricingRouter.get("/sources", (c) => {
 });
 
 // ---------------------------------------------------------------------------
+// ARCA-54: every STATIC path is registered BEFORE the `/:cardId` family below.
+//
+// Hono matches in registration order. With `/keys` declared after `/:cardId`, a request to
+// GET /api/pricing/keys bound `cardId = "keys"`, found no card, and returned
+// `{"error":"No prices found for this card"}` with a 404 — on the Settings page, with no card in
+// view. The key list never loaded and the toast made no sense, on a page whose entire job is
+// handling credentials.
+//
+// So this is a rule, not a one-off move: anything with a literal first segment goes above the
+// dynamic routes. Adding a static GET below them silently reintroduces the same bug, which is why
+// the test asserts the ORDERING and not only the behaviour.
+// ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// BYOK Key Management — /keys/*
+// Requires auth middleware (X-User-Id header)
+// ---------------------------------------------------------------------------
+
+function getUserId(c: { req: { header: (name: string) => string | undefined } }): string {
+  const userId = c.req.header("X-User-Id");
+  if (!userId) throw new Error("Missing X-User-Id header");
+  return userId;
+}
+
+// GET /keys — List user's API keys (redacted)
+pricingRouter.get("/keys", (c) => {
+  const userId = getUserId(c);
+  const db = getDb();
+
+  const keys = db
+    .select({
+      id: userApiKeys.id,
+      provider: userApiKeys.provider,
+      is_active: userApiKeys.is_active,
+      daily_usage: userApiKeys.daily_usage,
+      last_used_at: userApiKeys.last_used_at,
+      created_at: userApiKeys.created_at,
+    })
+    .from(userApiKeys)
+    .where(eq(userApiKeys.user_id, userId))
+    .all();
+
+  return c.json({ keys });
+});
+
+// POST /keys — Add a new API key
+pricingRouter.post("/keys", async (c) => {
+  const userId = getUserId(c);
+  const body = await c.req.json<{ provider: string; api_key: string }>();
+
+  if (!body.provider || !body.api_key) {
+    return c.json({ error: "provider and api_key are required" }, 400);
+  }
+
+  const validProviders = getAllProviders()
+    .filter((p) => p.requiresKey)
+    .map((p) => p.name);
+
+  if (!validProviders.includes(body.provider)) {
+    return c.json({ error: `Invalid provider. Valid: ${validProviders.join(", ")}` }, 400);
+  }
+
+  const db = getDb();
+  const encrypted = await encrypt(body.api_key);
+  const now = new Date();
+
+  // Upsert: one key per user+provider
+  const existing = db
+    .select({ id: userApiKeys.id })
+    .from(userApiKeys)
+    .where(and(eq(userApiKeys.user_id, userId), eq(userApiKeys.provider, body.provider)))
+    .get();
+
+  if (existing) {
+    db.update(userApiKeys)
+      .set({ encrypted_key: encrypted, is_active: true, updated_at: now })
+      .where(eq(userApiKeys.id, existing.id))
+      .run();
+  } else {
+    db.insert(userApiKeys)
+      .values({
+        user_id: userId,
+        provider: body.provider,
+        encrypted_key: encrypted,
+        is_active: true,
+        daily_usage: 0,
+        created_at: now,
+        updated_at: now,
+      })
+      .run();
+  }
+
+  return c.json({ ok: true, provider: body.provider }, 201);
+});
+
+// DELETE /keys/:provider — Remove an API key
+pricingRouter.delete("/keys/:provider", (c) => {
+  const userId = getUserId(c);
+  const provider = c.req.param("provider");
+  const db = getDb();
+
+  const existing = db
+    .select({ id: userApiKeys.id })
+    .from(userApiKeys)
+    .where(and(eq(userApiKeys.user_id, userId), eq(userApiKeys.provider, provider)))
+    .get();
+
+  if (!existing) return c.json({ error: "Key not found" }, 404);
+
+  db.delete(userApiKeys).where(eq(userApiKeys.id, existing.id)).run();
+
+  return c.json({ ok: true });
+});
+
+// PUT /keys/:provider/toggle — Toggle a key active/inactive
+pricingRouter.put("/keys/:provider/toggle", (c) => {
+  const userId = getUserId(c);
+  const provider = c.req.param("provider");
+  const db = getDb();
+
+  const existing = db
+    .select()
+    .from(userApiKeys)
+    .where(and(eq(userApiKeys.user_id, userId), eq(userApiKeys.provider, provider)))
+    .get();
+
+  if (!existing) return c.json({ error: "Key not found" }, 404);
+
+  db.update(userApiKeys)
+    .set({ is_active: !existing.is_active, updated_at: new Date() })
+    .where(eq(userApiKeys.id, existing.id))
+    .run();
+
+  return c.json({ ok: true, is_active: !existing.is_active });
+});
+
+// ---------------------------------------------------------------------------
 // GET /:cardId — Latest prices for a card (all sources, all variants)
 // ---------------------------------------------------------------------------
 
@@ -197,127 +334,4 @@ pricingRouter.get("/:cardId/history", (c) => {
     .all();
 
   return c.json({ card_id: cardId, days, history });
-});
-
-// ---------------------------------------------------------------------------
-// BYOK Key Management — /keys/*
-// Requires auth middleware (X-User-Id header)
-// ---------------------------------------------------------------------------
-
-function getUserId(c: { req: { header: (name: string) => string | undefined } }): string {
-  const userId = c.req.header("X-User-Id");
-  if (!userId) throw new Error("Missing X-User-Id header");
-  return userId;
-}
-
-// GET /keys — List user's API keys (redacted)
-pricingRouter.get("/keys", (c) => {
-  const userId = getUserId(c);
-  const db = getDb();
-
-  const keys = db
-    .select({
-      id: userApiKeys.id,
-      provider: userApiKeys.provider,
-      is_active: userApiKeys.is_active,
-      daily_usage: userApiKeys.daily_usage,
-      last_used_at: userApiKeys.last_used_at,
-      created_at: userApiKeys.created_at,
-    })
-    .from(userApiKeys)
-    .where(eq(userApiKeys.user_id, userId))
-    .all();
-
-  return c.json({ keys });
-});
-
-// POST /keys — Add a new API key
-pricingRouter.post("/keys", async (c) => {
-  const userId = getUserId(c);
-  const body = await c.req.json<{ provider: string; api_key: string }>();
-
-  if (!body.provider || !body.api_key) {
-    return c.json({ error: "provider and api_key are required" }, 400);
-  }
-
-  const validProviders = getAllProviders()
-    .filter((p) => p.requiresKey)
-    .map((p) => p.name);
-
-  if (!validProviders.includes(body.provider)) {
-    return c.json({ error: `Invalid provider. Valid: ${validProviders.join(", ")}` }, 400);
-  }
-
-  const db = getDb();
-  const encrypted = await encrypt(body.api_key);
-  const now = new Date();
-
-  // Upsert: one key per user+provider
-  const existing = db
-    .select({ id: userApiKeys.id })
-    .from(userApiKeys)
-    .where(and(eq(userApiKeys.user_id, userId), eq(userApiKeys.provider, body.provider)))
-    .get();
-
-  if (existing) {
-    db.update(userApiKeys)
-      .set({ encrypted_key: encrypted, is_active: true, updated_at: now })
-      .where(eq(userApiKeys.id, existing.id))
-      .run();
-  } else {
-    db.insert(userApiKeys)
-      .values({
-        user_id: userId,
-        provider: body.provider,
-        encrypted_key: encrypted,
-        is_active: true,
-        daily_usage: 0,
-        created_at: now,
-        updated_at: now,
-      })
-      .run();
-  }
-
-  return c.json({ ok: true, provider: body.provider }, 201);
-});
-
-// DELETE /keys/:provider — Remove an API key
-pricingRouter.delete("/keys/:provider", (c) => {
-  const userId = getUserId(c);
-  const provider = c.req.param("provider");
-  const db = getDb();
-
-  const existing = db
-    .select({ id: userApiKeys.id })
-    .from(userApiKeys)
-    .where(and(eq(userApiKeys.user_id, userId), eq(userApiKeys.provider, provider)))
-    .get();
-
-  if (!existing) return c.json({ error: "Key not found" }, 404);
-
-  db.delete(userApiKeys).where(eq(userApiKeys.id, existing.id)).run();
-
-  return c.json({ ok: true });
-});
-
-// PUT /keys/:provider/toggle — Toggle a key active/inactive
-pricingRouter.put("/keys/:provider/toggle", (c) => {
-  const userId = getUserId(c);
-  const provider = c.req.param("provider");
-  const db = getDb();
-
-  const existing = db
-    .select()
-    .from(userApiKeys)
-    .where(and(eq(userApiKeys.user_id, userId), eq(userApiKeys.provider, provider)))
-    .get();
-
-  if (!existing) return c.json({ error: "Key not found" }, 404);
-
-  db.update(userApiKeys)
-    .set({ is_active: !existing.is_active, updated_at: new Date() })
-    .where(eq(userApiKeys.id, existing.id))
-    .run();
-
-  return c.json({ ok: true, is_active: !existing.is_active });
 });

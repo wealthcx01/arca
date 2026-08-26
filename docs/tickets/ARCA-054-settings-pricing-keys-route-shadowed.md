@@ -1,6 +1,11 @@
 # ARCA-54 — Settings page can't load API keys: `/pricing/keys` is shadowed by `/pricing/:cardId`
 
-**Status:** Todo · **Area:** Settings/Pricing · **Depends on:** —
+**Status:** Shipped · **Area:** Settings/Pricing · **Depends on:** —
+
+Worked by hand rather than by the lane. The lane classified it sensitive (the ticket says
+"credential" and "secret", correctly) and stopped at a plan on 19 August — and there is no path in
+the Foundry today for a founder to approve a plan and let it proceed, so it sat for a week. That gap
+is fountainbridge's FB-121 and its follow-up; the fix below is the lane's own plan, carried out.
 
 ## Why this matters (for the founder)
 BYOK (bring-your-own-key) pricing is a real, built feature — four of the six providers listed in
