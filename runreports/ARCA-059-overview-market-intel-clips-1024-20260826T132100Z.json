@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T13:01:35Z",
+  "ended_at": "2026-08-26T13:21:00Z",
+  "trigger": "scheduled",
+  "outcome": "opened-pr",
+  "summary_md": "Made the Market Intel — By Era table use table-fixed with reserved column widths for Sets/Avg/Value and a truncating Era column (with title tooltip), so the Value column no longer gets pushed off the panel edge at 1024px. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Booted backend (:3001) and frontend (:5173) headless, signed up a fresh QA user, loaded /overview at 1024x900 with Playwright. Verified via bounding-box measurement, pixel-level zoom, and a viewport-edge marker overlay that all Market Intel — By Era VALUE column figures ($8105, $4740, $412, $190, $9291) and the VALUE header render fully within the 1024px viewport with no visual clipping, matching the ticket's acceptance criteria. No console errors observed..",
+  "tickets_touched": [
+    "ARCA-059-overview-market-intel-clips-1024"
+  ],
+  "error_detail": null,
+  "pr_url": "https://github.com/wealthcx01/arca/pull/78",
+  "ticket": "ARCA-059-overview-market-intel-clips-1024",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "Made the Market Intel — By Era table use table-fixed with reserved column widths for Sets/Avg/Value and a truncating Era column (with title tooltip), so the Value column no longer gets pushed off the panel edge at 1024px. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Booted backend (:3001) and frontend (:5173) headless, signed up a fresh QA user, loaded /overview at 1024x900 with Playwright. Verified via bounding-box measurement, pixel-level zoom, and a viewport-edge marker overlay that all Market Intel — By Era VALUE column figures ($8105, $4740, $412, $190, $9291) and the VALUE header render fully within the 1024px viewport with no visual clipping, matching the ticket's acceptance criteria. No console errors observed..",
+  "started": "2026-08-26T13:01:35Z",
+  "finished": "2026-08-26T13:21:00Z",
+  "repo": "wealthcx01/arca"
+}
