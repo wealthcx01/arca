@@ -1,6 +1,6 @@
 # ARCA-59 — Overview "Market Intel — By Era" value column clips at 1024px width
 
-**Status:** Todo · **Area:** Client/UI · **Depends on:** —
+**Status:** In progress · **Area:** Client/UI · **Depends on:** —
 
 ## Why this matters (for the founder)
 1024px is a common laptop width, not an edge case — the ticket that commissioned this audit
