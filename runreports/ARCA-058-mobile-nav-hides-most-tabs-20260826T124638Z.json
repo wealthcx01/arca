@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T12:30:44Z",
+  "ended_at": "2026-08-26T12:46:38Z",
+  "trigger": "scheduled",
+  "outcome": "opened-pr",
+  "summary_md": "Reformatted a too-long assertion line in scripts/mobile-nav.pw.ts:83 to satisfy Biome's formatter, which was the 1 lint problem the previous attempt introduced. — researched from the venture's brain (semantic), planned as a PRP with 6 validation gate(s) (written), then passed on round 2 of 2 (earlier rounds failed — round 1: tests: your change introduced 1 lint problem(s) on the lines it wrote) against them plus tests, /review review pass (0 critical) and /qa: Booted backend (:3001) + Vite dev server headlessly and verified the mobile nav fix. All 3 tests in the ticket's own scripts/mobile-nav.pw.ts passed (hamburger menu visible and reaches all 12 destinations at 375px, hidden at desktop width, active tab auto-scrolls into view). Additional manual Playwright exploration at 375px confirmed: hamburger menu opens/closes correctly, outside-click dismisses it, opening the user menu closes the mobile menu (and vice versa) with no overlap, and the left/right scroll-fade affordances appear/disappear correctly as the tab bar is scrolled. Visually confirmed via screenshot that all 12 nav destinations are reachable and cleanly laid out in the dropdown. No bugs found..",
+  "tickets_touched": [
+    "ARCA-058-mobile-nav-hides-most-tabs"
+  ],
+  "error_detail": null,
+  "pr_url": "https://github.com/wealthcx01/arca/pull/76",
+  "ticket": "ARCA-058-mobile-nav-hides-most-tabs",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "Reformatted a too-long assertion line in scripts/mobile-nav.pw.ts:83 to satisfy Biome's formatter, which was the 1 lint problem the previous attempt introduced. — researched from the venture's brain (semantic), planned as a PRP with 6 validation gate(s) (written), then passed on round 2 of 2 (earlier rounds failed — round 1: tests: your change introduced 1 lint problem(s) on the lines it wrote) against them plus tests, /review review pass (0 critical) and /qa: Booted backend (:3001) + Vite dev server headlessly and verified the mobile nav fix. All 3 tests in the ticket's own scripts/mobile-nav.pw.ts passed (hamburger menu visible and reaches all 12 destinations at 375px, hidden at desktop width, active tab auto-scrolls into view). Additional manual Playwright exploration at 375px confirmed: hamburger menu opens/closes correctly, outside-click dismisses it, opening the user menu closes the mobile menu (and vice versa) with no overlap, and the left/right scroll-fade affordances appear/disappear correctly as the tab bar is scrolled. Visually confirmed via screenshot that all 12 nav destinations are reachable and cleanly laid out in the dropdown. No bugs found..",
+  "started": "2026-08-26T12:30:44Z",
+  "finished": "2026-08-26T12:46:38Z",
+  "repo": "wealthcx01/arca"
+}
