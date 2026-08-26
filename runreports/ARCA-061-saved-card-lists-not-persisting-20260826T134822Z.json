@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T13:48:22Z",
+  "ended_at": "2026-08-26T13:48:22Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  **What I found by reading the code (no changes made):**  - Server side (`modules/watchlist/handlers.ts`, `schema.ts`) is correctly scoped: every route requires a valid session, injects `X-User-Id` from the session, and every query filters by `user_id`/watchlist ownership. Sessions are DB-backed with a 30-day expiry, not in-memory, so they survive server restarts. - Client side (`WatchlistPage.tsx`) has no localStorage/anonymous fallback — every read/write hits the API. The page only fetches once, on mount. - `App.tsx`'s `Router` ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  **What I found by reading the code (no changes made):**  - Server side (`modules/watchlist/handlers.ts`, `schema.ts`) is correctly scoped: every route requires a valid session, injects `X-User-Id` from the session, and every query filters by `user_id`/watchlist ownership. Sessions are DB-backed with a 30-day expiry, not in-memory, so they survive server restarts. - Client side (`WatchlistPage.tsx`) has no localStorage/anonymous fallback — every read/write hits the API. The page only fetches once, on mount. - `App.tsx`'s `Router` ",
+  "started": "2026-08-26T13:48:22Z",
+  "finished": "2026-08-26T13:48:22Z",
+  "repo": "wealthcx01/arca"
+}
