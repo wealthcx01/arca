@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-26T14:54:35Z",
+  "ended_at": "2026-08-26T15:16:25Z",
+  "trigger": "scheduled",
+  "outcome": "blocked",
+  "summary_md": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: BYOK daily-limit cap in syncPrices() (modules/pricing/jobs.ts) does providerCardRefs = cardRefs.slice(0, budget) with no rotation/offset across runs, so every run caps to the SAME leading slice of the catalog (stable cards-table order). Any card past that cutoff (guaranteed once catalog > smallest provider limit, e.g. pricecharting's 500) permanently never gets a BYOK price, and since graded (PSA/BGS) prices are BYOK-exclusive (pricecharting/poketrace/pokemon-price-tracker), those cards never get graded pricing at all. This reintroduces exactly the 'quietly wrong market-wide data' problem ARCA-063 exists to fix, now scoped to BYOK/graded data instead of held-only data, and is untested (jobs.test.ts only asserts the cap exists, not that coverage rotates).. No PR opened; it needs a human.",
+  "tickets_touched": [
+    "ARCA-063-refresh-market-wide-prices"
+  ],
+  "error_detail": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: BYOK daily-limit cap in syncPrices() (modules/pricing/jobs.ts) does providerCardRefs = cardRefs.slice(0, budget) with no rotation/offset across runs, so every run caps to the SAME leading slice of the catalog (stable cards-table order). Any card past that cutoff (guaranteed once catalog > smallest provider limit, e.g. pricecharting's 500) permanently never gets a BYOK price, and since graded (PSA/BGS) prices are BYOK-exclusive (pricecharting/poketrace/pokemon-price-tracker), those cards never get graded pricing at all. This reintroduces exactly the 'quietly wrong market-wide data' problem ARCA-063 exists to fix, now scoped to BYOK/graded data instead of held-only data, and is untested (jobs.test.ts only asserts the cap exists, not that coverage rotates).. No PR opened; it needs a human.",
+  "pr_url": null,
+  "ticket": "ARCA-063-refresh-market-wide-prices",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "The lane couldn't get this past its own validation in 2 rounds — /review didn't clear this to ship: BYOK daily-limit cap in syncPrices() (modules/pricing/jobs.ts) does providerCardRefs = cardRefs.slice(0, budget) with no rotation/offset across runs, so every run caps to the SAME leading slice of the catalog (stable cards-table order). Any card past that cutoff (guaranteed once catalog > smallest provider limit, e.g. pricecharting's 500) permanently never gets a BYOK price, and since graded (PSA/BGS) prices are BYOK-exclusive (pricecharting/poketrace/pokemon-price-tracker), those cards never get graded pricing at all. This reintroduces exactly the 'quietly wrong market-wide data' problem ARCA-063 exists to fix, now scoped to BYOK/graded data instead of held-only data, and is untested (jobs.test.ts only asserts the cap exists, not that coverage rotates).. No PR opened; it needs a human.",
+  "started": "2026-08-26T14:54:35Z",
+  "finished": "2026-08-26T15:16:25Z",
+  "repo": "wealthcx01/arca"
+}
