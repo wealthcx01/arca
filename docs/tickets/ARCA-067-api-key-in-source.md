@@ -1,6 +1,19 @@
 # ARCA-67 — The Pokémon TCG API key is hardcoded in source
 
-**Status:** Todo · **Area:** Infra/Security · **Depends on:** ARCA-31
+**Status:** Blocked · **Area:** Infra/Security · **Depends on:** ARCA-31 · **Blocked on:** John
+
+**Parked 2026-08-27, and not by the lane's own gate.** Moving the key to an environment variable is
+half a fix and the less important half: the key is in git history, so it stays readable from an
+earlier commit whatever the current file says. Until a **new key is issued at pokemontcg.io and the
+exposed one revoked**, doing the code half would leave the repository looking fixed while the
+credential in it still works — which is worse than leaving it visibly open.
+
+So this waits on one action only a person with the Pokémon TCG account can take. It is set to
+`Blocked` rather than left `Todo` so the lane stops offering it as a decision the founder can make
+with a click; it is not a decision, it is an errand.
+
+**To unblock:** issue a new key, revoke `2248c117-…`, put the new one on the box, and set this back
+to `Todo`. The code change then takes minutes.
 
 ## Why this matters
 A credential in source is a credential in every clone, every fork, and every laptop that has ever
