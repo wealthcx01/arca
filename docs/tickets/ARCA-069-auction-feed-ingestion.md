@@ -1,7 +1,7 @@
 
 # ARCA-069 — Build: ingest live auction listings for graded WOTC-era cards
 
-**Status:** Todo · **Area:** Auctions/ETL · **Depends on:** ARCA-068
+**Status:** In progress · **Area:** Auctions/ETL · **Depends on:** ARCA-068
 
 ## Why this matters (for the founder)
 Before we can show anyone a live auction, ARCA needs a working pipe that pulls in current auction listings and keeps them fresh — this is the plumbing everything else sits on.
