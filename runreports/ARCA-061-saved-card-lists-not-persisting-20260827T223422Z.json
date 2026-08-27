@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T22:34:22Z",
+  "ended_at": "2026-08-27T22:34:22Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **I did a read-only audit of the full chain before proposing a plan** (client `WatchlistPage.tsx` → `lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → schema). Flagging this up front because it changes the shape of the work: **the wiring the ticket suspects is broken actually looks correct.**  ### What I found (no edits made) - `WatchlistPage.tsx` fetches/saves via the shared `api` client, which sets `credentials: \"include\"` on every request — cookies are sent. - `modules/watchlist/handlers.ts` has its own `watchli",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **I did a read-only audit of the full chain before proposing a plan** (client `WatchlistPage.tsx` → `lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → schema). Flagging this up front because it changes the shape of the work: **the wiring the ticket suspects is broken actually looks correct.**  ### What I found (no edits made) - `WatchlistPage.tsx` fetches/saves via the shared `api` client, which sets `credentials: \"include\"` on every request — cookies are sent. - `modules/watchlist/handlers.ts` has its own `watchli",
+  "started": "2026-08-27T22:34:22Z",
+  "finished": "2026-08-27T22:34:22Z",
+  "repo": "wealthcx01/arca"
+}
