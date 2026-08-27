@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T22:23:08Z",
+  "ended_at": "2026-08-27T22:23:09Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved watchlists not persisting across login  ### What I found before proposing anything (read-only audit)  I had an agent trace the whole chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → auth middleware → `server.ts` mounting.  Contrary to the ticket's hypothesis, the obvious suspects are clean: - Client always calls the real `/api/watchlist` endpoints — no localStorage/anonymous fallback, no hardcoded IDs. - `credentials: \"include\"` is set on every client fetch, so the session cookie is s",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved watchlists not persisting across login  ### What I found before proposing anything (read-only audit)  I had an agent trace the whole chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → auth middleware → `server.ts` mounting.  Contrary to the ticket's hypothesis, the obvious suspects are clean: - Client always calls the real `/api/watchlist` endpoints — no localStorage/anonymous fallback, no hardcoded IDs. - `credentials: \"include\"` is set on every client fetch, so the session cookie is s",
+  "started": "2026-08-27T22:23:08Z",
+  "finished": "2026-08-27T22:23:09Z",
+  "repo": "wealthcx01/arca"
+}
