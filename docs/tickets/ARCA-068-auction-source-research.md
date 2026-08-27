@@ -1,7 +1,7 @@
 
 # ARCA-068 — Research: which auction houses we can realistically pull live listings from
 
-**Status:** Todo · **Area:** Research/Auctions · **Depends on:** —
+**Status:** Shipped · **Area:** Research/Auctions · **Depends on:** —
 
 ## Why this matters (for the founder)
 Before building anything, we need to know which auction sources will actually give us live data legally and reliably, so we build the aggregator against real access, not assumptions.
@@ -26,7 +26,12 @@ This research determines what "Scope" is realistic for the build tickets that fo
 - No sports card or non-WOTC-era sources.
 
 ## Acceptance criteria
-- [ ] Written findings covering eBay, Goldin, Heritage, and Fanatics Collect access options, with sources/links.
-- [ ] Clear recommendation on which source(s) v1 should build against.
-- [ ] Any legal/terms-of-service risk flagged explicitly (e.g. eBay's restriction on market-research use of listing data).
-- [ ] Findings saved somewhere the build tickets can reference before work starts.
+- [x] Written findings covering eBay, Goldin, Heritage, and Fanatics Collect access options, with
+      sources/links. See `docs/auction-source-research.md` §1–2 (eBay), §7 (Goldin), §8 (Heritage),
+      §9 (Fanatics Collect).
+- [x] Clear recommendation on which source(s) v1 should build against. See
+      `docs/auction-source-research.md` §11 (v1 recommendation) — eBay Browse API only.
+- [x] Any legal/terms-of-service risk flagged explicitly (e.g. eBay's restriction on market-research
+      use of listing data). See `docs/auction-source-research.md` §10 (Legal / ToS risk).
+- [x] Findings saved somewhere the build tickets can reference before work starts. See
+      `docs/auction-source-research.md`, referenced from ARCA-069/ARCA-071's scope.
