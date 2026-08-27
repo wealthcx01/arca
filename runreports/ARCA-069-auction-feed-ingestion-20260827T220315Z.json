@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T21:46:10Z",
+  "ended_at": "2026-08-27T22:03:15Z",
+  "trigger": "scheduled",
+  "outcome": "opened-pr",
+  "summary_md": "Added a new modules/auctions ingestion pipeline that pulls active auction-style eBay Browse API listings for PSA/BGS-graded WOTC-era Pokemon cards, title-matches them to existing cards rows, upserts them into a new auction_listings table on a 30-minute schedule, and exposes GET /api/auctions and GET /api/auctions/status, with auction_source_status recording ok/error state on every run. — researched from the venture's brain (semantic), planned as a PRP with 8 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Backend-only ingestion module, no frontend UI to browser-test (grep of client/src for 'auction' returns zero hits). Web-facing surface is 2 REST endpoints (GET /api/auctions/status, GET /api/auctions) registered in server.ts. Booted the app headless, ran db:push (new auction_listings/auction_source_status tables created cleanly), and hit both endpoints directly: both returned 200 with valid JSON, no server errors/crashes in logs. eBay Browse API call failed with 503 (no EBAY_CLIENT_ID/SECRET configured in this sandbox, expected) but the job caught it gracefully and recorded the error in auction_source_status instead of crashing — correct degraded behavior. Also ran the module's existing test suite (bun test modules/auctions/): 12/12 pass..",
+  "tickets_touched": [
+    "ARCA-069-auction-feed-ingestion"
+  ],
+  "error_detail": null,
+  "pr_url": "https://github.com/wealthcx01/arca/pull/86",
+  "ticket": "ARCA-069-auction-feed-ingestion",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "Added a new modules/auctions ingestion pipeline that pulls active auction-style eBay Browse API listings for PSA/BGS-graded WOTC-era Pokemon cards, title-matches them to existing cards rows, upserts them into a new auction_listings table on a 30-minute schedule, and exposes GET /api/auctions and GET /api/auctions/status, with auction_source_status recording ok/error state on every run. — researched from the venture's brain (semantic), planned as a PRP with 8 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Backend-only ingestion module, no frontend UI to browser-test (grep of client/src for 'auction' returns zero hits). Web-facing surface is 2 REST endpoints (GET /api/auctions/status, GET /api/auctions) registered in server.ts. Booted the app headless, ran db:push (new auction_listings/auction_source_status tables created cleanly), and hit both endpoints directly: both returned 200 with valid JSON, no server errors/crashes in logs. eBay Browse API call failed with 503 (no EBAY_CLIENT_ID/SECRET configured in this sandbox, expected) but the job caught it gracefully and recorded the error in auction_source_status instead of crashing — correct degraded behavior. Also ran the module's existing test suite (bun test modules/auctions/): 12/12 pass..",
+  "started": "2026-08-27T21:46:10Z",
+  "finished": "2026-08-27T22:03:15Z",
+  "repo": "wealthcx01/arca"
+}
