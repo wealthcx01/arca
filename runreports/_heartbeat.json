@@ -1,7 +1,7 @@
 {
   "lane_id": "arca",
-  "started_at": "2026-08-27T01:15:23Z",
-  "ended_at": "2026-08-27T01:15:23Z",
+  "started_at": "2026-08-27T01:20:24Z",
+  "ended_at": "2026-08-27T01:20:24Z",
   "trigger": "scheduled",
   "outcome": "awaiting-approval",
   "summary_md": "Lane awake with nothing it may work: 2 ticket(s) are waiting for your go — ARCA-061-saved-card-lists-not-persisting, ARCA-067-api-key-in-source. Nothing else is queued.",
@@ -12,7 +12,7 @@
   "lane": "arca",
   "status": "awaiting_founder",
   "summary": "Lane awake with nothing it may work: 2 ticket(s) are waiting for your go — ARCA-061-saved-card-lists-not-persisting, ARCA-067-api-key-in-source. Nothing else is queued.",
-  "started": "2026-08-27T01:15:23Z",
-  "finished": "2026-08-27T01:15:23Z",
+  "started": "2026-08-27T01:20:24Z",
+  "finished": "2026-08-27T01:20:24Z",
   "repo": "wealthcx01/arca"
 }
