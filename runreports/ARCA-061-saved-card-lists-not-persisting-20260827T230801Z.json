@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T23:08:01Z",
+  "ended_at": "2026-08-27T23:08:01Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting  ### What I found from a read-only audit (no fixes applied)  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → auth (`db/auth.ts`) → `server.ts` wiring.  Contrary to the ticket's working theory, **I could not find an obvious wiring bug** in any of the specific places the ticket suspects: - `WatchlistPage.tsx` has no localStorage/anonymous fallback — every read/write goes through the API, keyed off server-issued IDs, not a client-side default. - `Router` in `",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting  ### What I found from a read-only audit (no fixes applied)  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → auth (`db/auth.ts`) → `server.ts` wiring.  Contrary to the ticket's working theory, **I could not find an obvious wiring bug** in any of the specific places the ticket suspects: - `WatchlistPage.tsx` has no localStorage/anonymous fallback — every read/write goes through the API, keyed off server-issued IDs, not a client-side default. - `Router` in `",
+  "started": "2026-08-27T23:08:01Z",
+  "finished": "2026-08-27T23:08:01Z",
+  "repo": "wealthcx01/arca"
+}
