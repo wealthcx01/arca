@@ -1,6 +1,6 @@
 # ARCA-57 — Settings "Pricing Sources" always shows "0 cards synced" for active free sources
 
-**Status:** Todo · **Area:** Settings/Pricing · **Depends on:** —
+**Status:** In progress · **Area:** Settings/Pricing · **Depends on:** —
 
 ## Why this matters (for the founder)
 ARCA's entire premise is trustworthy market data. The Settings page's job is partly to reassure a
