@@ -1,6 +1,6 @@
 # ARCA-55 — "News" nav tab shows price alerts and a hardcoded calendar, not news
 
-**Status:** Todo · **Area:** Client/UI · **Depends on:** —
+**Status:** In progress · **Area:** Client/UI · **Depends on:** —
 
 ## Why this matters (for the founder)
 News is one of the twelve primary nav destinations. A collector clicking it expects articles or
