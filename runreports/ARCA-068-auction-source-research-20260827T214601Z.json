@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T21:30:16Z",
+  "ended_at": "2026-08-27T21:46:01Z",
+  "trigger": "scheduled",
+  "outcome": "opened-pr",
+  "summary_md": "Wrote docs/auction-source-research.md — a sourced decision doc recommending eBay's Browse API as the sole v1 auction source, and updated ARCA-068's ticket status/checkboxes to Shipped. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Change is docs-only (docs/auction-source-research.md research notes + ticket file update, no code changes) with no web-facing surface to QA.",
+  "tickets_touched": [
+    "ARCA-068-auction-source-research"
+  ],
+  "error_detail": null,
+  "pr_url": "https://github.com/wealthcx01/arca/pull/83",
+  "ticket": "ARCA-068-auction-source-research",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "Wrote docs/auction-source-research.md — a sourced decision doc recommending eBay's Browse API as the sole v1 auction source, and updated ARCA-068's ticket status/checkboxes to Shipped. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (written), then passed on round 1 of 2 against them plus tests, /review review pass (0 critical) and /qa: Change is docs-only (docs/auction-source-research.md research notes + ticket file update, no code changes) with no web-facing surface to QA.",
+  "started": "2026-08-27T21:30:16Z",
+  "finished": "2026-08-27T21:46:01Z",
+  "repo": "wealthcx01/arca"
+}
