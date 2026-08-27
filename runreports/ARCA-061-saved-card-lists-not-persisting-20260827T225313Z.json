@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T22:53:13Z",
+  "ended_at": "2026-08-27T22:53:13Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved watchlists not persisting to signed-in account  ### What I did before writing this plan Since this ticket assumes a client/wiring bug, I read the whole path before proposing anything: `client/src/pages/WatchlistPage.tsx`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts` + `schema.ts`, `modules/auth/handlers.ts`, and `db/auth.ts`.  **Finding: the code as written looks correctly wired, not obviously broken.** - `watchlists.user_id` is `NOT NULL` and every handler (`GET /`, `GET /:id`, `POST /:id/items`, `DEL",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved watchlists not persisting to signed-in account  ### What I did before writing this plan Since this ticket assumes a client/wiring bug, I read the whole path before proposing anything: `client/src/pages/WatchlistPage.tsx`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts` + `schema.ts`, `modules/auth/handlers.ts`, and `db/auth.ts`.  **Finding: the code as written looks correctly wired, not obviously broken.** - `watchlists.user_id` is `NOT NULL` and every handler (`GET /`, `GET /:id`, `POST /:id/items`, `DEL",
+  "started": "2026-08-27T22:53:13Z",
+  "finished": "2026-08-27T22:53:13Z",
+  "repo": "wealthcx01/arca"
+}
