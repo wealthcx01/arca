@@ -1,6 +1,5 @@
 import { ArrowLeft, Plus } from "lucide-react";
 import { useEffect, useState } from "react";
-import { CardImage } from "../components/ui/CardImage";
 import { ArcaScoreBadge } from "../components/analytics/ArcaScoreBadge";
 import { GradingAlphaPanel } from "../components/analytics/GradingAlphaPanel";
 import { RiskMetrics } from "../components/analytics/RiskMetrics";
@@ -11,6 +10,7 @@ import { AddHoldingDialog } from "../components/portfolio/AddHoldingDialog";
 import { PriceFreshness } from "../components/pricing/PriceFreshness";
 import { SourceBadge } from "../components/pricing/SourceBadge";
 import { DataPanel } from "../components/terminal/DataPanel";
+import { CardImage } from "../components/ui/CardImage";
 import { CardDetailSkeleton } from "../components/ui/Skeleton";
 import { useToast } from "../components/ui/Toaster";
 import { api } from "../lib/api";
