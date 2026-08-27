@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T23:21:31Z",
+  "ended_at": "2026-08-27T23:21:31Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  ### What's actually happening (root cause identified via read-only investigation) The backend is correct: `modules/watchlist/handlers.ts` enforces session auth on every route, resolves `X-User-Id` from the verified session cookie, and all reads/writes are properly scoped by `user_id` in the DB (`modules/watchlist/schema.ts`). This is not a missing-feature or backend-scoping bug.  The bug is on the client: `client/src/pages/WatchlistPage.tsx` fetches the watchlist once in a `useEffect` keyed only on `[toast]` — it never depends on",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  ### What's actually happening (root cause identified via read-only investigation) The backend is correct: `modules/watchlist/handlers.ts` enforces session auth on every route, resolves `X-User-Id` from the verified session cookie, and all reads/writes are properly scoped by `user_id` in the DB (`modules/watchlist/schema.ts`). This is not a missing-feature or backend-scoping bug.  The bug is on the client: `client/src/pages/WatchlistPage.tsx` fetches the watchlist once in a `useEffect` keyed only on `[toast]` — it never depends on",
+  "started": "2026-08-27T23:21:31Z",
+  "finished": "2026-08-27T23:21:31Z",
+  "repo": "wealthcx01/arca"
+}
