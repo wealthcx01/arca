@@ -309,7 +309,13 @@ export function OverviewPage() {
               />
             ) : (
               <div className="max-h-[240px] overflow-auto">
-                <table className="w-full terminal-dense">
+                <table className="w-full table-fixed terminal-dense">
+                  <colgroup>
+                    <col />
+                    <col className="w-10" />
+                    <col className="w-14" />
+                    <col className="w-20" />
+                  </colgroup>
                   <thead className="sticky top-0 bg-[var(--color-muted)]">
                     <tr>
                       <th className="px-2 py-1 text-left text-[10px] font-semibold uppercase tracking-wider text-[var(--color-muted-foreground)]">
@@ -329,7 +335,9 @@ export function OverviewPage() {
                   <tbody className="divide-y divide-[var(--color-border)]">
                     {eraStats.map((era) => (
                       <tr key={era.label} className="hover:bg-[var(--color-muted)]">
-                        <td className="px-2 py-1 font-medium">{era.label}</td>
+                        <td className="truncate px-2 py-1 font-medium" title={era.label}>
+                          {era.label}
+                        </td>
                         <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
                           {era.setCount}
                         </td>
