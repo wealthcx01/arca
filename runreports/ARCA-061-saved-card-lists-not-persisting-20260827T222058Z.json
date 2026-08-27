@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T22:20:58Z",
+  "ended_at": "2026-08-27T22:20:58Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I found before proposing anything (read-only audit, no edits made):**  I traced the whole path — `WatchlistPage.tsx` → `api.ts` (cookie-based fetch) → `modules/watchlist/handlers.ts` → `watchlists`/`watchlist_items` tables — and, contrary to the ticket's working theory, I could **not find the hypothesized wiring bug**:  - Every watchlist route requires a valid session and scopes every query by `user_id` (no `?? 'guest'`, no default/anonymous fallback, no hardcoded IDs). - The client has no localStorage/sessionStorage fallback",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I found before proposing anything (read-only audit, no edits made):**  I traced the whole path — `WatchlistPage.tsx` → `api.ts` (cookie-based fetch) → `modules/watchlist/handlers.ts` → `watchlists`/`watchlist_items` tables — and, contrary to the ticket's working theory, I could **not find the hypothesized wiring bug**:  - Every watchlist route requires a valid session and scopes every query by `user_id` (no `?? 'guest'`, no default/anonymous fallback, no hardcoded IDs). - The client has no localStorage/sessionStorage fallback",
+  "started": "2026-08-27T22:20:58Z",
+  "finished": "2026-08-27T22:20:58Z",
+  "repo": "wealthcx01/arca"
+}
