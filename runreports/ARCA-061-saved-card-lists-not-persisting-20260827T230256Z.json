@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T23:02:56Z",
+  "ended_at": "2026-08-27T23:02:56Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting on re-login  **What I checked (read-only):** `modules/watchlist/schema.ts`, `handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `client/src/pages/WatchlistPage.tsx`, `client/src/hooks/useAuth.tsx`, `client/src/lib/api.ts`, `client/src/App.tsx`.  **Good news — the core design is sound.** The backend is correctly scoped end to end: `watchlists.user_id` is `NOT NULL`, every route (`GET/POST/PUT/DELETE`) filters by `eq(watchlists.user_id, userId)`, and there's no anonymous/default/local-storage fallback anywhere in the client. Sessions",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting on re-login  **What I checked (read-only):** `modules/watchlist/schema.ts`, `handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `client/src/pages/WatchlistPage.tsx`, `client/src/hooks/useAuth.tsx`, `client/src/lib/api.ts`, `client/src/App.tsx`.  **Good news — the core design is sound.** The backend is correctly scoped end to end: `watchlists.user_id` is `NOT NULL`, every route (`GET/POST/PUT/DELETE`) filters by `eq(watchlists.user_id, userId)`, and there's no anonymous/default/local-storage fallback anywhere in the client. Sessions",
+  "started": "2026-08-27T23:02:56Z",
+  "finished": "2026-08-27T23:02:56Z",
+  "repo": "wealthcx01/arca"
+}
