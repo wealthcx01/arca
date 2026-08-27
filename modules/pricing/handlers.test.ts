@@ -1,8 +1,11 @@
-import { describe, expect, test } from "bun:test";
+import { afterAll, beforeAll, describe, expect, test } from "bun:test";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { eq } from "drizzle-orm";
 import { Hono } from "hono";
+import { getDb } from "../../db/index.ts";
 import { pricingRouter } from "./handlers";
+import { cardPrices, gradedPrices } from "./schema.ts";
 
 /**
  * ARCA-54: `GET /api/pricing/keys` must reach the key handler, not the card handler.
@@ -82,5 +85,126 @@ describe("ARCA-54 — /pricing/keys is not shadowed by /pricing/:cardId", () => 
       staticAfter.map((r) => `${r.method.toUpperCase()} ${r.path}`),
       `these are registered after the dynamic route "${firstDynamic.path}" and will be shadowed — move them above it (ARCA-54)`,
     ).toEqual([]);
+  });
+});
+
+/**
+ * ARCA-64: the card page needs a per-price "last updated" timestamp, and the three endpoints it
+ * reads from must actually carry one through to the response — that's the whole ticket, so a
+ * regression here is the regression.
+ */
+describe("ARCA-64 — pricing endpoints carry a fetch timestamp for freshness display", () => {
+  const CARD_ID = "arca64-test-card";
+  const RECENT = new Date(Date.now() - 60 * 60 * 1000); // 1h ago
+  const STALE = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000); // 30d ago — past any reasonable staleness threshold
+
+  beforeAll(() => {
+    const db = getDb();
+    db.insert(cardPrices)
+      .values([
+        {
+          card_id: CARD_ID,
+          source: "tcgplayer",
+          variant: "holofoil",
+          currency: "USD",
+          market_price_cents: 1000,
+          low_price_cents: 900,
+          mid_price_cents: 950,
+          high_price_cents: 1100,
+          fetched_at: RECENT,
+        },
+        {
+          card_id: CARD_ID,
+          source: "cardmarket",
+          variant: "reverseHolofoil",
+          currency: "USD",
+          market_price_cents: null,
+          low_price_cents: 800,
+          mid_price_cents: null,
+          high_price_cents: null,
+          fetched_at: STALE,
+        },
+      ])
+      .run();
+
+    db.insert(gradedPrices)
+      .values({
+        card_id: CARD_ID,
+        source: "pricecharting",
+        grading_company: "PSA",
+        grade: "10",
+        price_cents: 5000,
+        currency: "USD",
+        sale_type: "market",
+        fetched_at: RECENT,
+      })
+      .run();
+  });
+
+  afterAll(() => {
+    const db = getDb();
+    db.delete(cardPrices).where(eq(cardPrices.card_id, CARD_ID)).run();
+    db.delete(gradedPrices).where(eq(gradedPrices.card_id, CARD_ID)).run();
+  });
+
+  test("GET /:cardId includes a valid fetched_at on every grouped price", async () => {
+    const res = await app.request(`/api/pricing/${CARD_ID}`);
+    expect(res.status).toBe(200);
+    const body = (await res.json()) as {
+      prices: Record<string, Record<string, { fetched_at: unknown }>>;
+    };
+
+    const rows = Object.values(body.prices).flatMap((bySourceVariant) =>
+      Object.values(bySourceVariant),
+    );
+    expect(rows.length).toBeGreaterThan(0);
+    for (const row of rows) {
+      expect(row.fetched_at).not.toBeNull();
+      expect(row.fetched_at).not.toBeUndefined();
+      expect(Number.isNaN(new Date(row.fetched_at as string | number).getTime())).toBe(false);
+    }
+  });
+
+  test("GET /:cardId/conflated carries a ms-epoch fetched_at per field, null when no source supplied it", async () => {
+    const res = await app.request(`/api/pricing/${CARD_ID}/conflated`);
+    expect(res.status).toBe(200);
+    const body = (await res.json()) as {
+      conflated: Array<{
+        variant: string;
+        market_price_cents: number | null;
+        market_fetched_at: number | null;
+        low_fetched_at: number | null;
+        mid_fetched_at: number | null;
+        high_fetched_at: number | null;
+      }>;
+    };
+
+    const holo = body.conflated.find((c) => c.variant === "holofoil");
+    expect(holo).toBeDefined();
+    expect(typeof holo?.market_fetched_at).toBe("number");
+    expect(holo?.market_fetched_at).toBe(RECENT.getTime());
+
+    // cardmarket's row only ever supplied low_price_cents for reverseHolofoil — the other three
+    // fields must come back null (not throw, not a fabricated timestamp).
+    const reverseHolo = body.conflated.find((c) => c.variant === "reverseHolofoil");
+    expect(reverseHolo).toBeDefined();
+    expect(reverseHolo?.market_price_cents).toBeNull();
+    expect(reverseHolo?.market_fetched_at).toBeNull();
+    expect(reverseHolo?.mid_fetched_at).toBeNull();
+    expect(reverseHolo?.high_fetched_at).toBeNull();
+    expect(reverseHolo?.low_fetched_at).toBe(STALE.getTime());
+  });
+
+  test("GET /:cardId/graded includes a valid fetched_at on every row", async () => {
+    const res = await app.request(`/api/pricing/${CARD_ID}/graded`);
+    expect(res.status).toBe(200);
+    const body = (await res.json()) as { graded_prices: Array<{ fetched_at: unknown }> };
+
+    expect(body.graded_prices.length).toBeGreaterThan(0);
+    for (const row of body.graded_prices) {
+      expect(row.fetched_at).not.toBeNull();
+      expect(row.fetched_at).not.toBeUndefined();
+      expect(Number.isNaN(new Date(row.fetched_at as string | number).getTime())).toBe(false);
+    }
   });
 });

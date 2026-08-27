@@ -7,6 +7,7 @@ import { TechnicalSummary } from "../components/analytics/TechnicalSummary";
 import { CandlestickChart } from "../components/charts/CandlestickChart";
 import { IndicatorPane } from "../components/charts/IndicatorPane";
 import { AddHoldingDialog } from "../components/portfolio/AddHoldingDialog";
+import { PriceFreshness } from "../components/pricing/PriceFreshness";
 import { SourceBadge } from "../components/pricing/SourceBadge";
 import { DataPanel } from "../components/terminal/DataPanel";
 import { CardDetailSkeleton } from "../components/ui/Skeleton";
@@ -34,12 +35,16 @@ interface ConflatedPrice {
   variant: string;
   market_price_cents: number | null;
   market_source: string | null;
+  market_fetched_at: number | null;
   low_price_cents: number | null;
   low_source: string | null;
+  low_fetched_at: number | null;
   mid_price_cents: number | null;
   mid_source: string | null;
+  mid_fetched_at: number | null;
   high_price_cents: number | null;
   high_source: string | null;
+  high_fetched_at: number | null;
   currency: string;
 }
 
@@ -51,6 +56,7 @@ interface PriceData {
   mid_price_cents: number | null;
   high_price_cents: number | null;
   currency: string;
+  fetched_at: string | number | null;
 }
 
 interface GradedPrice {
@@ -60,6 +66,7 @@ interface GradedPrice {
   currency: string;
   source: string;
   sale_type: string;
+  fetched_at: string | number | null;
 }
 
 interface AnalyticsSummary {
@@ -252,22 +259,38 @@ export function CardDetailPage() {
                               ? formatMoney(cp.market_price_cents, cp.currency)
                               : "—"}
                           </span>
-                          {cp.market_source && (
-                            <div className="mt-0.5">
-                              <SourceBadge source={cp.market_source} />
+                          {cp.market_price_cents != null && (
+                            <div className="mt-0.5 flex flex-col items-end gap-0.5">
+                              {cp.market_source && <SourceBadge source={cp.market_source} />}
+                              <PriceFreshness fetchedAt={cp.market_fetched_at} />
                             </div>
                           )}
                         </td>
                         <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
                           {cp.low_price_cents ? formatMoney(cp.low_price_cents, cp.currency) : "—"}
+                          {cp.low_price_cents != null && (
+                            <div className="mt-0.5">
+                              <PriceFreshness fetchedAt={cp.low_fetched_at} />
+                            </div>
+                          )}
                         </td>
                         <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
                           {cp.mid_price_cents ? formatMoney(cp.mid_price_cents, cp.currency) : "—"}
+                          {cp.mid_price_cents != null && (
+                            <div className="mt-0.5">
+                              <PriceFreshness fetchedAt={cp.mid_fetched_at} />
+                            </div>
+                          )}
                         </td>
                         <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
                           {cp.high_price_cents
                             ? formatMoney(cp.high_price_cents, cp.currency)
                             : "—"}
+                          {cp.high_price_cents != null && (
+                            <div className="mt-0.5">
+                              <PriceFreshness fetchedAt={cp.high_fetched_at} />
+                            </div>
+                          )}
                         </td>
                       </tr>
                     ))}
@@ -348,6 +371,7 @@ export function CardDetailPage() {
                       <th className="px-2 py-1">Source</th>
                       <th className="px-2 py-1 text-right">Market</th>
                       <th className="px-2 py-1 text-right">Mid</th>
+                      <th className="px-2 py-1 text-right">Updated</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -363,6 +387,9 @@ export function CardDetailPage() {
                         </td>
                         <td className="px-2 py-1 text-right font-mono tabular-nums text-[var(--color-muted-foreground)]">
                           {p.mid_price_cents ? formatMoney(p.mid_price_cents, p.currency) : "—"}
+                        </td>
+                        <td className="px-2 py-1 text-right">
+                          <PriceFreshness fetchedAt={p.fetched_at} />
                         </td>
                       </tr>
                     ))}
@@ -400,6 +427,7 @@ export function CardDetailPage() {
                     <th className="px-2 py-1 text-right">Price</th>
                     <th className="px-2 py-1">Type</th>
                     <th className="px-2 py-1">Source</th>
+                    <th className="px-2 py-1 text-right">Updated</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -415,6 +443,9 @@ export function CardDetailPage() {
                       </td>
                       <td className="px-2 py-1">
                         <SourceBadge source={gp.source} />
+                      </td>
+                      <td className="px-2 py-1 text-right">
+                        <PriceFreshness fetchedAt={gp.fetched_at} />
                       </td>
                     </tr>
                   ))}

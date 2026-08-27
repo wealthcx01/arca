@@ -130,3 +130,46 @@ test.describe("Cards page — regression for ARCA-51 (pagination shape mismatch)
     });
   }
 });
+
+test.describe("Card detail page — regression for ARCA-64 (price freshness label)", () => {
+  test("shows a freshness label next to a price, sourced from the real fetch time", async ({
+    page,
+  }) => {
+    const email = `e2e-freshness-${Date.now()}-${Math.floor(Math.random() * 1e6)}@example.com`;
+    const signupRes = await page.request.post("/api/auth/signup", {
+      data: { email, password: "e2e-test-password", name: "E2E Freshness Test" },
+    });
+    expect(signupRes.ok()).toBe(true);
+
+    // Go straight to the fixture card `scripts/seed-fixture.ts` seeds a card_price/graded_price
+    // row for (external_id "fixture-base1-1", Charizard) rather than picking "the first card" —
+    // this test needs a card it KNOWS has priced data, not whichever one sorts first. Matched by
+    // external_id, not just name: a developer's machine can also carry the REAL catalog's Charizard
+    // (base1-4), which has no such price fixture and would otherwise make this test flaky depending
+    // on which one the API happens to return first.
+    const cardsRes = await page.request.get("/api/cards?q=Charizard&limit=50");
+    expect(cardsRes.ok()).toBe(true);
+    const cardsBody = (await cardsRes.json()) as {
+      data: Array<{ id: string; external_id: string }>;
+    };
+    const fixtureCard = cardsBody.data.find((c) => c.external_id === "fixture-base1-1");
+    expect(fixtureCard).toBeDefined();
+    const cardId = fixtureCard?.id;
+
+    await page.goto(`/cards/${cardId}`, { waitUntil: "domcontentloaded" });
+
+    await expect(page.locator("text=Something went wrong loading this page")).toHaveCount(0);
+
+    // Matches PriceFreshness's two render paths: "updated 2h ago" / "updated just now", or the
+    // "no recent update" flag for a missing/stale timestamp — either is a real label, neither is
+    // "Invalid Date" or nothing at all.
+    const freshnessLabel = page.locator("text=/updated (just now|\\d+[mhd] ago)|no recent update/");
+    await expect(freshnessLabel.first()).toBeVisible({ timeout: 10_000 });
+
+    // The fixture price was seeded moments before this run, well inside any staleness threshold —
+    // so this specific card must show a real relative time, not the "no recent update" fallback.
+    await expect(page.locator("text=/updated (just now|\\d+m ago)/").first()).toBeVisible({
+      timeout: 10_000,
+    });
+  });
+});

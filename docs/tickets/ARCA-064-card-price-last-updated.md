@@ -1,6 +1,6 @@
 # ARCA-64 — Show "last updated" time next to each price on the card page
 
-**Status:** Todo · **Area:** Cards · **Depends on:** ARCA-4
+**Status:** In progress · **Area:** Cards · **Depends on:** ARCA-4
 
 ## Why this matters (for the founder)
 Traders need to know if a price is current before they act on it. Right now the card page shows a price with no indication of when it was last refreshed, which makes it impossible to judge trust at a glance.

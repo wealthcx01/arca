@@ -22,6 +22,10 @@ export interface PriceResult {
   low_price_cents: number | null;
   mid_price_cents: number | null;
   high_price_cents: number | null;
+  // ms epoch — when this row was persisted. Providers don't set this (persistPrices() stamps it
+  // on write); only set when a PriceResult is reconstructed from an already-persisted row, so
+  // conflate() can carry a freshness timestamp alongside each field's source.
+  fetched_at?: number;
 }
 
 /** Graded price result from providers that support graded pricing. */
@@ -66,11 +70,15 @@ export interface ConflatedPrice {
   variant: string;
   market_price_cents: number | null;
   market_source: string | null;
+  market_fetched_at: number | null; // ms epoch
   low_price_cents: number | null;
   low_source: string | null;
+  low_fetched_at: number | null;
   mid_price_cents: number | null;
   mid_source: string | null;
+  mid_fetched_at: number | null;
   high_price_cents: number | null;
   high_source: string | null;
+  high_fetched_at: number | null;
   currency: string; // Normalized to USD
 }
