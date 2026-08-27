@@ -1,6 +1,10 @@
 # ARCA-073 — Anyone can publish "market news" to ARCA, and the next feature makes it stored XSS
 
-**Status:** Todo · **Area:** Security/News · **Depends on:** —
+**Status:** Shipped · **Area:** Security/News · **Depends on:** —
+
+Worked by hand rather than released to the lane. The lane had already failed three times on the
+adjacent ARCA-55 and this is the change that unblocks it; a security fix is the wrong place to spend
+a fourth attempt.
 
 ## Why this matters (for the founder)
 Right now any stranger on the internet can insert an item into ARCA's market-news feed, with no
@@ -60,9 +64,20 @@ ARCA-55 is parked at its attempt limit and cannot proceed until this is fixed.
 - Any change to how news is displayed beyond the URL check — ARCA-55 owns that surface.
 
 ## Acceptance criteria
-- [ ] `POST /api/news` with no session returns 401 and writes nothing.
-- [ ] A `javascript:` or `data:` URL is rejected on write, whoever is signed in.
-- [ ] Rendering a news item never produces a live link to a non-`http(s)` URL, even if the row exists.
-- [ ] Existing rows with non-`http(s)` URLs are found and removed on any deployed instance.
-- [ ] The unauthenticated-POST case is a test, so it cannot come back quietly.
-- [ ] ARCA-55 can be taken off its attempt limit and retried once this lands.
+- [x] `POST /api/news` with no session returns 401 **and writes nothing** — the second half asserted
+      separately, because a 401 is worth little if the row lands anyway.
+- [x] A `javascript:`, `data:`, `vbscript:` or `file:` URL is rejected on write, whoever is signed in,
+      including the case-folded and whitespace-split variants a regex would miss.
+- [x] `safeLinkHref` gives the render side one answer instead of two steps, so ARCA-55 has something
+      to use rather than a rule to remember. Nothing renders a news URL on master today, which is why
+      the XSS half is still latent.
+- [x] `scripts/purge-unsafe-news-urls.ts` finds and clears them, reports before it writes, and counts
+      afterwards rather than trusting its own loop. It clears the URL and keeps the row: the URL is
+      the untrustworthy part, and deleting the row would throw away real content to fix a field.
+- [x] The guard is tested **through the real server** (`server.ts` exports `fetch`, so the actual
+      middleware stack runs) rather than through a re-implementation. Checked against the old code:
+      those two tests fail, which is the only thing that makes them worth having.
+- [x] Reading the feed stays public — asserted, because blanket middleware on the path would have
+      broken that to fix the write.
+- [ ] ARCA-55 taken off its attempt limit and retried. Its `gaveup` marker is still on the box; clear
+      it once this merges.

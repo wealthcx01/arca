@@ -55,6 +55,27 @@ app.use("/api/pricing/keys/*", async (c, next) => {
   await next();
 });
 
+// ARCA-73: news WRITES need a session; news READS stay public.
+//
+// `/api/news` sat outside every auth middleware, so `POST /api/news` accepted anything from anyone
+// with no credential at all — confirmed against a running stack: HTTP 201, persisted, and served
+// back to everyone by the GET. On a product whose promise is telling a collector what their cards
+// are worth, a stranger being able to publish "market news" into it is a trust problem before it is
+// a technical one.
+//
+// Method-aware rather than path-aware, because the read genuinely is public: the feed is meant to be
+// readable without an account, and blanket middleware here would have broken that to fix the write.
+app.use("/api/news/*", async (c, next) => {
+  if (c.req.method === "GET" || c.req.method === "HEAD") return next();
+  const token =
+    getCookie(c, "arca_session") || c.req.header("Authorization")?.replace("Bearer ", "");
+  if (!token) return c.json({ error: "Unauthorized" }, 401);
+  const user = getSession(token);
+  if (!user) return c.json({ error: "Session expired" }, 401);
+  c.req.raw.headers.set("X-User-Id", user.id);
+  await next();
+});
+
 app.use("/api/performance/*", async (c, next) => {
   const token =
     getCookie(c, "arca_session") || c.req.header("Authorization")?.replace("Bearer ", "");

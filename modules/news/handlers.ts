@@ -7,6 +7,7 @@ import { desc, eq, sql } from "drizzle-orm";
 import { Hono } from "hono";
 import { getDb } from "../../db/index.ts";
 import { marketNews } from "../analytics/schema.ts";
+import { isSafeHttpUrl } from "./url-safety.ts";
 
 export const newsRouter = new Hono();
 
@@ -64,6 +65,14 @@ newsRouter.post("/", async (c) => {
 
   if (!body.title || !body.source) {
     return c.json({ error: "title and source are required" }, 400);
+  }
+
+  // ARCA-73: a news `url` is meant to be clicked, so anything that is not http(s) is a way to run
+  // something in a reader's session. Refused at the boundary rather than sanitised on the way out:
+  // a bad row that never exists cannot be rendered by a page that forgets to check, and ARCA-55 is
+  // about to be exactly that page.
+  if (body.url !== undefined && body.url !== null && body.url !== "" && !isSafeHttpUrl(body.url)) {
+    return c.json({ error: "url must be an http(s) link" }, 400);
   }
 
   const db = getDb();
