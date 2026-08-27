@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T22:39:20Z",
+  "ended_at": "2026-08-27T22:39:20Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  I read through the full chain before writing this (read-only, no edits made): `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/auth.ts`, `server.ts`, and `client/vite.config.ts`.  **Important finding up front:** static reading did *not* turn up an obvious smoking-gun bug. There is no localStorage/anonymous fallback anywhere in the watchlist client code, no default/guest `user_id` on the server, watchlist rows are correctly scoped by `watchlists.user_i",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  I read through the full chain before writing this (read-only, no edits made): `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/auth.ts`, `server.ts`, and `client/vite.config.ts`.  **Important finding up front:** static reading did *not* turn up an obvious smoking-gun bug. There is no localStorage/anonymous fallback anywhere in the watchlist client code, no default/guest `user_id` on the server, watchlist rows are correctly scoped by `watchlists.user_i",
+  "started": "2026-08-27T22:39:20Z",
+  "finished": "2026-08-27T22:39:20Z",
+  "repo": "wealthcx01/arca"
+}
