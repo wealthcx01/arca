@@ -363,6 +363,39 @@ db.exec(`
   )
 `);
 
+// Auction listings table
+db.exec(`
+  CREATE TABLE IF NOT EXISTS auction_listings (
+    id TEXT PRIMARY KEY,
+    card_id TEXT NOT NULL,
+    external_listing_id TEXT NOT NULL UNIQUE,
+    source TEXT NOT NULL,
+    title TEXT NOT NULL,
+    grading_company TEXT NOT NULL,
+    grade TEXT NOT NULL,
+    current_bid_cents INTEGER,
+    currency TEXT NOT NULL,
+    end_time INTEGER NOT NULL,
+    seller TEXT,
+    listing_url TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'active',
+    fetched_at INTEGER NOT NULL
+  )
+`);
+
+// Auction source status table
+db.exec(`
+  CREATE TABLE IF NOT EXISTS auction_source_status (
+    id TEXT PRIMARY KEY,
+    provider TEXT NOT NULL UNIQUE,
+    status TEXT NOT NULL DEFAULT 'idle',
+    last_sync_at INTEGER,
+    last_error TEXT,
+    listings_synced INTEGER NOT NULL DEFAULT 0,
+    updated_at INTEGER NOT NULL
+  )
+`);
+
 // Add conflated_rank column to card_prices if not present
 try {
   db.exec("ALTER TABLE card_prices ADD COLUMN conflated_rank INTEGER DEFAULT 0");
@@ -422,6 +455,10 @@ db.exec(
   "CREATE UNIQUE INDEX IF NOT EXISTS idx_pop_reports_card_grade ON pop_reports(card_id, grading_company, grade)",
 );
 db.exec("CREATE INDEX IF NOT EXISTS idx_market_news_published ON market_news(published_at)");
+
+// Auction indexes
+db.exec("CREATE INDEX IF NOT EXISTS idx_auction_listings_card_id ON auction_listings(card_id)");
+db.exec("CREATE INDEX IF NOT EXISTS idx_auction_listings_end_time ON auction_listings(end_time)");
 
 console.log("✅ All tables created successfully");
 console.log(`📁 Database: ${DB_PATH}`);

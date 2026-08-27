@@ -8,6 +8,8 @@ import { getDb } from "./db";
 import { getSession } from "./db/auth";
 import { analyticsRouter } from "./modules/analytics/handlers";
 import { registerAnalyticsJobs } from "./modules/analytics/jobs";
+import { auctionsRouter } from "./modules/auctions/handlers";
+import { registerAuctionJobs } from "./modules/auctions/jobs";
 import { authRouter } from "./modules/auth/handlers";
 import { cardsRouter } from "./modules/cards/handlers";
 import { registerCardJobs } from "./modules/cards/jobs";
@@ -92,6 +94,7 @@ app.get("/api/health", (c) => {
 });
 
 // Mount module routers
+app.route("/api/auctions", auctionsRouter);
 app.route("/api/auth", authRouter);
 app.route("/api/cards", cardsRouter);
 app.route("/api/portfolio", portfolioRouter);
@@ -107,6 +110,7 @@ app.route("/api/watchlist", watchlistRouter);
 app.get("/api/system/status", (c) => {
   return c.json({
     modules: [
+      "auctions",
       "auth",
       "cards",
       "portfolio",
@@ -145,6 +149,7 @@ registerCardJobs();
 registerPricingJobs();
 registerPerformanceJobs();
 registerAnalyticsJobs();
+registerAuctionJobs();
 console.log("📋 Background jobs registered");
 
 export default {
