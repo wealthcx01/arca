@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T23:17:50Z",
+  "ended_at": "2026-08-27T23:17:50Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I did:** Read-only audit of the full chain — `WatchlistPage.tsx` → `useAuth`/`App.tsx` → `client/src/lib/api.ts` → CORS/proxy config → `modules/watchlist/handlers.ts` and `schema.ts` → `db/auth.ts` (sessions/cookies). No files were changed.  **What I found, which changes the plan:** the ticket assumes a client-side wiring bug, but the current code looks correctly wired end-to-end: - `watchlists`/`watchlist_items` are scoped by `user_id`, every handler filters by it and checks ownership. - The watch",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I did:** Read-only audit of the full chain — `WatchlistPage.tsx` → `useAuth`/`App.tsx` → `client/src/lib/api.ts` → CORS/proxy config → `modules/watchlist/handlers.ts` and `schema.ts` → `db/auth.ts` (sessions/cookies). No files were changed.  **What I found, which changes the plan:** the ticket assumes a client-side wiring bug, but the current code looks correctly wired end-to-end: - `watchlists`/`watchlist_items` are scoped by `user_id`, every handler filters by it and checks ownership. - The watch",
+  "started": "2026-08-27T23:17:50Z",
+  "finished": "2026-08-27T23:17:50Z",
+  "repo": "wealthcx01/arca"
+}
