@@ -1,0 +1,6 @@
+{
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "approver": "john.gallagher@wealthcx.com",
+  "released_at": "2026-08-27T21:45:00.000Z",
+  "note": "Released under John's standing instruction of 2026-08-27 ('fix what is fixable, make the best decisions on my behalf'), not by a click in the studio. This marker is unsigned and lives on a ref the lane can write, so it is not evidence a human approved anything — the signed record is in the studio ActiveGraph. See FB-122."
+}
