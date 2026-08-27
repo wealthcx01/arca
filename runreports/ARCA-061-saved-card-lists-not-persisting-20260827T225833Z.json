@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T22:58:32Z",
+  "ended_at": "2026-08-27T22:58:33Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **No code was changed.** I read through the full chain end-to-end first (client `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → auth cookie config) to ground the plan in what's actually there rather than guess.  ### What I found on inspection Contrary to the ticket's leading hypotheses, I did **not** find an obvious smoking gun: - No localStorage/sessionStorage is used for watchlist data anywhere in the client (only theme uses localStorage). - `WatchlistPage.tsx` always fetches from `GET /api/wat",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **No code was changed.** I read through the full chain end-to-end first (client `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → auth cookie config) to ground the plan in what's actually there rather than guess.  ### What I found on inspection Contrary to the ticket's leading hypotheses, I did **not** find an obvious smoking gun: - No localStorage/sessionStorage is used for watchlist data anywhere in the client (only theme uses localStorage). - `WatchlistPage.tsx` always fetches from `GET /api/wat",
+  "started": "2026-08-27T22:58:32Z",
+  "finished": "2026-08-27T22:58:33Z",
+  "repo": "wealthcx01/arca"
+}
