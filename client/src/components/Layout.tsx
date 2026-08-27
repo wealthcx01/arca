@@ -19,6 +19,8 @@ import {
 import { type ReactNode, useEffect, useRef, useState } from "react";
 import { useAuth } from "../hooks/useAuth";
 import { RollingTicker } from "./terminal/RollingTicker";
+import { Badge } from "./ui/Badge";
+import { ArcaLogo } from "./ui/Logo";
 
 interface LayoutProps {
   children: ReactNode;
@@ -112,12 +114,8 @@ export function Layout({ children }: LayoutProps) {
       <header className="sticky top-0 z-50 flex items-center border-b border-[var(--color-border)] bg-[var(--color-card)] px-3 py-0">
         {/* Logo */}
         <a href="/overview" className="flex shrink-0 items-center gap-1.5 py-2 pr-3">
-          <span className="text-base font-bold tracking-tight text-[var(--color-foreground)]">
-            ARCA
-          </span>
-          <span className="rounded bg-[var(--color-primary)] px-1 py-0.5 text-[8px] font-bold text-white">
-            BETA
-          </span>
+          <ArcaLogo />
+          <Badge size="sm">BETA</Badge>
         </a>
 
         {/* Rolling ticker — fills center */}

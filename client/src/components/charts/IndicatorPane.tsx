@@ -119,7 +119,7 @@ export function IndicatorPane({
 
       if (signalData && signalData.length > 0) {
         const series = chart.addSeries(LineSeries, {
-          color: "#f59e0b",
+          color: theme.secondaryColor,
           lineWidth: 1,
           priceLineVisible: false,
           lastValueVisible: false,

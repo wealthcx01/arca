@@ -140,7 +140,7 @@ export function DashboardPage() {
         </div>
         <button
           onClick={() => setShowAddDialog(true)}
-          className="flex items-center gap-1.5 rounded-md bg-[var(--color-primary)] px-3 py-1.5 text-sm font-medium text-white hover:opacity-90"
+          className="flex items-center gap-1.5 rounded-md bg-[var(--color-primary)] px-3 py-1.5 text-sm font-medium text-[var(--color-primary-foreground)] hover:opacity-90"
         >
           <Plus size={14} />
           Add Card
@@ -314,9 +314,9 @@ function StatCard({
 }) {
   const bgClass =
     variant === "positive"
-      ? "bg-green-50 dark:bg-green-950/30"
+      ? "bg-[color-mix(in_srgb,var(--color-positive)_12%,var(--color-card))]"
       : variant === "negative"
-        ? "bg-red-50 dark:bg-red-950/30"
+        ? "bg-[color-mix(in_srgb,var(--color-negative)_12%,var(--color-card))]"
         : "bg-[var(--color-card)]";
 
   return (

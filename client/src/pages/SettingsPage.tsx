@@ -148,8 +148,8 @@ export function SettingsPage() {
                         onClick={() => handleToggleKey(source.name)}
                         className={`rounded px-2 py-1 text-xs ${
                           key.is_active
-                            ? "bg-green-100 text-green-700"
-                            : "bg-gray-100 text-gray-500"
+                            ? "bg-[color-mix(in_srgb,var(--color-positive)_15%,var(--color-card))] text-[var(--color-positive)]"
+                            : "bg-[var(--color-muted)] text-[var(--color-muted-foreground)]"
                         }`}
                       >
                         {key.is_active ? "Active" : "Disabled"}
@@ -157,7 +157,7 @@ export function SettingsPage() {
                       <button
                         type="button"
                         onClick={() => handleDeleteKey(source.name)}
-                        className="rounded p-1 text-[var(--color-muted-foreground)] hover:bg-red-50 hover:text-red-600"
+                        className="rounded p-1 text-[var(--color-muted-foreground)] hover:bg-[color-mix(in_srgb,var(--color-negative)_10%,var(--color-card))] hover:text-[var(--color-negative)]"
                       >
                         <Trash2 size={14} />
                       </button>
@@ -182,7 +182,7 @@ export function SettingsPage() {
         </p>
 
         {error && (
-          <div className="mb-3 flex items-center gap-2 rounded bg-red-50 px-3 py-2 text-xs text-red-700">
+          <div className="mb-3 flex items-center gap-2 rounded bg-[color-mix(in_srgb,var(--color-negative)_10%,var(--color-card))] px-3 py-2 text-xs text-[var(--color-negative)]">
             <AlertTriangle size={12} /> {error}
           </div>
         )}
@@ -213,7 +213,7 @@ export function SettingsPage() {
             type="button"
             onClick={handleAddKey}
             disabled={!newProvider || !newApiKey || saving}
-            className="rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 disabled:opacity-50"
+            className="rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-primary-foreground)] hover:opacity-90 disabled:opacity-50"
           >
             {saving ? "Saving..." : "Save Key"}
           </button>
@@ -226,12 +226,12 @@ export function SettingsPage() {
 function StatusDot({ status }: { status: string }) {
   const color =
     status === "ok"
-      ? "bg-green-500"
+      ? "bg-[var(--color-positive)]"
       : status === "syncing"
-        ? "bg-yellow-500 animate-pulse"
+        ? "bg-[var(--color-warning)] animate-pulse"
         : status === "error"
-          ? "bg-red-500"
-          : "bg-gray-300";
+          ? "bg-[var(--color-negative)]"
+          : "bg-[var(--color-muted-foreground)]";
 
   return <div className={`h-2 w-2 rounded-full ${color}`} title={status} />;
 }

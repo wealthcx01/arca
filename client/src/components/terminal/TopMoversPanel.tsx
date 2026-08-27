@@ -50,7 +50,7 @@ export function TopMoversPanel({ onCardSelect }: TopMoversPanelProps = {}) {
           onClick={() => setPeriod(p)}
           className={`rounded px-1.5 py-0.5 text-[9px] font-medium ${
             period === p
-              ? "bg-[var(--color-primary)] text-white"
+              ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
               : "text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"
           }`}
         >

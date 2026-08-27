@@ -45,7 +45,7 @@ export function ChartControls({
             onClick={() => onPeriodChange(p)}
             className={`px-2 py-1 transition-colors ${
               period === p
-                ? "bg-[var(--color-primary)] text-white"
+                ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
                 : "bg-[var(--color-card)] text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"
             }`}
           >
@@ -64,7 +64,7 @@ export function ChartControls({
             onClick={() => onChartTypeChange(ct.value)}
             className={`px-2 py-1 transition-colors ${
               chartType === ct.value
-                ? "bg-[var(--color-primary)] text-white"
+                ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
                 : "bg-[var(--color-card)] text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"
             }`}
           >

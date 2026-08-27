@@ -42,7 +42,7 @@ export function LoginPage() {
           <h2 className="mb-4 text-lg font-semibold">{isSignup ? "Create account" : "Sign in"}</h2>
 
           {error && (
-            <div className="mb-4 rounded-md bg-red-50 p-3 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+            <div className="mb-4 rounded-md bg-[color-mix(in_srgb,var(--color-negative)_10%,var(--color-card))] p-3 text-sm text-[var(--color-negative)]">
               {error}
             </div>
           )}
@@ -98,7 +98,7 @@ export function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 disabled:opacity-50"
+              className="w-full rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-primary-foreground)] hover:opacity-90 disabled:opacity-50"
             >
               {loading ? "Loading..." : isSignup ? "Create account" : "Sign in"}
             </button>

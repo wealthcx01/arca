@@ -78,13 +78,13 @@ export function CardsPage() {
         <div className="flex gap-1">
           <button
             onClick={() => setViewMode("grid")}
-            className={`rounded p-1.5 ${viewMode === "grid" ? "bg-[var(--color-primary)] text-white" : "text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"}`}
+            className={`rounded p-1.5 ${viewMode === "grid" ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]" : "text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"}`}
           >
             <Grid3X3 size={16} />
           </button>
           <button
             onClick={() => setViewMode("list")}
-            className={`rounded p-1.5 ${viewMode === "list" ? "bg-[var(--color-primary)] text-white" : "text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"}`}
+            className={`rounded p-1.5 ${viewMode === "list" ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]" : "text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"}`}
           >
             <List size={16} />
           </button>

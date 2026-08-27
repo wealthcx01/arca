@@ -74,7 +74,7 @@ export function AddHoldingDialog({
 
         <form onSubmit={handleSubmit} className="max-h-[70vh] overflow-y-auto p-4">
           {error && (
-            <div className="mb-3 rounded bg-red-50 p-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+            <div className="mb-3 rounded bg-[color-mix(in_srgb,var(--color-negative)_10%,var(--color-card))] p-2 text-sm text-[var(--color-negative)]">
               {error}
             </div>
           )}
@@ -231,7 +231,7 @@ export function AddHoldingDialog({
           <button
             type="submit"
             disabled={loading || !cardId}
-            className="mt-2 w-full rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 disabled:opacity-50"
+            className="mt-2 w-full rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-primary-foreground)] hover:opacity-90 disabled:opacity-50"
           >
             {loading ? "Adding..." : "Add to Portfolio"}
           </button>

@@ -213,13 +213,13 @@ export function CardDetailPage() {
           <div className="flex gap-1 font-mono text-[10px]">
             <button
               onClick={() => setShowIndicatorPane(showIndicatorPane === "RSI_14" ? null : "RSI_14")}
-              className={`rounded border px-2 py-1 ${showIndicatorPane === "RSI_14" ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-white" : "border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-muted-foreground)]"}`}
+              className={`rounded border px-2 py-1 ${showIndicatorPane === "RSI_14" ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-primary-foreground)]" : "border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-muted-foreground)]"}`}
             >
               RSI
             </button>
             <button
               onClick={() => setShowIndicatorPane(showIndicatorPane === "MACD" ? null : "MACD")}
-              className={`rounded border px-2 py-1 ${showIndicatorPane === "MACD" ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-white" : "border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-muted-foreground)]"}`}
+              className={`rounded border px-2 py-1 ${showIndicatorPane === "MACD" ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-primary-foreground)]" : "border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-muted-foreground)]"}`}
             >
               MACD
             </button>
@@ -394,7 +394,7 @@ export function CardDetailPage() {
 
           <button
             onClick={() => setShowAddDialog(true)}
-            className="flex w-full items-center justify-center gap-1.5 rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white hover:opacity-90"
+            className="flex w-full items-center justify-center gap-1.5 rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-primary-foreground)] hover:opacity-90"
           >
             <Plus size={14} /> Add to Portfolio
           </button>

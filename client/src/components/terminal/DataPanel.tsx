@@ -9,10 +9,10 @@ interface DataPanelProps {
 }
 
 const headerColorMap: Record<string, string> = {
-  primary: "bg-[var(--color-primary)] text-white",
-  positive: "bg-[var(--color-positive)] text-white",
-  negative: "bg-[var(--color-negative)] text-white",
-  warning: "bg-[var(--color-warning)] text-white",
+  primary: "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]",
+  positive: "bg-[var(--color-positive)] text-[var(--color-positive-foreground)]",
+  negative: "bg-[var(--color-negative)] text-[var(--color-negative-foreground)]",
+  warning: "bg-[var(--color-warning)] text-[var(--color-warning-foreground)]",
   default: "bg-[var(--color-muted)] text-[var(--color-foreground)]",
 };
 

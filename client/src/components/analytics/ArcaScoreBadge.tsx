@@ -1,5 +1,7 @@
 /**
- * ARCA Score badge — color gradient (0-30 red, 30-60 yellow, 60-80 green, 80-100 gold).
+ * ARCA Score badge — color gradient (0-30 negative, 30-60 warning, 60-80 positive,
+ * 80-100 gold/primary). The gold tier is deliberate: gold is reserved across the app
+ * for signals ARCA has actually proven, and a Strong score is the clearest one.
  * Shows tooltip with sub-score breakdown.
  */
 
@@ -10,10 +12,10 @@ interface ArcaScoreBadgeProps {
 }
 
 function getScoreColor(score: number): string {
-  if (score >= 80) return "bg-amber-500 text-white";
-  if (score >= 60) return "bg-emerald-600 text-white";
-  if (score >= 30) return "bg-yellow-500 text-black";
-  return "bg-red-500 text-white";
+  if (score >= 80) return "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]";
+  if (score >= 60) return "bg-[var(--color-positive)] text-[var(--color-positive-foreground)]";
+  if (score >= 30) return "bg-[var(--color-warning)] text-[var(--color-warning-foreground)]";
+  return "bg-[var(--color-negative)] text-[var(--color-negative-foreground)]";
 }
 
 function getScoreLabel(score: number): string {

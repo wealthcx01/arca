@@ -1,4 +1,5 @@
 import { Component, type ErrorInfo, type ReactNode } from "react";
+import { Button } from "./ui/Button";
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -27,13 +28,9 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
             Something went wrong loading this page.
           </p>
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => window.location.reload()}
-              className="rounded bg-[var(--color-primary)] px-3 py-1.5 text-xs font-medium text-white transition-colors hover:opacity-90"
-            >
+            <Button size="sm" onClick={() => window.location.reload()}>
               Reload
-            </button>
+            </Button>
             <a
               href="/overview"
               className="rounded border border-[var(--color-border)] px-3 py-1.5 text-xs font-medium text-[var(--color-foreground)] transition-colors hover:bg-[var(--color-muted)]"

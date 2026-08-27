@@ -163,7 +163,7 @@ export function HoldingsTable({
                 <td className="px-3 py-2.5">
                   <span className="text-xs">
                     {h.is_graded ? (
-                      <span className="rounded bg-blue-100 px-1.5 py-0.5 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
+                      <span className="rounded bg-[var(--color-highlight)] px-1.5 py-0.5 font-mono text-[var(--color-primary)]">
                         {h.grading_company} {h.grade}
                       </span>
                     ) : (

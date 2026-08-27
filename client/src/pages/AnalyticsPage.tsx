@@ -89,14 +89,11 @@ interface IndexCoverage {
 const INDEX_COVERAGE_FLOOR = 0.8;
 
 const COLORS = [
-  "#2563eb",
-  "#7c3aed",
-  "#db2777",
-  "#ea580c",
-  "#16a34a",
-  "#0891b2",
-  "#4f46e5",
-  "#c026d3",
+  "var(--color-chart-1)",
+  "var(--color-chart-2)",
+  "var(--color-chart-3)",
+  "var(--color-chart-4)",
+  "var(--color-chart-5)",
 ];
 
 export function AnalyticsPage() {
@@ -171,7 +168,7 @@ export function AnalyticsPage() {
               onClick={() => setTab(t)}
               className={`px-3 py-1.5 capitalize transition-colors ${
                 tab === t
-                  ? "bg-[var(--color-primary)] text-white"
+                  ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)]"
                   : "bg-[var(--color-card)] text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]"
               }`}
             >
@@ -254,7 +251,7 @@ function MarketTab({
       {coverage && coverage.fraction !== null && coverage.fraction < INDEX_COVERAGE_FLOOR && (
         <div
           data-testid="analytics-partial-coverage"
-          className="rounded border border-[var(--color-warning,#b45309)] bg-[var(--color-muted)] px-3 py-2 text-[11px]"
+          className="rounded border border-[var(--color-warning)] bg-[var(--color-muted)] px-3 py-2 text-[11px]"
         >
           <strong>
             These market figures cover {coverage.cards_covered} of {coverage.catalog_total} cards.
@@ -340,7 +337,7 @@ function ScreenerTab({
         <select
           value={sort}
           onChange={(e) => onSortChange(e.target.value)}
-          className="rounded bg-transparent px-1 py-0.5 text-[10px] text-white"
+          className="rounded bg-transparent px-1 py-0.5 text-[10px] text-[var(--color-primary-foreground)]"
         >
           {sortOptions.map((o) => (
             <option key={o.value} value={o.value}>
