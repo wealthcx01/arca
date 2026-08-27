@@ -1,6 +1,6 @@
 # ARCA-60 — Placeholder image for cards with no artwork
 
-**Status:** Todo · **Area:** Client/UI · **Depends on:** ARCA-3
+**Status:** In progress · **Area:** Client/UI · **Depends on:** ARCA-3
 
 ## Why this matters (for the founder)
 A broken-image icon looks like the site is malfunctioning, which undermines trust in a paid analytics terminal. A clean placeholder signals "no image available" instead of "something is broken."

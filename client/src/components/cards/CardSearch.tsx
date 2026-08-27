@@ -1,6 +1,7 @@
 import { Search } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { api } from "../../lib/api";
+import { CardImage } from "../ui/CardImage";
 
 interface CardResult {
   id: string;
@@ -121,14 +122,12 @@ export function CardSearch({ onSelect, placeholder = "Search cards..." }: CardSe
                 setOpen(false);
               }}
             >
-              {card.image_url && (
-                <img
-                  src={card.image_url}
-                  alt=""
-                  className="h-8 w-6 rounded object-cover"
-                  loading="lazy"
-                />
-              )}
+              <CardImage
+                src={card.image_url}
+                alt=""
+                className="h-8 w-6 rounded object-cover"
+                iconSize={14}
+              />
               <div className="min-w-0">
                 <p className="truncate font-medium">{card.name}</p>
                 <p className="truncate text-xs text-[var(--color-muted-foreground)]">

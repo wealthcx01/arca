@@ -1,4 +1,4 @@
-import { ArrowLeft, ImageOff, Plus } from "lucide-react";
+import { ArrowLeft, Plus } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ArcaScoreBadge } from "../components/analytics/ArcaScoreBadge";
 import { GradingAlphaPanel } from "../components/analytics/GradingAlphaPanel";
@@ -10,6 +10,7 @@ import { AddHoldingDialog } from "../components/portfolio/AddHoldingDialog";
 import { PriceFreshness } from "../components/pricing/PriceFreshness";
 import { SourceBadge } from "../components/pricing/SourceBadge";
 import { DataPanel } from "../components/terminal/DataPanel";
+import { CardImage } from "../components/ui/CardImage";
 import { CardDetailSkeleton } from "../components/ui/Skeleton";
 import { useToast } from "../components/ui/Toaster";
 import { api } from "../lib/api";
@@ -90,7 +91,6 @@ export function CardDetailPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [showAddDialog, setShowAddDialog] = useState(false);
-  const [imgError, setImgError] = useState(false);
   const [showIndicatorPane, setShowIndicatorPane] = useState<"RSI_14" | "MACD" | null>(null);
 
   const isDark = document.documentElement.classList.contains("dark");
@@ -305,18 +305,11 @@ export function CardDetailPage() {
         <div className="space-y-3">
           {/* Card image */}
           <div>
-            {imgSrc && !imgError ? (
-              <img
-                src={imgSrc}
-                alt={card.name}
-                className="w-full rounded-lg shadow-lg"
-                onError={() => setImgError(true)}
-              />
-            ) : (
-              <div className="flex aspect-[2.5/3.5] w-full items-center justify-center rounded-lg bg-[var(--color-muted)]">
-                <ImageOff size={32} className="text-[var(--color-muted-foreground)]" />
-              </div>
-            )}
+            <CardImage
+              src={imgSrc}
+              alt={card.name}
+              className="aspect-[2.5/3.5] w-full rounded-lg object-cover shadow-lg"
+            />
           </div>
 
           {/* Technical summary */}
