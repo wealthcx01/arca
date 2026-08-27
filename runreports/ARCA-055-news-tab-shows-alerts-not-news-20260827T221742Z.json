@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T22:03:19Z",
+  "ended_at": "2026-08-27T22:17:42Z",
+  "trigger": "scheduled",
+  "outcome": "opened-pr",
+  "summary_md": "Fixed the one lint problem (missing explicit button type) on the period-toggle button in MarketNewsPage.tsx that biome flagged as a11y/useButtonType. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (resumed), then passed on round 2 of 2 (earlier rounds failed — round 1: tests: your change introduced 1 lint problem(s) on the lines it wrote) against them plus tests, /review review pass (0 critical) and /qa: Booted backend (bun server.ts on :3001) and frontend (vite on :5173), signed up a fresh QA user, and loaded /news in the headless browser. The News panel is now the main content and shows actual market_news rows (title/source/relative time), while the price-movement table has moved to a secondary 'Price Alerts' sidebar panel with its own 1d/7d/30d toggle. No console errors. Matches the ARCA-055 fix intent (News tab was previously showing alerts instead of news)..",
+  "tickets_touched": [
+    "ARCA-055-news-tab-shows-alerts-not-news"
+  ],
+  "error_detail": null,
+  "pr_url": "https://github.com/wealthcx01/arca/pull/87",
+  "ticket": "ARCA-055-news-tab-shows-alerts-not-news",
+  "lane": "arca",
+  "status": "opened_pr",
+  "summary": "Fixed the one lint problem (missing explicit button type) on the period-toggle button in MarketNewsPage.tsx that biome flagged as a11y/useButtonType. — researched from the venture's brain (semantic), planned as a PRP with 4 validation gate(s) (resumed), then passed on round 2 of 2 (earlier rounds failed — round 1: tests: your change introduced 1 lint problem(s) on the lines it wrote) against them plus tests, /review review pass (0 critical) and /qa: Booted backend (bun server.ts on :3001) and frontend (vite on :5173), signed up a fresh QA user, and loaded /news in the headless browser. The News panel is now the main content and shows actual market_news rows (title/source/relative time), while the price-movement table has moved to a secondary 'Price Alerts' sidebar panel with its own 1d/7d/30d toggle. No console errors. Matches the ARCA-055 fix intent (News tab was previously showing alerts instead of news)..",
+  "started": "2026-08-27T22:03:19Z",
+  "finished": "2026-08-27T22:17:42Z",
+  "repo": "wealthcx01/arca"
+}
