@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-27T11:35:59Z",
+  "ended_at": "2026-08-27T11:36:00Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: I reviewed `server.ts`, `modules/news/handlers.ts`, the `market_news` schema, and confirmed the client doesn't render `news.url` yet (ARCA-55 is still pending). Here's the plan — no files touched.  ## Plan  **1. Require auth on `POST /api/news`** Add a session-check middleware scoped to `app.use(\"/api/news/*\", ...)` in `server.ts`, mirroring the existing pattern at lines 37–44 (portfolio) and 46–53 (pricing/keys): read `arca_session` cookie or `Authorization: Bearer`, call `getSession(token)`, 401 if missing/invalid. Scope it to `POST` only (or split the router into a public GET path and",
+  "tickets_touched": [
+    "ARCA-073-news-write-is-unauthenticated"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-073-news-write-is-unauthenticated",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: I reviewed `server.ts`, `modules/news/handlers.ts`, the `market_news` schema, and confirmed the client doesn't render `news.url` yet (ARCA-55 is still pending). Here's the plan — no files touched.  ## Plan  **1. Require auth on `POST /api/news`** Add a session-check middleware scoped to `app.use(\"/api/news/*\", ...)` in `server.ts`, mirroring the existing pattern at lines 37–44 (portfolio) and 46–53 (pricing/keys): read `arca_session` cookie or `Authorization: Bearer`, call `getSession(token)`, 401 if missing/invalid. Scope it to `POST` only (or split the router into a public GET path and",
+  "started": "2026-08-27T11:35:59Z",
+  "finished": "2026-08-27T11:36:00Z",
+  "repo": "wealthcx01/arca"
+}
