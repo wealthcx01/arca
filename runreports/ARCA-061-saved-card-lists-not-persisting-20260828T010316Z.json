@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-28T01:03:16Z",
+  "ended_at": "2026-08-28T01:03:16Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — this is a plan only)  ### What I found from reading the code (no changes made) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite. Contrary to the ticket's hypothesis, **I could not find an obvious wiring bug**:  - Every watchlist route requires a valid `arca_session` cookie, resolves it to a real `user_id`, and scopes every query (`GET`, `POST`, `PUT`, `DELETE`) by `eq(watchlists.user_id, userId)`. - `login()` looks up the user **by email** (not creating a new row",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — this is a plan only)  ### What I found from reading the code (no changes made) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite. Contrary to the ticket's hypothesis, **I could not find an obvious wiring bug**:  - Every watchlist route requires a valid `arca_session` cookie, resolves it to a real `user_id`, and scopes every query (`GET`, `POST`, `PUT`, `DELETE`) by `eq(watchlists.user_id, userId)`. - `login()` looks up the user **by email** (not creating a new row",
+  "started": "2026-08-28T01:03:16Z",
+  "finished": "2026-08-28T01:03:16Z",
+  "repo": "wealthcx01/arca"
+}
