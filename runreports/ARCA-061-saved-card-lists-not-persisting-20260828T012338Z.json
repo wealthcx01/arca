@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-28T01:23:37Z",
+  "ended_at": "2026-08-28T01:23:38Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist persistence bug  **What I did to prepare this plan:** read-only audit of the full chain — `modules/watchlist/schema.ts`, `handlers.ts`, the auth middleware (`db/auth.ts`, `modules/auth/handlers.ts`), `server.ts` route mounting, and the client (`WatchlistPage.tsx`, `lib/api.ts`, `Layout.tsx`). No files were changed.  ### What the code currently shows (important — may contradict the ticket's premise) - Schema: `watchlists.user_id` is `NOT NULL`, no anonymous/guest fallback. - Handlers: every read/write (`GET /`, `GET /:id`, `POST /`, `PUT/DELETE /:id`, item add",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist persistence bug  **What I did to prepare this plan:** read-only audit of the full chain — `modules/watchlist/schema.ts`, `handlers.ts`, the auth middleware (`db/auth.ts`, `modules/auth/handlers.ts`), `server.ts` route mounting, and the client (`WatchlistPage.tsx`, `lib/api.ts`, `Layout.tsx`). No files were changed.  ### What the code currently shows (important — may contradict the ticket's premise) - Schema: `watchlists.user_id` is `NOT NULL`, no anonymous/guest fallback. - Handlers: every read/write (`GET /`, `GET /:id`, `POST /`, `PUT/DELETE /:id`, item add",
+  "started": "2026-08-28T01:23:37Z",
+  "finished": "2026-08-28T01:23:38Z",
+  "repo": "wealthcx01/arca"
+}
