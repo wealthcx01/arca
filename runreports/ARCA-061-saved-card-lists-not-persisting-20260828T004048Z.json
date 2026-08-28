@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-28T00:40:47Z",
+  "ended_at": "2026-08-28T00:40:48Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I did (read-only):** traced the full path — `WatchlistPage.tsx` → `api.ts` fetch wrapper → `server.ts` route mounting → `watchlistRouter` auth middleware → `handlers.ts` → `schema.ts`/DB, plus `useAuth.tsx` and the login/session code in `db/auth.ts`.  **Finding, which changes the shape of this task:** every layer I inspected already does the right thing. - `api.ts` sends `credentials: \"include\"` on all requests — no localStorage/anonymous fallback anywhere in the watchlist or auth client code. - `WatchlistPage.tsx` o",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I did (read-only):** traced the full path — `WatchlistPage.tsx` → `api.ts` fetch wrapper → `server.ts` route mounting → `watchlistRouter` auth middleware → `handlers.ts` → `schema.ts`/DB, plus `useAuth.tsx` and the login/session code in `db/auth.ts`.  **Finding, which changes the shape of this task:** every layer I inspected already does the right thing. - `api.ts` sends `credentials: \"include\"` on all requests — no localStorage/anonymous fallback anywhere in the watchlist or auth client code. - `WatchlistPage.tsx` o",
+  "started": "2026-08-28T00:40:47Z",
+  "finished": "2026-08-28T00:40:48Z",
+  "repo": "wealthcx01/arca"
+}
