@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-28T00:59:41Z",
+  "ended_at": "2026-08-28T00:59:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **No changes made — this is a plan for founder review, per high-impact ticket policy.**  ### What I found by reading the code (no execution/testing done)  The watchlist read/write path is mostly wired correctly: - `WatchlistPage.tsx` has no localStorage/anonymous fallback — every load/save goes through `api.get/post/delete`, and `api.ts` sends `credentials: \"include\"` on every call, so the session cookie is attached correctly. - `modules/watchlist/handlers.ts` correctly scopes `GET /`, `POST /`, `GET /:id`, item add/remo",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **No changes made — this is a plan for founder review, per high-impact ticket policy.**  ### What I found by reading the code (no execution/testing done)  The watchlist read/write path is mostly wired correctly: - `WatchlistPage.tsx` has no localStorage/anonymous fallback — every load/save goes through `api.get/post/delete`, and `api.ts` sends `credentials: \"include\"` on every call, so the session cookie is attached correctly. - `modules/watchlist/handlers.ts` correctly scopes `GET /`, `POST /`, `GET /:id`, item add/remo",
+  "started": "2026-08-28T00:59:41Z",
+  "finished": "2026-08-28T00:59:42Z",
+  "repo": "wealthcx01/arca"
+}
