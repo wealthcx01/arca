@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-28T00:13:29Z",
+  "ended_at": "2026-08-28T00:13:30Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence bug (no code changes made)  ### What I did to prepare this plan Read-only audit of the full path: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` / `modules/auth/handlers.ts`.  ### What the code currently shows - **Schema is sound:** `watchlists.user_id` is `NOT NULL`, no default, no anonymous fallback. Can't create an orphaned/anonymous list. - **Handlers are sound:** every watchlist route (list/create/read/update/delete/add-item",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence bug (no code changes made)  ### What I did to prepare this plan Read-only audit of the full path: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` / `modules/auth/handlers.ts`.  ### What the code currently shows - **Schema is sound:** `watchlists.user_id` is `NOT NULL`, no default, no anonymous fallback. Can't create an orphaned/anonymous list. - **Handlers are sound:** every watchlist route (list/create/read/update/delete/add-item",
+  "started": "2026-08-28T00:13:29Z",
+  "finished": "2026-08-28T00:13:30Z",
+  "repo": "wealthcx01/arca"
+}
