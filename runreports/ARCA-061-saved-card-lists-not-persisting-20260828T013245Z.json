@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-28T01:32:44Z",
+  "ended_at": "2026-08-28T01:32:45Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login (do not implement yet)  **What I found by reading the code (no changes made):**  The backend scoping logic itself looks solid — `modules/watchlist/handlers.ts` filters every read/write by `user_id` derived from the session, and `modules/watchlist/schema.ts` makes `user_id` `NOT NULL`. There's no anonymous/guest fallback and no localStorage caching of watchlist data on the client. So this is not a \"missing feature\" — it's a narrower bug, most likely one of:  1. **Cookie `secure` flag mismatch (highest suspicion).** `modules/auth/",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login (do not implement yet)  **What I found by reading the code (no changes made):**  The backend scoping logic itself looks solid — `modules/watchlist/handlers.ts` filters every read/write by `user_id` derived from the session, and `modules/watchlist/schema.ts` makes `user_id` `NOT NULL`. There's no anonymous/guest fallback and no localStorage caching of watchlist data on the client. So this is not a \"missing feature\" — it's a narrower bug, most likely one of:  1. **Cookie `secure` flag mismatch (highest suspicion).** `modules/auth/",
+  "started": "2026-08-28T01:32:44Z",
+  "finished": "2026-08-28T01:32:45Z",
+  "repo": "wealthcx01/arca"
+}
