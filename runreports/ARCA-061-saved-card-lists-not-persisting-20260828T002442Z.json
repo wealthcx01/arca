@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-28T00:24:41Z",
+  "ended_at": "2026-08-28T00:24:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation done so far (read-only)  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / schema. Findings:  - **Client** (`WatchlistPage.tsx`, `api.ts`): fetches/saves via `/api/watchlist*` with `credentials: \"include\"`, no localStorage/anonymous fallback, page is gated behind auth in `App.tsx`. Looks correct. - **Server** (`modules/watchlist/handlers.ts`): every route resolves `userId` via a router-level auth middleware that reads the `arca_session` cookie → `getSession(token)` → sets `X-User-Id`. Every query",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation done so far (read-only)  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / schema. Findings:  - **Client** (`WatchlistPage.tsx`, `api.ts`): fetches/saves via `/api/watchlist*` with `credentials: \"include\"`, no localStorage/anonymous fallback, page is gated behind auth in `App.tsx`. Looks correct. - **Server** (`modules/watchlist/handlers.ts`): every route resolves `userId` via a router-level auth middleware that reads the `arca_session` cookie → `getSession(token)` → sets `X-User-Id`. Every query",
+  "started": "2026-08-28T00:24:41Z",
+  "finished": "2026-08-28T00:24:42Z",
+  "repo": "wealthcx01/arca"
+}
