@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-28T01:07:42Z",
+  "ended_at": "2026-08-28T01:07:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found before writing this plan I read the full chain end to end (read-only, no edits): `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and `server.ts`.  Notably, **the code as it exists today looks correctly wired**: - `api.ts` sends `credentials: \"include\"` on every request, so the `arca_session` cookie should always be attached. - `WatchlistPage.tsx` has no localStorage/sessionStorage ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found before writing this plan I read the full chain end to end (read-only, no edits): `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and `server.ts`.  Notably, **the code as it exists today looks correctly wired**: - `api.ts` sends `credentials: \"include\"` on every request, so the `arca_session` cookie should always be attached. - `WatchlistPage.tsx` has no localStorage/sessionStorage ",
+  "started": "2026-08-28T01:07:42Z",
+  "finished": "2026-08-28T01:07:42Z",
+  "repo": "wealthcx01/arca"
+}
