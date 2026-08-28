@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-28T00:28:29Z",
+  "ended_at": "2026-08-28T00:28:29Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found before writing this plan (read-only audit, no changes made)  I read the full path end-to-end: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`. Notable: **the code as it exists right now does not show the bug the ticket hypothesizes.**  - `watchlists.user_id` and all watchlist queries are correctly scoped (`eq(watchlists.user_id, userId)` on every read/write, ownership double-checked on item",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found before writing this plan (read-only audit, no changes made)  I read the full path end-to-end: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`. Notable: **the code as it exists right now does not show the bug the ticket hypothesizes.**  - `watchlists.user_id` and all watchlist queries are correctly scoped (`eq(watchlists.user_id, userId)` on every read/write, ownership double-checked on item",
+  "started": "2026-08-28T00:28:29Z",
+  "finished": "2026-08-28T00:28:29Z",
+  "repo": "wealthcx01/arca"
+}
