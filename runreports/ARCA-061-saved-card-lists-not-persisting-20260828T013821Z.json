@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-28T01:38:20Z",
+  "ended_at": "2026-08-28T01:38:21Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — before any implementation  **What I did:** read-only audit of the full path (client `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → schema → `modules/auth`/`db/auth.ts`). No files changed.  ### What I found  **The wiring the ticket suspects looks correct, not broken:** - `WatchlistPage.tsx` has no localStorage/anonymous fallback — every read and write goes through `api.ts`, which sends `credentials: \"include\"` on every request. - `App.tsx` won't render `WatchlistPage` until `useAuth()` resolves `/api/auth/me`, so there's no race where the pa",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — before any implementation  **What I did:** read-only audit of the full path (client `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → schema → `modules/auth`/`db/auth.ts`). No files changed.  ### What I found  **The wiring the ticket suspects looks correct, not broken:** - `WatchlistPage.tsx` has no localStorage/anonymous fallback — every read and write goes through `api.ts`, which sends `credentials: \"include\"` on every request. - `App.tsx` won't render `WatchlistPage` until `useAuth()` resolves `/api/auth/me`, so there's no race where the pa",
+  "started": "2026-08-28T01:38:20Z",
+  "finished": "2026-08-28T01:38:21Z",
+  "repo": "wealthcx01/arca"
+}
