@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T01:32:43Z",
+  "ended_at": "2026-08-29T01:32:43Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I traced the full watchlist path end-to-end before proposing anything:  - **Client** (`client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`): loads via `GET /watchlist` on mount, saves via `POST/DELETE .../items`, always sends `credentials: \"include\"`. No localStorage/anonymous fallback exists anywhere in the client. - **Backend** (`modules/watchlist/handlers.ts`): every route is behind an auth middleware that resolves the session cookie → `X-User-Id`, and every query (`SELECT`/`INSERT`/`DELETE`) filters by `watchlists.user_id`. ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I traced the full watchlist path end-to-end before proposing anything:  - **Client** (`client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`): loads via `GET /watchlist` on mount, saves via `POST/DELETE .../items`, always sends `credentials: \"include\"`. No localStorage/anonymous fallback exists anywhere in the client. - **Backend** (`modules/watchlist/handlers.ts`): every route is behind an auth middleware that resolves the session cookie → `X-User-Id`, and every query (`SELECT`/`INSERT`/`DELETE`) filters by `watchlists.user_id`. ",
+  "started": "2026-08-29T01:32:43Z",
+  "finished": "2026-08-29T01:32:43Z",
+  "repo": "wealthcx01/arca"
+}
