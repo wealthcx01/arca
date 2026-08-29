@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T00:27:36Z",
+  "ended_at": "2026-08-29T00:27:37Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no edits made)  I traced the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`.  What I found on current `master`: - **Client:** Every watchlist action (load, create, delete, add card, remove card) goes through `api.*` calls with `credentials: \"include\"`. No `localStorage`/`sessionStorage` usage anywhere in the watchlist code path (the only localStorage use in the client is an unrelated theme toggle in `Layout.tsx`). No anonymous",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no edits made)  I traced the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`.  What I found on current `master`: - **Client:** Every watchlist action (load, create, delete, add card, remove card) goes through `api.*` calls with `credentials: \"include\"`. No `localStorage`/`sessionStorage` usage anywhere in the watchlist code path (the only localStorage use in the client is an unrelated theme toggle in `Layout.tsx`). No anonymous",
+  "started": "2026-08-29T00:27:36Z",
+  "finished": "2026-08-29T00:27:37Z",
+  "repo": "wealthcx01/arca"
+}
