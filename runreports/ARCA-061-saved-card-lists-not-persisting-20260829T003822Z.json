@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T00:38:22Z",
+  "ended_at": "2026-08-29T00:38:22Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only)  **What I found by reading the actual code (client → API → DB):**  - `WatchlistPage.tsx` fetches `/watchlist` via `api.get()`, which sends `credentials: \"include\"` on every call — cookies go out, no localStorage/anonymous fallback exists anywhere in the watchlist client code. - The route is only rendered once `useAuth()` has resolved `user` (App.tsx gates all pages behind login), so it isn't racing an unauthenticated mount. - `modules/watchlist/handlers.ts` has its own auth middleware that validates the session cookie, rej",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only)  **What I found by reading the actual code (client → API → DB):**  - `WatchlistPage.tsx` fetches `/watchlist` via `api.get()`, which sends `credentials: \"include\"` on every call — cookies go out, no localStorage/anonymous fallback exists anywhere in the watchlist client code. - The route is only rendered once `useAuth()` has resolved `user` (App.tsx gates all pages behind login), so it isn't racing an unauthenticated mount. - `modules/watchlist/handlers.ts` has its own auth middleware that validates the session cookie, rej",
+  "started": "2026-08-29T00:38:22Z",
+  "finished": "2026-08-29T00:38:22Z",
+  "repo": "wealthcx01/arca"
+}
