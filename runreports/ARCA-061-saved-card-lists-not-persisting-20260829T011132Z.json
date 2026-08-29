@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T01:11:31Z",
+  "ended_at": "2026-08-29T01:11:32Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting  **What I found on read-only audit (no changes made):**  The server-side wiring is actually correct, which changes the diagnosis from the ticket's headline hypothesis: - `modules/watchlist/handlers.ts` has its own auth middleware requiring a valid session and correctly scopes every query by `user_id`. - `modules/watchlist/schema.ts` ties watchlists/items to `user_id` with no default-watchlist-recreation bug. - `client/src/pages/WatchlistPage.tsx` is purely server-backed — no localStorage/anonymous fallback found. - Logins reuse the same `u",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting  **What I found on read-only audit (no changes made):**  The server-side wiring is actually correct, which changes the diagnosis from the ticket's headline hypothesis: - `modules/watchlist/handlers.ts` has its own auth middleware requiring a valid session and correctly scopes every query by `user_id`. - `modules/watchlist/schema.ts` ties watchlists/items to `user_id` with no default-watchlist-recreation bug. - `client/src/pages/WatchlistPage.tsx` is purely server-backed — no localStorage/anonymous fallback found. - Logins reuse the same `u",
+  "started": "2026-08-29T01:11:31Z",
+  "finished": "2026-08-29T01:11:32Z",
+  "repo": "wealthcx01/arca"
+}
