@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T00:46:27Z",
+  "ended_at": "2026-08-29T00:46:28Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no changes made — investigation only)  ### What's actually happening The backend is correctly scoping watchlists by user (`user_id` column, `X-User-Id` header set by session middleware in `modules/watchlist/handlers.ts`). There's no localStorage/anonymous fallback anywhere in the client. The bug is a **client-side race condition** in `client/src/pages/WatchlistPage.tsx`:  - `WatchlistPage` fires its `GET /watchlist` fetch on mount, unconditionally — it never imports or checks `useAuth()`. - `AuthProvider` (`client/src/hooks/useAuth.tsx`) independently fetches `/auth/me",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no changes made — investigation only)  ### What's actually happening The backend is correctly scoping watchlists by user (`user_id` column, `X-User-Id` header set by session middleware in `modules/watchlist/handlers.ts`). There's no localStorage/anonymous fallback anywhere in the client. The bug is a **client-side race condition** in `client/src/pages/WatchlistPage.tsx`:  - `WatchlistPage` fires its `GET /watchlist` fetch on mount, unconditionally — it never imports or checks `useAuth()`. - `AuthProvider` (`client/src/hooks/useAuth.tsx`) independently fetches `/auth/me",
+  "started": "2026-08-29T00:46:27Z",
+  "finished": "2026-08-29T00:46:28Z",
+  "repo": "wealthcx01/arca"
+}
