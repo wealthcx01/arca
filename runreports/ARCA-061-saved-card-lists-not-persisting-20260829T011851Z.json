@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T01:18:51Z",
+  "ended_at": "2026-08-29T01:18:51Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  **What I did to prepare this plan:** Read the full chain end-to-end (no edits) — `client/src/pages/WatchlistPage.tsx`, `client/src/hooks/useAuth.tsx`, `client/src/lib/api.ts`, `client/src/App.tsx` router, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and the relevant `server.ts` middleware.  **What I found:** contrary to the ticket's working assumption, I could not find an obvious wiring bug by reading the code: - `api.ts` sends `credentials: \"include\"` on every request (no calls bypass",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  **What I did to prepare this plan:** Read the full chain end-to-end (no edits) — `client/src/pages/WatchlistPage.tsx`, `client/src/hooks/useAuth.tsx`, `client/src/lib/api.ts`, `client/src/App.tsx` router, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and the relevant `server.ts` middleware.  **What I found:** contrary to the ticket's working assumption, I could not find an obvious wiring bug by reading the code: - `api.ts` sends `credentials: \"include\"` on every request (no calls bypass",
+  "started": "2026-08-29T01:18:51Z",
+  "finished": "2026-08-29T01:18:51Z",
+  "repo": "wealthcx01/arca"
+}
