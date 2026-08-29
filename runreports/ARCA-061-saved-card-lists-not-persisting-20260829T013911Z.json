@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T01:39:10Z",
+  "ended_at": "2026-08-29T01:39:11Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found before writing this plan (read-only audit, no edits made):**  I traced the entire path — `WatchlistPage.tsx` → `api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite — and it looks correctly wired, which is worth flagging up front because it changes the shape of this task:  - Every watchlist route (`modules/watchlist/handlers.ts`) has its own auth middleware that validates the session cookie against a real `sessions` table (30-day expiry, DB-backed, not in-memory) and sets `X-User-Id",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found before writing this plan (read-only audit, no edits made):**  I traced the entire path — `WatchlistPage.tsx` → `api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite — and it looks correctly wired, which is worth flagging up front because it changes the shape of this task:  - Every watchlist route (`modules/watchlist/handlers.ts`) has its own auth middleware that validates the session cookie against a real `sessions` table (30-day expiry, DB-backed, not in-memory) and sets `X-User-Id",
+  "started": "2026-08-29T01:39:10Z",
+  "finished": "2026-08-29T01:39:11Z",
+  "repo": "wealthcx01/arca"
+}
