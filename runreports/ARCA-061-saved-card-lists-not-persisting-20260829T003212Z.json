@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T00:32:11Z",
+  "ended_at": "2026-08-29T00:32:12Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — this is a plan only)  **What I found (read-only audit, confirmed myself against the source):**  The watchlist code itself is clean. `client/src/pages/WatchlistPage.tsx` has no localStorage/anonymous fallback — every read/write goes through the API with the session cookie. `modules/watchlist/handlers.ts` correctly resolves `X-User-Id` from a verified session and scopes every query (`GET /`, item add/remove) with `eq(watchlists.user_id, userId)`. There's no default/guest watchlist logic. So this is **not** the wiring bug the ticket description gues",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — this is a plan only)  **What I found (read-only audit, confirmed myself against the source):**  The watchlist code itself is clean. `client/src/pages/WatchlistPage.tsx` has no localStorage/anonymous fallback — every read/write goes through the API with the session cookie. `modules/watchlist/handlers.ts` correctly resolves `X-User-Id` from a verified session and scopes every query (`GET /`, item add/remove) with `eq(watchlists.user_id, userId)`. There's no default/guest watchlist logic. So this is **not** the wiring bug the ticket description gues",
+  "started": "2026-08-29T00:32:11Z",
+  "finished": "2026-08-29T00:32:12Z",
+  "repo": "wealthcx01/arca"
+}
