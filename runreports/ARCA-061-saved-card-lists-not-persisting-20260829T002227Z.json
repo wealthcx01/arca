@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T00:22:26Z",
+  "ended_at": "2026-08-29T00:22:27Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found from a read-only audit (no code changed):**  The watchlist code itself looks correctly wired end-to-end: - `modules/watchlist/handlers.ts` has its own auth middleware that requires a valid `arca_session` cookie, validates it via `getSession()`, and injects `X-User-Id` — same pattern as portfolio. - Every route (list, create, get, update, delete, add item, remove item) filters/verifies by `user_id`, so there's no shared/anonymous watchlist and no hardcoded default id. - `client/src/pages/WatchlistPage.tsx` has no localSto",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found from a read-only audit (no code changed):**  The watchlist code itself looks correctly wired end-to-end: - `modules/watchlist/handlers.ts` has its own auth middleware that requires a valid `arca_session` cookie, validates it via `getSession()`, and injects `X-User-Id` — same pattern as portfolio. - Every route (list, create, get, update, delete, add item, remove item) filters/verifies by `user_id`, so there's no shared/anonymous watchlist and no hardcoded default id. - `client/src/pages/WatchlistPage.tsx` has no localSto",
+  "started": "2026-08-29T00:22:26Z",
+  "finished": "2026-08-29T00:22:27Z",
+  "repo": "wealthcx01/arca"
+}
