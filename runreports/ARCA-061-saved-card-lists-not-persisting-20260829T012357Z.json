@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T01:23:57Z",
+  "ended_at": "2026-08-29T01:23:57Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found before proposing anything (read-only audit, no edits made)  I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  Contrary to the ticket's hypothesis, I could **not** find an obvious wiring bug in the current code:  - The client uses `credentials: \"include\"` on every request (`client/src/lib/api.ts:5`), so the session cookie is sent on every watchlist call. - `modules/watchlist/handlers.ts` has its own auth middleware (lines",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found before proposing anything (read-only audit, no edits made)  I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  Contrary to the ticket's hypothesis, I could **not** find an obvious wiring bug in the current code:  - The client uses `credentials: \"include\"` on every request (`client/src/lib/api.ts:5`), so the session cookie is sent on every watchlist call. - `modules/watchlist/handlers.ts` has its own auth middleware (lines",
+  "started": "2026-08-29T01:23:57Z",
+  "finished": "2026-08-29T01:23:57Z",
+  "repo": "wealthcx01/arca"
+}
