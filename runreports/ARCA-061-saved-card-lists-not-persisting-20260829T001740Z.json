@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T00:17:40Z",
+  "ended_at": "2026-08-29T00:17:40Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Confirmed: no anonymous/demo fallback, and the only `localStorage` usage in the client is for theme, unrelated to watchlists. This corroborates the sub-agent's finding. Here's the plan.  ## Plan for ARCA-61 (no code changes made — plan only)  **What I found (read-only audit):**  The backend watchlist path is actually correct end-to-end: the router middleware (`modules/watchlist/handlers.ts`) reads the `arca_session` cookie, resolves it to a stable user via `getSession()`, injects `X-User-Id`, and every query (`GET /watchlist`, `POST /:id/items`, etc.) is properly scoped by `user_id`. The cli",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Confirmed: no anonymous/demo fallback, and the only `localStorage` usage in the client is for theme, unrelated to watchlists. This corroborates the sub-agent's finding. Here's the plan.  ## Plan for ARCA-61 (no code changes made — plan only)  **What I found (read-only audit):**  The backend watchlist path is actually correct end-to-end: the router middleware (`modules/watchlist/handlers.ts`) reads the `arca_session` cookie, resolves it to a stable user via `getSession()`, injects `X-User-Id`, and every query (`GET /watchlist`, `POST /:id/items`, etc.) is properly scoped by `user_id`. The cli",
+  "started": "2026-08-29T00:17:40Z",
+  "finished": "2026-08-29T00:17:40Z",
+  "repo": "wealthcx01/arca"
+}
