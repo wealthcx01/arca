@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T01:03:18Z",
+  "ended_at": "2026-08-29T01:03:18Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did:** read-only audit of the full path (`client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`). No files changed.  ### What the static read shows (important — may overturn the ticket's assumption)  The wiring looks correct, not broken: - `modules/watchlist/handlers.ts:12-21` has its own auth middleware (`watchlistRouter.use(\"*\", ...)`) that reads the `arca_session` cookie, resolves the session, and injects `X-User",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did:** read-only audit of the full path (`client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`). No files changed.  ### What the static read shows (important — may overturn the ticket's assumption)  The wiring looks correct, not broken: - `modules/watchlist/handlers.ts:12-21` has its own auth middleware (`watchlistRouter.use(\"*\", ...)`) that reads the `arca_session` cookie, resolves the session, and injects `X-User",
+  "started": "2026-08-29T01:03:18Z",
+  "finished": "2026-08-29T01:03:18Z",
+  "repo": "wealthcx01/arca"
+}
