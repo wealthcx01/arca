@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-29T00:53:07Z",
+  "ended_at": "2026-08-29T00:53:07Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence across login  ### What I did before writing this plan Since this touches auth-adjacent code, I read (not edited) the full chain rather than guessing: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `modules/watchlist/{schema,handlers}.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `server.ts` (CORS), and `client/vite.config.ts` (proxy). I also checked git history on these files.  ### What the audit found (this should change the plan, not just confirm it) Every \"usual suspect\" the ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence across login  ### What I did before writing this plan Since this touches auth-adjacent code, I read (not edited) the full chain rather than guessing: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `modules/watchlist/{schema,handlers}.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `server.ts` (CORS), and `client/vite.config.ts` (proxy). I also checked git history on these files.  ### What the audit found (this should change the plan, not just confirm it) Every \"usual suspect\" the ",
+  "started": "2026-08-29T00:53:07Z",
+  "finished": "2026-08-29T00:53:07Z",
+  "repo": "wealthcx01/arca"
+}
