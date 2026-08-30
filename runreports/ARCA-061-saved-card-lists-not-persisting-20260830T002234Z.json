@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T00:22:33Z",
+  "ended_at": "2026-08-30T00:22:34Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **No code has been changed.** This is a plan only, per the high-impact-ticket rule (auth-adjacent data path).  ### What I found from reading the code (not yet acted on)  I traced the full path: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / SQLite.  Contrary to the ticket's hypothesis, I did **not** find an obvious \"smoking gun\" bug in the primary path: - The client has no `localStorage`/`sessionStorage` fallback anywhere in the watchlist code �",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **No code has been changed.** This is a plan only, per the high-impact-ticket rule (auth-adjacent data path).  ### What I found from reading the code (not yet acted on)  I traced the full path: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / SQLite.  Contrary to the ticket's hypothesis, I did **not** find an obvious \"smoking gun\" bug in the primary path: - The client has no `localStorage`/`sessionStorage` fallback anywhere in the watchlist code �",
+  "started": "2026-08-30T00:22:33Z",
+  "finished": "2026-08-30T00:22:34Z",
+  "repo": "wealthcx01/arca"
+}
