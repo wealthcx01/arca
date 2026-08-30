@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T01:17:42Z",
+  "ended_at": "2026-08-30T01:17:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good, I now have enough grounded evidence. Here's the plan — no files touched.  ## Plan: ARCA-61 — Saved watchlists not persisting to signed-in account  ### What I found on inspection (read-only, no changes made) I audited the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus `db/auth.ts` and `modules/auth/handlers.ts`.  Contrary to my expectation going in, **I could not find an obvious bug in the code as written**: - `watchlists.user_id` is `notNull` and every handler filters by it (`eq(w",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good, I now have enough grounded evidence. Here's the plan — no files touched.  ## Plan: ARCA-61 — Saved watchlists not persisting to signed-in account  ### What I found on inspection (read-only, no changes made) I audited the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus `db/auth.ts` and `modules/auth/handlers.ts`.  Contrary to my expectation going in, **I could not find an obvious bug in the code as written**: - `watchlists.user_id` is `notNull` and every handler filters by it (`eq(w",
+  "started": "2026-08-30T01:17:42Z",
+  "finished": "2026-08-30T01:17:42Z",
+  "repo": "wealthcx01/arca"
+}
