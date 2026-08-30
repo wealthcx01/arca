@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T00:43:46Z",
+  "ended_at": "2026-08-30T00:43:47Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence  **What I did:** read-only trace of the whole path (no edits) — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `useAuth.tsx`/`App.tsx` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → `modules/watchlist/schema.ts` → `db/index.ts`.  **What I found:** the current code, as written, looks correct end-to-end: - Client sends `credentials: \"include\"` on every request; no localStorage/sessionStorage is used anywhere near watchlists (only theme uses localStorage). - `App.tsx` gates the entire app behind `useAuth()` — there",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence  **What I did:** read-only trace of the whole path (no edits) — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `useAuth.tsx`/`App.tsx` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → `modules/watchlist/schema.ts` → `db/index.ts`.  **What I found:** the current code, as written, looks correct end-to-end: - Client sends `credentials: \"include\"` on every request; no localStorage/sessionStorage is used anywhere near watchlists (only theme uses localStorage). - `App.tsx` gates the entire app behind `useAuth()` — there",
+  "started": "2026-08-30T00:43:46Z",
+  "finished": "2026-08-30T00:43:47Z",
+  "repo": "wealthcx01/arca"
+}
