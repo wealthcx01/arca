@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T00:18:27Z",
+  "ended_at": "2026-08-30T00:18:27Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across sign-in  ### What I did (read-only) Audited the full path end to end: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session/cookie code in `db/auth.ts` and `modules/auth/handlers.ts`. No files were changed.  ### What I found The backend architecture actually looks correct on inspection: - Every watchlist route (`GET /`, `POST /`, `GET /:id`, `PUT /:id`, `DELETE /:id`, item add/remove) filters by `eq(watchlists.user_id, userId)`, where `userId` comes from a validat",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across sign-in  ### What I did (read-only) Audited the full path end to end: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session/cookie code in `db/auth.ts` and `modules/auth/handlers.ts`. No files were changed.  ### What I found The backend architecture actually looks correct on inspection: - Every watchlist route (`GET /`, `POST /`, `GET /:id`, `PUT /:id`, `DELETE /:id`, item add/remove) filters by `eq(watchlists.user_id, userId)`, where `userId` comes from a validat",
+  "started": "2026-08-30T00:18:27Z",
+  "finished": "2026-08-30T00:18:27Z",
+  "repo": "wealthcx01/arca"
+}
