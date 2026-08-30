@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T00:33:33Z",
+  "ended_at": "2026-08-30T00:33:33Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Diagnosis (read-only investigation, no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  **What I found is correctly wired:** - Frontend uses `credentials: \"include\"` on every request, no localStorage/anonymous fallback anywhere in the watchlist flow. - `watchlists` table has a mandatory `user_id` column; every query (list/get/create/delete/add-item/remove-item) filters by `eq(watchlists.user_id, userId)`. - The watchlist router has its own auth middleware that validates the `arca_session`",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Diagnosis (read-only investigation, no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  **What I found is correctly wired:** - Frontend uses `credentials: \"include\"` on every request, no localStorage/anonymous fallback anywhere in the watchlist flow. - `watchlists` table has a mandatory `user_id` column; every query (list/get/create/delete/add-item/remove-item) filters by `eq(watchlists.user_id, userId)`. - The watchlist router has its own auth middleware that validates the `arca_session`",
+  "started": "2026-08-30T00:33:33Z",
+  "finished": "2026-08-30T00:33:33Z",
+  "repo": "wealthcx01/arca"
+}
