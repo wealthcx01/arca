@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T00:52:55Z",
+  "ended_at": "2026-08-30T00:52:56Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting to signed-in account  ### What I did to prepare this plan Before writing this, I read (read-only, no edits) the full chain end-to-end: - `client/src/pages/WatchlistPage.tsx` — loads via `GET /watchlist`, saves via `POST/DELETE /watchlist/:id` and `/watchlist/:id/items` - `client/src/lib/api.ts` — every request sends `credentials: \"include\"`; no localStorage/anonymous fallback anywhere in the watchlist code path - `client/src/hooks/useAuth.tsx` + `App.tsx` — session is resolved via `GET /auth/me` before any page (including watchlist) render",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting to signed-in account  ### What I did to prepare this plan Before writing this, I read (read-only, no edits) the full chain end-to-end: - `client/src/pages/WatchlistPage.tsx` — loads via `GET /watchlist`, saves via `POST/DELETE /watchlist/:id` and `/watchlist/:id/items` - `client/src/lib/api.ts` — every request sends `credentials: \"include\"`; no localStorage/anonymous fallback anywhere in the watchlist code path - `client/src/hooks/useAuth.tsx` + `App.tsx` — session is resolved via `GET /auth/me` before any page (including watchlist) render",
+  "started": "2026-08-30T00:52:55Z",
+  "finished": "2026-08-30T00:52:56Z",
+  "repo": "wealthcx01/arca"
+}
