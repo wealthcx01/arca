@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T00:47:18Z",
+  "ended_at": "2026-08-30T00:47:18Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found (read-only audit, no changes made) I traced the full watchlist path — `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `modules/auth`/`db/auth.ts` → SQLite. Contrary to the ticket's hypothesis, I could **not** find a wiring bug in the watchlist module itself:  - No localStorage/anonymous fallback exists anywhere in the watchlist flow (the only localStorage use in the app is an unrelated theme preference). - Every watchlist table row requires a non-null `user_id`, and every handler (list, get, ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found (read-only audit, no changes made) I traced the full watchlist path — `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `modules/auth`/`db/auth.ts` → SQLite. Contrary to the ticket's hypothesis, I could **not** find a wiring bug in the watchlist module itself:  - No localStorage/anonymous fallback exists anywhere in the watchlist flow (the only localStorage use in the app is an unrelated theme preference). - Every watchlist table row requires a non-null `user_id`, and every handler (list, get, ",
+  "started": "2026-08-30T00:47:18Z",
+  "finished": "2026-08-30T00:47:18Z",
+  "repo": "wealthcx01/arca"
+}
