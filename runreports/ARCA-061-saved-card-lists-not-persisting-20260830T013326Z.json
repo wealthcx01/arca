@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T01:33:26Z",
+  "ended_at": "2026-08-30T01:33:26Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I did to prepare this plan:** read the client (`WatchlistPage.tsx`, `api.ts`, `useAuth.tsx`), the server (`modules/watchlist/handlers.ts`, `schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `server.ts`, `db/index.ts`), and the dev proxy config — no edits made.  **What I found (important — corrects an initial wrong lead):** A first-pass subagent scan claimed the bug was that `watchlistRouter`'s own auth middleware injects `X-User-Id` via `c.req.raw.headers.set()` and that Hono doesn't propagate it to downstream handlers. I check",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I did to prepare this plan:** read the client (`WatchlistPage.tsx`, `api.ts`, `useAuth.tsx`), the server (`modules/watchlist/handlers.ts`, `schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `server.ts`, `db/index.ts`), and the dev proxy config — no edits made.  **What I found (important — corrects an initial wrong lead):** A first-pass subagent scan claimed the bug was that `watchlistRouter`'s own auth middleware injects `X-User-Id` via `c.req.raw.headers.set()` and that Hono doesn't propagate it to downstream handlers. I check",
+  "started": "2026-08-30T01:33:26Z",
+  "finished": "2026-08-30T01:33:26Z",
+  "repo": "wealthcx01/arca"
+}
