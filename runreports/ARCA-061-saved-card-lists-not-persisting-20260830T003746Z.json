@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T00:37:45Z",
+  "ended_at": "2026-08-30T00:37:46Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: This looks correctly wired — every handler scopes by `user_id` derived from the session. That confirms the client and server code paths look correct on inspection; I now have enough to write an honest, hypothesis-ranked plan rather than asserting a root cause I haven't reproduced live.  ---  ## Plan for ARCA-61: Saved card lists not persisting  **What I audited (read-only, no edits made):** the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` route wiring → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session/cookie code in `db/auth.ts",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: This looks correctly wired — every handler scopes by `user_id` derived from the session. That confirms the client and server code paths look correct on inspection; I now have enough to write an honest, hypothesis-ranked plan rather than asserting a root cause I haven't reproduced live.  ---  ## Plan for ARCA-61: Saved card lists not persisting  **What I audited (read-only, no edits made):** the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` route wiring → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session/cookie code in `db/auth.ts",
+  "started": "2026-08-30T00:37:45Z",
+  "finished": "2026-08-30T00:37:46Z",
+  "repo": "wealthcx01/arca"
+}
