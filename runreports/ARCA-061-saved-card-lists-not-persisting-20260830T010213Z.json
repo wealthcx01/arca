@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T01:02:12Z",
+  "ended_at": "2026-08-30T01:02:13Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence audit  **What I found already (read-only, no edits made):**  I traced the full path before writing this plan, since \"plan the fix\" is only useful if grounded in what's actually there:  - `client/src/pages/WatchlistPage.tsx` — loads/saves entirely through `api.get/post/put/delete(\"/watchlist...\")`. No localStorage/sessionStorage fallback for the list data itself. - `client/src/lib/api.ts:4-5` — every request sends `credentials: \"include\"`, so the session cookie goes out on every watchlist call. - `modules/watchlist/handlers.ts:12-21` — router-",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence audit  **What I found already (read-only, no edits made):**  I traced the full path before writing this plan, since \"plan the fix\" is only useful if grounded in what's actually there:  - `client/src/pages/WatchlistPage.tsx` — loads/saves entirely through `api.get/post/put/delete(\"/watchlist...\")`. No localStorage/sessionStorage fallback for the list data itself. - `client/src/lib/api.ts:4-5` — every request sends `credentials: \"include\"`, so the session cookie goes out on every watchlist call. - `modules/watchlist/handlers.ts:12-21` — router-",
+  "started": "2026-08-30T01:02:12Z",
+  "finished": "2026-08-30T01:02:13Z",
+  "repo": "wealthcx01/arca"
+}
