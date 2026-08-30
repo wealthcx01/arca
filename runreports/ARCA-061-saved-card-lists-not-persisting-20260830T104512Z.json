@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T10:45:12Z",
+  "ended_at": "2026-08-30T10:45:12Z",
+  "trigger": "scheduled",
+  "outcome": "blocked",
+  "summary_md": "Daily lane budget reached — parked until tomorrow.",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": "Daily lane budget reached — parked until tomorrow.",
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "blocked",
+  "summary": "Daily lane budget reached — parked until tomorrow.",
+  "started": "2026-08-30T10:45:12Z",
+  "finished": "2026-08-30T10:45:12Z",
+  "repo": "wealthcx01/arca"
+}
