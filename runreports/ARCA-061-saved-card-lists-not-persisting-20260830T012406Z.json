@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T01:24:06Z",
+  "ended_at": "2026-08-30T01:24:06Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I did (read-only audit, no files touched) I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session/cookie logic in `db/auth.ts` and `modules/auth/handlers.ts`.  An automated sub-agent first reported a confident root cause (auth middleware setting `X-User-Id` via `c.req.raw.headers.set()` on an \"immutable\" Request, silently failing). **I verified that claim empirically with a live Bun/Hono server and it's wrong** — the header mutat",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I did (read-only audit, no files touched) I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session/cookie logic in `db/auth.ts` and `modules/auth/handlers.ts`.  An automated sub-agent first reported a confident root cause (auth middleware setting `X-User-Id` via `c.req.raw.headers.set()` on an \"immutable\" Request, silently failing). **I verified that claim empirically with a live Bun/Hono server and it's wrong** — the header mutat",
+  "started": "2026-08-30T01:24:06Z",
+  "finished": "2026-08-30T01:24:06Z",
+  "repo": "wealthcx01/arca"
+}
