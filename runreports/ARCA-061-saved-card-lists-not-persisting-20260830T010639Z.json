@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T01:06:39Z",
+  "ended_at": "2026-08-30T01:06:39Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found (read-only investigation, no changes made):**  The backend is actually built correctly — `watchlists` has a `NOT NULL user_id` column, every handler filters by `user_id`, and the client's `api.ts` sends cookies (`credentials: \"include\"`) on every request. There's no localStorage/guest fallback anywhere in the watchlist client code. So this isn't the \"anonymous storage\" bug the ticket speculated about — it's more likely a **session/auth edge case** that makes the watchlist page silently render as empty when the user is ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found (read-only investigation, no changes made):**  The backend is actually built correctly — `watchlists` has a `NOT NULL user_id` column, every handler filters by `user_id`, and the client's `api.ts` sends cookies (`credentials: \"include\"`) on every request. There's no localStorage/guest fallback anywhere in the watchlist client code. So this isn't the \"anonymous storage\" bug the ticket speculated about — it's more likely a **session/auth edge case** that makes the watchlist page silently render as empty when the user is ",
+  "started": "2026-08-30T01:06:39Z",
+  "finished": "2026-08-30T01:06:39Z",
+  "repo": "wealthcx01/arca"
+}
