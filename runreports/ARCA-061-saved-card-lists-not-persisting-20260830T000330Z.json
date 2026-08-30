@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-30T00:03:29Z",
+  "ended_at": "2026-08-30T00:03:30Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Same ticket doc, no extra info. I now have enough to write the plan without touching any files.  ## Plan for ARCA-61 (no code changed — for founder review)  **What I did to prepare this plan:** read-only audit of the full chain — `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → DB schema (`db/push.ts`).  **What I found:**  1. **The watchlist backend is correctly scoped per-user.** Every route (`GET /`, `GET /:id`, item add/remove) filters by `watchlists.user_id`, derived from a required auth-middleware check (401 if n",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Same ticket doc, no extra info. I now have enough to write the plan without touching any files.  ## Plan for ARCA-61 (no code changed — for founder review)  **What I did to prepare this plan:** read-only audit of the full chain — `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → DB schema (`db/push.ts`).  **What I found:**  1. **The watchlist backend is correctly scoped per-user.** Every route (`GET /`, `GET /:id`, item add/remove) filters by `watchlists.user_id`, derived from a required auth-middleware check (401 if n",
+  "started": "2026-08-30T00:03:29Z",
+  "finished": "2026-08-30T00:03:30Z",
+  "repo": "wealthcx01/arca"
+}
