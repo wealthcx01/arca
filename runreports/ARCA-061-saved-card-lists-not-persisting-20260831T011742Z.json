@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-31T01:17:41Z",
+  "ended_at": "2026-08-31T01:17:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting to signed-in account  **No code changes made.** This is a plan only, per the high-impact flag (touches auth-adjacent, ownership-scoped data).  ### What I already checked (read-only, to ground the plan) I read the full chain end to end before proposing anything: - `modules/watchlist/schema.ts` — watchlists have a `user_id` column, items key off `watchlist_id`. Correctly modeled. - `modules/watchlist/handlers.ts` — every route (`GET /`, `GET /:id`, `PUT /:id`, `DELETE /:id`, item add/remove) filters by `and(eq(watchlists.id, id), eq(watchlis",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting to signed-in account  **No code changes made.** This is a plan only, per the high-impact flag (touches auth-adjacent, ownership-scoped data).  ### What I already checked (read-only, to ground the plan) I read the full chain end to end before proposing anything: - `modules/watchlist/schema.ts` — watchlists have a `user_id` column, items key off `watchlist_id`. Correctly modeled. - `modules/watchlist/handlers.ts` — every route (`GET /`, `GET /:id`, `PUT /:id`, `DELETE /:id`, item add/remove) filters by `and(eq(watchlists.id, id), eq(watchlis",
+  "started": "2026-08-31T01:17:41Z",
+  "finished": "2026-08-31T01:17:42Z",
+  "repo": "wealthcx01/arca"
+}
