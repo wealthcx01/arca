@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-31T01:07:58Z",
+  "ended_at": "2026-08-31T01:07:59Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  ### What I did (read-only) Traced the full path with no edits: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` (session/login) → `server.ts` route mounting.  ### What I found Contrary to the ticket's working assumption, static review does **not** turn up an obvious wiring bug: - `WatchlistPage.tsx` has no localStorage/anonymous fallback — it's purely server-driven (`api.get(\"/watchlist\")` on mount, save/add/remove all go throug",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  ### What I did (read-only) Traced the full path with no edits: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` (session/login) → `server.ts` route mounting.  ### What I found Contrary to the ticket's working assumption, static review does **not** turn up an obvious wiring bug: - `WatchlistPage.tsx` has no localStorage/anonymous fallback — it's purely server-driven (`api.get(\"/watchlist\")` on mount, save/add/remove all go throug",
+  "started": "2026-08-31T01:07:58Z",
+  "finished": "2026-08-31T01:07:59Z",
+  "repo": "wealthcx01/arca"
+}
