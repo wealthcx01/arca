@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-31T01:12:55Z",
+  "ended_at": "2026-08-31T01:12:56Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did:** Read-only audit of the full chain (no edits made): `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `db/index.ts`, plus `server.ts` routing and `useAuth.tsx`.  ### Key finding — the premise in the ticket doesn't match what's in the code today  The ticket assumes an obvious client-side wiring bug (missing user id on save, anonymous/local fallback, wrong default watchlist_id). I couldn't find one:  - `api.ts` sends `credentials: \"include\"` on every request, so the sess",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did:** Read-only audit of the full chain (no edits made): `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `db/index.ts`, plus `server.ts` routing and `useAuth.tsx`.  ### Key finding — the premise in the ticket doesn't match what's in the code today  The ticket assumes an obvious client-side wiring bug (missing user id on save, anonymous/local fallback, wrong default watchlist_id). I couldn't find one:  - `api.ts` sends `credentials: \"include\"` on every request, so the sess",
+  "started": "2026-08-31T01:12:55Z",
+  "finished": "2026-08-31T01:12:56Z",
+  "repo": "wealthcx01/arca"
+}
