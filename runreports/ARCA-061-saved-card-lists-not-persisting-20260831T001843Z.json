@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-31T00:18:43Z",
+  "ended_at": "2026-08-31T00:18:43Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — audit only)  **What I found by reading the code (client → API → DB), no bug reproduced:**  The chain the ticket suspects is broken actually looks correctly wired as it stands today:  - `WatchlistPage.tsx` has no localStorage/anonymous fallback — it's pure in-memory React state fed entirely by `GET /watchlist` and `GET /watchlist/:id`. - `client/src/lib/api.ts` sends `credentials: \"include\"` on every call, so the session cookie always rides along; no user id is (or needs to be) sent from the client. - `modules/watchlist/handlers.ts` has its ow",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — audit only)  **What I found by reading the code (client → API → DB), no bug reproduced:**  The chain the ticket suspects is broken actually looks correctly wired as it stands today:  - `WatchlistPage.tsx` has no localStorage/anonymous fallback — it's pure in-memory React state fed entirely by `GET /watchlist` and `GET /watchlist/:id`. - `client/src/lib/api.ts` sends `credentials: \"include\"` on every call, so the session cookie always rides along; no user id is (or needs to be) sent from the client. - `modules/watchlist/handlers.ts` has its ow",
+  "started": "2026-08-31T00:18:43Z",
+  "finished": "2026-08-31T00:18:43Z",
+  "repo": "wealthcx01/arca"
+}
