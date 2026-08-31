@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-31T01:04:39Z",
+  "ended_at": "2026-08-31T01:04:39Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — plan only)  **What I did to prepare this plan:** Read the full chain end-to-end — `WatchlistPage.tsx`, `client/src/lib/api.ts`, `hooks/useAuth.tsx`, `App.tsx` routing, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, and `db/auth.ts` (session/cookie logic).  **What I found, which changes the plan:** I could not find the bug described. Every layer already looks correctly scoped: - `watchlists.user_id` is `NOT NULL`, and every watchlist query (list/get/create/update/delete/items) filters `WHERE user_id = <session user>`. - The watchl",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — plan only)  **What I did to prepare this plan:** Read the full chain end-to-end — `WatchlistPage.tsx`, `client/src/lib/api.ts`, `hooks/useAuth.tsx`, `App.tsx` routing, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, and `db/auth.ts` (session/cookie logic).  **What I found, which changes the plan:** I could not find the bug described. Every layer already looks correctly scoped: - `watchlists.user_id` is `NOT NULL`, and every watchlist query (list/get/create/update/delete/items) filters `WHERE user_id = <session user>`. - The watchl",
+  "started": "2026-08-31T01:04:39Z",
+  "finished": "2026-08-31T01:04:39Z",
+  "repo": "wealthcx01/arca"
+}
