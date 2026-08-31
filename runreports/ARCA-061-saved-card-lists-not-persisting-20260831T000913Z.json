@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-31T00:09:12Z",
+  "ended_at": "2026-08-31T00:09:13Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **No code changes made.** This is a summary of what I found by reading the code, and what I'd do next.  ### What I checked I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session/cookie auth in `db/auth.ts` and `server.ts`.  ### Important finding: the obvious hypotheses in the ticket don't hold up on inspection The ticket assumes this is a wiring bug (missing `X-User-Id`, anonymous/local fallback, unchecked session). I could not find that: ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **No code changes made.** This is a summary of what I found by reading the code, and what I'd do next.  ### What I checked I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session/cookie auth in `db/auth.ts` and `server.ts`.  ### Important finding: the obvious hypotheses in the ticket don't hold up on inspection The ticket assumes this is a wiring bug (missing `X-User-Id`, anonymous/local fallback, unchecked session). I could not find that: ",
+  "started": "2026-08-31T00:09:12Z",
+  "finished": "2026-08-31T00:09:13Z",
+  "repo": "wealthcx01/arca"
+}
