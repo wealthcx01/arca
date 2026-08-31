@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-31T00:37:34Z",
+  "ended_at": "2026-08-31T00:37:34Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting to signed-in account  ### What I found from a read-only audit (no changes made)  I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `/api/watchlist` router → `modules/watchlist/handlers.ts` → SQLite via Drizzle, plus the auth side (`useAuth.tsx`, `modules/auth/handlers.ts`, `db/auth.ts`).  Contrary to what the ticket assumes, **I did not find an obvious client-side wiring bug**: - `watchlists.user_id` is a real column, and every handler (list/create/get/update/delete/add-item/remove-item) filters by `eq(watchlists",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting to signed-in account  ### What I found from a read-only audit (no changes made)  I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `/api/watchlist` router → `modules/watchlist/handlers.ts` → SQLite via Drizzle, plus the auth side (`useAuth.tsx`, `modules/auth/handlers.ts`, `db/auth.ts`).  Contrary to what the ticket assumes, **I did not find an obvious client-side wiring bug**: - `watchlists.user_id` is a real column, and every handler (list/create/get/update/delete/add-item/remove-item) filters by `eq(watchlists",
+  "started": "2026-08-31T00:37:34Z",
+  "finished": "2026-08-31T00:37:34Z",
+  "repo": "wealthcx01/arca"
+}
