@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-31T00:58:08Z",
+  "ended_at": "2026-08-31T00:58:09Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only, as instructed)  ### What I verified by reading the actual code (not speculation)  I read the full chain end to end: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, and `server.ts`.  Contrary to the ticket's hypothesis of an obvious wiring bug, **the persistence chain looks correctly built**: - Client always calls `/api/watchlist*` with `credentials: \"include\"` (api.ts) — no localStorage/anonym",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only, as instructed)  ### What I verified by reading the actual code (not speculation)  I read the full chain end to end: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, and `server.ts`.  Contrary to the ticket's hypothesis of an obvious wiring bug, **the persistence chain looks correctly built**: - Client always calls `/api/watchlist*` with `credentials: \"include\"` (api.ts) — no localStorage/anonym",
+  "started": "2026-08-31T00:58:08Z",
+  "finished": "2026-08-31T00:58:09Z",
+  "repo": "wealthcx01/arca"
+}
