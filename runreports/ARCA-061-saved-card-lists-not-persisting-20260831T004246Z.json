@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-08-31T00:42:46Z",
+  "ended_at": "2026-08-31T00:42:46Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no edits made)  I traced the full chain before writing this plan: `modules/watchlist/schema.ts` (user_id column, not null) → `modules/watchlist/handlers.ts` (self-contained auth middleware validates the `arca_session` cookie, sets `X-User-Id`, every query filters `WHERE user_id = ?`) → `modules/auth/handlers.ts` + `db/auth.ts` (login/signup issue a 30-day cookie, session lookup joins back to the stable `users.id`) → `client/src/lib/api.ts` (`credentials: \"include\"` on every request) → `client/src/pages/WatchlistPage.tsx` and `useAuth.tsx` (no localS",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no edits made)  I traced the full chain before writing this plan: `modules/watchlist/schema.ts` (user_id column, not null) → `modules/watchlist/handlers.ts` (self-contained auth middleware validates the `arca_session` cookie, sets `X-User-Id`, every query filters `WHERE user_id = ?`) → `modules/auth/handlers.ts` + `db/auth.ts` (login/signup issue a 30-day cookie, session lookup joins back to the stable `users.id`) → `client/src/lib/api.ts` (`credentials: \"include\"` on every request) → `client/src/pages/WatchlistPage.tsx` and `useAuth.tsx` (no localS",
+  "started": "2026-08-31T00:42:46Z",
+  "finished": "2026-08-31T00:42:46Z",
+  "repo": "wealthcx01/arca"
+}
