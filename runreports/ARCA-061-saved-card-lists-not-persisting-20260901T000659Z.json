@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-01T00:06:59Z",
+  "ended_at": "2026-09-01T00:06:59Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **Diagnosis (from a read-only audit of the full chain):**  The watchlist code itself is *not* the bug. `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → DB is wired correctly: every request includes the session cookie (`credentials: \"include\"`), the server resolves `user_id` from the session (not from anything the client supplies), and every watchlist query is scoped with `eq(watchlists.user_id, userId)`. There's no localStorage/anonymous fallback anywhere in the watchlist path. So the \"ownership-scoped\" design fro",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **Diagnosis (from a read-only audit of the full chain):**  The watchlist code itself is *not* the bug. `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → DB is wired correctly: every request includes the session cookie (`credentials: \"include\"`), the server resolves `user_id` from the session (not from anything the client supplies), and every watchlist query is scoped with `eq(watchlists.user_id, userId)`. There's no localStorage/anonymous fallback anywhere in the watchlist path. So the \"ownership-scoped\" design fro",
+  "started": "2026-09-01T00:06:59Z",
+  "finished": "2026-09-01T00:06:59Z",
+  "repo": "wealthcx01/arca"
+}
