@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-01T00:37:57Z",
+  "ended_at": "2026-09-01T00:37:58Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I read the full watchlist chain: `modules/watchlist/schema.ts`, `handlers.ts`, `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, and `server.ts`.  **What's actually correct** (ruling things out): - DB schema: `watchlists.user_id` is a required column, every route filters by it correctly (`handlers.ts:40,102,148,198,249`). - `login()` in `db/auth.ts` resolves sessions to the *same* `user_id` by email lookup every time — logging in on a new device does not create a new/different user, ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I read the full watchlist chain: `modules/watchlist/schema.ts`, `handlers.ts`, `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, and `server.ts`.  **What's actually correct** (ruling things out): - DB schema: `watchlists.user_id` is a required column, every route filters by it correctly (`handlers.ts:40,102,148,198,249`). - `login()` in `db/auth.ts` resolves sessions to the *same* `user_id` by email lookup every time — logging in on a new device does not create a new/different user, ",
+  "started": "2026-09-01T00:37:57Z",
+  "finished": "2026-09-01T00:37:58Z",
+  "repo": "wealthcx01/arca"
+}
