@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-01T01:28:55Z",
+  "ended_at": "2026-09-01T01:28:55Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence  I did a read-only audit of the full path first (client `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → schema → `db/auth.ts`) before proposing anything. Here's what I'd do and what I found.  ### What the audit found (no changes made)  The implementation is actually **correctly ownership-scoped end-to-end**, contrary to the ticket's hypothesis:  - `watchlists.user_id` is `NOT NULL` — no anonymous/default watchlist exists in the schema. - The client (`WatchlistPage.tsx`, `api.ts`) sends `credentials: \"include\"` on every ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence  I did a read-only audit of the full path first (client `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → schema → `db/auth.ts`) before proposing anything. Here's what I'd do and what I found.  ### What the audit found (no changes made)  The implementation is actually **correctly ownership-scoped end-to-end**, contrary to the ticket's hypothesis:  - `watchlists.user_id` is `NOT NULL` — no anonymous/default watchlist exists in the schema. - The client (`WatchlistPage.tsx`, `api.ts`) sends `credentials: \"include\"` on every ",
+  "started": "2026-09-01T01:28:55Z",
+  "finished": "2026-09-01T01:28:55Z",
+  "repo": "wealthcx01/arca"
+}
