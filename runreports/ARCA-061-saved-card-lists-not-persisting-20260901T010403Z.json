@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-01T01:04:03Z",
+  "ended_at": "2026-09-01T01:04:03Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  I did a read-only audit of the full path (`client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` → `server.ts`) without changing anything. Here's what I'd do to fix it, and what I found that should inform the founder's call.  ### What the audit already shows (so expectations are calibrated) - The obvious \"footgun\" causes named in the ticket **don't appear to be present**: `watchlists`/`watchlist_items` are properly scoped by a ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  I did a read-only audit of the full path (`client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` → `server.ts`) without changing anything. Here's what I'd do to fix it, and what I found that should inform the founder's call.  ### What the audit already shows (so expectations are calibrated) - The obvious \"footgun\" causes named in the ticket **don't appear to be present**: `watchlists`/`watchlist_items` are properly scoped by a ",
+  "started": "2026-09-01T01:04:03Z",
+  "finished": "2026-09-01T01:04:03Z",
+  "repo": "wealthcx01/arca"
+}
