@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-01T00:12:46Z",
+  "ended_at": "2026-09-01T00:12:46Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (do not implement — this is the proposed plan only)  ### What I found from a read-only audit  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `watchlistRouter` (`modules/watchlist/handlers.ts`) → `watchlists`/`watchlist_items` tables, plus the session layer (`db/auth.ts`, `modules/auth/handlers.ts`, `server.ts`).  Contrary to the ticket's assumption, **I did not find an obvious wiring bug**. Specifically: - Every watchlist route requires a valid session and derives `user_id` from the server-verified session token (not from anything the client sends) — `mo",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (do not implement — this is the proposed plan only)  ### What I found from a read-only audit  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `watchlistRouter` (`modules/watchlist/handlers.ts`) → `watchlists`/`watchlist_items` tables, plus the session layer (`db/auth.ts`, `modules/auth/handlers.ts`, `server.ts`).  Contrary to the ticket's assumption, **I did not find an obvious wiring bug**. Specifically: - Every watchlist route requires a valid session and derives `user_id` from the server-verified session token (not from anything the client sends) — `mo",
+  "started": "2026-09-01T00:12:46Z",
+  "finished": "2026-09-01T00:12:46Z",
+  "repo": "wealthcx01/arca"
+}
