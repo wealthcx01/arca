@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-01T01:12:58Z",
+  "ended_at": "2026-09-01T01:12:58Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  **What I audited already (read-only, no changes):** - `client/src/pages/WatchlistPage.tsx` — GET `/watchlist`, GET `/watchlist/:id`, POST/DELETE for lists and items. No localStorage/sessionStorage fallback found. - `client/src/lib/api.ts` — sends `credentials: \"include\"` on every request, so the session cookie should always ride along. - `client/src/App.tsx` — `WatchlistPage` only renders after `useAuth()` finishes loading and confirms a `user`, so there's no race where the page fetches before auth resolves. - `modules/watchl",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  **What I audited already (read-only, no changes):** - `client/src/pages/WatchlistPage.tsx` — GET `/watchlist`, GET `/watchlist/:id`, POST/DELETE for lists and items. No localStorage/sessionStorage fallback found. - `client/src/lib/api.ts` — sends `credentials: \"include\"` on every request, so the session cookie should always ride along. - `client/src/App.tsx` — `WatchlistPage` only renders after `useAuth()` finishes loading and confirms a `user`, so there's no race where the page fetches before auth resolves. - `modules/watchl",
+  "started": "2026-09-01T01:12:58Z",
+  "finished": "2026-09-01T01:12:58Z",
+  "repo": "wealthcx01/arca"
+}
