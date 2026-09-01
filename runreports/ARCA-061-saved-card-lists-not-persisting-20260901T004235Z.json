@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-01T00:42:34Z",
+  "ended_at": "2026-09-01T00:42:35Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence bug  **What I'd do:**  1. **Reproduce before touching code.** This is an auth/session-adjacent bug — I want a confirmed repro, not a guess. Sign in as a real test user, add cards to a watchlist, log out, log back in (same browser, then a fresh browser/incognito), and check:    - Does `/auth/me` return the same user id both times?    - Does the watchlist GET request return the same `watchlists.user_id` as the session's user?    - Inspect the DB directly (`users`, `sessions`, `watchlists` tables) to confirm whether the list actually exists under th",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence bug  **What I'd do:**  1. **Reproduce before touching code.** This is an auth/session-adjacent bug — I want a confirmed repro, not a guess. Sign in as a real test user, add cards to a watchlist, log out, log back in (same browser, then a fresh browser/incognito), and check:    - Does `/auth/me` return the same user id both times?    - Does the watchlist GET request return the same `watchlists.user_id` as the session's user?    - Inspect the DB directly (`users`, `sessions`, `watchlists` tables) to confirm whether the list actually exists under th",
+  "started": "2026-09-01T00:42:34Z",
+  "finished": "2026-09-01T00:42:35Z",
+  "repo": "wealthcx01/arca"
+}
