@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-01T00:03:47Z",
+  "ended_at": "2026-09-01T00:03:47Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did first (read-only):** traced the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` route mounting → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` session/login logic → `useAuth.tsx`/`App.tsx` route gating.  **What I found:** every layer I inspected is actually wired correctly in isolation: - No localStorage/anonymous fallback anywhere in the watchlist path (only theme uses localStorage). - The watchlist router has its own auth middleware (`handlers.ts:13-21",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did first (read-only):** traced the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` route mounting → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` session/login logic → `useAuth.tsx`/`App.tsx` route gating.  **What I found:** every layer I inspected is actually wired correctly in isolation: - No localStorage/anonymous fallback anywhere in the watchlist path (only theme uses localStorage). - The watchlist router has its own auth middleware (`handlers.ts:13-21",
+  "started": "2026-09-01T00:03:47Z",
+  "finished": "2026-09-01T00:03:47Z",
+  "repo": "wealthcx01/arca"
+}
