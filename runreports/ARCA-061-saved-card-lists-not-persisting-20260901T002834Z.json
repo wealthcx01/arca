@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-01T00:28:34Z",
+  "ended_at": "2026-09-01T00:28:34Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (no code changed)  I traced the full watchlist path — `WatchlistPage.tsx` → `api.ts` (fetch wrapper) → `modules/watchlist` router/middleware → `handlers.ts` → SQLite schema — and everything there looks correct:  - Client has no localStorage/anonymous fallback; every load/save hits the server with `credentials: \"include\"`. - The watchlist router requires a valid session cookie, rejects with 401 if missing/expired, and injects `X-User-Id` from the validated session. - Every handler (`GET /`, `GET /:id`, `DELETE /:id`, `POST /items`) filters strictly by `user_",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (no code changed)  I traced the full watchlist path — `WatchlistPage.tsx` → `api.ts` (fetch wrapper) → `modules/watchlist` router/middleware → `handlers.ts` → SQLite schema — and everything there looks correct:  - Client has no localStorage/anonymous fallback; every load/save hits the server with `credentials: \"include\"`. - The watchlist router requires a valid session cookie, rejects with 401 if missing/expired, and injects `X-User-Id` from the validated session. - Every handler (`GET /`, `GET /:id`, `DELETE /:id`, `POST /items`) filters strictly by `user_",
+  "started": "2026-09-01T00:28:34Z",
+  "finished": "2026-09-01T00:28:34Z",
+  "repo": "wealthcx01/arca"
+}
