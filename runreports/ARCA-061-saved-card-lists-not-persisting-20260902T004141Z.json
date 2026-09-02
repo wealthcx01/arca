@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-02T00:41:40Z",
+  "ended_at": "2026-09-02T00:41:41Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I'd do:**  1. **Audit the path end-to-end first (read-only)** — client `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist` auth middleware/handlers → `sessions`/`watchlists` tables → auth cookie lifecycle in `modules/auth`.    - *I already did this read-only pass.* Result: I could not find a code bug. Cookie is `httpOnly`, `credentials: \"include\"` is set on every client fetch, every watchlist route is behind per-route session-derived auth, every DB query is scoped by `user_id`, and th",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I'd do:**  1. **Audit the path end-to-end first (read-only)** — client `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist` auth middleware/handlers → `sessions`/`watchlists` tables → auth cookie lifecycle in `modules/auth`.    - *I already did this read-only pass.* Result: I could not find a code bug. Cookie is `httpOnly`, `credentials: \"include\"` is set on every client fetch, every watchlist route is behind per-route session-derived auth, every DB query is scoped by `user_id`, and th",
+  "started": "2026-09-02T00:41:40Z",
+  "finished": "2026-09-02T00:41:41Z",
+  "repo": "wealthcx01/arca"
+}
