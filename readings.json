@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "readings": {
+    "context/sell/arca-brand-positioning": {
+      "at": "2026-09-02T13:54:55.691Z",
+      "work": {
+        "kind": "ticket",
+        "id": "ARCA-62",
+        "title": "ARCA brand redesign"
+      }
+    }
+  }
+}
