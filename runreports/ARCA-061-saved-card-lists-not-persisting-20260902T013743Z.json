@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-02T01:37:43Z",
+  "ended_at": "2026-09-02T01:37:43Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (do not implement — for founder review)  **What I'd check first:** Reproduce the actual symptom before touching anything. I did a read-only audit of the whole chain (`WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist` → DB), and contrary to the ticket's hypothesis, the ownership-scoping from ARCA-19 looks correct: watchlist routes require a valid session, every query filters by `watchlists.user_id`, the client always fetches from the API (`credentials: \"include\"`, no localStorage/anonymous fallback), and the DB schema has a non-nullable `user_id` FK.",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (do not implement — for founder review)  **What I'd check first:** Reproduce the actual symptom before touching anything. I did a read-only audit of the whole chain (`WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist` → DB), and contrary to the ticket's hypothesis, the ownership-scoping from ARCA-19 looks correct: watchlist routes require a valid session, every query filters by `watchlists.user_id`, the client always fetches from the API (`credentials: \"include\"`, no localStorage/anonymous fallback), and the DB schema has a non-nullable `user_id` FK.",
+  "started": "2026-09-02T01:37:43Z",
+  "finished": "2026-09-02T01:37:43Z",
+  "repo": "wealthcx01/arca"
+}
