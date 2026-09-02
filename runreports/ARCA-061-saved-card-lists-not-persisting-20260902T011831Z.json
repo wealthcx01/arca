@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-02T01:18:30Z",
+  "ended_at": "2026-09-02T01:18:31Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I found from a read-only audit (no changes made):**  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → schema → `db/auth.ts`. On paper, it looks correctly wired: - Client has no localStorage/anonymous fallback — every read/write goes through `/api/watchlist*` with cookies included. - Server-side, every watchlist route requires a valid session and double-checks `user_id` ownership on every read/write (not just at the middleware layer). - Login/signup sets a real `arca_session` cook",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I found from a read-only audit (no changes made):**  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → schema → `db/auth.ts`. On paper, it looks correctly wired: - Client has no localStorage/anonymous fallback — every read/write goes through `/api/watchlist*` with cookies included. - Server-side, every watchlist route requires a valid session and double-checks `user_id` ownership on every read/write (not just at the middleware layer). - Login/signup sets a real `arca_session` cook",
+  "started": "2026-09-02T01:18:30Z",
+  "finished": "2026-09-02T01:18:31Z",
+  "repo": "wealthcx01/arca"
+}
