@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-02T00:38:57Z",
+  "ended_at": "2026-09-02T00:38:58Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I read the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus `useAuth.tsx`, `App.tsx`, and `modules/auth/handlers.ts` / `db/auth.ts`. Findings (read-only, no edits made):  - **Backend scoping is correct.** Every watchlist query (`GET /`, `GET /:id`, add/remove item, delete) filters by `eq(watchlists.user_id, userId)`. `userId` comes from a session-validated `X-User-Id` header set by middleware (`modules/watchlist/handlers.ts:13-21`), not from client-supplied input. No default/anonymou",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I read the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus `useAuth.tsx`, `App.tsx`, and `modules/auth/handlers.ts` / `db/auth.ts`. Findings (read-only, no edits made):  - **Backend scoping is correct.** Every watchlist query (`GET /`, `GET /:id`, add/remove item, delete) filters by `eq(watchlists.user_id, userId)`. `userId` comes from a session-validated `X-User-Id` header set by middleware (`modules/watchlist/handlers.ts:13-21`), not from client-supplied input. No default/anonymou",
+  "started": "2026-09-02T00:38:57Z",
+  "finished": "2026-09-02T00:38:58Z",
+  "repo": "wealthcx01/arca"
+}
