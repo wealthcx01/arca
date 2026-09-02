@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-02T01:23:28Z",
+  "ended_at": "2026-09-02T01:23:28Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found from reading the code (no changes made)  I read the full chain: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `server.ts`, and `client/vite.config.ts`.  On inspection, the \"obvious\" causes named in the ticket don't hold up: - **No anonymous/local fallback exists.** The only `localStorage` usage in the client is a theme toggle (`Layout.tsx`) — wat",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found from reading the code (no changes made)  I read the full chain: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `server.ts`, and `client/vite.config.ts`.  On inspection, the \"obvious\" causes named in the ticket don't hold up: - **No anonymous/local fallback exists.** The only `localStorage` usage in the client is a theme toggle (`Layout.tsx`) — wat",
+  "started": "2026-09-02T01:23:28Z",
+  "finished": "2026-09-02T01:23:28Z",
+  "repo": "wealthcx01/arca"
+}
