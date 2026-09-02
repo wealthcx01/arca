@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-02T00:18:12Z",
+  "ended_at": "2026-09-02T00:18:12Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: This all checks out — proper ownership scoping throughout. I've done enough grounding to write an accurate plan. Here it is:  ## Plan for ARCA-61 — Saved lists not persisting to signed-in account  ### What I found in read-only recon (no edits made) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → schema, plus the auth chain (`useAuth.tsx` → `App.tsx` router → `modules/auth/handlers.ts` → `db/auth.ts`).  - **Backend is correctly scoped.** Every watchlist route (`list`, `create`, `get/:id`, `put/:id`, `delete/:id`, `post/:i",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: This all checks out — proper ownership scoping throughout. I've done enough grounding to write an accurate plan. Here it is:  ## Plan for ARCA-61 — Saved lists not persisting to signed-in account  ### What I found in read-only recon (no edits made) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → schema, plus the auth chain (`useAuth.tsx` → `App.tsx` router → `modules/auth/handlers.ts` → `db/auth.ts`).  - **Backend is correctly scoped.** Every watchlist route (`list`, `create`, `get/:id`, `put/:id`, `delete/:id`, `post/:i",
+  "started": "2026-09-02T00:18:12Z",
+  "finished": "2026-09-02T00:18:12Z",
+  "repo": "wealthcx01/arca"
+}
