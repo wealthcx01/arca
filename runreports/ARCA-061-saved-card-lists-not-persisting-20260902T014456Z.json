@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-02T01:44:56Z",
+  "ended_at": "2026-09-02T01:44:56Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  I did not change any files. Below is what I found by reading the code, and what I'd propose doing next.  ### What I checked and found to be correctly wired - **Server-side scoping is sound.** `modules/watchlist/handlers.ts` requires a valid session on every route, resolves `X-User-Id` from the session, and every query (list, get, create item, delete item) filters by `watchlists.user_id = userId`. No cross-user leakage or anonymous fallback in this file. - **Client has no anonymous/local storage fallback.** `Watchlist",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  I did not change any files. Below is what I found by reading the code, and what I'd propose doing next.  ### What I checked and found to be correctly wired - **Server-side scoping is sound.** `modules/watchlist/handlers.ts` requires a valid session on every route, resolves `X-User-Id` from the session, and every query (list, get, create item, delete item) filters by `watchlists.user_id = userId`. No cross-user leakage or anonymous fallback in this file. - **Client has no anonymous/local storage fallback.** `Watchlist",
+  "started": "2026-09-02T01:44:56Z",
+  "finished": "2026-09-02T01:44:56Z",
+  "repo": "wealthcx01/arca"
+}
