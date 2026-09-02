@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-02T00:47:36Z",
+  "ended_at": "2026-09-02T00:47:37Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good, I have enough grounding now. Here's the plan.  ## Plan for ARCA-61 — Saved lists not persisting on re-login  **Root cause identified (read-only investigation, no code changed):**  The backend is fine. `modules/watchlist/schema.ts` correctly scopes every watchlist row to `user_id`, and every handler filters by it. The session cookie is sent correctly (`credentials: \"include\"` in `client/src/lib/api.ts`).  The bug is in the client: `client/src/pages/WatchlistPage.tsx:61-76`. The `useEffect` that loads the watchlist runs once on mount with dependency array `[toast]` only — it has **no d",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good, I have enough grounding now. Here's the plan.  ## Plan for ARCA-61 — Saved lists not persisting on re-login  **Root cause identified (read-only investigation, no code changed):**  The backend is fine. `modules/watchlist/schema.ts` correctly scopes every watchlist row to `user_id`, and every handler filters by it. The session cookie is sent correctly (`credentials: \"include\"` in `client/src/lib/api.ts`).  The bug is in the client: `client/src/pages/WatchlistPage.tsx:61-76`. The `useEffect` that loads the watchlist runs once on mount with dependency array `[toast]` only — it has **no d",
+  "started": "2026-09-02T00:47:36Z",
+  "finished": "2026-09-02T00:47:37Z",
+  "repo": "wealthcx01/arca"
+}
