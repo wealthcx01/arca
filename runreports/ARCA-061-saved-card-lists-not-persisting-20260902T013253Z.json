@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-02T01:32:53Z",
+  "ended_at": "2026-09-02T01:32:53Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  ### What I did before writing this plan I read (did not edit) the full watchlist path: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `server.ts`, and the DB schema in `db/push.ts`.  **Finding: the chain I can see by reading code looks correctly wired.** - Client `api.ts` sends every request with `credentials: \"include\"`, so the session cookie always goes along. - Watchlist routes have their own a",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  ### What I did before writing this plan I read (did not edit) the full watchlist path: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `server.ts`, and the DB schema in `db/push.ts`.  **Finding: the chain I can see by reading code looks correctly wired.** - Client `api.ts` sends every request with `credentials: \"include\"`, so the session cookie always goes along. - Watchlist routes have their own a",
+  "started": "2026-09-02T01:32:53Z",
+  "finished": "2026-09-02T01:32:53Z",
+  "repo": "wealthcx01/arca"
+}
