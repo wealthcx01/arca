@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-03T01:34:10Z",
+  "ended_at": "2026-09-03T01:34:10Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from a read-only audit (no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite schema.  Everything I can verify **statically looks correct**: - Schema: `watchlists.user_id` and `watchlist_items.watchlist_id` are proper foreign-key-style columns with indexes. - Every watchlist handler (list/create/get/update/delete/add-item/remove-item) filters by `eq(watchlists.user_id, userId)` — no cross-user leakage, no default/global ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from a read-only audit (no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite schema.  Everything I can verify **statically looks correct**: - Schema: `watchlists.user_id` and `watchlist_items.watchlist_id` are proper foreign-key-style columns with indexes. - Every watchlist handler (list/create/get/update/delete/add-item/remove-item) filters by `eq(watchlists.user_id, userId)` — no cross-user leakage, no default/global ",
+  "started": "2026-09-03T01:34:10Z",
+  "finished": "2026-09-03T01:34:10Z",
+  "repo": "wealthcx01/arca"
+}
