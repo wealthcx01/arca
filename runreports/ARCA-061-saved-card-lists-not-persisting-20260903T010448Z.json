@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-03T01:04:48Z",
+  "ended_at": "2026-09-03T01:04:48Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist persistence bug  ### What I looked at (read-only, no changes made) I traced the full chain: `modules/watchlist/schema.ts` → `modules/watchlist/handlers.ts` → `server.ts` mounting → `client/src/lib/api.ts` → `client/src/pages/WatchlistPage.tsx` → `db/auth.ts` (login/session) → `modules/auth/handlers.ts` (cookie config).  **On static reading, nothing is obviously broken:** - `watchlists` table has a `user_id` column; every handler (list/get/create/update/delete/add-item/remove-item) filters or writes with `userId` pulled from an `X-User-Id` header — n",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist persistence bug  ### What I looked at (read-only, no changes made) I traced the full chain: `modules/watchlist/schema.ts` → `modules/watchlist/handlers.ts` → `server.ts` mounting → `client/src/lib/api.ts` → `client/src/pages/WatchlistPage.tsx` → `db/auth.ts` (login/session) → `modules/auth/handlers.ts` (cookie config).  **On static reading, nothing is obviously broken:** - `watchlists` table has a `user_id` column; every handler (list/get/create/update/delete/add-item/remove-item) filters or writes with `userId` pulled from an `X-User-Id` header — n",
+  "started": "2026-09-03T01:04:48Z",
+  "finished": "2026-09-03T01:04:48Z",
+  "repo": "wealthcx01/arca"
+}
