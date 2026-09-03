@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-03T01:38:21Z",
+  "ended_at": "2026-09-03T01:38:22Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I did (read-only audit, no edits made) I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `db/index.ts`, plus the auth middleware and session/cookie logic. Contrary to the ticket's hypothesis, **I could not find an obvious client-side wiring bug in the current code**:  - Backend (`modules/watchlist/handlers.ts`) correctly scopes every read/write by `user_id` derived from the session (`GET /`, `GET /:id`, `POST /:id/items`, `DELETE /:id/items/:itemId` all filter/verify ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I did (read-only audit, no edits made) I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `db/index.ts`, plus the auth middleware and session/cookie logic. Contrary to the ticket's hypothesis, **I could not find an obvious client-side wiring bug in the current code**:  - Backend (`modules/watchlist/handlers.ts`) correctly scopes every read/write by `user_id` derived from the session (`GET /`, `GET /:id`, `POST /:id/items`, `DELETE /:id/items/:itemId` all filter/verify ",
+  "started": "2026-09-03T01:38:21Z",
+  "finished": "2026-09-03T01:38:22Z",
+  "repo": "wealthcx01/arca"
+}
