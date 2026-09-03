@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-03T00:03:39Z",
+  "ended_at": "2026-09-03T00:03:39Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I found from reading the code (no changes made):**  The backend wiring is actually correct end-to-end, which changes where I'd focus: - `modules/watchlist/handlers.ts:13-21` enforces its own session-cookie auth on every route and correctly scopes every query by `watchlists.user_id` (list, get, create, delete, add/remove item all filter on the authenticated `userId`). - `db/auth.ts` persists sessions in the SQLite `sessions` table (not in-memory), keyed to a stable `users.id`, so logging out and back in — even on a different devi",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I found from reading the code (no changes made):**  The backend wiring is actually correct end-to-end, which changes where I'd focus: - `modules/watchlist/handlers.ts:13-21` enforces its own session-cookie auth on every route and correctly scopes every query by `watchlists.user_id` (list, get, create, delete, add/remove item all filter on the authenticated `userId`). - `db/auth.ts` persists sessions in the SQLite `sessions` table (not in-memory), keyed to a stable `users.id`, so logging out and back in — even on a different devi",
+  "started": "2026-09-03T00:03:39Z",
+  "finished": "2026-09-03T00:03:39Z",
+  "repo": "wealthcx01/arca"
+}
