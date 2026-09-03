@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-03T00:39:39Z",
+  "ended_at": "2026-09-03T00:39:40Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **No code changes made.** I read through the full path first so the plan is grounded, not speculative: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `server.ts`, `client/vite.config.ts`.  ### What I found on static read (honest status: no smoking gun yet) Every hop in the chain looks correctly wired: - `WatchlistPage.tsx` has no localStorage/anonymous fallback — it o",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **No code changes made.** I read through the full path first so the plan is grounded, not speculative: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `server.ts`, `client/vite.config.ts`.  ### What I found on static read (honest status: no smoking gun yet) Every hop in the chain looks correctly wired: - `WatchlistPage.tsx` has no localStorage/anonymous fallback — it o",
+  "started": "2026-09-03T00:39:39Z",
+  "finished": "2026-09-03T00:39:40Z",
+  "repo": "wealthcx01/arca"
+}
