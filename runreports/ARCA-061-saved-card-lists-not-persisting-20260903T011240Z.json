@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-03T01:12:39Z",
+  "ended_at": "2026-09-03T01:12:40Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — audit only)  **What I already checked (read-only), and what it tells us:**  I read the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`. On static inspection, the wiring looks *correct*: - Client sends `credentials: \"include\"` on every request; no localStorage/anonymous fallback exists anywhere in the watchlist page. - Server CORS has explicit origins + `credentials: true`. - Watchlist router has its own auth middleware that 401s wit",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — audit only)  **What I already checked (read-only), and what it tells us:**  I read the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`. On static inspection, the wiring looks *correct*: - Client sends `credentials: \"include\"` on every request; no localStorage/anonymous fallback exists anywhere in the watchlist page. - Server CORS has explicit origins + `credentials: true`. - Watchlist router has its own auth middleware that 401s wit",
+  "started": "2026-09-03T01:12:39Z",
+  "finished": "2026-09-03T01:12:40Z",
+  "repo": "wealthcx01/arca"
+}
