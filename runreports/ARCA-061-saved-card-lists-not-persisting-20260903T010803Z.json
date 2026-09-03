@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-03T01:08:03Z",
+  "ended_at": "2026-09-03T01:08:03Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I did:** read-only audit of the full watchlist chain (no edits made, per instructions for high-impact tickets).  ### What I found — the chain looks correct  I traced client → API → DB and didn't find the bug patterns the ticket hypothesized:  - `WatchlistPage.tsx` fetches/saves only via the API (`api.get/post/delete`), no localStorage/anonymous fallback anywhere for watchlist data (only the theme toggle uses localStorage). - `client/src/lib/api.ts` sends `credentials: \"include\"` on every request, so the session cookie goes out wi",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I did:** read-only audit of the full watchlist chain (no edits made, per instructions for high-impact tickets).  ### What I found — the chain looks correct  I traced client → API → DB and didn't find the bug patterns the ticket hypothesized:  - `WatchlistPage.tsx` fetches/saves only via the API (`api.get/post/delete`), no localStorage/anonymous fallback anywhere for watchlist data (only the theme toggle uses localStorage). - `client/src/lib/api.ts` sends `credentials: \"include\"` on every request, so the session cookie goes out wi",
+  "started": "2026-09-03T01:08:03Z",
+  "finished": "2026-09-03T01:08:03Z",
+  "repo": "wealthcx01/arca"
+}
