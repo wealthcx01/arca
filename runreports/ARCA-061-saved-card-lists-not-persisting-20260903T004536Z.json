@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-03T00:45:36Z",
+  "ended_at": "2026-09-03T00:45:36Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **Note:** I did a read-only audit (no edits) to ground this plan, since a plan on pure guesswork would be low-value for an item this trust-sensitive.  ### What I checked and what I found - **Client (`WatchlistPage.tsx`, `api.ts`):** Fetches/saves purely through `api.get/post/delete(\"/watchlist...\")`, which sends cookies (`credentials: \"include\"`). No `localStorage`/`sessionStorage` fallback or caching of watchlist data anywhere in the watchlist code path — the only local storage in the client is an unrelated theme setting ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **Note:** I did a read-only audit (no edits) to ground this plan, since a plan on pure guesswork would be low-value for an item this trust-sensitive.  ### What I checked and what I found - **Client (`WatchlistPage.tsx`, `api.ts`):** Fetches/saves purely through `api.get/post/delete(\"/watchlist...\")`, which sends cookies (`credentials: \"include\"`). No `localStorage`/`sessionStorage` fallback or caching of watchlist data anywhere in the watchlist code path — the only local storage in the client is an unrelated theme setting ",
+  "started": "2026-09-03T00:45:36Z",
+  "finished": "2026-09-03T00:45:36Z",
+  "repo": "wealthcx01/arca"
+}
