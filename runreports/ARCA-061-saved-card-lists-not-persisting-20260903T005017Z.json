@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-03T00:50:17Z",
+  "ended_at": "2026-09-03T00:50:17Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Just the ticket doc, same content. I now have enough grounding to write the plan.  ## Plan for ARCA-61 (no code changes made — audit only)  **What I did:** Read through the full chain read-only: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/{schema,handlers}.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `server.ts` CORS/routing.  **What I found, which changes the diagnosis:** The premise in the ticket — \"a client-side or wiring bug\" — doesn't hold up against the current code. Every link in the chain looks correct today: - `WatchlistPage.tsx` has no `l",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Just the ticket doc, same content. I now have enough grounding to write the plan.  ## Plan for ARCA-61 (no code changes made — audit only)  **What I did:** Read through the full chain read-only: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/{schema,handlers}.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `server.ts` CORS/routing.  **What I found, which changes the diagnosis:** The premise in the ticket — \"a client-side or wiring bug\" — doesn't hold up against the current code. Every link in the chain looks correct today: - `WatchlistPage.tsx` has no `l",
+  "started": "2026-09-03T00:50:17Z",
+  "finished": "2026-09-03T00:50:17Z",
+  "repo": "wealthcx01/arca"
+}
