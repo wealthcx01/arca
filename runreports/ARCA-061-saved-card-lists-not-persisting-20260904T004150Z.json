@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-04T00:41:50Z",
+  "ended_at": "2026-09-04T00:41:50Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did:** read-only investigation only, no files touched. I traced the full watchlist chain (client → API → auth middleware → DB) to ground this plan in what's actually there.  ### What the code currently looks like Every layer I checked is correctly scoped to the authenticated user: - `WatchlistPage.tsx` has no localStorage/anonymous fallback — it always calls the real API. - The client's fetch wrapper (`client/src/lib/api.ts`) sends `credentials: \"include\"` on every request, so the session cookie always goes along. - The ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did:** read-only investigation only, no files touched. I traced the full watchlist chain (client → API → auth middleware → DB) to ground this plan in what's actually there.  ### What the code currently looks like Every layer I checked is correctly scoped to the authenticated user: - `WatchlistPage.tsx` has no localStorage/anonymous fallback — it always calls the real API. - The client's fetch wrapper (`client/src/lib/api.ts`) sends `credentials: \"include\"` on every request, so the session cookie always goes along. - The ",
+  "started": "2026-09-04T00:41:50Z",
+  "finished": "2026-09-04T00:41:50Z",
+  "repo": "wealthcx01/arca"
+}
