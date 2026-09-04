@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-04T01:28:01Z",
+  "ended_at": "2026-09-04T01:28:02Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: # Plan: ARCA-61 — Saved watchlists not persisting  ## What I found from a read-only audit (no changes made) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  - Backend is correctly scoped: `watchlists.user_id` is `NOT NULL`, every handler (`GET /`, `GET /:id`, `POST /:id/items`, `DELETE`, etc.) filters/verifies by `user_id` derived from the session, not a client-supplied ID. - Watchlist routes have their **own** auth middleware (session cookie → `getSession()` → sets `X-User-Id`), separate from the pa",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: # Plan: ARCA-61 — Saved watchlists not persisting  ## What I found from a read-only audit (no changes made) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  - Backend is correctly scoped: `watchlists.user_id` is `NOT NULL`, every handler (`GET /`, `GET /:id`, `POST /:id/items`, `DELETE`, etc.) filters/verifies by `user_id` derived from the session, not a client-supplied ID. - Watchlist routes have their **own** auth middleware (session cookie → `getSession()` → sets `X-User-Id`), separate from the pa",
+  "started": "2026-09-04T01:28:01Z",
+  "finished": "2026-09-04T01:28:02Z",
+  "repo": "wealthcx01/arca"
+}
