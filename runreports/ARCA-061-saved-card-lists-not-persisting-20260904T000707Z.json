@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-04T00:07:06Z",
+  "ended_at": "2026-09-04T00:07:07Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found before proposing anything:** I audited the full read/write path (schema, auth middleware, session/cookie config, client fetch/state, React mount/unmount on login/logout, Vite proxy, and recent git history). Every layer is correctly scoped server-side to `user_id`, the client never touches localStorage or a guest/default watchlist, cookies are sent with `credentials: \"include\"`, and `WatchlistPage` fully unmounts on logout so there's no stale client state to leak between sessions. **I did not find the bug in the current cod",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found before proposing anything:** I audited the full read/write path (schema, auth middleware, session/cookie config, client fetch/state, React mount/unmount on login/logout, Vite proxy, and recent git history). Every layer is correctly scoped server-side to `user_id`, the client never touches localStorage or a guest/default watchlist, cookies are sent with `credentials: \"include\"`, and `WatchlistPage` fully unmounts on logout so there's no stale client state to leak between sessions. **I did not find the bug in the current cod",
+  "started": "2026-09-04T00:07:06Z",
+  "finished": "2026-09-04T00:07:07Z",
+  "repo": "wealthcx01/arca"
+}
