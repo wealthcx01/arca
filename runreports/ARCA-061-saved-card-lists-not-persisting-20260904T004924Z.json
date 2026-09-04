@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-04T00:49:24Z",
+  "ended_at": "2026-09-04T00:49:24Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan — Saved card lists not persisting  ### What I did (read-only) Traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → SQLite (`data/arca.db`), and compared it against the portfolio module and the auth/session layer (`db/auth.ts`, `modules/auth/handlers.ts`, `server.ts`).  **Finding: I could not confirm the bug the ticket hypothesizes.** In the current code: - Every watchlist route is gated by its own `Hono` middleware (`handlers.ts:13-21`) that requires the `arca_session` cookie, resolves ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan — Saved card lists not persisting  ### What I did (read-only) Traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → SQLite (`data/arca.db`), and compared it against the portfolio module and the auth/session layer (`db/auth.ts`, `modules/auth/handlers.ts`, `server.ts`).  **Finding: I could not confirm the bug the ticket hypothesizes.** In the current code: - Every watchlist route is gated by its own `Hono` middleware (`handlers.ts:13-21`) that requires the `arca_session` cookie, resolves ",
+  "started": "2026-09-04T00:49:24Z",
+  "finished": "2026-09-04T00:49:24Z",
+  "repo": "wealthcx01/arca"
+}
