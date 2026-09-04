@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-04T01:07:07Z",
+  "ended_at": "2026-09-04T01:07:07Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found before touching anything:** I did a read-only audit of the full path (`WatchlistPage.tsx` → `/api/watchlist` → `modules/watchlist` → SQLite). The wiring actually looks correct end-to-end: - No localStorage/anonymous fallback exists anywhere in the watchlist client code (only theme uses localStorage). - Every watchlist handler scopes strictly by `user_id`, which is `NOT NULL` with no default/anonymous path. - The watchlist router has its own auth middleware that hard-401s on missing/invalid session — it can't silent",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found before touching anything:** I did a read-only audit of the full path (`WatchlistPage.tsx` → `/api/watchlist` → `modules/watchlist` → SQLite). The wiring actually looks correct end-to-end: - No localStorage/anonymous fallback exists anywhere in the watchlist client code (only theme uses localStorage). - Every watchlist handler scopes strictly by `user_id`, which is `NOT NULL` with no default/anonymous path. - The watchlist router has its own auth middleware that hard-401s on missing/invalid session — it can't silent",
+  "started": "2026-09-04T01:07:07Z",
+  "finished": "2026-09-04T01:07:07Z",
+  "repo": "wealthcx01/arca"
+}
