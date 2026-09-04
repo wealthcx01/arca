@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-04T00:28:57Z",
+  "ended_at": "2026-09-04T00:28:57Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from a static read-through (no changes made)  I traced the full path end to end and, contrary to what the symptom suggests, **the code as it stands looks correctly wired**:  - **Client (`WatchlistPage.tsx`)**: loads/saves everything through `api.get/post/delete`, no localStorage/sessionStorage fallback anywhere for watchlist data (only theme uses localStorage). It only mounts after `useAuth()` resolves (`App.tsx`), so there's no obvious pre-auth race. - **API client (`client/src/lib/api.ts`)**: sends `credentials: \"inclu",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from a static read-through (no changes made)  I traced the full path end to end and, contrary to what the symptom suggests, **the code as it stands looks correctly wired**:  - **Client (`WatchlistPage.tsx`)**: loads/saves everything through `api.get/post/delete`, no localStorage/sessionStorage fallback anywhere for watchlist data (only theme uses localStorage). It only mounts after `useAuth()` resolves (`App.tsx`), so there's no obvious pre-auth race. - **API client (`client/src/lib/api.ts`)**: sends `credentials: \"inclu",
+  "started": "2026-09-04T00:28:57Z",
+  "finished": "2026-09-04T00:28:57Z",
+  "repo": "wealthcx01/arca"
+}
