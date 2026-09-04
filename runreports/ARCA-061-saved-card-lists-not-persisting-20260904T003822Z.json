@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-04T00:38:22Z",
+  "ended_at": "2026-09-04T00:38:22Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (investigation only — no changes made)  **What I found by reading the code (read-only):**  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`/`server.ts`. Contrary to the ticket's hypothesis, I did **not** find an obvious anonymous/local-storage fallback or a hardcoded owner id:  - The client has no `localStorage`/`sessionStorage` use for watchlist data (only the theme toggle uses `localStorage`, unrelated). - `client/src/lib/api.ts` sends `credentials: \"include\"` o",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (investigation only — no changes made)  **What I found by reading the code (read-only):**  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`/`server.ts`. Contrary to the ticket's hypothesis, I did **not** find an obvious anonymous/local-storage fallback or a hardcoded owner id:  - The client has no `localStorage`/`sessionStorage` use for watchlist data (only the theme toggle uses `localStorage`, unrelated). - `client/src/lib/api.ts` sends `credentials: \"include\"` o",
+  "started": "2026-09-04T00:38:22Z",
+  "finished": "2026-09-04T00:38:22Z",
+  "repo": "wealthcx01/arca"
+}
