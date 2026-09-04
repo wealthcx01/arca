@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-04T00:19:06Z",
+  "ended_at": "2026-09-04T00:19:06Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only)  I traced the full chain end to end and, contrary to the ticket's assumption, **didn't find an obvious bug**:  - **Schema**: `watchlists.user_id` is a persistent column tied to the `users.id` (nanoid), not a session id. Correct. - **Auth**: `signUp`/`login` in `db/auth.ts` key users by email (unique check on signup), so the same person always gets the same `user.id` across logins. Sessions store `user_id` correctly, 30-day expiry. - **Server**: `modules/watchlist/handlers.ts` has its own auth middleware (mirrors the pattern in `server.ts` for portfolio/pric",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only)  I traced the full chain end to end and, contrary to the ticket's assumption, **didn't find an obvious bug**:  - **Schema**: `watchlists.user_id` is a persistent column tied to the `users.id` (nanoid), not a session id. Correct. - **Auth**: `signUp`/`login` in `db/auth.ts` key users by email (unique check on signup), so the same person always gets the same `user.id` across logins. Sessions store `user_id` correctly, 30-day expiry. - **Server**: `modules/watchlist/handlers.ts` has its own auth middleware (mirrors the pattern in `server.ts` for portfolio/pric",
+  "started": "2026-09-04T00:19:06Z",
+  "finished": "2026-09-04T00:19:06Z",
+  "repo": "wealthcx01/arca"
+}
