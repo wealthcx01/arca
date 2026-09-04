@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-04T00:01:40Z",
+  "ended_at": "2026-09-04T00:01:40Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found by reading the code (no changes made) The backend wiring actually looks correct: - `modules/watchlist/schema.ts` keys watchlists by `user_id` (not anonymous/global). - `modules/watchlist/handlers.ts` has its own auth middleware that reads the `arca_session` cookie, validates it via `getSession()`, and sets `X-User-Id` before every handler; all queries filter `eq(watchlists.user_id, userId)`. - `client/src/lib/api.ts` sends `credentials: \"include\"` on every request, so cookies should go out. - `client",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found by reading the code (no changes made) The backend wiring actually looks correct: - `modules/watchlist/schema.ts` keys watchlists by `user_id` (not anonymous/global). - `modules/watchlist/handlers.ts` has its own auth middleware that reads the `arca_session` cookie, validates it via `getSession()`, and sets `X-User-Id` before every handler; all queries filter `eq(watchlists.user_id, userId)`. - `client/src/lib/api.ts` sends `credentials: \"include\"` on every request, so cookies should go out. - `client",
+  "started": "2026-09-04T00:01:40Z",
+  "finished": "2026-09-04T00:01:40Z",
+  "repo": "wealthcx01/arca"
+}
