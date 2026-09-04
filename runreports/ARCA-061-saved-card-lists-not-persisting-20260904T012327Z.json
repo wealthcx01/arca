@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-04T01:23:26Z",
+  "ended_at": "2026-09-04T01:23:27Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Investigation & Plan (no changes made — read-only audit)  ### What I checked I read the full chain end-to-end without editing anything: - `client/src/pages/WatchlistPage.tsx` — loads/saves via `api.get/post/delete`, no localStorage, no anonymous fallback. - `client/src/lib/api.ts` — every request uses `credentials: \"include\"`, so the session cookie is always sent. - `modules/watchlist/handlers.ts` — has its own auth middleware (lines 13–21) that validates `arca_session`, rejects with 401 if missing/expired, and injects `X-User-Id`. Every query (list, detail, create, add it",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Investigation & Plan (no changes made — read-only audit)  ### What I checked I read the full chain end-to-end without editing anything: - `client/src/pages/WatchlistPage.tsx` — loads/saves via `api.get/post/delete`, no localStorage, no anonymous fallback. - `client/src/lib/api.ts` — every request uses `credentials: \"include\"`, so the session cookie is always sent. - `modules/watchlist/handlers.ts` — has its own auth middleware (lines 13–21) that validates `arca_session`, rejects with 401 if missing/expired, and injects `X-User-Id`. Every query (list, detail, create, add it",
+  "started": "2026-09-04T01:23:26Z",
+  "finished": "2026-09-04T01:23:27Z",
+  "repo": "wealthcx01/arca"
+}
