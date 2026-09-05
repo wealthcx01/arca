@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-05T01:38:24Z",
+  "ended_at": "2026-09-05T01:38:25Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **No code has been changed.** I read through the watchlist and auth code end-to-end to ground this plan; findings below are from that read-only pass.  ### What I already checked (read-only) and found to be correct - `modules/watchlist/handlers.ts` — every route (list/create/read/update/delete/add-item/remove-item) filters by `watchlists.user_id`, and its own auth middleware requires a valid session cookie before setting `X-User-Id`. This matches the pattern used for portfolio routes. - `client/src/lib/api.ts` — the fetch wrapper send",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **No code has been changed.** I read through the watchlist and auth code end-to-end to ground this plan; findings below are from that read-only pass.  ### What I already checked (read-only) and found to be correct - `modules/watchlist/handlers.ts` — every route (list/create/read/update/delete/add-item/remove-item) filters by `watchlists.user_id`, and its own auth middleware requires a valid session cookie before setting `X-User-Id`. This matches the pattern used for portfolio routes. - `client/src/lib/api.ts` — the fetch wrapper send",
+  "started": "2026-09-05T01:38:24Z",
+  "finished": "2026-09-05T01:38:25Z",
+  "repo": "wealthcx01/arca"
+}
