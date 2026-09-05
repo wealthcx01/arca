@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-05T01:03:37Z",
+  "ended_at": "2026-09-05T01:03:37Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **No code was changed.** I read through the client watchlist page, the API client, the watchlist backend module, the auth middleware, and the login/session code to find where the chain breaks. Findings below, then what I'd propose.  ### What I found (the good news) The watchlist plumbing itself looks solid: - `WatchlistPage.tsx` always talks to the real API (`/api/watchlist`) — no localStorage/anonymous fallback, no dead code path. - The API client sends cookies on every request (`credentials: \"include\"`), so the session is always atta",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **No code was changed.** I read through the client watchlist page, the API client, the watchlist backend module, the auth middleware, and the login/session code to find where the chain breaks. Findings below, then what I'd propose.  ### What I found (the good news) The watchlist plumbing itself looks solid: - `WatchlistPage.tsx` always talks to the real API (`/api/watchlist`) — no localStorage/anonymous fallback, no dead code path. - The API client sends cookies on every request (`credentials: \"include\"`), so the session is always atta",
+  "started": "2026-09-05T01:03:37Z",
+  "finished": "2026-09-05T01:03:37Z",
+  "repo": "wealthcx01/arca"
+}
