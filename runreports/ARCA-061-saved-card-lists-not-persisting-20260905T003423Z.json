@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-05T00:34:23Z",
+  "ended_at": "2026-09-05T00:34:23Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I looked at (read-only) - `client/src/pages/WatchlistPage.tsx` — loads via `GET /watchlist`, saves via `POST/DELETE` calls, no localStorage/sessionStorage fallback, requests sent with `credentials: \"include\"`. - `modules/watchlist/handlers.ts` — every route requires a valid session cookie, resolves `X-User-Id` from it, and every DB query is scoped `WHERE user_id = ?`. - `db/auth.ts` — login always resolves to the same stable `user.id` keyed by email; sessions last 30 days. - `server.ts` CORS config — correct",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I looked at (read-only) - `client/src/pages/WatchlistPage.tsx` — loads via `GET /watchlist`, saves via `POST/DELETE` calls, no localStorage/sessionStorage fallback, requests sent with `credentials: \"include\"`. - `modules/watchlist/handlers.ts` — every route requires a valid session cookie, resolves `X-User-Id` from it, and every DB query is scoped `WHERE user_id = ?`. - `db/auth.ts` — login always resolves to the same stable `user.id` keyed by email; sessions last 30 days. - `server.ts` CORS config — correct",
+  "started": "2026-09-05T00:34:23Z",
+  "finished": "2026-09-05T00:34:23Z",
+  "repo": "wealthcx01/arca"
+}
