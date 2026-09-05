@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-05T01:34:25Z",
+  "ended_at": "2026-09-05T01:34:25Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found from reading the code (no changes made):**  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `/api/watchlist*` → `modules/watchlist/handlers.ts` → SQLite. Contrary to the ticket's assumption, I did **not** find an obvious wiring bug like a missing `X-User-Id`, a localStorage/anonymous fallback, or unscoped queries:  - The client fetch wrapper sends `credentials: \"include\"` on every call, and the watchlist page has no local/guest storage — it only ever renders server data. - Every watchlist ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found from reading the code (no changes made):**  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `/api/watchlist*` → `modules/watchlist/handlers.ts` → SQLite. Contrary to the ticket's assumption, I did **not** find an obvious wiring bug like a missing `X-User-Id`, a localStorage/anonymous fallback, or unscoped queries:  - The client fetch wrapper sends `credentials: \"include\"` on every call, and the watchlist page has no local/guest storage — it only ever renders server data. - Every watchlist ",
+  "started": "2026-09-05T01:34:25Z",
+  "finished": "2026-09-05T01:34:25Z",
+  "repo": "wealthcx01/arca"
+}
