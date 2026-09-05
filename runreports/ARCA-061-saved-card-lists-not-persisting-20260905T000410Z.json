@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-05T00:04:10Z",
+  "ended_at": "2026-09-05T00:04:10Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found by reading the code (no changes made)  I traced the full path: `WatchlistPage.tsx` → `/api/watchlist` → `modules/watchlist/handlers.ts` → SQLite, plus the auth/session layer and the client router.  **The backend and DB layer look correct, not broken:** - `watchlists` and `watchlist_items` tables both key off `user_id` (`modules/watchlist/schema.ts`), with indexes. - Every handler (`GET /`, `GET /:id`, `POST /`, `DELETE /:id`, item add/remove) filters or inserts using `user_id` pulled from an auth middleware that va",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found by reading the code (no changes made)  I traced the full path: `WatchlistPage.tsx` → `/api/watchlist` → `modules/watchlist/handlers.ts` → SQLite, plus the auth/session layer and the client router.  **The backend and DB layer look correct, not broken:** - `watchlists` and `watchlist_items` tables both key off `user_id` (`modules/watchlist/schema.ts`), with indexes. - Every handler (`GET /`, `GET /:id`, `POST /`, `DELETE /:id`, item add/remove) filters or inserts using `user_id` pulled from an auth middleware that va",
+  "started": "2026-09-05T00:04:10Z",
+  "finished": "2026-09-05T00:04:10Z",
+  "repo": "wealthcx01/arca"
+}
