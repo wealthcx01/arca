@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-05T01:24:23Z",
+  "ended_at": "2026-09-05T01:24:23Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from a read-only audit (no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts`/`modules/auth/handlers.ts`. Concretely:  - Client (`WatchlistPage.tsx`, `api.ts`): no localStorage/sessionStorage use for watchlist data, no anonymous fallback, requests always use `credentials: 'include'` so the session cookie rides along. - Backend (`modules/watchlist/handlers.ts`): every route scopes reads/writes by `watchlists.user_id`, derived from an ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from a read-only audit (no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts`/`modules/auth/handlers.ts`. Concretely:  - Client (`WatchlistPage.tsx`, `api.ts`): no localStorage/sessionStorage use for watchlist data, no anonymous fallback, requests always use `credentials: 'include'` so the session cookie rides along. - Backend (`modules/watchlist/handlers.ts`): every route scopes reads/writes by `watchlists.user_id`, derived from an ",
+  "started": "2026-09-05T01:24:23Z",
+  "finished": "2026-09-05T01:24:23Z",
+  "repo": "wealthcx01/arca"
+}
