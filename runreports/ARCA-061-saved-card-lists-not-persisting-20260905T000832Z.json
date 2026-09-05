@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-05T00:08:32Z",
+  "ended_at": "2026-09-05T00:08:32Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist persistence bug  **Root cause hypothesis (high confidence, needs quick confirmation before fixing):** `modules/watchlist/handlers.ts` has its own router-level auth middleware (lines 13-21) that authenticates the session cookie correctly, but then injects the resolved user id via `c.req.raw.headers.set(\"X-User-Id\", user.id)`. Downstream handlers read it back via `c.req.header(\"X-User-Id\")` (via a local `getUserId()` helper). In Hono, mutating `c.req.raw.headers` inside router-scoped middleware is not reliably visible to `c.req.header()` in the same request — thi",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist persistence bug  **Root cause hypothesis (high confidence, needs quick confirmation before fixing):** `modules/watchlist/handlers.ts` has its own router-level auth middleware (lines 13-21) that authenticates the session cookie correctly, but then injects the resolved user id via `c.req.raw.headers.set(\"X-User-Id\", user.id)`. Downstream handlers read it back via `c.req.header(\"X-User-Id\")` (via a local `getUserId()` helper). In Hono, mutating `c.req.raw.headers` inside router-scoped middleware is not reliably visible to `c.req.header()` in the same request — thi",
+  "started": "2026-09-05T00:08:32Z",
+  "finished": "2026-09-05T00:08:32Z",
+  "repo": "wealthcx01/arca"
+}
