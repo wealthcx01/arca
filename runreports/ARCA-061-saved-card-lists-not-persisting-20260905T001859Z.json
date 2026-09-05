@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-05T00:18:58Z",
+  "ended_at": "2026-09-05T00:18:59Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found from a read-only audit (no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts`/`modules/auth/handlers.ts` → SQLite.  Contrary to the ticket's hypothesis, **the backend is already correctly scoped by a stable `user_id`**: - Sessions map `token → users.id` via a join (`db/auth.ts`), and `users.id` is a permanent nanoid set once at signup — it does not change across logins or devices. - Every watchlist route (`",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found from a read-only audit (no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts`/`modules/auth/handlers.ts` → SQLite.  Contrary to the ticket's hypothesis, **the backend is already correctly scoped by a stable `user_id`**: - Sessions map `token → users.id` via a join (`db/auth.ts`), and `users.id` is a permanent nanoid set once at signup — it does not change across logins or devices. - Every watchlist route (`",
+  "started": "2026-09-05T00:18:58Z",
+  "finished": "2026-09-05T00:18:59Z",
+  "repo": "wealthcx01/arca"
+}
