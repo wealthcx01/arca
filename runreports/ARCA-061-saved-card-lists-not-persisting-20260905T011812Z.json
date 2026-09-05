@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-05T01:18:12Z",
+  "ended_at": "2026-09-05T01:18:12Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Confirms the suspicion — email lookups are case-sensitive with no normalization anywhere in signup/login.  ## Plan for ARCA-61 (no code changes made — plan only)  **What I did:** read the full path end-to-end — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` mounting → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` (sessions/cookies).  **Finding that changes the ticket's premise:** the code I read does *not* show the bug the ticket hypothesizes. Specifically: - Client always calls the real API with `credentials: \"include\"` — no loca",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Confirms the suspicion — email lookups are case-sensitive with no normalization anywhere in signup/login.  ## Plan for ARCA-61 (no code changes made — plan only)  **What I did:** read the full path end-to-end — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` mounting → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` (sessions/cookies).  **Finding that changes the ticket's premise:** the code I read does *not* show the bug the ticket hypothesizes. Specifically: - Client always calls the real API with `credentials: \"include\"` — no loca",
+  "started": "2026-09-05T01:18:12Z",
+  "finished": "2026-09-05T01:18:12Z",
+  "repo": "wealthcx01/arca"
+}
