@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-05T00:22:59Z",
+  "ended_at": "2026-09-05T00:23:00Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  I did a read-only audit of the full chain (I did not edit anything). Here's what I found, what I'd still need to verify before touching code, and the risk profile.  ### What the audit already shows - **Backend (`modules/watchlist/handlers.ts`)**: every route requires a valid session (line 13-21 auth middleware), and every read/write handler correctly checks `eq(watchlists.user_id, userId)` before returning or mutating data. This is *not* an anonymous/local-storage design — there's no fallback path. - **Client (`WatchlistPa",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  I did a read-only audit of the full chain (I did not edit anything). Here's what I found, what I'd still need to verify before touching code, and the risk profile.  ### What the audit already shows - **Backend (`modules/watchlist/handlers.ts`)**: every route requires a valid session (line 13-21 auth middleware), and every read/write handler correctly checks `eq(watchlists.user_id, userId)` before returning or mutating data. This is *not* an anonymous/local-storage design — there's no fallback path. - **Client (`WatchlistPa",
+  "started": "2026-09-05T00:22:59Z",
+  "finished": "2026-09-05T00:23:00Z",
+  "repo": "wealthcx01/arca"
+}
