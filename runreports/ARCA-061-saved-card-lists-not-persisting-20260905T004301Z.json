@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-05T00:43:01Z",
+  "ended_at": "2026-09-05T00:43:01Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **No code will be touched by me for this step — this is a plan for the founder to approve.**  ### What I already confirmed by reading the code (no changes made) - Client (`client/src/pages/WatchlistPage.tsx`) has no localStorage/sessionStorage fallback — it's pure React state that always re-fetches from `/watchlist` on mount, using `api.ts`'s `credentials: \"include\"` (cookies sent automatically). - `modules/watchlist/handlers.ts` has its own auth middleware (separate from `server.ts`) that reads the `arca_session` cookie",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **No code will be touched by me for this step — this is a plan for the founder to approve.**  ### What I already confirmed by reading the code (no changes made) - Client (`client/src/pages/WatchlistPage.tsx`) has no localStorage/sessionStorage fallback — it's pure React state that always re-fetches from `/watchlist` on mount, using `api.ts`'s `credentials: \"include\"` (cookies sent automatically). - `modules/watchlist/handlers.ts` has its own auth middleware (separate from `server.ts`) that reads the `arca_session` cookie",
+  "started": "2026-09-05T00:43:01Z",
+  "finished": "2026-09-05T00:43:01Z",
+  "repo": "wealthcx01/arca"
+}
