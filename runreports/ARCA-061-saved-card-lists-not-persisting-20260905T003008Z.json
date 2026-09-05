@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-05T00:30:07Z",
+  "ended_at": "2026-09-05T00:30:08Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only — no files changed)  I traced the full path the ticket describes: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` routing → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth layer (`db/auth.ts`, `modules/auth/handlers.ts`, `client/src/hooks/useAuth.tsx`).  **What I expected to find, per the ticket's own hypotheses, and did NOT find:** - No localStorage/sessionStorage/anonymous fallback anywhere in the watchlist client code — every read/write goes through `api.get/post/delete`, which always",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only — no files changed)  I traced the full path the ticket describes: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` routing → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth layer (`db/auth.ts`, `modules/auth/handlers.ts`, `client/src/hooks/useAuth.tsx`).  **What I expected to find, per the ticket's own hypotheses, and did NOT find:** - No localStorage/sessionStorage/anonymous fallback anywhere in the watchlist client code — every read/write goes through `api.get/post/delete`, which always",
+  "started": "2026-09-05T00:30:07Z",
+  "finished": "2026-09-05T00:30:08Z",
+  "repo": "wealthcx01/arca"
+}
