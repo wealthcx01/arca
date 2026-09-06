@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T01:14:21Z",
+  "ended_at": "2026-09-06T01:14:21Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting to signed-in account  **What I did first:** since this touches auth-derived identity and per-user data ownership, I did a read-only trace of the whole chain before proposing anything (no edits made). Findings below should shape whatever fix gets picked — several of the \"obvious suspects\" the ticket calls out are actually clean.  ### What I confirmed is *not* the bug - **`client/src/pages/WatchlistPage.tsx`** — fetches via `/watchlist` and `/watchlist/:id`, no localStorage/sessionStorage fallback, no anonymous/local state. Every save/remove i",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting to signed-in account  **What I did first:** since this touches auth-derived identity and per-user data ownership, I did a read-only trace of the whole chain before proposing anything (no edits made). Findings below should shape whatever fix gets picked — several of the \"obvious suspects\" the ticket calls out are actually clean.  ### What I confirmed is *not* the bug - **`client/src/pages/WatchlistPage.tsx`** — fetches via `/watchlist` and `/watchlist/:id`, no localStorage/sessionStorage fallback, no anonymous/local state. Every save/remove i",
+  "started": "2026-09-06T01:14:21Z",
+  "finished": "2026-09-06T01:14:21Z",
+  "repo": "wealthcx01/arca"
+}
