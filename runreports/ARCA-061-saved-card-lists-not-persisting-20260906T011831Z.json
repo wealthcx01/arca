@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T01:18:31Z",
+  "ended_at": "2026-09-06T01:18:31Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found before proposing anything (read-only) I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/index.ts`/`db/auth.ts`. Contrary to the ticket's assumption that this is an obvious wiring bug, **the code as written looks correctly scoped end-to-end**: - `App.tsx` gates all pages on `useAuth()`'s `user`; `WatchlistPage` never renders unless a session is confirmed via `/api/auth/me`. - No `localStorage`/`sessionStorage` is used for watchlist data anywhe",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found before proposing anything (read-only) I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/index.ts`/`db/auth.ts`. Contrary to the ticket's assumption that this is an obvious wiring bug, **the code as written looks correctly scoped end-to-end**: - `App.tsx` gates all pages on `useAuth()`'s `user`; `WatchlistPage` never renders unless a session is confirmed via `/api/auth/me`. - No `localStorage`/`sessionStorage` is used for watchlist data anywhe",
+  "started": "2026-09-06T01:18:31Z",
+  "finished": "2026-09-06T01:18:31Z",
+  "repo": "wealthcx01/arca"
+}
