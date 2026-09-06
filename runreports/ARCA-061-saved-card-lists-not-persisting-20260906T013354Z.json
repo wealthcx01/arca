@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T01:33:54Z",
+  "ended_at": "2026-09-06T01:33:54Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only)  **What I already checked (read-only, no edits):** I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → SQLite. On paper it's wired correctly: - The API client sends `credentials: \"include\"` on every request, so the session cookie always goes out. - `watchlistRouter.use(\"*\", ...)` requires a valid `arca_session` cookie on every watchlist route and scopes every query by `user_id`. - `login()` in `db/auth.ts` always returns the same permanent account `id` from the `users` ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only)  **What I already checked (read-only, no edits):** I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → SQLite. On paper it's wired correctly: - The API client sends `credentials: \"include\"` on every request, so the session cookie always goes out. - `watchlistRouter.use(\"*\", ...)` requires a valid `arca_session` cookie on every watchlist route and scopes every query by `user_id`. - `login()` in `db/auth.ts` always returns the same permanent account `id` from the `users` ",
+  "started": "2026-09-06T01:33:54Z",
+  "finished": "2026-09-06T01:33:54Z",
+  "repo": "wealthcx01/arca"
+}
