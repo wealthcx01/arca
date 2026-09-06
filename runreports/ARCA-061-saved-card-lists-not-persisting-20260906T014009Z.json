@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T01:40:08Z",
+  "ended_at": "2026-09-06T01:40:09Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found from reading the code (no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth plumbing in `db/auth.ts` and `server.ts`.  Contrary to the ticket's working theory, **I could not find an obvious wiring bug in the current code**: - The client's `api.ts` sends `credentials: \"include\"` on every request, so the `arca_session` cookie is always attached — no localStorage/anonymous fallback exists anywhere in `",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found from reading the code (no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth plumbing in `db/auth.ts` and `server.ts`.  Contrary to the ticket's working theory, **I could not find an obvious wiring bug in the current code**: - The client's `api.ts` sends `credentials: \"include\"` on every request, so the `arca_session` cookie is always attached — no localStorage/anonymous fallback exists anywhere in `",
+  "started": "2026-09-06T01:40:08Z",
+  "finished": "2026-09-06T01:40:09Z",
+  "repo": "wealthcx01/arca"
+}
