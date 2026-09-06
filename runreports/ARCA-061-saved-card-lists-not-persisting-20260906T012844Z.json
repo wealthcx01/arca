@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T01:28:44Z",
+  "ended_at": "2026-09-06T01:28:44Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Now I have a complete picture of the chain. Here's the plan.  ## ARCA-61 Plan — Saved lists not persisting to signed-in account  ### What I did (read-only) Traced the full chain end to end: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / SQLite. No edits made.  ### Notable finding — the wiring looks correct, contrary to the ticket's premise - `modules/watchlist/handlers.ts` has its own auth middleware requiring `arca_session` cookie or `Authorization` header, resolves it to a real, stable `user_id` via `getSession()`, a",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Now I have a complete picture of the chain. Here's the plan.  ## ARCA-61 Plan — Saved lists not persisting to signed-in account  ### What I did (read-only) Traced the full chain end to end: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / SQLite. No edits made.  ### Notable finding — the wiring looks correct, contrary to the ticket's premise - `modules/watchlist/handlers.ts` has its own auth middleware requiring `arca_session` cookie or `Authorization` header, resolves it to a real, stable `user_id` via `getSession()`, a",
+  "started": "2026-09-06T01:28:44Z",
+  "finished": "2026-09-06T01:28:44Z",
+  "repo": "wealthcx01/arca"
+}
