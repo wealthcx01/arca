@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T00:09:40Z",
+  "ended_at": "2026-09-06T00:09:40Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I found from a read-only audit (no code changed):**  - Backend (`modules/watchlist/handlers.ts`) correctly scopes every read/write to `user_id` derived from the session cookie (`arca_session` → `getSession()` → `X-User-Id`). No anonymous/guest watchlist creation exists, and `user_id` is `NOT NULL` in the schema. - Auth cookie (`modules/auth/handlers.ts`) is set with a 30-day `maxAge`, `path: \"/\"`, consistently on signup/login, and cleared on logout. Session lookup is keyed correctly by token → user. - Th",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I found from a read-only audit (no code changed):**  - Backend (`modules/watchlist/handlers.ts`) correctly scopes every read/write to `user_id` derived from the session cookie (`arca_session` → `getSession()` → `X-User-Id`). No anonymous/guest watchlist creation exists, and `user_id` is `NOT NULL` in the schema. - Auth cookie (`modules/auth/handlers.ts`) is set with a 30-day `maxAge`, `path: \"/\"`, consistently on signup/login, and cleared on logout. Session lookup is keyed correctly by token → user. - Th",
+  "started": "2026-09-06T00:09:40Z",
+  "finished": "2026-09-06T00:09:40Z",
+  "repo": "wealthcx01/arca"
+}
