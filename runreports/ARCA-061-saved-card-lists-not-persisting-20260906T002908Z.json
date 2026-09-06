@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T00:29:08Z",
+  "ended_at": "2026-09-06T00:29:08Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did:** Read-only audit of the full chain (no edits made): `WatchlistPage.tsx` → `client/src/lib/api.ts` → `useAuth.tsx` → `modules/watchlist/handlers.ts` → `db/auth.ts` → `modules/watchlist/schema.ts`, plus a live Bun test of the one thing that looked suspicious (mutating request headers in middleware).  **What I found, which changes the shape of this ticket:** The chain, as it exists right now, looks correctly wired: - `api.ts` sends `credentials: \"include\"` on every request, so the session cookie is always attached. ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did:** Read-only audit of the full chain (no edits made): `WatchlistPage.tsx` → `client/src/lib/api.ts` → `useAuth.tsx` → `modules/watchlist/handlers.ts` → `db/auth.ts` → `modules/watchlist/schema.ts`, plus a live Bun test of the one thing that looked suspicious (mutating request headers in middleware).  **What I found, which changes the shape of this ticket:** The chain, as it exists right now, looks correctly wired: - `api.ts` sends `credentials: \"include\"` on every request, so the session cookie is always attached. ",
+  "started": "2026-09-06T00:29:08Z",
+  "finished": "2026-09-06T00:29:08Z",
+  "repo": "wealthcx01/arca"
+}
