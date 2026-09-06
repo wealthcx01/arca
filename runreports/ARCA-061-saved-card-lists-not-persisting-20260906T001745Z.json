@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T00:17:44Z",
+  "ended_at": "2026-09-06T00:17:45Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: This is a relative `/api` path, same-origin via Vite proxy — fine for cookie handling, not the likely culprit. I now have enough grounding for the plan. I did not modify any files.  ## Plan for ARCA-61 — Saved card lists not persisting  **What I found from a read-only audit (no changes made):**  The architecture is actually built correctly, end-to-end, as far as static reading shows:  - `WatchlistPage.tsx` never touches localStorage/sessionStorage for watchlist data, never hardcodes a watchlist ID, and always fetches `/watchlist` fresh on mount, letting the server determine ownership from ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: This is a relative `/api` path, same-origin via Vite proxy — fine for cookie handling, not the likely culprit. I now have enough grounding for the plan. I did not modify any files.  ## Plan for ARCA-61 — Saved card lists not persisting  **What I found from a read-only audit (no changes made):**  The architecture is actually built correctly, end-to-end, as far as static reading shows:  - `WatchlistPage.tsx` never touches localStorage/sessionStorage for watchlist data, never hardcodes a watchlist ID, and always fetches `/watchlist` fresh on mount, letting the server determine ownership from ",
+  "started": "2026-09-06T00:17:44Z",
+  "finished": "2026-09-06T00:17:45Z",
+  "repo": "wealthcx01/arca"
+}
