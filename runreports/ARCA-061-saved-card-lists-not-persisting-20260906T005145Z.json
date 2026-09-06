@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T00:51:44Z",
+  "ended_at": "2026-09-06T00:51:45Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting  **What I found first (read-only audit, no changes made):**  I had a subagent trace the full watchlist path — client `WatchlistPage.tsx` → API → `modules/watchlist` → DB → `modules/auth` — before proposing a plan, since the ticket's own hypothesis (client-side wiring bug) needs to be checked against the code, not assumed.  Contrary to the ticket's hypothesis, the watchlist module itself looks correctly wired: - Client always calls the real API with `credentials: \"include\"`; no localStorage/anonymous fallback for watchlist data ex",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting  **What I found first (read-only audit, no changes made):**  I had a subagent trace the full watchlist path — client `WatchlistPage.tsx` → API → `modules/watchlist` → DB → `modules/auth` — before proposing a plan, since the ticket's own hypothesis (client-side wiring bug) needs to be checked against the code, not assumed.  Contrary to the ticket's hypothesis, the watchlist module itself looks correctly wired: - Client always calls the real API with `credentials: \"include\"`; no localStorage/anonymous fallback for watchlist data ex",
+  "started": "2026-09-06T00:51:44Z",
+  "finished": "2026-09-06T00:51:45Z",
+  "repo": "wealthcx01/arca"
+}
