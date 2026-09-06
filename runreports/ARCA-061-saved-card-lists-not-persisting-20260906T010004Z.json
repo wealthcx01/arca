@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T01:00:04Z",
+  "ended_at": "2026-09-06T01:00:04Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  I read the full path end-to-end (no edits made): `client/src/pages/WatchlistPage.tsx`, `client/src/App.tsx`, `client/src/hooks/useAuth.tsx`, `client/src/lib/api.ts`, `modules/watchlist/{schema,handlers}.ts`, `db/auth.ts`, `db/index.ts`, `server.ts`.  ### What's already correct (ruled out) - **DB schema**: `watchlists` is keyed by `user_id NOT NULL`; no shared/default/anonymous row exists. - **Server-side scoping**: every watchlist route (`GET/POST/PUT/DELETE`) filters by `eq(watchlists.user_id, userId)`. No route lets one us",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  I read the full path end-to-end (no edits made): `client/src/pages/WatchlistPage.tsx`, `client/src/App.tsx`, `client/src/hooks/useAuth.tsx`, `client/src/lib/api.ts`, `modules/watchlist/{schema,handlers}.ts`, `db/auth.ts`, `db/index.ts`, `server.ts`.  ### What's already correct (ruled out) - **DB schema**: `watchlists` is keyed by `user_id NOT NULL`; no shared/default/anonymous row exists. - **Server-side scoping**: every watchlist route (`GET/POST/PUT/DELETE`) filters by `eq(watchlists.user_id, userId)`. No route lets one us",
+  "started": "2026-09-06T01:00:04Z",
+  "finished": "2026-09-06T01:00:04Z",
+  "repo": "wealthcx01/arca"
+}
