@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T00:22:53Z",
+  "ended_at": "2026-09-06T00:22:54Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I traced the full watchlist chain before writing this plan (read-only, no edits made):  - **Client** (`client/src/pages/WatchlistPage.tsx`) — loads via `api.get(\"/watchlist\")`, saves via `api.post`/`delete` to `/watchlist/:id/items`. No localStorage/anonymous fallback anywhere in this file. - **API client** (`client/src/lib/api.ts`) — every request uses `credentials: \"include\"`, so cookies are sent consistently, same as portfolio. - **Auth** (`db/auth.ts`, `modules/auth/handlers.ts`) — login/signup issue a session tied to a stable, persistent `users.id`; cookie ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I traced the full watchlist chain before writing this plan (read-only, no edits made):  - **Client** (`client/src/pages/WatchlistPage.tsx`) — loads via `api.get(\"/watchlist\")`, saves via `api.post`/`delete` to `/watchlist/:id/items`. No localStorage/anonymous fallback anywhere in this file. - **API client** (`client/src/lib/api.ts`) — every request uses `credentials: \"include\"`, so cookies are sent consistently, same as portfolio. - **Auth** (`db/auth.ts`, `modules/auth/handlers.ts`) — login/signup issue a session tied to a stable, persistent `users.id`; cookie ",
+  "started": "2026-09-06T00:22:53Z",
+  "finished": "2026-09-06T00:22:54Z",
+  "repo": "wealthcx01/arca"
+}
