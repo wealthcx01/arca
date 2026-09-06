@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T00:45:02Z",
+  "ended_at": "2026-09-06T00:45:02Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: No test file for the watchlist module at all — that's notable. I've done a full read-only trace of the chain now. Here's the plan.  ## ARCA-61 Plan — Saved watchlists not persisting across login  ### What I found in the audit (no changes made) - **Client (`WatchlistPage.tsx`)** is clean: it fetches/writes only via `GET/POST/DELETE /watchlist...` through `api.ts` (which sends `credentials: \"include\"`), with **no localStorage/anonymous fallback** for watchlist data. The one `localStorage` hit in the client is in `Layout.tsx`, unrelated to watchlist state. - **DB schema** (`watchlists`, `watc",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: No test file for the watchlist module at all — that's notable. I've done a full read-only trace of the chain now. Here's the plan.  ## ARCA-61 Plan — Saved watchlists not persisting across login  ### What I found in the audit (no changes made) - **Client (`WatchlistPage.tsx`)** is clean: it fetches/writes only via `GET/POST/DELETE /watchlist...` through `api.ts` (which sends `credentials: \"include\"`), with **no localStorage/anonymous fallback** for watchlist data. The one `localStorage` hit in the client is in `Layout.tsx`, unrelated to watchlist state. - **DB schema** (`watchlists`, `watc",
+  "started": "2026-09-06T00:45:02Z",
+  "finished": "2026-09-06T00:45:02Z",
+  "repo": "wealthcx01/arca"
+}
