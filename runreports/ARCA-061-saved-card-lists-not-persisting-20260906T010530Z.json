@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T01:05:30Z",
+  "ended_at": "2026-09-06T01:05:30Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I did (read-only audit, no files changed) I traced the full read/write path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` auth middleware → `modules/watchlist` schema/DB → `db/auth.ts` session logic.  **Findings so far — the \"obvious\" bugs aren't there:** - `api.ts` sends `credentials: \"include\"` on every request, and CORS on the server allows credentials — cookies do flow. - The watchlist auth middleware (`modules/watchlist/handlers.ts:13-21`) uses the identical `getCookie → getS",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I did (read-only audit, no files changed) I traced the full read/write path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` auth middleware → `modules/watchlist` schema/DB → `db/auth.ts` session logic.  **Findings so far — the \"obvious\" bugs aren't there:** - `api.ts` sends `credentials: \"include\"` on every request, and CORS on the server allows credentials — cookies do flow. - The watchlist auth middleware (`modules/watchlist/handlers.ts:13-21`) uses the identical `getCookie → getS",
+  "started": "2026-09-06T01:05:30Z",
+  "finished": "2026-09-06T01:05:30Z",
+  "repo": "wealthcx01/arca"
+}
