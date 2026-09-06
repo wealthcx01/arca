@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-06T01:23:12Z",
+  "ended_at": "2026-09-06T01:23:12Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I checked first (read-only, no edits) I audited the full chain the ticket calls out, and it's worth flagging: **the \"obvious\" bugs in the ticket description don't appear to be present in the current code.**  - `client/src/pages/WatchlistPage.tsx` — loads/saves exclusively via the shared `api` client, no localStorage/anonymous fallback anywhere in this file. - `client/src/lib/api.ts` — every request sends `credentials: \"include\"`, so session cookies do go out on every watchlist call. - `modules/watchlist/handlers.ts` — has ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I checked first (read-only, no edits) I audited the full chain the ticket calls out, and it's worth flagging: **the \"obvious\" bugs in the ticket description don't appear to be present in the current code.**  - `client/src/pages/WatchlistPage.tsx` — loads/saves exclusively via the shared `api` client, no localStorage/anonymous fallback anywhere in this file. - `client/src/lib/api.ts` — every request sends `credentials: \"include\"`, so session cookies do go out on every watchlist call. - `modules/watchlist/handlers.ts` — has ",
+  "started": "2026-09-06T01:23:12Z",
+  "finished": "2026-09-06T01:23:12Z",
+  "repo": "wealthcx01/arca"
+}
