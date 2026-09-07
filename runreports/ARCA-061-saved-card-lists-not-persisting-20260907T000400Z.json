@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T00:04:00Z",
+  "ended_at": "2026-09-07T00:04:00Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I did to prepare this plan I read the full watchlist chain end-to-end (read-only, no edits): `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `modules/watchlist/{schema,handlers}.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, and `server.ts`.  **Finding, and why this ticket needs care before coding:** as currently written, the chain looks *correctly* wired — cookies are sent (`credentials: \"include\"`), the watchlist router h",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I did to prepare this plan I read the full watchlist chain end-to-end (read-only, no edits): `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `modules/watchlist/{schema,handlers}.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, and `server.ts`.  **Finding, and why this ticket needs care before coding:** as currently written, the chain looks *correctly* wired — cookies are sent (`credentials: \"include\"`), the watchlist router h",
+  "started": "2026-09-07T00:04:00Z",
+  "finished": "2026-09-07T00:04:00Z",
+  "repo": "wealthcx01/arca"
+}
