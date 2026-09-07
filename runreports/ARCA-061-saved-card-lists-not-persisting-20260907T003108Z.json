@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T00:31:08Z",
+  "ended_at": "2026-09-07T00:31:08Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found (read-only audit, no code changes made)  I traced the full path: `WatchlistPage.tsx` → `/api/watchlist` → `modules/watchlist/handlers.ts` → DB, and then the auth layer underneath it.  **The watchlist module itself is not the bug.** It's correctly built: - `watchlists.user_id` is `NOT NULL`, every query filters by `eq(watchlists.user_id, userId)`. - The client has no localStorage/anonymous fallback — it's cookie-session-based only (`credentials: \"include\"`). - `useAuth` correctly rehydrates from `GET ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found (read-only audit, no code changes made)  I traced the full path: `WatchlistPage.tsx` → `/api/watchlist` → `modules/watchlist/handlers.ts` → DB, and then the auth layer underneath it.  **The watchlist module itself is not the bug.** It's correctly built: - `watchlists.user_id` is `NOT NULL`, every query filters by `eq(watchlists.user_id, userId)`. - The client has no localStorage/anonymous fallback — it's cookie-session-based only (`credentials: \"include\"`). - `useAuth` correctly rehydrates from `GET ",
+  "started": "2026-09-07T00:31:08Z",
+  "finished": "2026-09-07T00:31:08Z",
+  "repo": "wealthcx01/arca"
+}
