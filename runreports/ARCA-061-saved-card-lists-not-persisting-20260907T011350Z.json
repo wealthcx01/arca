@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T01:13:50Z",
+  "ended_at": "2026-09-07T01:13:50Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only)  **What I did this turn:** read-only audit of the whole watchlist path — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/pages/LoginPage.tsx`, `modules/auth/handlers.ts`, `db/auth.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/index.ts`, `db/push.ts`. No files were edited.  **What I found:** the code, as written, looks correct end-to-end. The client sends `credentials: \"include\"` on every request, has no localStorage/anonymous fallback for wat",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only)  **What I did this turn:** read-only audit of the whole watchlist path — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/pages/LoginPage.tsx`, `modules/auth/handlers.ts`, `db/auth.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/index.ts`, `db/push.ts`. No files were edited.  **What I found:** the code, as written, looks correct end-to-end. The client sends `credentials: \"include\"` on every request, has no localStorage/anonymous fallback for wat",
+  "started": "2026-09-07T01:13:50Z",
+  "finished": "2026-09-07T01:13:50Z",
+  "repo": "wealthcx01/arca"
+}
