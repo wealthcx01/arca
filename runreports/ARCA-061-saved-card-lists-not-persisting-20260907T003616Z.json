@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T00:36:16Z",
+  "ended_at": "2026-09-07T00:36:16Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA‑61 — Saved card lists not persisting  ### What I did (read-only audit, no edits) I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` route mounting → `modules/watchlist/handlers.ts` auth middleware → `db/auth.ts` (session/login) → `modules/watchlist/schema.ts` (DB).  **Everything I read is wired correctly:** - Client never touches `localStorage`/`sessionStorage` for watchlists (only theme uses localStorage). Every fetch goes through `api.ts`, which sends `credentials: \"include\"` so the session cookie is always attached. - `watchli",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA‑61 — Saved card lists not persisting  ### What I did (read-only audit, no edits) I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` route mounting → `modules/watchlist/handlers.ts` auth middleware → `db/auth.ts` (session/login) → `modules/watchlist/schema.ts` (DB).  **Everything I read is wired correctly:** - Client never touches `localStorage`/`sessionStorage` for watchlists (only theme uses localStorage). Every fetch goes through `api.ts`, which sends `credentials: \"include\"` so the session cookie is always attached. - `watchli",
+  "started": "2026-09-07T00:36:16Z",
+  "finished": "2026-09-07T00:36:16Z",
+  "repo": "wealthcx01/arca"
+}
