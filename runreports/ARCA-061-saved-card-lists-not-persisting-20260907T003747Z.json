@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T00:37:46Z",
+  "ended_at": "2026-09-07T00:37:47Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login (read-only investigation, no changes made)  ### What I found (root cause) This is **not** a backend/data-scoping bug — the backend is correct: - `modules/watchlist/schema.ts:8` — watchlists have a required `user_id` column. - `modules/watchlist/handlers.ts:12-21, 33-56` — every route is gated by auth middleware and filters strictly by `eq(watchlists.user_id, userId)`. - `client/src/lib/api.ts:5` — the API client sends `credentials: \"include\"`, so cookies/session are attached correctly.  The bug is a **client-side stal",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login (read-only investigation, no changes made)  ### What I found (root cause) This is **not** a backend/data-scoping bug — the backend is correct: - `modules/watchlist/schema.ts:8` — watchlists have a required `user_id` column. - `modules/watchlist/handlers.ts:12-21, 33-56` — every route is gated by auth middleware and filters strictly by `eq(watchlists.user_id, userId)`. - `client/src/lib/api.ts:5` — the API client sends `credentials: \"include\"`, so cookies/session are attached correctly.  The bug is a **client-side stal",
+  "started": "2026-09-07T00:37:46Z",
+  "finished": "2026-09-07T00:37:47Z",
+  "repo": "wealthcx01/arca"
+}
