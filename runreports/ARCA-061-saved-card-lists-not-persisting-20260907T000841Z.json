@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T00:08:40Z",
+  "ended_at": "2026-09-07T00:08:41Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence bug  **What I did so far (read-only audit, no code changed):** I traced the full path — `WatchlistPage.tsx` → `api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → schema — and checked it against the portfolio module, which is called out as the working reference.  **What I found:** Everything I can verify statically looks correctly wired: - Client sends `credentials: \"include\"` on every request, no localStorage/anonymous fallback anywhere in the watchlist page or auth hook. - `modules/watchlist/handlers.ts` has its",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence bug  **What I did so far (read-only audit, no code changed):** I traced the full path — `WatchlistPage.tsx` → `api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → schema — and checked it against the portfolio module, which is called out as the working reference.  **What I found:** Everything I can verify statically looks correctly wired: - Client sends `credentials: \"include\"` on every request, no localStorage/anonymous fallback anywhere in the watchlist page or auth hook. - `modules/watchlist/handlers.ts` has its",
+  "started": "2026-09-07T00:08:40Z",
+  "finished": "2026-09-07T00:08:41Z",
+  "repo": "wealthcx01/arca"
+}
