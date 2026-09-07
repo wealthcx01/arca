@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T00:25:23Z",
+  "ended_at": "2026-09-07T00:25:23Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found before proposing anything (read-only audit, no edits made)  I traced the full read/write path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist` router/handlers → `modules/watchlist/schema.ts` → auth session lookup in `db/auth.ts`.  **Everything I checked looks correctly wired today:** - `watchlists` table has a `NOT NULL user_id`; every handler (list/create/get/update/delete/add-item/remove-item) filters by `eq(watchlists.user_id, userId)` — no shared/default/anonymous li",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found before proposing anything (read-only audit, no edits made)  I traced the full read/write path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist` router/handlers → `modules/watchlist/schema.ts` → auth session lookup in `db/auth.ts`.  **Everything I checked looks correctly wired today:** - `watchlists` table has a `NOT NULL user_id`; every handler (list/create/get/update/delete/add-item/remove-item) filters by `eq(watchlists.user_id, userId)` — no shared/default/anonymous li",
+  "started": "2026-09-07T00:25:23Z",
+  "finished": "2026-09-07T00:25:23Z",
+  "repo": "wealthcx01/arca"
+}
