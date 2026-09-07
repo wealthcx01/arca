@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T01:38:38Z",
+  "ended_at": "2026-09-07T01:38:38Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist not persisting to signed-in account  ### What I found from a static audit (no code changed)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`.  - **Client (`WatchlistPage.tsx`):** Clean. Every load/add/remove/delete goes straight to the API (`GET/POST/DELETE /watchlist...`). No `localStorage`/`sessionStorage` fallback anywhere in this file or `api.ts` — I grepped the whole client and the only `localStorage` use in the app is an unrelated theme toggle in",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist not persisting to signed-in account  ### What I found from a static audit (no code changed)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`.  - **Client (`WatchlistPage.tsx`):** Clean. Every load/add/remove/delete goes straight to the API (`GET/POST/DELETE /watchlist...`). No `localStorage`/`sessionStorage` fallback anywhere in this file or `api.ts` — I grepped the whole client and the only `localStorage` use in the app is an unrelated theme toggle in",
+  "started": "2026-09-07T01:38:38Z",
+  "finished": "2026-09-07T01:38:38Z",
+  "repo": "wealthcx01/arca"
+}
