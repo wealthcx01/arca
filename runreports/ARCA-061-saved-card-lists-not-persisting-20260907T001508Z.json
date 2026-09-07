@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T00:15:08Z",
+  "ended_at": "2026-09-07T00:15:08Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I read the full chain before proposing anything: `modules/watchlist/schema.ts`, `handlers.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `server.ts`, `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, and `client/vite.config.ts`.  Contrary to the ticket's own hypothesis, I did **not** find an obvious wiring bug on static read: - Backend: `watchlists.user_id` is set correctly on create, and every route (`GET/POST/PUT/DELETE`) filters by `eq(watchlists.user_id, userId)` before touching a row. The auth mid",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I read the full chain before proposing anything: `modules/watchlist/schema.ts`, `handlers.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `server.ts`, `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, and `client/vite.config.ts`.  Contrary to the ticket's own hypothesis, I did **not** find an obvious wiring bug on static read: - Backend: `watchlists.user_id` is set correctly on create, and every route (`GET/POST/PUT/DELETE`) filters by `eq(watchlists.user_id, userId)` before touching a row. The auth mid",
+  "started": "2026-09-07T00:15:08Z",
+  "finished": "2026-09-07T00:15:08Z",
+  "repo": "wealthcx01/arca"
+}
