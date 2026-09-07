@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T01:28:38Z",
+  "ended_at": "2026-09-07T01:28:38Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good, that confirms routing correctly gates on `loading`/`user`. I now have enough evidence to write the plan without more digging (this is a \"no implementation\" ticket, so exhaustive root-causing isn't required — I've ruled out the obvious suspects and can point the assigned engineer at the real remaining candidates).  ## Plan for ARCA-61 — Saved card lists not persisting  **What I checked before writing this plan** (read-only): `modules/watchlist/schema.ts` + `handlers.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `db/index.ts`, `client/src/pages/WatchlistPage.tsx`, `client/src/hooks/us",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good, that confirms routing correctly gates on `loading`/`user`. I now have enough evidence to write the plan without more digging (this is a \"no implementation\" ticket, so exhaustive root-causing isn't required — I've ruled out the obvious suspects and can point the assigned engineer at the real remaining candidates).  ## Plan for ARCA-61 — Saved card lists not persisting  **What I checked before writing this plan** (read-only): `modules/watchlist/schema.ts` + `handlers.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `db/index.ts`, `client/src/pages/WatchlistPage.tsx`, `client/src/hooks/us",
+  "started": "2026-09-07T01:28:38Z",
+  "finished": "2026-09-07T01:28:38Z",
+  "repo": "wealthcx01/arca"
+}
