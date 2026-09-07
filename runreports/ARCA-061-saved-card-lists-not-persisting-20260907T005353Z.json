@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T00:53:53Z",
+  "ended_at": "2026-09-07T00:53:53Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation + proposed approach only)  **What I did:** read-only audit of the full chain — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts` + `schema.ts`, `db/auth.ts`, and `server.ts`'s auth middleware (compared against the equivalent portfolio/pricing/news patterns).  **What I found:** the wiring looks correct, not broken, everywhere I checked: - `watchlists.user_id` is a real column, and every handler (list/get/create/update/delete/add-item/remove-item) filters or writes with `eq(watchlists.user_",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation + proposed approach only)  **What I did:** read-only audit of the full chain — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts` + `schema.ts`, `db/auth.ts`, and `server.ts`'s auth middleware (compared against the equivalent portfolio/pricing/news patterns).  **What I found:** the wiring looks correct, not broken, everywhere I checked: - `watchlists.user_id` is a real column, and every handler (list/get/create/update/delete/add-item/remove-item) filters or writes with `eq(watchlists.user_",
+  "started": "2026-09-07T00:53:53Z",
+  "finished": "2026-09-07T00:53:53Z",
+  "repo": "wealthcx01/arca"
+}
