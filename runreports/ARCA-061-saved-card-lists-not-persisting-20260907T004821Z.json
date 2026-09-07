@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T00:48:20Z",
+  "ended_at": "2026-09-07T00:48:21Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I traced the full watchlist path read-only (no edits made). What I confirmed in the current code:  - **Backend (`modules/watchlist/handlers.ts`) is genuinely ownership-scoped.** Every route requires a valid session, injects `X-User-Id`, and every query/write filters `WHERE watchlists.user_id = <that id>`. No anonymous/default fallback. - **Client (`WatchlistPage.tsx`) has no localStorage/sessionStorage fallback.** It's 100% driven by `api.get(\"/watchlist\")` and `api.get(\"/watchlist/:id\")`, with cookies sent via `credentials: \"include\"`. - **Sessions are keyed to `user",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I traced the full watchlist path read-only (no edits made). What I confirmed in the current code:  - **Backend (`modules/watchlist/handlers.ts`) is genuinely ownership-scoped.** Every route requires a valid session, injects `X-User-Id`, and every query/write filters `WHERE watchlists.user_id = <that id>`. No anonymous/default fallback. - **Client (`WatchlistPage.tsx`) has no localStorage/sessionStorage fallback.** It's 100% driven by `api.get(\"/watchlist\")` and `api.get(\"/watchlist/:id\")`, with cookies sent via `credentials: \"include\"`. - **Sessions are keyed to `user",
+  "started": "2026-09-07T00:48:20Z",
+  "finished": "2026-09-07T00:48:21Z",
+  "repo": "wealthcx01/arca"
+}
