@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T00:43:30Z",
+  "ended_at": "2026-09-07T00:43:31Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I did (read-only) I traced the full path end-to-end before proposing anything: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite schema, plus `useAuth.tsx`/`App.tsx` (route gating) and the session-cookie config in `modules/auth/handlers.ts`.  ### What's actually fine (so we don't re-litigate it) - Watchlist routes correctly scope every query by `user_id` (`eq(watchlists.user_id, userId)`), including add/remove/create/delete — no",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I did (read-only) I traced the full path end-to-end before proposing anything: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite schema, plus `useAuth.tsx`/`App.tsx` (route gating) and the session-cookie config in `modules/auth/handlers.ts`.  ### What's actually fine (so we don't re-litigate it) - Watchlist routes correctly scope every query by `user_id` (`eq(watchlists.user_id, userId)`), including add/remove/create/delete — no",
+  "started": "2026-09-07T00:43:30Z",
+  "finished": "2026-09-07T00:43:31Z",
+  "repo": "wealthcx01/arca"
+}
