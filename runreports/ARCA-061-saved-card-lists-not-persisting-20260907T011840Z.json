@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-07T01:18:39Z",
+  "ended_at": "2026-09-07T01:18:40Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did before writing this plan:** read-only audit of the full chain — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and `client/vite.config.ts`. No edits made.  **Finding, stated plainly:** statically, the chain looks correctly wired, contradicting the ticket's assumption of an obvious wiring bug. - Client sends `credentials: \"include\"` on every request, no localStorage/sessionStorage ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did before writing this plan:** read-only audit of the full chain — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and `client/vite.config.ts`. No edits made.  **Finding, stated plainly:** statically, the chain looks correctly wired, contradicting the ticket's assumption of an obvious wiring bug. - Client sends `credentials: \"include\"` on every request, no localStorage/sessionStorage ",
+  "started": "2026-09-07T01:18:39Z",
+  "finished": "2026-09-07T01:18:40Z",
+  "repo": "wealthcx01/arca"
+}
