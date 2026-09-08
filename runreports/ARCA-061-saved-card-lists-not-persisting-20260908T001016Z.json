@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-08T00:10:16Z",
+  "ended_at": "2026-09-08T00:10:16Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no files changed)  Before planning, I traced the actual watchlist read/write path end to end and even spun up the backend locally to test it directly (signup → create watchlist → logout → fresh login with a brand-new cookie jar, simulating a different device):  - **Backend (`modules/watchlist/handlers.ts`, `db/auth.ts`):** Correctly scopes every read/write to the authenticated user via the `arca_session` cookie → `X-User-Id`. My live test confirmed a watchlist **does** survive logout + fresh login on a \"new device.\" Backend looks correct. - **Client",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no files changed)  Before planning, I traced the actual watchlist read/write path end to end and even spun up the backend locally to test it directly (signup → create watchlist → logout → fresh login with a brand-new cookie jar, simulating a different device):  - **Backend (`modules/watchlist/handlers.ts`, `db/auth.ts`):** Correctly scopes every read/write to the authenticated user via the `arca_session` cookie → `X-User-Id`. My live test confirmed a watchlist **does** survive logout + fresh login on a \"new device.\" Backend looks correct. - **Client",
+  "started": "2026-09-08T00:10:16Z",
+  "finished": "2026-09-08T00:10:16Z",
+  "repo": "wealthcx01/arca"
+}
