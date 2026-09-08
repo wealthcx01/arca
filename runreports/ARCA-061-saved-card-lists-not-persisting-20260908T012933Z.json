@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-08T01:29:33Z",
+  "ended_at": "2026-09-08T01:29:33Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I did (read-only) Before proposing a fix, I traced the whole chain by reading the code (no edits made): - `modules/watchlist/schema.ts` — `watchlists` and `watchlist_items` tables - `modules/watchlist/handlers.ts` — all CRUD routes - `server.ts` — router mounting and other modules' auth middleware for comparison - `db/auth.ts` and `modules/auth/handlers.ts` — session/cookie creation, login/logout, `getSession` - `client/src/pages/WatchlistPage.tsx` and `client/src/lib/api.ts` — fetch/save logic - `client/v",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I did (read-only) Before proposing a fix, I traced the whole chain by reading the code (no edits made): - `modules/watchlist/schema.ts` — `watchlists` and `watchlist_items` tables - `modules/watchlist/handlers.ts` — all CRUD routes - `server.ts` — router mounting and other modules' auth middleware for comparison - `db/auth.ts` and `modules/auth/handlers.ts` — session/cookie creation, login/logout, `getSession` - `client/src/pages/WatchlistPage.tsx` and `client/src/lib/api.ts` — fetch/save logic - `client/v",
+  "started": "2026-09-08T01:29:33Z",
+  "finished": "2026-09-08T01:29:33Z",
+  "repo": "wealthcx01/arca"
+}
