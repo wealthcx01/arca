@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-08T00:03:59Z",
+  "ended_at": "2026-09-08T00:04:00Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting to signed-in account  ### What I found before writing this plan (read-only investigation) I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session/auth (`db/auth.ts`, `modules/auth/handlers.ts`). Contrary to the ticket's assumption, the wiring looks **structurally correct**: - No localStorage/anonymous fallback anywhere in the client (only a theme preference uses localStorage). - `WatchlistPage` only renders when `useAuth()` has a `user` (gated in `App.tsx`), and i",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting to signed-in account  ### What I found before writing this plan (read-only investigation) I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session/auth (`db/auth.ts`, `modules/auth/handlers.ts`). Contrary to the ticket's assumption, the wiring looks **structurally correct**: - No localStorage/anonymous fallback anywhere in the client (only a theme preference uses localStorage). - `WatchlistPage` only renders when `useAuth()` has a `user` (gated in `App.tsx`), and i",
+  "started": "2026-09-08T00:03:59Z",
+  "finished": "2026-09-08T00:04:00Z",
+  "repo": "wealthcx01/arca"
+}
