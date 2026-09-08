@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-08T00:23:19Z",
+  "ended_at": "2026-09-08T00:23:20Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I did to prep this plan:** read the full chain myself (not just delegated) — `WatchlistPage.tsx`, `client/src/lib/api.ts`, `server.ts` route mounting, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `hooks/useAuth.tsx`, `App.tsx`. No edits made.  ### Headline finding: the obvious suspects check out clean  Everything the ticket guesses at is actually wired correctly: - Watchlist rows have a `user_id` column and every query (`list`, `get`, `create`, `add item`, `delete`) fi",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I did to prep this plan:** read the full chain myself (not just delegated) — `WatchlistPage.tsx`, `client/src/lib/api.ts`, `server.ts` route mounting, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `hooks/useAuth.tsx`, `App.tsx`. No edits made.  ### Headline finding: the obvious suspects check out clean  Everything the ticket guesses at is actually wired correctly: - Watchlist rows have a `user_id` column and every query (`list`, `get`, `create`, `add item`, `delete`) fi",
+  "started": "2026-09-08T00:23:19Z",
+  "finished": "2026-09-08T00:23:20Z",
+  "repo": "wealthcx01/arca"
+}
