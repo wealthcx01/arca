@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-08T01:05:43Z",
+  "ended_at": "2026-09-08T01:05:43Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  ### What I found from a read-only audit (no changes made)  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  - **Watchlist backend is correctly scoped.** Every route (`GET /`, `GET /:id`, `POST/PUT/DELETE`) filters by `eq(watchlists.user_id, userId)`, and `userId` comes from a durable `X-User-Id` header set by an auth middleware that resolves a session token to a real `users.id`. No default/global/anonymous watchlist fallback exists. - **Client has no localSto",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  ### What I found from a read-only audit (no changes made)  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  - **Watchlist backend is correctly scoped.** Every route (`GET /`, `GET /:id`, `POST/PUT/DELETE`) filters by `eq(watchlists.user_id, userId)`, and `userId` comes from a durable `X-User-Id` header set by an auth middleware that resolves a session token to a real `users.id`. No default/global/anonymous watchlist fallback exists. - **Client has no localSto",
+  "started": "2026-09-08T01:05:43Z",
+  "finished": "2026-09-08T01:05:43Z",
+  "repo": "wealthcx01/arca"
+}
