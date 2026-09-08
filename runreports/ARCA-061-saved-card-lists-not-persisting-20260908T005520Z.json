@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-08T00:55:20Z",
+  "ended_at": "2026-09-08T00:55:20Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I did before writing this plan I read (did not edit) the full chain: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/{schema,handlers}.ts`, `server.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, plus git history for the watchlist module (untouched since the ARCA-19 initial commit — no regression was introduced later; if there's a bug, it's been there since launch).  **What's structurally sound** (so I'm not proposing to touch ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I did before writing this plan I read (did not edit) the full chain: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/{schema,handlers}.ts`, `server.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, plus git history for the watchlist module (untouched since the ARCA-19 initial commit — no regression was introduced later; if there's a bug, it's been there since launch).  **What's structurally sound** (so I'm not proposing to touch ",
+  "started": "2026-09-08T00:55:20Z",
+  "finished": "2026-09-08T00:55:20Z",
+  "repo": "wealthcx01/arca"
+}
