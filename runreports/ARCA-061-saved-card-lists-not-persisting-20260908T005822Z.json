@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-08T00:58:22Z",
+  "ended_at": "2026-09-08T00:58:22Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found before proposing anything I read the full path end-to-end (client `WatchlistPage.tsx`, `useAuth.tsx`, `App.tsx` routing, `api.ts`, `modules/watchlist/handlers.ts`, `schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, CORS config) rather than assuming the ticket's hypothesis. Notably:  - **Server side looks correctly scoped.** `watchlists.user_id` is `NOT NULL`; every GET/POST/PUT/DELETE in `handlers.ts` filters or ownership-checks by `eq(watchlists.user_id, userId)`. Auth middleware (`handlers.ts:13-21`)",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found before proposing anything I read the full path end-to-end (client `WatchlistPage.tsx`, `useAuth.tsx`, `App.tsx` routing, `api.ts`, `modules/watchlist/handlers.ts`, `schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, CORS config) rather than assuming the ticket's hypothesis. Notably:  - **Server side looks correctly scoped.** `watchlists.user_id` is `NOT NULL`; every GET/POST/PUT/DELETE in `handlers.ts` filters or ownership-checks by `eq(watchlists.user_id, userId)`. Auth middleware (`handlers.ts:13-21`)",
+  "started": "2026-09-08T00:58:22Z",
+  "finished": "2026-09-08T00:58:22Z",
+  "repo": "wealthcx01/arca"
+}
