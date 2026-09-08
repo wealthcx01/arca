@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-08T00:48:43Z",
+  "ended_at": "2026-09-08T00:48:44Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (Saved watchlists not persisting) — no code changes made  ### What I found from a static read of the code (no reproduction yet) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `db/index.ts` (SQLite via Drizzle).  Contrary to what the symptom suggests, I did **not** find an obvious anonymous-fallback or localStorage bug: - `watchlists` table has a required `user_id` column (`modules/watchlist/schema.ts:8`) — there's no \"guest\"/default watchlist concept in the schema. - `WatchlistPage.tsx` hold",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (Saved watchlists not persisting) — no code changes made  ### What I found from a static read of the code (no reproduction yet) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `db/index.ts` (SQLite via Drizzle).  Contrary to what the symptom suggests, I did **not** find an obvious anonymous-fallback or localStorage bug: - `watchlists` table has a required `user_id` column (`modules/watchlist/schema.ts:8`) — there's no \"guest\"/default watchlist concept in the schema. - `WatchlistPage.tsx` hold",
+  "started": "2026-09-08T00:48:43Z",
+  "finished": "2026-09-08T00:48:44Z",
+  "repo": "wealthcx01/arca"
+}
