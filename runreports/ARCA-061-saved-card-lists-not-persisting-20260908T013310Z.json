@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-08T01:33:09Z",
+  "ended_at": "2026-09-08T01:33:10Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good, that confirms same-origin proxying in dev (relative `/api` path). I have enough grounded findings now to write the plan.  ## Plan for ARCA-61 (planning only — no code changes made)  **What I did to prepare this plan:** read-only audit of the full path — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts` + `schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, `client/vite.config.ts`. No files were edited.  **What the audit already rules out:** There is no localStorage/anonymous fallback anywhere in the client (only `localStor",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good, that confirms same-origin proxying in dev (relative `/api` path). I have enough grounded findings now to write the plan.  ## Plan for ARCA-61 (planning only — no code changes made)  **What I did to prepare this plan:** read-only audit of the full path — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts` + `schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, `client/vite.config.ts`. No files were edited.  **What the audit already rules out:** There is no localStorage/anonymous fallback anywhere in the client (only `localStor",
+  "started": "2026-09-08T01:33:09Z",
+  "finished": "2026-09-08T01:33:10Z",
+  "repo": "wealthcx01/arca"
+}
