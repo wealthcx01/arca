@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-09T01:08:42Z",
+  "ended_at": "2026-09-09T01:08:43Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Same resolved path as `db/auth.ts` (both `<repo>/data/arca.db`), so that's not it. I have enough to write the plan.  ---  ## Plan: ARCA-61 — Saved watchlists not persisting across login  ### What I did (read-only audit) Traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `getDb()`. Findings:  - **Client:** `WatchlistPage.tsx` always fetches from the API on mount, has no localStorage/anonymous fallback, and `api.ts` sends `credentials: \"include\"` on every call (cookies attached correctly). Login (`LoginPage.tsx`) does a",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Same resolved path as `db/auth.ts` (both `<repo>/data/arca.db`), so that's not it. I have enough to write the plan.  ---  ## Plan: ARCA-61 — Saved watchlists not persisting across login  ### What I did (read-only audit) Traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `getDb()`. Findings:  - **Client:** `WatchlistPage.tsx` always fetches from the API on mount, has no localStorage/anonymous fallback, and `api.ts` sends `credentials: \"include\"` on every call (cookies attached correctly). Login (`LoginPage.tsx`) does a",
+  "started": "2026-09-09T01:08:42Z",
+  "finished": "2026-09-09T01:08:43Z",
+  "repo": "wealthcx01/arca"
+}
