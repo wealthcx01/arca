@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-09T00:38:01Z",
+  "ended_at": "2026-09-09T00:38:01Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What the code currently shows (read-only audit, no changes made) I had an agent trace the full path: `modules/watchlist/schema.ts` → `modules/watchlist/handlers.ts` → `server.ts` routing → `client/WatchlistPage.tsx` → `client/lib/api.ts` → `useAuth.tsx`. On paper, everything looks correctly wired: - `watchlists.user_id` is `NOT NULL` and every handler (list/create/read/update/delete/add-item/remove-item) filters or writes by `user_id` pulled from an `X-User-Id` header — never from client-supplied body/query p",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What the code currently shows (read-only audit, no changes made) I had an agent trace the full path: `modules/watchlist/schema.ts` → `modules/watchlist/handlers.ts` → `server.ts` routing → `client/WatchlistPage.tsx` → `client/lib/api.ts` → `useAuth.tsx`. On paper, everything looks correctly wired: - `watchlists.user_id` is `NOT NULL` and every handler (list/create/read/update/delete/add-item/remove-item) filters or writes by `user_id` pulled from an `X-User-Id` header — never from client-supplied body/query p",
+  "started": "2026-09-09T00:38:01Z",
+  "finished": "2026-09-09T00:38:01Z",
+  "repo": "wealthcx01/arca"
+}
