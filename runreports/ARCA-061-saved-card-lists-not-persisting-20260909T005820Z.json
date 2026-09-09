@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-09T00:58:19Z",
+  "ended_at": "2026-09-09T00:58:20Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found from a read-through (no changes made) I audited the full chain end-to-end before proposing a plan:  - **Client** (`client/src/pages/WatchlistPage.tsx`): fetches `/watchlist` on mount, no localStorage/sessionStorage fallback, no hardcoded/anonymous IDs. Uses the shared `api` client. - **API client** (`client/src/lib/api.ts`): every request sets `credentials: \"include\"`, so the `arca_session` cookie is sent correctly. - **Auth** (`db/auth.ts`, `modules/auth/handlers.ts`): login looks up the user by email (not ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found from a read-through (no changes made) I audited the full chain end-to-end before proposing a plan:  - **Client** (`client/src/pages/WatchlistPage.tsx`): fetches `/watchlist` on mount, no localStorage/sessionStorage fallback, no hardcoded/anonymous IDs. Uses the shared `api` client. - **API client** (`client/src/lib/api.ts`): every request sets `credentials: \"include\"`, so the `arca_session` cookie is sent correctly. - **Auth** (`db/auth.ts`, `modules/auth/handlers.ts`): login looks up the user by email (not ",
+  "started": "2026-09-09T00:58:19Z",
+  "finished": "2026-09-09T00:58:20Z",
+  "repo": "wealthcx01/arca"
+}
