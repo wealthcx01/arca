@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-09T00:06:16Z",
+  "ended_at": "2026-09-09T00:06:16Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## What I found investigating the path (read-only)  I traced client → API → module → DB and everything I could check *statically* looks correctly wired:  - **DB schema** (`modules/watchlist/schema.ts`): `watchlists` and `watchlist_items` are keyed by `user_id` / `watchlist_id`. No anonymous/guest/default-list concept. - **Handlers** (`modules/watchlist/handlers.ts`): every read and write (`GET /`, `POST /`, `GET /:id`, `PUT /:id`, `DELETE /:id`, item add/remove) filters or scopes by `getUserId(c)`, and ownership is re-checked on every item operation. No hardcoded or client-supplied user/",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## What I found investigating the path (read-only)  I traced client → API → module → DB and everything I could check *statically* looks correctly wired:  - **DB schema** (`modules/watchlist/schema.ts`): `watchlists` and `watchlist_items` are keyed by `user_id` / `watchlist_id`. No anonymous/guest/default-list concept. - **Handlers** (`modules/watchlist/handlers.ts`): every read and write (`GET /`, `POST /`, `GET /:id`, `PUT /:id`, `DELETE /:id`, item add/remove) filters or scopes by `getUserId(c)`, and ownership is re-checked on every item operation. No hardcoded or client-supplied user/",
+  "started": "2026-09-09T00:06:16Z",
+  "finished": "2026-09-09T00:06:16Z",
+  "repo": "wealthcx01/arca"
+}
