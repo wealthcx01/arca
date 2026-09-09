@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-09T00:23:26Z",
+  "ended_at": "2026-09-09T00:23:26Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found from reading the code (no changes made):** The backend already scopes every watchlist read/write correctly by the logged-in user's ID — creating, listing, viewing, adding/removing cards, and deleting all check `user_id` before touching a row. The login/session/cookie setup looks standard (30-day cookie matching a 30-day server session, sent with every request). The watchlist page's own fetch/save calls all go through the real API, not local browser storage — the only browser storage in the app is for the light/dark the",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found from reading the code (no changes made):** The backend already scopes every watchlist read/write correctly by the logged-in user's ID — creating, listing, viewing, adding/removing cards, and deleting all check `user_id` before touching a row. The login/session/cookie setup looks standard (30-day cookie matching a 30-day server session, sent with every request). The watchlist page's own fetch/save calls all go through the real API, not local browser storage — the only browser storage in the app is for the light/dark the",
+  "started": "2026-09-09T00:23:26Z",
+  "finished": "2026-09-09T00:23:26Z",
+  "repo": "wealthcx01/arca"
+}
