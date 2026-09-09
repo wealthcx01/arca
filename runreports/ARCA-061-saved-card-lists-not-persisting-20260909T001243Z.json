@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-09T00:12:42Z",
+  "ended_at": "2026-09-09T00:12:43Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan (no code changes made — investigation only)  **What I checked first, read-only, to ground this plan:** - `modules/watchlist/schema.ts` — `watchlists.user_id` is a proper NOT NULL column; not a shared/default row. - `modules/watchlist/handlers.ts` — every route (list, create, get, update, delete, add-item, remove-item) filters by `eq(watchlists.user_id, userId)`, and has its own auth middleware (lines 13–21) that rejects requests with no valid session cookie/token. - `db/auth.ts` — sessions are persisted in SQLite (`sessions` table), not in-memory, so they survive serv",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan (no code changes made — investigation only)  **What I checked first, read-only, to ground this plan:** - `modules/watchlist/schema.ts` — `watchlists.user_id` is a proper NOT NULL column; not a shared/default row. - `modules/watchlist/handlers.ts` — every route (list, create, get, update, delete, add-item, remove-item) filters by `eq(watchlists.user_id, userId)`, and has its own auth middleware (lines 13–21) that rejects requests with no valid session cookie/token. - `db/auth.ts` — sessions are persisted in SQLite (`sessions` table), not in-memory, so they survive serv",
+  "started": "2026-09-09T00:12:42Z",
+  "finished": "2026-09-09T00:12:43Z",
+  "repo": "wealthcx01/arca"
+}
