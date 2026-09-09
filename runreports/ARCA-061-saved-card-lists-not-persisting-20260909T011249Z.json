@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-09T01:12:49Z",
+  "ended_at": "2026-09-09T01:12:49Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only)  **What I found before planning anything:** I read through the watchlist backend (`modules/watchlist`), the auth session system (`db/auth.ts`), and the client (`WatchlistPage.tsx`, `api.ts`, `useAuth.tsx`, `App.tsx`). The ownership scoping, session persistence, cookie handling, and client fetch logic all look structurally correct and consistent with the (working) portfolio module. I did **not** find an obvious, concrete bug that would cause a signed-in user's list to vanish or swap on re-login. That itself is an important findin",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only)  **What I found before planning anything:** I read through the watchlist backend (`modules/watchlist`), the auth session system (`db/auth.ts`), and the client (`WatchlistPage.tsx`, `api.ts`, `useAuth.tsx`, `App.tsx`). The ownership scoping, session persistence, cookie handling, and client fetch logic all look structurally correct and consistent with the (working) portfolio module. I did **not** find an obvious, concrete bug that would cause a signed-in user's list to vanish or swap on re-login. That itself is an important findin",
+  "started": "2026-09-09T01:12:49Z",
+  "finished": "2026-09-09T01:12:49Z",
+  "repo": "wealthcx01/arca"
+}
