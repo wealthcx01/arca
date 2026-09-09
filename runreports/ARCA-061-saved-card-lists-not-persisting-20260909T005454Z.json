@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-09T00:54:53Z",
+  "ended_at": "2026-09-09T00:54:54Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only — no files changed)  I traced the full watchlist path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `db/index.ts`.  **What I expected to find (per the ticket's hypothesis) but didn't:** a missing `X-User-Id`, a local/anonymous fallback, or a missing ownership check. None of that is present. Every watchlist handler filters by `eq(watchlists.user_id, userId)`, the auth middleware on the watchlist router mirrors the exact pattern already used (and trusted) by the portfolio module, the client always sends `credentials",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only — no files changed)  I traced the full watchlist path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `db/index.ts`.  **What I expected to find (per the ticket's hypothesis) but didn't:** a missing `X-User-Id`, a local/anonymous fallback, or a missing ownership check. None of that is present. Every watchlist handler filters by `eq(watchlists.user_id, userId)`, the auth middleware on the watchlist router mirrors the exact pattern already used (and trusted) by the portfolio module, the client always sends `credentials",
+  "started": "2026-09-09T00:54:53Z",
+  "finished": "2026-09-09T00:54:54Z",
+  "repo": "wealthcx01/arca"
+}
