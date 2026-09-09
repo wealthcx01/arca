@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-09T00:48:17Z",
+  "ended_at": "2026-09-09T00:48:18Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved watchlists not persisting across login  ### What I did (read-only) I traced the full chain without editing anything: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` (+ auth middleware) → `modules/watchlist/schema.ts` → `db/auth.ts` / `db/index.ts`.  **Finding that changes the framing:** the ticket's leading hypothesis (client-side local/anonymous fallback, or a wrong/default `watchlist_id`) does **not** hold up under a static read. Specifically: - `WatchlistPage.tsx` has no `localStorage`/anonymous fallback — every load and s",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved watchlists not persisting across login  ### What I did (read-only) I traced the full chain without editing anything: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` (+ auth middleware) → `modules/watchlist/schema.ts` → `db/auth.ts` / `db/index.ts`.  **Finding that changes the framing:** the ticket's leading hypothesis (client-side local/anonymous fallback, or a wrong/default `watchlist_id`) does **not** hold up under a static read. Specifically: - `WatchlistPage.tsx` has no `localStorage`/anonymous fallback — every load and s",
+  "started": "2026-09-09T00:48:17Z",
+  "finished": "2026-09-09T00:48:18Z",
+  "repo": "wealthcx01/arca"
+}
