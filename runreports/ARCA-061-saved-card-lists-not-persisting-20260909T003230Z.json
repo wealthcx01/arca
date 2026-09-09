@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-09T00:32:29Z",
+  "ended_at": "2026-09-09T00:32:30Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I did (read-only):** Traced the full path client→API→DB before writing this plan, so the \"what I'd do\" below is targeted rather than generic.  ### What I found so far The architecture is actually solid, contrary to the ticket's \"probably a wiring bug\" hypothesis being obviously visible: - Client `api.ts` sends `credentials: \"include\"` on every request — cookies go out correctly. - `WatchlistPage.tsx` has no localStorage/anonymous fallback; every read/write hits `/api/watchlist*`. - `modules/watchlist/handlers.ts` requires a valid",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I did (read-only):** Traced the full path client→API→DB before writing this plan, so the \"what I'd do\" below is targeted rather than generic.  ### What I found so far The architecture is actually solid, contrary to the ticket's \"probably a wiring bug\" hypothesis being obviously visible: - Client `api.ts` sends `credentials: \"include\"` on every request — cookies go out correctly. - `WatchlistPage.tsx` has no localStorage/anonymous fallback; every read/write hits `/api/watchlist*`. - `modules/watchlist/handlers.ts` requires a valid",
+  "started": "2026-09-09T00:32:29Z",
+  "finished": "2026-09-09T00:32:30Z",
+  "repo": "wealthcx01/arca"
+}
