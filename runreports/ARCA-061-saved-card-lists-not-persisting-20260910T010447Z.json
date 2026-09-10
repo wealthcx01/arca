@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-10T01:04:46Z",
+  "ended_at": "2026-09-10T01:04:47Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only; no files changed)  I traced the full watchlist path before writing this plan:  - **Client → API:** `client/src/lib/api.ts` sends every request with `credentials: \"include\"`, so the session cookie always goes along. No `localStorage`/`sessionStorage` fallback exists anywhere in the watchlist code (only unrelated theme storage in `Layout.tsx`). - **Routing/auth gating:** `App.tsx` only renders `WatchlistPage` when `useAuth()` has a real `user`; on logout the whole page unmounts (falls back to `LoginPage`), and on next login it remounts fresh, so its data-fe",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only; no files changed)  I traced the full watchlist path before writing this plan:  - **Client → API:** `client/src/lib/api.ts` sends every request with `credentials: \"include\"`, so the session cookie always goes along. No `localStorage`/`sessionStorage` fallback exists anywhere in the watchlist code (only unrelated theme storage in `Layout.tsx`). - **Routing/auth gating:** `App.tsx` only renders `WatchlistPage` when `useAuth()` has a real `user`; on logout the whole page unmounts (falls back to `LoginPage`), and on next login it remounts fresh, so its data-fe",
+  "started": "2026-09-10T01:04:46Z",
+  "finished": "2026-09-10T01:04:47Z",
+  "repo": "wealthcx01/arca"
+}
