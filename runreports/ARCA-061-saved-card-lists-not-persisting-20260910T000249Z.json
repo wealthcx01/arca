@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-10T00:02:49Z",
+  "ended_at": "2026-09-10T00:02:49Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found from a read-only audit (no code changed) I traced the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite — and, as it stands today, every link looks correctly wired:  - **DB schema**: `watchlists.user_id` is `NOT NULL`; every query filters by `user_id`. No anonymous/nullable owner path exists. - **Backend**: `modules/watchlist/handlers.ts` has its own auth middleware that reads the `arca_session` cookie, validates it via `getSessio",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found from a read-only audit (no code changed) I traced the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite — and, as it stands today, every link looks correctly wired:  - **DB schema**: `watchlists.user_id` is `NOT NULL`; every query filters by `user_id`. No anonymous/nullable owner path exists. - **Backend**: `modules/watchlist/handlers.ts` has its own auth middleware that reads the `arca_session` cookie, validates it via `getSessio",
+  "started": "2026-09-10T00:02:49Z",
+  "finished": "2026-09-10T00:02:49Z",
+  "repo": "wealthcx01/arca"
+}
