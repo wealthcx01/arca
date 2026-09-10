@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-10T01:29:42Z",
+  "ended_at": "2026-09-10T01:29:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found (read-only audit, no changes made)  I traced the full path: `WatchlistPage.tsx` → `/api/watchlist` → `modules/watchlist/handlers.ts` → SQLite.  - **Backend is correctly scoped.** Every watchlist route requires a valid session cookie, resolves the real `user_id` from the session table (not a client-supplied header), and every query filters `WHERE user_id = ?`. `user_id` is `NOT NULL` in the schema. No default/guest/anonymous watchlist exists anywhere in the code. - **No localStorage/anonymous fallback** in the clien",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found (read-only audit, no changes made)  I traced the full path: `WatchlistPage.tsx` → `/api/watchlist` → `modules/watchlist/handlers.ts` → SQLite.  - **Backend is correctly scoped.** Every watchlist route requires a valid session cookie, resolves the real `user_id` from the session table (not a client-supplied header), and every query filters `WHERE user_id = ?`. `user_id` is `NOT NULL` in the schema. No default/guest/anonymous watchlist exists anywhere in the code. - **No localStorage/anonymous fallback** in the clien",
+  "started": "2026-09-10T01:29:42Z",
+  "finished": "2026-09-10T01:29:42Z",
+  "repo": "wealthcx01/arca"
+}
