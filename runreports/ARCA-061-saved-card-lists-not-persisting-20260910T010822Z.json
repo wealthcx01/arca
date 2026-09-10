@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-10T01:08:22Z",
+  "ended_at": "2026-09-10T01:08:22Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I found from reading the code (no changes made):**  The backend path actually looks correctly wired end-to-end: - `modules/watchlist/handlers.ts` requires a valid `arca_session` cookie on every route and scopes every query (`GET /`, `GET /:id`, item add/remove) by `watchlists.user_id`. There's no guest/anonymous fallback row and no default watchlist. - `client/src/lib/api.ts` sends `credentials: \"include\"` on every request, so the session cookie is attached. - `client/src/pages/WatchlistPage.tsx` never touches localStorage/sessionStora",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I found from reading the code (no changes made):**  The backend path actually looks correctly wired end-to-end: - `modules/watchlist/handlers.ts` requires a valid `arca_session` cookie on every route and scopes every query (`GET /`, `GET /:id`, item add/remove) by `watchlists.user_id`. There's no guest/anonymous fallback row and no default watchlist. - `client/src/lib/api.ts` sends `credentials: \"include\"` on every request, so the session cookie is attached. - `client/src/pages/WatchlistPage.tsx` never touches localStorage/sessionStora",
+  "started": "2026-09-10T01:08:22Z",
+  "finished": "2026-09-10T01:08:22Z",
+  "repo": "wealthcx01/arca"
+}
