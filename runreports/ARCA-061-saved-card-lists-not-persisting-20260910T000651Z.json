@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-10T00:06:50Z",
+  "ended_at": "2026-09-10T00:06:51Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found before proposing anything (read-only audit, no edits made):**  I had a sub-agent trace the full path: `modules/watchlist/schema.ts` → auth middleware → `handlers.ts` → `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `useAuth.tsx`/`App.tsx`. Contrary to the ticket's hypothesis, I did **not** find an obvious client-side wiring bug:  - Every watchlist row requires a real `user_id` (no default/guest watchlist exists in the schema). - Every watchlist handler scopes reads/writes/deletes by `user_id` de",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found before proposing anything (read-only audit, no edits made):**  I had a sub-agent trace the full path: `modules/watchlist/schema.ts` → auth middleware → `handlers.ts` → `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `useAuth.tsx`/`App.tsx`. Contrary to the ticket's hypothesis, I did **not** find an obvious client-side wiring bug:  - Every watchlist row requires a real `user_id` (no default/guest watchlist exists in the schema). - Every watchlist handler scopes reads/writes/deletes by `user_id` de",
+  "started": "2026-09-10T00:06:50Z",
+  "finished": "2026-09-10T00:06:51Z",
+  "repo": "wealthcx01/arca"
+}
