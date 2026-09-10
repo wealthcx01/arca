@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-10T00:54:11Z",
+  "ended_at": "2026-09-10T00:54:11Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from a read-only audit (no changes made) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  Everything I could verify statically looks correctly wired: - Client always fetches live from `/watchlist` on mount (`api.get`), no `localStorage`/anonymous fallback anywhere in the watchlist code. - `api.ts` sends `credentials: \"include\"`, and CORS on the server has `credentials: true`, so the session cookie should travel with e",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from a read-only audit (no changes made) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  Everything I could verify statically looks correctly wired: - Client always fetches live from `/watchlist` on mount (`api.get`), no `localStorage`/anonymous fallback anywhere in the watchlist code. - `api.ts` sends `credentials: \"include\"`, and CORS on the server has `credentials: true`, so the session cookie should travel with e",
+  "started": "2026-09-10T00:54:11Z",
+  "finished": "2026-09-10T00:54:11Z",
+  "repo": "wealthcx01/arca"
+}
