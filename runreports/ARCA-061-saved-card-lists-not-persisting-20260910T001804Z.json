@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-10T00:18:04Z",
+  "ended_at": "2026-09-10T00:18:04Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  **No code has been changed.** I traced the full chain first so the plan is grounded, not speculative.  ### What I found tracing the chain (client → API → module → DB) - `WatchlistPage.tsx` — no localStorage/anonymous fallback. Every read/write goes through the shared `api` client. - `client/src/lib/api.ts` — every fetch sets `credentials: \"include\"`, so the session cookie is sent on every watchlist call. - `modules/watchlist/handlers.ts` — router-level middleware requires a valid `arca_session` cookie, re",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  **No code has been changed.** I traced the full chain first so the plan is grounded, not speculative.  ### What I found tracing the chain (client → API → module → DB) - `WatchlistPage.tsx` — no localStorage/anonymous fallback. Every read/write goes through the shared `api` client. - `client/src/lib/api.ts` — every fetch sets `credentials: \"include\"`, so the session cookie is sent on every watchlist call. - `modules/watchlist/handlers.ts` — router-level middleware requires a valid `arca_session` cookie, re",
+  "started": "2026-09-10T00:18:04Z",
+  "finished": "2026-09-10T00:18:04Z",
+  "repo": "wealthcx01/arca"
+}
