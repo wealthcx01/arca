@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-10T00:45:18Z",
+  "ended_at": "2026-09-10T00:45:18Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good — non-destructive `CREATE TABLE IF NOT EXISTS`, no DROP TABLE. That rules out db:push as the culprit. I have enough to write the plan now.  ## Plan for ARCA-61 — Saved lists not persisting  **What I found from a read-only audit (no code changed):**  I traced the full chain — `WatchlistPage.tsx` → `api.ts` fetch wrapper → CORS/auth middleware in `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` sessions → SQLite. Every piece I inspected is actually built correctly: - Client always fetches from the server (`/watchlist`, `/watchlist/:id`) with `credentials: \"includ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good — non-destructive `CREATE TABLE IF NOT EXISTS`, no DROP TABLE. That rules out db:push as the culprit. I have enough to write the plan now.  ## Plan for ARCA-61 — Saved lists not persisting  **What I found from a read-only audit (no code changed):**  I traced the full chain — `WatchlistPage.tsx` → `api.ts` fetch wrapper → CORS/auth middleware in `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` sessions → SQLite. Every piece I inspected is actually built correctly: - Client always fetches from the server (`/watchlist`, `/watchlist/:id`) with `credentials: \"includ",
+  "started": "2026-09-10T00:45:18Z",
+  "finished": "2026-09-10T00:45:18Z",
+  "repo": "wealthcx01/arca"
+}
