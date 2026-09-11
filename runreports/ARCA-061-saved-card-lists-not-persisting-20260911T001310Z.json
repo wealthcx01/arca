@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-11T00:13:09Z",
+  "ended_at": "2026-09-11T00:13:10Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did before writing this plan:** read the full path — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, and `server.ts` — without changing anything.  **Notable finding:** the code as it stands today looks correctly wired. The client uses `fetch(..., { credentials: \"include\" })` with no localStorage/anonymous fallback anywhere in the watchlist flow. The watchlist router has its own auth middleware that checks ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did before writing this plan:** read the full path — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, and `server.ts` — without changing anything.  **Notable finding:** the code as it stands today looks correctly wired. The client uses `fetch(..., { credentials: \"include\" })` with no localStorage/anonymous fallback anywhere in the watchlist flow. The watchlist router has its own auth middleware that checks ",
+  "started": "2026-09-11T00:13:09Z",
+  "finished": "2026-09-11T00:13:10Z",
+  "repo": "wealthcx01/arca"
+}
