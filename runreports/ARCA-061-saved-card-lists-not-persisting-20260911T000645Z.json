@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-11T00:06:44Z",
+  "ended_at": "2026-09-11T00:06:45Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting to signed-in account  **I have not edited anything.** I first audited the code (read-only) to ground this plan in what's actually there, since this is an auth-adjacent ticket.  ### What I found on inspection The backend and client both look correctly wired today: - `modules/watchlist/schema.ts` — every watchlist row has a `user_id`; no anonymous/default watchlist path exists. - `modules/watchlist/handlers.ts` — a router-level `watchlistRouter.use(\"*\", ...)` middleware requires a valid session cookie or bearer token on every route, inject",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting to signed-in account  **I have not edited anything.** I first audited the code (read-only) to ground this plan in what's actually there, since this is an auth-adjacent ticket.  ### What I found on inspection The backend and client both look correctly wired today: - `modules/watchlist/schema.ts` — every watchlist row has a `user_id`; no anonymous/default watchlist path exists. - `modules/watchlist/handlers.ts` — a router-level `watchlistRouter.use(\"*\", ...)` middleware requires a valid session cookie or bearer token on every route, inject",
+  "started": "2026-09-11T00:06:44Z",
+  "finished": "2026-09-11T00:06:45Z",
+  "repo": "wealthcx01/arca"
+}
