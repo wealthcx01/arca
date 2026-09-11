@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-11T01:33:25Z",
+  "ended_at": "2026-09-11T01:33:26Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I did:** read-only audit only (no edits). I traced the full watchlist path: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite schema (`db/push.ts`).  **What I found (this changes the ticket's own hypothesis):** - The client has **no localStorage/anonymous fallback** anywhere for watchlist data (only theme preference uses localStorage). Every create/read/update/delete of lists and items in `WatchlistPage.tsx` goes through the real API — I checked `hand",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I did:** read-only audit only (no edits). I traced the full watchlist path: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite schema (`db/push.ts`).  **What I found (this changes the ticket's own hypothesis):** - The client has **no localStorage/anonymous fallback** anywhere for watchlist data (only theme preference uses localStorage). Every create/read/update/delete of lists and items in `WatchlistPage.tsx` goes through the real API — I checked `hand",
+  "started": "2026-09-11T01:33:25Z",
+  "finished": "2026-09-11T01:33:26Z",
+  "repo": "wealthcx01/arca"
+}
