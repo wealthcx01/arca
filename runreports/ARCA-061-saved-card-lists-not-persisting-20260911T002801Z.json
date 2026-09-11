@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-11T00:28:01Z",
+  "ended_at": "2026-09-11T00:28:01Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found from a read-only audit (no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`. Summary of what's actually there, contrary to the ticket's hypothesis:  - **No anonymous/local fallback exists.** `WatchlistPage.tsx` has no localStorage usage for watchlist state (only the theme toggle uses localStorage). `activeId` is pure in-memory React state, not persisted. - **The API cli",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found from a read-only audit (no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`. Summary of what's actually there, contrary to the ticket's hypothesis:  - **No anonymous/local fallback exists.** `WatchlistPage.tsx` has no localStorage usage for watchlist state (only the theme toggle uses localStorage). `activeId` is pure in-memory React state, not persisted. - **The API cli",
+  "started": "2026-09-11T00:28:01Z",
+  "finished": "2026-09-11T00:28:01Z",
+  "repo": "wealthcx01/arca"
+}
