@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-11T00:49:52Z",
+  "ended_at": "2026-09-11T00:49:52Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting on re-login  ### What I found (read-only audit, no code changes made)  **Backend (`modules/watchlist/handlers.ts`) is correct.** Every route validates the `arca_session` cookie (or `Authorization: Bearer`) via `getSession()`, derives `userId` server-side from that session, and every query is scoped with `eq(watchlists.user_id, userId)`. There's no client-supplied user id, no anonymous/default watchlist fallback, and no `localStorage` used for watchlist data anywhere in the client (`localStorage` is only used for theme, in `Layout.tsx`). C",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting on re-login  ### What I found (read-only audit, no code changes made)  **Backend (`modules/watchlist/handlers.ts`) is correct.** Every route validates the `arca_session` cookie (or `Authorization: Bearer`) via `getSession()`, derives `userId` server-side from that session, and every query is scoped with `eq(watchlists.user_id, userId)`. There's no client-supplied user id, no anonymous/default watchlist fallback, and no `localStorage` used for watchlist data anywhere in the client (`localStorage` is only used for theme, in `Layout.tsx`). C",
+  "started": "2026-09-11T00:49:52Z",
+  "finished": "2026-09-11T00:49:52Z",
+  "repo": "wealthcx01/arca"
+}
