@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-11T00:57:27Z",
+  "ended_at": "2026-09-11T00:57:28Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I'd do  **1. Reproduce first, before touching code.** Use the browser tooling (`/qa` or `/browse`) to actually log in, add a card to a watchlist, log out, log back in (same browser, then a second browser/incognito to simulate \"different device\"), and watch: - The `Set-Cookie` header on `/api/auth/login` responses - The `Cookie` header sent on subsequent `/api/watchlist` requests - The HTTP status and body of every `/api/watchlist` call across the logout/login boundary  This matters because static reading of the code (client `Wat",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I'd do  **1. Reproduce first, before touching code.** Use the browser tooling (`/qa` or `/browse`) to actually log in, add a card to a watchlist, log out, log back in (same browser, then a second browser/incognito to simulate \"different device\"), and watch: - The `Set-Cookie` header on `/api/auth/login` responses - The `Cookie` header sent on subsequent `/api/watchlist` requests - The HTTP status and body of every `/api/watchlist` call across the logout/login boundary  This matters because static reading of the code (client `Wat",
+  "started": "2026-09-11T00:57:27Z",
+  "finished": "2026-09-11T00:57:28Z",
+  "repo": "wealthcx01/arca"
+}
