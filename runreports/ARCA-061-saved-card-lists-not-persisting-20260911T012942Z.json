@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-11T01:29:42Z",
+  "ended_at": "2026-09-11T01:29:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — this is the investigation/fix plan for review)  ### What I did just now (read-only) I traced the whole chain myself before writing this plan, since \"fix whatever is broken\" isn't safe to plan blindly on an auth-adjacent ticket:  - **Backend (`modules/watchlist/handlers.ts`, `schema.ts`)**: every route requires a valid session, sets `X-User-Id` from `getSession(token)`, and every query (`list`, `get`, `create`, `add item`, `remove item`) filters by `watchlists.user_id`. `user_id` is `NOT NULL` in the schema. This looks correctly scoped. - **Auth (`d",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — this is the investigation/fix plan for review)  ### What I did just now (read-only) I traced the whole chain myself before writing this plan, since \"fix whatever is broken\" isn't safe to plan blindly on an auth-adjacent ticket:  - **Backend (`modules/watchlist/handlers.ts`, `schema.ts`)**: every route requires a valid session, sets `X-User-Id` from `getSession(token)`, and every query (`list`, `get`, `create`, `add item`, `remove item`) filters by `watchlists.user_id`. `user_id` is `NOT NULL` in the schema. This looks correctly scoped. - **Auth (`d",
+  "started": "2026-09-11T01:29:42Z",
+  "finished": "2026-09-11T01:29:42Z",
+  "repo": "wealthcx01/arca"
+}
