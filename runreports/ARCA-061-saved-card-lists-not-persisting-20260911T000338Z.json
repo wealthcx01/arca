@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-11T00:03:37Z",
+  "ended_at": "2026-09-11T00:03:38Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from a read-only audit (no changes made) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `db/index.ts` → SQLite.  Everything I can verify statically looks **correctly wired**, which changes the risk profile of this ticket: - Client always calls through the shared `api` wrapper with `credentials: \"include\"` — no localStorage/sessionStorage fallback anywhere in `WatchlistPage.tsx`. - Watchlist router has its own auth middleware that requires",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from a read-only audit (no changes made) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `db/index.ts` → SQLite.  Everything I can verify statically looks **correctly wired**, which changes the risk profile of this ticket: - Client always calls through the shared `api` wrapper with `credentials: \"include\"` — no localStorage/sessionStorage fallback anywhere in `WatchlistPage.tsx`. - Watchlist router has its own auth middleware that requires",
+  "started": "2026-09-11T00:03:37Z",
+  "finished": "2026-09-11T00:03:38Z",
+  "repo": "wealthcx01/arca"
+}
