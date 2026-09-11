@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-11T00:33:18Z",
+  "ended_at": "2026-09-11T00:33:18Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan — ARCA-61: Saved watchlists not persisting to signed-in account  ### What I found before proposing anything (read-only investigation, no edits made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite schema.  Contrary to the ticket's hypothesis, **I could not find an obvious wiring bug** in the current code: - `api.ts` sends `credentials: \"include\"` on every request, and there's no localStorage/sessionStorage anywhere near watchlist state (only the theme toggle uses localStorage). - The watchlist ro",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan — ARCA-61: Saved watchlists not persisting to signed-in account  ### What I found before proposing anything (read-only investigation, no edits made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite schema.  Contrary to the ticket's hypothesis, **I could not find an obvious wiring bug** in the current code: - `api.ts` sends `credentials: \"include\"` on every request, and there's no localStorage/sessionStorage anywhere near watchlist state (only the theme toggle uses localStorage). - The watchlist ro",
+  "started": "2026-09-11T00:33:18Z",
+  "finished": "2026-09-11T00:33:18Z",
+  "repo": "wealthcx01/arca"
+}
