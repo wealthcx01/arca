@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-12T00:49:35Z",
+  "ended_at": "2026-09-12T00:49:35Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Same DB path, singleton connection — consistent with auth's DB. No split-brain storage issue. That closes out my static audit. I have enough to write the plan now.  ## Plan for ARCA-61 — Saved card lists not persisting  **What I did to prepare this plan (read-only, no edits):** traced the full path — `WatchlistPage.tsx` → `/api/watchlist` router → `modules/watchlist/handlers.ts` → `watchlists`/`watchlist_items` tables → `db/auth.ts` session/login logic → `server.ts` middleware wiring — plus git history and other client files referencing \"watchlist.\"  **What the audit found:**",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Same DB path, singleton connection — consistent with auth's DB. No split-brain storage issue. That closes out my static audit. I have enough to write the plan now.  ## Plan for ARCA-61 — Saved card lists not persisting  **What I did to prepare this plan (read-only, no edits):** traced the full path — `WatchlistPage.tsx` → `/api/watchlist` router → `modules/watchlist/handlers.ts` → `watchlists`/`watchlist_items` tables → `db/auth.ts` session/login logic → `server.ts` middleware wiring — plus git history and other client files referencing \"watchlist.\"  **What the audit found:**",
+  "started": "2026-09-12T00:49:35Z",
+  "finished": "2026-09-12T00:49:35Z",
+  "repo": "wealthcx01/arca"
+}
