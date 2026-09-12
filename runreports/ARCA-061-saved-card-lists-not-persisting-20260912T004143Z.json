@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-12T00:41:43Z",
+  "ended_at": "2026-09-12T00:41:43Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **Root cause (from read-only audit, not yet fixed):** This is not a backend/data problem — it's a client-side stale-state bug.  - Backend (`modules/watchlist/handlers.ts`) already scopes every read/write correctly by `user_id` derived from the session cookie (`and(eq(watchlists.id, id), eq(watchlists.user_id, userId))`), and its own auth middleware correctly re-validates the session token and injects `X-User-Id`. No missing feature, no anonymous fallback, no localStorage — the backend is solid. - The bug is in `client/src/pages/Watch",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **Root cause (from read-only audit, not yet fixed):** This is not a backend/data problem — it's a client-side stale-state bug.  - Backend (`modules/watchlist/handlers.ts`) already scopes every read/write correctly by `user_id` derived from the session cookie (`and(eq(watchlists.id, id), eq(watchlists.user_id, userId))`), and its own auth middleware correctly re-validates the session token and injects `X-User-Id`. No missing feature, no anonymous fallback, no localStorage — the backend is solid. - The bug is in `client/src/pages/Watch",
+  "started": "2026-09-12T00:41:43Z",
+  "finished": "2026-09-12T00:41:43Z",
+  "repo": "wealthcx01/arca"
+}
