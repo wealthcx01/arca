@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-12T00:08:31Z",
+  "ended_at": "2026-09-12T00:08:32Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I'd do first: reproduce before touching anything This ticket assumes a client-side wiring bug, but before changing code I'd nail down the exact repro: sign in, add cards, log out, log back in (a) same browser, (b) incognito/different browser, (c) a second real device. I'd also check whether it's *all* lists disappearing or just becoming empty vs. a 401/error being silently swallowed. Auth-adjacent bugs are easy to \"fix\" blindly and just paper over a different problem, so I want to see the actual failure mode (empty list vs. erro",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I'd do first: reproduce before touching anything This ticket assumes a client-side wiring bug, but before changing code I'd nail down the exact repro: sign in, add cards, log out, log back in (a) same browser, (b) incognito/different browser, (c) a second real device. I'd also check whether it's *all* lists disappearing or just becoming empty vs. a 401/error being silently swallowed. Auth-adjacent bugs are easy to \"fix\" blindly and just paper over a different problem, so I want to see the actual failure mode (empty list vs. erro",
+  "started": "2026-09-12T00:08:31Z",
+  "finished": "2026-09-12T00:08:32Z",
+  "repo": "wealthcx01/arca"
+}
