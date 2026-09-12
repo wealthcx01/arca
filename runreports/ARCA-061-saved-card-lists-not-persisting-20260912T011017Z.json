@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-12T01:10:17Z",
+  "ended_at": "2026-09-12T01:10:17Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — plan only)  ### What I did to prepare this plan I read the full chain end-to-end without editing anything: `modules/watchlist/schema.ts`, `modules/watchlist/handlers.ts`, `server.ts` (route + middleware wiring), `db/auth.ts`, `modules/auth/handlers.ts`, `db/index.ts`, and the client (`WatchlistPage.tsx`, `lib/api.ts`, `hooks/useAuth.tsx`, `App.tsx`).  ### Important finding: the obvious causes named in the ticket are NOT present The ticket guesses the bug is a missing user id on save, a local/anonymous storage fallback, a missing session check, or a",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — plan only)  ### What I did to prepare this plan I read the full chain end-to-end without editing anything: `modules/watchlist/schema.ts`, `modules/watchlist/handlers.ts`, `server.ts` (route + middleware wiring), `db/auth.ts`, `modules/auth/handlers.ts`, `db/index.ts`, and the client (`WatchlistPage.tsx`, `lib/api.ts`, `hooks/useAuth.tsx`, `App.tsx`).  ### Important finding: the obvious causes named in the ticket are NOT present The ticket guesses the bug is a missing user id on save, a local/anonymous storage fallback, a missing session check, or a",
+  "started": "2026-09-12T01:10:17Z",
+  "finished": "2026-09-12T01:10:17Z",
+  "repo": "wealthcx01/arca"
+}
