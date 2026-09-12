@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-12T00:05:41Z",
+  "ended_at": "2026-09-12T00:05:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan (no code changes made — audit only, for founder sign-off)  ### What I already checked (read-only) and can rule out I read the full chain end-to-end: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`.  - **Backend is correctly user-scoped.** Every watchlist route (`GET /`, `GET /:id`, `POST /`, `PUT /:id`, `DELETE /:id`, item add/remove) filters by `user_id` derived from the validated session, not a client-supplied value. No default/guest",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan (no code changes made — audit only, for founder sign-off)  ### What I already checked (read-only) and can rule out I read the full chain end-to-end: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`.  - **Backend is correctly user-scoped.** Every watchlist route (`GET /`, `GET /:id`, `POST /`, `PUT /:id`, `DELETE /:id`, item add/remove) filters by `user_id` derived from the validated session, not a client-supplied value. No default/guest",
+  "started": "2026-09-12T00:05:41Z",
+  "finished": "2026-09-12T00:05:42Z",
+  "repo": "wealthcx01/arca"
+}
