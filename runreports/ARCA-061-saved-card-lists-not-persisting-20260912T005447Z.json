@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-12T00:54:47Z",
+  "ended_at": "2026-09-12T00:54:47Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good, diagnostic data cleaned up and no leftover server process. Now here's the plan.  ## Plan for ARCA-61 — Saved card lists not persisting  **What I did to prepare this plan:** read the full chain (`WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `schema.ts` → `db/auth.ts` → `server.ts`), and ran a live diagnostic against the actual dev server: signed up a test user, created a watchlist, logged out, logged back in with a brand-new session token (simulating \"different device\"), and re-fetched `/api/watchlist`. The list was still there, correctly scoped by `user_i",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good, diagnostic data cleaned up and no leftover server process. Now here's the plan.  ## Plan for ARCA-61 — Saved card lists not persisting  **What I did to prepare this plan:** read the full chain (`WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `schema.ts` → `db/auth.ts` → `server.ts`), and ran a live diagnostic against the actual dev server: signed up a test user, created a watchlist, logged out, logged back in with a brand-new session token (simulating \"different device\"), and re-fetched `/api/watchlist`. The list was still there, correctly scoped by `user_i",
+  "started": "2026-09-12T00:54:47Z",
+  "finished": "2026-09-12T00:54:47Z",
+  "repo": "wealthcx01/arca"
+}
