@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-12T00:13:43Z",
+  "ended_at": "2026-09-12T00:13:43Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence after re-login  **What I did (read-only):** traced the full path — `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth stack (`modules/auth/handlers.ts`, `db/auth.ts`, `server.ts` middleware, `useAuth.tsx`). No files were changed.  **What I found:** the wiring is, on paper, already correct. - `watchlists.user_id` is a real, non-null column; every route (`GET/POST /`, `GET/PUT/DELETE /:id`, item add/remove) filters or checks ownership by `user_id`. - ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence after re-login  **What I did (read-only):** traced the full path — `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth stack (`modules/auth/handlers.ts`, `db/auth.ts`, `server.ts` middleware, `useAuth.tsx`). No files were changed.  **What I found:** the wiring is, on paper, already correct. - `watchlists.user_id` is a real, non-null column; every route (`GET/POST /`, `GET/PUT/DELETE /:id`, item add/remove) filters or checks ownership by `user_id`. - ",
+  "started": "2026-09-12T00:13:43Z",
+  "finished": "2026-09-12T00:13:43Z",
+  "repo": "wealthcx01/arca"
+}
