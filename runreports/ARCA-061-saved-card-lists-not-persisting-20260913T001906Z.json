@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-13T00:19:06Z",
+  "ended_at": "2026-09-13T00:19:06Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan — Saved lists not persisting across login  **What I checked (read-only, no changes made):** the full chain — `watchlists`/`watchlist_items` schema, the watchlist module's own auth middleware, every CRUD route's ownership filtering, the client API wrapper, `WatchlistPage.tsx`'s fetch/save effects, `AuthProvider`/`useAuth`, and the top-level `Router` in `App.tsx`.  **What's actually solid (ruled out):** - DB schema correctly scopes every watchlist row by `user_id`; every route filters by `and(id, user_id)` before reading/writing — no cross-account leakage in the queries the",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan — Saved lists not persisting across login  **What I checked (read-only, no changes made):** the full chain — `watchlists`/`watchlist_items` schema, the watchlist module's own auth middleware, every CRUD route's ownership filtering, the client API wrapper, `WatchlistPage.tsx`'s fetch/save effects, `AuthProvider`/`useAuth`, and the top-level `Router` in `App.tsx`.  **What's actually solid (ruled out):** - DB schema correctly scopes every watchlist row by `user_id`; every route filters by `and(id, user_id)` before reading/writing — no cross-account leakage in the queries the",
+  "started": "2026-09-13T00:19:06Z",
+  "finished": "2026-09-13T00:19:06Z",
+  "repo": "wealthcx01/arca"
+}
