@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-13T01:28:09Z",
+  "ended_at": "2026-09-13T01:28:09Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from reading the code (no changes made) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth stack (`db/auth.ts`, `modules/auth/handlers.ts`, `server.ts`).  Everything I can see statically looks correctly wired: - `watchlists.user_id` is `NOT NULL` with no default/guest fallback. - Every watchlist route re-verifies `eq(watchlists.user_id, userId)` before reading/writing. - The client's `api.ts` sends `credentials: \"inc",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from reading the code (no changes made) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth stack (`db/auth.ts`, `modules/auth/handlers.ts`, `server.ts`).  Everything I can see statically looks correctly wired: - `watchlists.user_id` is `NOT NULL` with no default/guest fallback. - Every watchlist route re-verifies `eq(watchlists.user_id, userId)` before reading/writing. - The client's `api.ts` sends `credentials: \"inc",
+  "started": "2026-09-13T01:28:09Z",
+  "finished": "2026-09-13T01:28:09Z",
+  "repo": "wealthcx01/arca"
+}
