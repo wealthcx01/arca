@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-13T01:24:07Z",
+  "ended_at": "2026-09-13T01:24:08Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found from reading the code (no changes made) I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → schema. Contrary to the ticket's hypothesis, I could **not** find an obvious wiring bug:  - Backend: `watchlists.user_id` is `NOT NULL`, every route (list/get/update/delete/add-item/remove-item) filters `WHERE user_id = <session user>` — ownership is enforced everywhere, not just on write. - Auth: watchlist router has its own `.use(\"*\")` middleware requiring a valid `",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found from reading the code (no changes made) I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → schema. Contrary to the ticket's hypothesis, I could **not** find an obvious wiring bug:  - Backend: `watchlists.user_id` is `NOT NULL`, every route (list/get/update/delete/add-item/remove-item) filters `WHERE user_id = <session user>` — ownership is enforced everywhere, not just on write. - Auth: watchlist router has its own `.use(\"*\")` middleware requiring a valid `",
+  "started": "2026-09-13T01:24:07Z",
+  "finished": "2026-09-13T01:24:08Z",
+  "repo": "wealthcx01/arca"
+}
