@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-13T00:09:58Z",
+  "ended_at": "2026-09-13T00:09:59Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I traced the full watchlist read/write path before proposing anything:  - **Client (`client/src/pages/WatchlistPage.tsx`)**: every load/add/remove goes through the shared `api` client (`credentials: \"include\"`) hitting `/watchlist*`. No localStorage/sessionStorage, no anonymous/guest ID, no client-side watchlist_id caching. That specific hypothesis from the ticket (\"fallback to local/anonymous storage\") does **not** appear in the current code. - **Server auth chain** (`modules/watchlist/handlers.ts`, `db/auth.ts`, `server.ts`): watchlist r",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I traced the full watchlist read/write path before proposing anything:  - **Client (`client/src/pages/WatchlistPage.tsx`)**: every load/add/remove goes through the shared `api` client (`credentials: \"include\"`) hitting `/watchlist*`. No localStorage/sessionStorage, no anonymous/guest ID, no client-side watchlist_id caching. That specific hypothesis from the ticket (\"fallback to local/anonymous storage\") does **not** appear in the current code. - **Server auth chain** (`modules/watchlist/handlers.ts`, `db/auth.ts`, `server.ts`): watchlist r",
+  "started": "2026-09-13T00:09:58Z",
+  "finished": "2026-09-13T00:09:59Z",
+  "repo": "wealthcx01/arca"
+}
