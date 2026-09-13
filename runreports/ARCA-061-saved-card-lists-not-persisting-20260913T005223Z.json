@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-13T00:52:22Z",
+  "ended_at": "2026-09-13T00:52:23Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting to signed-in account  ### What I found before proposing anything (read-only audit) I traced the full path: `WatchlistPage.tsx` → `api.ts` (fetch with `credentials: \"include\"`) → `modules/watchlist/handlers.ts` auth check → `watchlists` table (`user_id` keyed, not nullable) → `db/auth.ts` session/login logic. Result: **the server-side and DB-side logic all check out as correct.** Every watchlist route filters strictly by `user_id`, `user_id` is stable across logins (only the session token rotates), there's no anonymous/local-storage fallb",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting to signed-in account  ### What I found before proposing anything (read-only audit) I traced the full path: `WatchlistPage.tsx` → `api.ts` (fetch with `credentials: \"include\"`) → `modules/watchlist/handlers.ts` auth check → `watchlists` table (`user_id` keyed, not nullable) → `db/auth.ts` session/login logic. Result: **the server-side and DB-side logic all check out as correct.** Every watchlist route filters strictly by `user_id`, `user_id` is stable across logins (only the session token rotates), there's no anonymous/local-storage fallb",
+  "started": "2026-09-13T00:52:22Z",
+  "finished": "2026-09-13T00:52:23Z",
+  "repo": "wealthcx01/arca"
+}
