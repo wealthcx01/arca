@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-13T01:08:57Z",
+  "ended_at": "2026-09-13T01:08:57Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did before writing this plan:** read the full path end-to-end (no edits) — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`/`App.tsx`, `modules/watchlist/handlers.ts` + `schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, and `server.ts` routing.  ### Important finding first The code, as it currently stands, looks **correctly wired**, which cuts against the ticket's own theory: - No localStorage/sessionStorage/anonymous fallback exists anywhere in the watchlist code",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did before writing this plan:** read the full path end-to-end (no edits) — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`/`App.tsx`, `modules/watchlist/handlers.ts` + `schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, and `server.ts` routing.  ### Important finding first The code, as it currently stands, looks **correctly wired**, which cuts against the ticket's own theory: - No localStorage/sessionStorage/anonymous fallback exists anywhere in the watchlist code",
+  "started": "2026-09-13T01:08:57Z",
+  "finished": "2026-09-13T01:08:57Z",
+  "repo": "wealthcx01/arca"
+}
