@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-13T00:05:43Z",
+  "ended_at": "2026-09-13T00:05:43Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I did (read-only audit, no code changes) I traced the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`.  **What I found is actually correct**, contrary to my first assumption: - Every watchlist DB query is scoped by a stable `user_id` (looked up via session token → `sessions` table → `users` table — the id doesn't change between logins). - Every watchlist route (list, create, get, add item, rem",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I did (read-only audit, no code changes) I traced the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`.  **What I found is actually correct**, contrary to my first assumption: - Every watchlist DB query is scoped by a stable `user_id` (looked up via session token → `sessions` table → `users` table — the id doesn't change between logins). - Every watchlist route (list, create, get, add item, rem",
+  "started": "2026-09-13T00:05:43Z",
+  "finished": "2026-09-13T00:05:43Z",
+  "repo": "wealthcx01/arca"
+}
