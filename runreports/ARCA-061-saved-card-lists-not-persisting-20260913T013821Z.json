@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-13T01:38:21Z",
+  "ended_at": "2026-09-13T01:38:21Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I already checked (read-only, no edits made):** I traced the full path — `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `watchlists`/`watchlist_items` tables — and it looks correctly wired, which is worth flagging up front:  - The watchlist router requires a valid session on every route and injects `X-User-Id` from the server-verified session (not from anything the client sends). - Every handler (list, get, create, rename, delete, add item, remove item) filters or check",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I already checked (read-only, no edits made):** I traced the full path — `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `watchlists`/`watchlist_items` tables — and it looks correctly wired, which is worth flagging up front:  - The watchlist router requires a valid session on every route and injects `X-User-Id` from the server-verified session (not from anything the client sends). - Every handler (list, get, create, rename, delete, add item, remove item) filters or check",
+  "started": "2026-09-13T01:38:21Z",
+  "finished": "2026-09-13T01:38:21Z",
+  "repo": "wealthcx01/arca"
+}
