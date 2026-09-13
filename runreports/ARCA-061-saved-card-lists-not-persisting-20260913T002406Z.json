@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-13T00:24:05Z",
+  "ended_at": "2026-09-13T00:24:06Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only)  **What I did:** Read the full watchlist path end-to-end (`client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `server.ts`, `db/push.ts`).  **What I found, contrary to the ticket's assumption:** The described \"obvious client-side wiring bug\" doesn't appear to exist in the current code. - Client always calls the API with `credentials: \"include\"` (`client/src/lib/api.ts:5`) — no localStorage/sessionStorage fallback",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only)  **What I did:** Read the full watchlist path end-to-end (`client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `server.ts`, `db/push.ts`).  **What I found, contrary to the ticket's assumption:** The described \"obvious client-side wiring bug\" doesn't appear to exist in the current code. - Client always calls the API with `credentials: \"include\"` (`client/src/lib/api.ts:5`) — no localStorage/sessionStorage fallback",
+  "started": "2026-09-13T00:24:05Z",
+  "finished": "2026-09-13T00:24:06Z",
+  "repo": "wealthcx01/arca"
+}
