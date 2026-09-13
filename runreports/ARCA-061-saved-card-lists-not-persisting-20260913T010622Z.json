@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-13T01:06:22Z",
+  "ended_at": "2026-09-13T01:06:22Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan — ARCA‑61 (investigation only, no changes made)  **What I did:** Traced the full watchlist path — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `db/index.ts` — plus the login/logout flow (`useAuth.tsx`, `App.tsx`, `LoginPage.tsx`, `Layout.tsx`).  **Headline finding: the ticket's premise doesn't fully hold up.** The parts it suspected are actually fine: - `api.ts` sends `credentials: \"include\"` on every request — cookies go out correctly. - Every watchlist route (`modules/watchlist/handlers.ts`) is behind an auth check t",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan — ARCA‑61 (investigation only, no changes made)  **What I did:** Traced the full watchlist path — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `db/index.ts` — plus the login/logout flow (`useAuth.tsx`, `App.tsx`, `LoginPage.tsx`, `Layout.tsx`).  **Headline finding: the ticket's premise doesn't fully hold up.** The parts it suspected are actually fine: - `api.ts` sends `credentials: \"include\"` on every request — cookies go out correctly. - Every watchlist route (`modules/watchlist/handlers.ts`) is behind an auth check t",
+  "started": "2026-09-13T01:06:22Z",
+  "finished": "2026-09-13T01:06:22Z",
+  "repo": "wealthcx01/arca"
+}
