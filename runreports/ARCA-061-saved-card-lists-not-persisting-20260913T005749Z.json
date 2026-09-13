@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-13T00:57:49Z",
+  "ended_at": "2026-09-13T00:57:49Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  ### What I found before proposing anything (read-only audit, no changes made)  I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite schema. Everything I read looks **correctly wired**, which matters for how we should proceed:  - Client fetch wrapper sends `credentials: \"include\"` on every call — cookies go out. - `WatchlistPage.tsx` has no localStorage/sessionStorage/anonymous fallback — it's pure server round-trips via React sta",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  ### What I found before proposing anything (read-only audit, no changes made)  I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite schema. Everything I read looks **correctly wired**, which matters for how we should proceed:  - Client fetch wrapper sends `credentials: \"include\"` on every call — cookies go out. - `WatchlistPage.tsx` has no localStorage/sessionStorage/anonymous fallback — it's pure server round-trips via React sta",
+  "started": "2026-09-13T00:57:49Z",
+  "finished": "2026-09-13T00:57:49Z",
+  "repo": "wealthcx01/arca"
+}
