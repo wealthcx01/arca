@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-14T01:03:49Z",
+  "ended_at": "2026-09-14T01:03:50Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found before writing this plan (read-only investigation, no files touched)  I traced the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → SQLite, plus the auth/session code in `modules/auth/handlers.ts` and `db/auth.ts`.  **Everything I read looks correctly wired:** - `watchlists.user_id` is `NOT NULL`, every route (`GET/POST/PUT/DELETE /watchlist*`) requires a valid session and scopes every query by `user_id` ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found before writing this plan (read-only investigation, no files touched)  I traced the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → SQLite, plus the auth/session code in `modules/auth/handlers.ts` and `db/auth.ts`.  **Everything I read looks correctly wired:** - `watchlists.user_id` is `NOT NULL`, every route (`GET/POST/PUT/DELETE /watchlist*`) requires a valid session and scopes every query by `user_id` ",
+  "started": "2026-09-14T01:03:49Z",
+  "finished": "2026-09-14T01:03:50Z",
+  "repo": "wealthcx01/arca"
+}
