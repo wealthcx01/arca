@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-14T00:01:55Z",
+  "ended_at": "2026-09-14T00:01:56Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I did first:** had a read-only audit done of the full watchlist path (client → API → auth middleware → `modules/watchlist` → DB) before proposing any fix, since this is auth-adjacent.  **What the audit found:** the code, as it stands, looks correct — not what the ticket assumes. - Client (`WatchlistPage.tsx`, `client/src/lib/api.ts`) has no localStorage/anonymous fallback; every request goes through a shared fetch wrapper with `credentials: \"include\"`, and routes are gated behind a resolved `useAuth(",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I did first:** had a read-only audit done of the full watchlist path (client → API → auth middleware → `modules/watchlist` → DB) before proposing any fix, since this is auth-adjacent.  **What the audit found:** the code, as it stands, looks correct — not what the ticket assumes. - Client (`WatchlistPage.tsx`, `client/src/lib/api.ts`) has no localStorage/anonymous fallback; every request goes through a shared fetch wrapper with `credentials: \"include\"`, and routes are gated behind a resolved `useAuth(",
+  "started": "2026-09-14T00:01:55Z",
+  "finished": "2026-09-14T00:01:56Z",
+  "repo": "wealthcx01/arca"
+}
