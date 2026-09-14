@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-14T01:43:42Z",
+  "ended_at": "2026-09-14T01:43:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found (read-only audit, no edits made)  I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / SQLite.  **Good news — most of the chain is correctly scoped:** - Sessions are DB-backed (`sessions` table keyed by `user_id`), not in-memory, so they survive server restarts and work across devices. - `arca_session` cookie is set with `httpOnly`, `sameSite: Lax`, `path: /`, `maxAge: 30 days` — persists correctly. - Every watchlist read/write (`",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found (read-only audit, no edits made)  I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / SQLite.  **Good news — most of the chain is correctly scoped:** - Sessions are DB-backed (`sessions` table keyed by `user_id`), not in-memory, so they survive server restarts and work across devices. - `arca_session` cookie is set with `httpOnly`, `sameSite: Lax`, `path: /`, `maxAge: 30 days` — persists correctly. - Every watchlist read/write (`",
+  "started": "2026-09-14T01:43:42Z",
+  "finished": "2026-09-14T01:43:42Z",
+  "repo": "wealthcx01/arca"
+}
