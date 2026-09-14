@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-14T01:12:20Z",
+  "ended_at": "2026-09-14T01:12:21Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found before proposing anything (read-only)  I traced the full path: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus `db/auth.ts` and `App.tsx`'s routing.  The good news: the watchlist code itself looks correctly built. - No localStorage/anonymous fallback anywhere in the watchlist path (only `Layout.tsx` uses localStorage, for theme — unrelated). - Every watchlist route (`modules/watchlist/handlers.ts:13-21`) has its ow",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found before proposing anything (read-only)  I traced the full path: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus `db/auth.ts` and `App.tsx`'s routing.  The good news: the watchlist code itself looks correctly built. - No localStorage/anonymous fallback anywhere in the watchlist path (only `Layout.tsx` uses localStorage, for theme — unrelated). - Every watchlist route (`modules/watchlist/handlers.ts:13-21`) has its ow",
+  "started": "2026-09-14T01:12:20Z",
+  "finished": "2026-09-14T01:12:21Z",
+  "repo": "wealthcx01/arca"
+}
