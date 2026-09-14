@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-14T00:57:19Z",
+  "ended_at": "2026-09-14T00:57:19Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **I did not edit anything.** I had an agent read the full chain end-to-end (client `WatchlistPage.tsx`, `modules/watchlist/*`, auth middleware, cookie config) to find the actual bug before proposing any fix. Summary of what it found, then the plan.  ### What the code currently shows Every piece the ticket suspects (local/anonymous fallback storage, hardcoded/default watchlist_id, missing auth on watchlist routes, unscoped DB queries) is **not present** in the current code: - Client always calls the backend API with `credentials: \"include",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **I did not edit anything.** I had an agent read the full chain end-to-end (client `WatchlistPage.tsx`, `modules/watchlist/*`, auth middleware, cookie config) to find the actual bug before proposing any fix. Summary of what it found, then the plan.  ### What the code currently shows Every piece the ticket suspects (local/anonymous fallback storage, hardcoded/default watchlist_id, missing auth on watchlist routes, unscoped DB queries) is **not present** in the current code: - Client always calls the backend API with `credentials: \"include",
+  "started": "2026-09-14T00:57:19Z",
+  "finished": "2026-09-14T00:57:19Z",
+  "repo": "wealthcx01/arca"
+}
