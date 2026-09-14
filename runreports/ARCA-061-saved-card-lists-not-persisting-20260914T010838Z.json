@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-14T01:08:38Z",
+  "ended_at": "2026-09-14T01:08:38Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence bug  **What I did to prepare this plan:** read the full watchlist path end-to-end (read-only, no edits) — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts` — plus a broad grep for localStorage/anonymous/default-watchlist patterns on the client.  ### What I found The obvious suspects are all clean: - **Client:** `WatchlistPage.tsx` only ever reads/writes via `api.get/post/delete`, no localStorage, no anonymous fallback, no hardcoded IDs. `api.ts` sends `creden",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence bug  **What I did to prepare this plan:** read the full watchlist path end-to-end (read-only, no edits) — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts` — plus a broad grep for localStorage/anonymous/default-watchlist patterns on the client.  ### What I found The obvious suspects are all clean: - **Client:** `WatchlistPage.tsx` only ever reads/writes via `api.get/post/delete`, no localStorage, no anonymous fallback, no hardcoded IDs. `api.ts` sends `creden",
+  "started": "2026-09-14T01:08:38Z",
+  "finished": "2026-09-14T01:08:38Z",
+  "repo": "wealthcx01/arca"
+}
