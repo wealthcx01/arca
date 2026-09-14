@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-14T01:17:46Z",
+  "ended_at": "2026-09-14T01:17:46Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting (no code changed, investigation only)  **What I checked:** client (`WatchlistPage.tsx`, `lib/api.ts`), server (`modules/watchlist/handlers.ts`, `schema.ts`), and auth (`db/auth.ts`, `modules/auth/handlers.ts`), tracing a save from click → API → DB and back.  **What I found:** The core path is actually wired correctly today — no localStorage/anonymous fallback, every watchlist route is scoped by `user_id`, the auth middleware validates the `arca_session` cookie against the DB and injects the real user id before any query runs, and the cli",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting (no code changed, investigation only)  **What I checked:** client (`WatchlistPage.tsx`, `lib/api.ts`), server (`modules/watchlist/handlers.ts`, `schema.ts`), and auth (`db/auth.ts`, `modules/auth/handlers.ts`), tracing a save from click → API → DB and back.  **What I found:** The core path is actually wired correctly today — no localStorage/anonymous fallback, every watchlist route is scoped by `user_id`, the auth middleware validates the `arca_session` cookie against the DB and injects the real user id before any query runs, and the cli",
+  "started": "2026-09-14T01:17:46Z",
+  "finished": "2026-09-14T01:17:46Z",
+  "repo": "wealthcx01/arca"
+}
