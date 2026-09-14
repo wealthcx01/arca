@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-14T01:29:15Z",
+  "ended_at": "2026-09-14T01:29:15Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I read the full watchlist chain (schema → handlers → router → auth middleware → client `WatchlistPage.tsx` → `api.ts` → `useAuth`) without changing anything. Everything I can verify statically looks correct:  - `watchlists.user_id` is `NOT NULL`, and every handler (`list`, `create`, `get`, `add item`, `remove item`, `delete`) filters by `eq(watchlists.user_id, userId)`. No anonymous/default watchlist fallback exists anywhere in the module. - The watchlist router has its own `use(\"*\", ...)` auth middleware requiring a valid, non-expired session before any r",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I read the full watchlist chain (schema → handlers → router → auth middleware → client `WatchlistPage.tsx` → `api.ts` → `useAuth`) without changing anything. Everything I can verify statically looks correct:  - `watchlists.user_id` is `NOT NULL`, and every handler (`list`, `create`, `get`, `add item`, `remove item`, `delete`) filters by `eq(watchlists.user_id, userId)`. No anonymous/default watchlist fallback exists anywhere in the module. - The watchlist router has its own `use(\"*\", ...)` auth middleware requiring a valid, non-expired session before any r",
+  "started": "2026-09-14T01:29:15Z",
+  "finished": "2026-09-14T01:29:15Z",
+  "repo": "wealthcx01/arca"
+}
