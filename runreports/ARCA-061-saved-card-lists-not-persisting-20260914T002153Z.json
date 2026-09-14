@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-14T00:21:53Z",
+  "ended_at": "2026-09-14T00:21:53Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I traced the full path end-to-end without changing anything:  - **Client** (`WatchlistPage.tsx`): fetches `/watchlist` and `/watchlist/:id` from the server on every load, saves via `POST/DELETE /watchlist/:id/items`. No `localStorage`/`sessionStorage`/anonymous fallback exists anywhere in this flow (only unrelated theme storage lives in `localStorage`). - **Routing** (`App.tsx` + `useAuth.tsx`): `WatchlistPage` cannot mount until auth has resolved via `GET /auth/me` — no stale/undefined-user race. - **API/auth middleware** (`modules/watchlist/handlers.ts`): every ro",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I traced the full path end-to-end without changing anything:  - **Client** (`WatchlistPage.tsx`): fetches `/watchlist` and `/watchlist/:id` from the server on every load, saves via `POST/DELETE /watchlist/:id/items`. No `localStorage`/`sessionStorage`/anonymous fallback exists anywhere in this flow (only unrelated theme storage lives in `localStorage`). - **Routing** (`App.tsx` + `useAuth.tsx`): `WatchlistPage` cannot mount until auth has resolved via `GET /auth/me` — no stale/undefined-user race. - **API/auth middleware** (`modules/watchlist/handlers.ts`): every ro",
+  "started": "2026-09-14T00:21:53Z",
+  "finished": "2026-09-14T00:21:53Z",
+  "repo": "wealthcx01/arca"
+}
