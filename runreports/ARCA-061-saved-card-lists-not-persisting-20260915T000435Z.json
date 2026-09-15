@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-15T00:04:35Z",
+  "ended_at": "2026-09-15T00:04:35Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I read first (no changes made):** `modules/watchlist/handlers.ts`, `schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `client/src/pages/WatchlistPage.tsx`, `client/src/hooks/useAuth.tsx`, `client/src/lib/api.ts`, `server.ts`, `vite.config.ts`.  **What the code shows today:** the wiring looks correct end to end — `watchlists`/`watchlist_items` are keyed by `user_id`, every route re-checks `and(id, user_id)` ownership, the watchlist router requires a valid session before anything runs, the client sends `credentials: \"include\"`",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I read first (no changes made):** `modules/watchlist/handlers.ts`, `schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `client/src/pages/WatchlistPage.tsx`, `client/src/hooks/useAuth.tsx`, `client/src/lib/api.ts`, `server.ts`, `vite.config.ts`.  **What the code shows today:** the wiring looks correct end to end — `watchlists`/`watchlist_items` are keyed by `user_id`, every route re-checks `and(id, user_id)` ownership, the watchlist router requires a valid session before anything runs, the client sends `credentials: \"include\"`",
+  "started": "2026-09-15T00:04:35Z",
+  "finished": "2026-09-15T00:04:35Z",
+  "repo": "wealthcx01/arca"
+}
