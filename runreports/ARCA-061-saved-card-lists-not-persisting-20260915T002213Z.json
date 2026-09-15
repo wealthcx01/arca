@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-15T00:22:12Z",
+  "ended_at": "2026-09-15T00:22:13Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved watchlists not persisting  **Root cause identified (high confidence):** This isn't a watchlist bug at all — it's an auth cookie bug. `modules/auth/handlers.ts` hardcodes `secure: false` on the `arca_session` cookie in both signup and login (line ~25 even has a stale comment \"Set to true in production\" that was never acted on). There is **zero** `NODE_ENV` branching anywhere in the codebase. The app is deployed over HTTPS (Railway), and browsers are increasingly strict about accepting/persisting non-`Secure` cookies set over HTTPS with `SameSite=Lax`. So the session",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved watchlists not persisting  **Root cause identified (high confidence):** This isn't a watchlist bug at all — it's an auth cookie bug. `modules/auth/handlers.ts` hardcodes `secure: false` on the `arca_session` cookie in both signup and login (line ~25 even has a stale comment \"Set to true in production\" that was never acted on). There is **zero** `NODE_ENV` branching anywhere in the codebase. The app is deployed over HTTPS (Railway), and browsers are increasingly strict about accepting/persisting non-`Secure` cookies set over HTTPS with `SameSite=Lax`. So the session",
+  "started": "2026-09-15T00:22:12Z",
+  "finished": "2026-09-15T00:22:13Z",
+  "repo": "wealthcx01/arca"
+}
