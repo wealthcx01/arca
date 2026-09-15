@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-15T00:18:36Z",
+  "ended_at": "2026-09-15T00:18:36Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found before proposing anything:** I read the full watchlist path (schema, handlers, route registration), the auth middleware and session code, and the client (`WatchlistPage.tsx`, `api.ts`). On static review, the wiring is actually correct end-to-end: - `watchlists`/`watchlist_items` are scoped by `user_id`/`watchlist_id`, every handler checks ownership. - The watchlist router has its own `X-User-Id`-injecting auth middleware (mirrors the portfolio pattern, just declared locally instead of in `server.ts` — harmless, not a bug",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found before proposing anything:** I read the full watchlist path (schema, handlers, route registration), the auth middleware and session code, and the client (`WatchlistPage.tsx`, `api.ts`). On static review, the wiring is actually correct end-to-end: - `watchlists`/`watchlist_items` are scoped by `user_id`/`watchlist_id`, every handler checks ownership. - The watchlist router has its own `X-User-Id`-injecting auth middleware (mirrors the portfolio pattern, just declared locally instead of in `server.ts` — harmless, not a bug",
+  "started": "2026-09-15T00:18:36Z",
+  "finished": "2026-09-15T00:18:36Z",
+  "repo": "wealthcx01/arca"
+}
