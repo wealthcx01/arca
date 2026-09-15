@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-15T00:43:08Z",
+  "ended_at": "2026-09-15T00:43:08Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  ### What I'd do  **1. Reproduce before touching anything.** Log in as a test user, add 2-3 cards, log out, log back in (same browser, then a second browser/incognito to rule out cookie caching). Confirm whether the list is actually empty, partially wrong, or belongs to a different user's data. This determines which of the hypotheses below is real — I wouldn't guess and patch blind on an auth-adjacent bug.  **2. Audited the code path already (read-only) and found the backend looks correctly scoped:** - `watchlists` rows have a `us",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  ### What I'd do  **1. Reproduce before touching anything.** Log in as a test user, add 2-3 cards, log out, log back in (same browser, then a second browser/incognito to rule out cookie caching). Confirm whether the list is actually empty, partially wrong, or belongs to a different user's data. This determines which of the hypotheses below is real — I wouldn't guess and patch blind on an auth-adjacent bug.  **2. Audited the code path already (read-only) and found the backend looks correctly scoped:** - `watchlists` rows have a `us",
+  "started": "2026-09-15T00:43:08Z",
+  "finished": "2026-09-15T00:43:08Z",
+  "repo": "wealthcx01/arca"
+}
