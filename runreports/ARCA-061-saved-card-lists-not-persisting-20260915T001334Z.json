@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-15T00:13:34Z",
+  "ended_at": "2026-09-15T00:13:34Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan — Saved card lists not persisting  **What I did:** Read the full path end-to-end (no edits) — `WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`. This is a high-impact/auth-adjacent area, so per instructions I'm only reporting findings and a plan, not changing code.  **What I found:** The path the ticket names as the likely culprit actually looks correct on inspection: - `api.ts` sends `credentials: \"include\"` on every request — cookies go out. - Login/signup set `arca_ses",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan — Saved card lists not persisting  **What I did:** Read the full path end-to-end (no edits) — `WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`. This is a high-impact/auth-adjacent area, so per instructions I'm only reporting findings and a plan, not changing code.  **What I found:** The path the ticket names as the likely culprit actually looks correct on inspection: - `api.ts` sends `credentials: \"include\"` on every request — cookies go out. - Login/signup set `arca_ses",
+  "started": "2026-09-15T00:13:34Z",
+  "finished": "2026-09-15T00:13:34Z",
+  "repo": "wealthcx01/arca"
+}
