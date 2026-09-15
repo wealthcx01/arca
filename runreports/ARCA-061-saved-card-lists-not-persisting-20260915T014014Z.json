@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-15T01:40:13Z",
+  "ended_at": "2026-09-15T01:40:14Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved watchlists not persisting across login  ### What I found before proposing any changes I read through the full path end-to-end (no edits made): - `client/src/pages/WatchlistPage.tsx` — load and save handlers - `modules/watchlist/handlers.ts` and `schema.ts` - `db/auth.ts` (login/session), `db/index.ts` (main DB), `server.ts` (CORS/middleware wiring) - Hono's own request-handling source, to check a specific suspicion  **Ruled out (code looks correct):** - No localStorage/anonymous fallback for watchlist data — only theme is cached locally. - Every watchlist query (",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved watchlists not persisting across login  ### What I found before proposing any changes I read through the full path end-to-end (no edits made): - `client/src/pages/WatchlistPage.tsx` — load and save handlers - `modules/watchlist/handlers.ts` and `schema.ts` - `db/auth.ts` (login/session), `db/index.ts` (main DB), `server.ts` (CORS/middleware wiring) - Hono's own request-handling source, to check a specific suspicion  **Ruled out (code looks correct):** - No localStorage/anonymous fallback for watchlist data — only theme is cached locally. - Every watchlist query (",
+  "started": "2026-09-15T01:40:13Z",
+  "finished": "2026-09-15T01:40:14Z",
+  "repo": "wealthcx01/arca"
+}
