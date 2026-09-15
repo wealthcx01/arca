@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-15T00:32:53Z",
+  "ended_at": "2026-09-15T00:32:53Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan (investigation-only, no changes made)  **What I did:** Read the full chain — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `client/src/pages/LoginPage.tsx`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and the router mounting in `server.ts`. No files were edited.  ### What's actually correct (rule these out) - `modules/watchlist/handlers.ts` has its own inline auth middleware requiring a valid session on every route, and every query (`GET /`, `GE",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan (investigation-only, no changes made)  **What I did:** Read the full chain — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/App.tsx`, `client/src/pages/LoginPage.tsx`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and the router mounting in `server.ts`. No files were edited.  ### What's actually correct (rule these out) - `modules/watchlist/handlers.ts` has its own inline auth middleware requiring a valid session on every route, and every query (`GET /`, `GE",
+  "started": "2026-09-15T00:32:53Z",
+  "finished": "2026-09-15T00:32:53Z",
+  "repo": "wealthcx01/arca"
+}
