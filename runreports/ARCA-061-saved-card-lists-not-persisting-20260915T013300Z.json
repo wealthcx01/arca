@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-15T01:32:59Z",
+  "ended_at": "2026-09-15T01:33:00Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I'd do first: confirm the bug actually reproduces in the code as written.**  I traced the full chain (client `WatchlistPage.tsx` → `api.ts` fetch wrapper → `modules/watchlist/handlers.ts` auth middleware → `user_id`-scoped queries → schema) and also ran a live repro: sign up → add card to watchlist → log out → log back in with a fresh session (simulating a new device) → fetch watchlist. The item was still there. Findings:  - Client never touches localStorage/sessionStorage for watchlist data (o",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I'd do first: confirm the bug actually reproduces in the code as written.**  I traced the full chain (client `WatchlistPage.tsx` → `api.ts` fetch wrapper → `modules/watchlist/handlers.ts` auth middleware → `user_id`-scoped queries → schema) and also ran a live repro: sign up → add card to watchlist → log out → log back in with a fresh session (simulating a new device) → fetch watchlist. The item was still there. Findings:  - Client never touches localStorage/sessionStorage for watchlist data (o",
+  "started": "2026-09-15T01:32:59Z",
+  "finished": "2026-09-15T01:33:00Z",
+  "repo": "wealthcx01/arca"
+}
