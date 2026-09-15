@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-15T00:28:13Z",
+  "ended_at": "2026-09-15T00:28:13Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan (no code changes made — this is a proposal only)  **What I did to prepare this plan:** Read the full chain — `WatchlistPage.tsx`, `useAuth.tsx`, `api.ts`, `modules/watchlist/handlers.ts` + `schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and `server.ts`'s middleware stack.  **Finding so far:** I could not find an obvious bug in the current code. Every watchlist route requires a valid session, injects `X-User-Id` the same way `portfolio`/`pricing/keys`/`news` do, and every DB query filters by `user_id` (not nullable, no default/anonymous fallback). The client has no lo",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan (no code changes made — this is a proposal only)  **What I did to prepare this plan:** Read the full chain — `WatchlistPage.tsx`, `useAuth.tsx`, `api.ts`, `modules/watchlist/handlers.ts` + `schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and `server.ts`'s middleware stack.  **Finding so far:** I could not find an obvious bug in the current code. Every watchlist route requires a valid session, injects `X-User-Id` the same way `portfolio`/`pricing/keys`/`news` do, and every DB query filters by `user_id` (not nullable, no default/anonymous fallback). The client has no lo",
+  "started": "2026-09-15T00:28:13Z",
+  "finished": "2026-09-15T00:28:13Z",
+  "repo": "wealthcx01/arca"
+}
