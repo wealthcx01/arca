@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-15T01:27:48Z",
+  "ended_at": "2026-09-15T01:27:48Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found from a static read (no code changes made)  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → schema/DB, and compared it against `modules/portfolio` as the \"known-good\" reference from CLAUDE.md.  Contrary to the ticket's framing, **the code as written looks correct**, not obviously broken: - `WatchlistPage.tsx` has no localStorage/sessionStorage fallback anywhere — every read/write goes through `api.get/post/delete` (I also grepped the whole client for `localSt",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found from a static read (no code changes made)  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → schema/DB, and compared it against `modules/portfolio` as the \"known-good\" reference from CLAUDE.md.  Contrary to the ticket's framing, **the code as written looks correct**, not obviously broken: - `WatchlistPage.tsx` has no localStorage/sessionStorage fallback anywhere — every read/write goes through `api.get/post/delete` (I also grepped the whole client for `localSt",
+  "started": "2026-09-15T01:27:48Z",
+  "finished": "2026-09-15T01:27:48Z",
+  "repo": "wealthcx01/arca"
+}
