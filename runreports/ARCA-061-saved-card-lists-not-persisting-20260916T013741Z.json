@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-16T01:37:40Z",
+  "ended_at": "2026-09-16T01:37:41Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did first:** had a sub-agent trace the full chain (schema → handlers → auth middleware → client → live DB) before proposing any plan, since this touches auth. Summary of what it found:  - `watchlists.user_id` is NOT NULL, indexed, same shape as `portfolios` — no guest/default watchlist concept, no schema gap. - Every handler resolves the watchlist via `getUserId(c)` (from `X-User-Id`, injected only after a valid session lookup) and filters by `(id, user_id)` — no anonymous fallback, no body-supplied id. - The watchli",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did first:** had a sub-agent trace the full chain (schema → handlers → auth middleware → client → live DB) before proposing any plan, since this touches auth. Summary of what it found:  - `watchlists.user_id` is NOT NULL, indexed, same shape as `portfolios` — no guest/default watchlist concept, no schema gap. - Every handler resolves the watchlist via `getUserId(c)` (from `X-User-Id`, injected only after a valid session lookup) and filters by `(id, user_id)` — no anonymous fallback, no body-supplied id. - The watchli",
+  "started": "2026-09-16T01:37:40Z",
+  "finished": "2026-09-16T01:37:41Z",
+  "repo": "wealthcx01/arca"
+}
