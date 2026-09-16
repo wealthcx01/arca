@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-16T00:32:26Z",
+  "ended_at": "2026-09-16T00:32:26Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: # ARCA-61 Plan: Watchlist Persistence Bug  ## What I found from tracing the code (read-only) The backend architecture looks correct on paper: - Every watchlist route requires a valid session cookie and 401s without one. - All reads/writes filter by the authenticated user's ID (`user_id` column, checked on every query). - The DB schema ties watchlists and their items to a specific user, not a global/shared row. - The client's `WatchlistPage.tsx` fetches from the server on load and doesn't fall back to localStorage/anonymous state.  So this isn't a case of \"the feature was never built to scope b",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: # ARCA-61 Plan: Watchlist Persistence Bug  ## What I found from tracing the code (read-only) The backend architecture looks correct on paper: - Every watchlist route requires a valid session cookie and 401s without one. - All reads/writes filter by the authenticated user's ID (`user_id` column, checked on every query). - The DB schema ties watchlists and their items to a specific user, not a global/shared row. - The client's `WatchlistPage.tsx` fetches from the server on load and doesn't fall back to localStorage/anonymous state.  So this isn't a case of \"the feature was never built to scope b",
+  "started": "2026-09-16T00:32:26Z",
+  "finished": "2026-09-16T00:32:26Z",
+  "repo": "wealthcx01/arca"
+}
