@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-16T00:02:50Z",
+  "ended_at": "2026-09-16T00:02:51Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I checked already (read-only, no code changed) I traced the whole chain end to end before writing this plan, because I wanted the plan to be grounded rather than speculative:  - `client/src/pages/WatchlistPage.tsx` — loads via `GET /watchlist`, saves via `POST/DELETE /watchlist/:id` and `/watchlist/:id/items`. No `localStorage`/anonymous fallback anywhere in the client (only the theme toggle uses `localStorage`, unrelated). - `client/src/lib/api.ts` — every request sends `credentials: \"include\"`, so the session cookie always",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I checked already (read-only, no code changed) I traced the whole chain end to end before writing this plan, because I wanted the plan to be grounded rather than speculative:  - `client/src/pages/WatchlistPage.tsx` — loads via `GET /watchlist`, saves via `POST/DELETE /watchlist/:id` and `/watchlist/:id/items`. No `localStorage`/anonymous fallback anywhere in the client (only the theme toggle uses `localStorage`, unrelated). - `client/src/lib/api.ts` — every request sends `credentials: \"include\"`, so the session cookie always",
+  "started": "2026-09-16T00:02:50Z",
+  "finished": "2026-09-16T00:02:51Z",
+  "repo": "wealthcx01/arca"
+}
