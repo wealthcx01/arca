@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-16T00:38:11Z",
+  "ended_at": "2026-09-16T00:38:11Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting  **What I'd do (in order):**  1. **Reproduce first, don't guess.** Before touching code: log in as a test user, add cards to a watchlist, log out, log back in (same browser, then a different browser/incognito), and check whether the list is actually empty in the DB (`data/arca.db` → `watchlists`/`watchlist_items` tables) versus just not rendering. This tells us whether it's a data-loss bug or a display/fetch bug — they need very different fixes.  2. **Audit finding so far:** I had a subagent trace the full path (`WatchlistPage.tsx` → `",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting  **What I'd do (in order):**  1. **Reproduce first, don't guess.** Before touching code: log in as a test user, add cards to a watchlist, log out, log back in (same browser, then a different browser/incognito), and check whether the list is actually empty in the DB (`data/arca.db` → `watchlists`/`watchlist_items` tables) versus just not rendering. This tells us whether it's a data-loss bug or a display/fetch bug — they need very different fixes.  2. **Audit finding so far:** I had a subagent trace the full path (`WatchlistPage.tsx` → `",
+  "started": "2026-09-16T00:38:11Z",
+  "finished": "2026-09-16T00:38:11Z",
+  "repo": "wealthcx01/arca"
+}
