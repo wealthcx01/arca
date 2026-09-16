@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-16T01:24:16Z",
+  "ended_at": "2026-09-16T01:24:16Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## What I found before writing this plan  Since this is auth-adjacent, I read the full path first rather than guessing (no edits made): `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → `db/push.ts` schema. Summary of what's actually there today:  - Client fetches use a shared `api` wrapper with `credentials: \"include\"` and a relative `/api` base (same-origin, proxied) — no localStorage/anonymous fallback exists anywhere for watchlists (only theme uses localStorage). - The watchlist route protects itself with its own inl",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## What I found before writing this plan  Since this is auth-adjacent, I read the full path first rather than guessing (no edits made): `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → `db/push.ts` schema. Summary of what's actually there today:  - Client fetches use a shared `api` wrapper with `credentials: \"include\"` and a relative `/api` base (same-origin, proxied) — no localStorage/anonymous fallback exists anywhere for watchlists (only theme uses localStorage). - The watchlist route protects itself with its own inl",
+  "started": "2026-09-16T01:24:16Z",
+  "finished": "2026-09-16T01:24:16Z",
+  "repo": "wealthcx01/arca"
+}
