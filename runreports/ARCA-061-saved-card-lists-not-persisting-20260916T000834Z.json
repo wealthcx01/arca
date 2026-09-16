@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-16T00:08:33Z",
+  "ended_at": "2026-09-16T00:08:34Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **What I did to prepare this plan:** I read the full path end-to-end (no edits) — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, and `server.ts` — to ground this plan in what's actually there rather than guessing.  **What I already verified looks correct** (so the plan doesn't waste time re-checking these): - Every watchlist route (`GET /`, `GET /:id`, `POST /:id/items`, `DELETE /:id`, etc.) filters b",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **What I did to prepare this plan:** I read the full path end-to-end (no edits) — `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, and `server.ts` — to ground this plan in what's actually there rather than guessing.  **What I already verified looks correct** (so the plan doesn't waste time re-checking these): - Every watchlist route (`GET /`, `GET /:id`, `POST /:id/items`, `DELETE /:id`, etc.) filters b",
+  "started": "2026-09-16T00:08:33Z",
+  "finished": "2026-09-16T00:08:34Z",
+  "repo": "wealthcx01/arca"
+}
