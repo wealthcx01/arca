@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-16T01:07:49Z",
+  "ended_at": "2026-09-16T01:07:49Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **Step 1 — Reproduce before touching anything.** Sign up, add cards to a watchlist, log out, log back in in the same browser, then repeat in an incognito window / different browser profile (simulating \"different device\"). Watch the network tab and the `sessions`/`watchlists` tables directly to see exactly where it breaks: does `GET /api/watchlist` come back empty, come back with a different `id`, return 401, or does the client silently show a blank state? This determines whether the fix is client, server, or infra.  **What a read-only code ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **Step 1 — Reproduce before touching anything.** Sign up, add cards to a watchlist, log out, log back in in the same browser, then repeat in an incognito window / different browser profile (simulating \"different device\"). Watch the network tab and the `sessions`/`watchlists` tables directly to see exactly where it breaks: does `GET /api/watchlist` come back empty, come back with a different `id`, return 401, or does the client silently show a blank state? This determines whether the fix is client, server, or infra.  **What a read-only code ",
+  "started": "2026-09-16T01:07:49Z",
+  "finished": "2026-09-16T01:07:49Z",
+  "repo": "wealthcx01/arca"
+}
