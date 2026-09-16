@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-16T01:14:54Z",
+  "ended_at": "2026-09-16T01:14:55Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist not persisting across login  **What I found by reading the code (no changes made):** - `modules/watchlist/schema.ts` — `watchlists.user_id` and all handler queries (`handlers.ts`) correctly filter every read/write by the authenticated user's id. No hardcoded/default/anonymous id anywhere. - `modules/watchlist/handlers.ts` — has its own auth middleware (`watchlistRouter.use(\"*\", ...)`) that validates the session cookie and sets `X-User-Id` before every route. This mirrors the pattern other modules use, just applied on the sub-router instead of in `server.ts`. ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist not persisting across login  **What I found by reading the code (no changes made):** - `modules/watchlist/schema.ts` — `watchlists.user_id` and all handler queries (`handlers.ts`) correctly filter every read/write by the authenticated user's id. No hardcoded/default/anonymous id anywhere. - `modules/watchlist/handlers.ts` — has its own auth middleware (`watchlistRouter.use(\"*\", ...)`) that validates the session cookie and sets `X-User-Id` before every route. This mirrors the pattern other modules use, just applied on the sub-router instead of in `server.ts`. ",
+  "started": "2026-09-16T01:14:54Z",
+  "finished": "2026-09-16T01:14:55Z",
+  "repo": "wealthcx01/arca"
+}
