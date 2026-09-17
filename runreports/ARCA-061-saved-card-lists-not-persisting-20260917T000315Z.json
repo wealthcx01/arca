@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-17T00:03:15Z",
+  "ended_at": "2026-09-17T00:03:15Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting  ### What I found from a read-only code audit I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / schema, plus `useAuth.tsx` and `server.ts` wiring. None of the \"obvious\" bugs named in the ticket are actually present in the current code:  - Backend: every watchlist route is behind its own `use(\"*\", ...)` auth middleware (`modules/watchlist/handlers.ts:13-21`) that validates the session cookie/token per-request and derives `X-User-Id` from it. All queries filter by `wa",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting  ### What I found from a read-only code audit I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / schema, plus `useAuth.tsx` and `server.ts` wiring. None of the \"obvious\" bugs named in the ticket are actually present in the current code:  - Backend: every watchlist route is behind its own `use(\"*\", ...)` auth middleware (`modules/watchlist/handlers.ts:13-21`) that validates the session cookie/token per-request and derives `X-User-Id` from it. All queries filter by `wa",
+  "started": "2026-09-17T00:03:15Z",
+  "finished": "2026-09-17T00:03:15Z",
+  "repo": "wealthcx01/arca"
+}
