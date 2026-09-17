@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-17T00:38:12Z",
+  "ended_at": "2026-09-17T00:38:12Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **I have not made any changes.** Before proposing a fix, I read through the full path end-to-end (client `WatchlistPage.tsx`, `client/src/lib/api.ts`, `server.ts` CORS/mount config, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`) to ground the plan in what's actually there rather than guessing.  ### What I found (read-only audit) The current implementation is, on inspection, already correctly wired end-to-end: - Client never touches localStorage/sessionStorage for wat",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **I have not made any changes.** Before proposing a fix, I read through the full path end-to-end (client `WatchlistPage.tsx`, `client/src/lib/api.ts`, `server.ts` CORS/mount config, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`) to ground the plan in what's actually there rather than guessing.  ### What I found (read-only audit) The current implementation is, on inspection, already correctly wired end-to-end: - Client never touches localStorage/sessionStorage for wat",
+  "started": "2026-09-17T00:38:12Z",
+  "finished": "2026-09-17T00:38:12Z",
+  "repo": "wealthcx01/arca"
+}
