@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-17T00:33:13Z",
+  "ended_at": "2026-09-17T00:33:13Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **No code has been changed.** Here's what I found from a full read-through of the path, and how I'd proceed.  ### What the static audit shows (this is the important, non-obvious part)  I traced the entire chain end to end — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → schema → `db/auth.ts` / cookies — and **every layer I read looks correctly wired**, not obviously broken:  - Schema: `watchlists.user_id` is a required column; items hang off `watchlist_id`. No anonymous/default id anywhere. ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **No code has been changed.** Here's what I found from a full read-through of the path, and how I'd proceed.  ### What the static audit shows (this is the important, non-obvious part)  I traced the entire chain end to end — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → schema → `db/auth.ts` / cookies — and **every layer I read looks correctly wired**, not obviously broken:  - Schema: `watchlists.user_id` is a required column; items hang off `watchlist_id`. No anonymous/default id anywhere. ",
+  "started": "2026-09-17T00:33:13Z",
+  "finished": "2026-09-17T00:33:13Z",
+  "repo": "wealthcx01/arca"
+}
