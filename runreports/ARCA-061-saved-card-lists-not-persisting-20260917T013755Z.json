@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-17T01:37:55Z",
+  "ended_at": "2026-09-17T01:37:55Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no files changed)  I traced the full watchlist path: `WatchlistPage.tsx` → `/api/watchlist/*` → `modules/watchlist/handlers.ts` → SQLite, plus the auth chain in `db/auth.ts` and `modules/auth/handlers.ts`.  **What's actually correct (ruled out):** - `watchlists.user_id` is `NOT NULL` and every handler filters by it (`GET /`, `GET /:id`, `POST /:id/items`, `DELETE`) — no anonymous/default watchlist logic exists. - Client has no localStorage/sessionStorage fallback for watchlist data (only theme is in localStorage — unrelated). - Session cookie (`ar",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no files changed)  I traced the full watchlist path: `WatchlistPage.tsx` → `/api/watchlist/*` → `modules/watchlist/handlers.ts` → SQLite, plus the auth chain in `db/auth.ts` and `modules/auth/handlers.ts`.  **What's actually correct (ruled out):** - `watchlists.user_id` is `NOT NULL` and every handler filters by it (`GET /`, `GET /:id`, `POST /:id/items`, `DELETE`) — no anonymous/default watchlist logic exists. - Client has no localStorage/sessionStorage fallback for watchlist data (only theme is in localStorage — unrelated). - Session cookie (`ar",
+  "started": "2026-09-17T01:37:55Z",
+  "finished": "2026-09-17T01:37:55Z",
+  "repo": "wealthcx01/arca"
+}
