@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-17T01:27:42Z",
+  "ended_at": "2026-09-17T01:27:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I traced the full watchlist path end to end:  - **Backend (`modules/watchlist/handlers.ts`)**: every route requires a valid session, injects `X-User-Id` from the DB-backed session, and all reads/writes are filtered by `user_id`. Ordering is deterministic (`sort_order`). This looks correct. - **Auth (`db/auth.ts`, `modules/auth/handlers.ts`)**: sessions are persisted in SQLite (not in-memory), cookie is `httpOnly`, `sameSite: Lax`, 30-day `maxAge`. Logging in/out doesn't touch or reset the user's row. This looks correct. - **Client (`client",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I traced the full watchlist path end to end:  - **Backend (`modules/watchlist/handlers.ts`)**: every route requires a valid session, injects `X-User-Id` from the DB-backed session, and all reads/writes are filtered by `user_id`. Ordering is deterministic (`sort_order`). This looks correct. - **Auth (`db/auth.ts`, `modules/auth/handlers.ts`)**: sessions are persisted in SQLite (not in-memory), cookie is `httpOnly`, `sameSite: Lax`, 30-day `maxAge`. Logging in/out doesn't touch or reset the user's row. This looks correct. - **Client (`client",
+  "started": "2026-09-17T01:27:42Z",
+  "finished": "2026-09-17T01:27:42Z",
+  "repo": "wealthcx01/arca"
+}
