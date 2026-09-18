@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-18T00:14:32Z",
+  "ended_at": "2026-09-18T00:14:33Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found from a read-only audit (no edits made)  I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the session/cookie machinery in `db/auth.ts` and `modules/auth/handlers.ts`.  Notably, **I could not find an obvious wiring bug in the code as it currently stands**: - `watchlists.user_id` is `NOT NULL` with no default — there's no anonymous/guest row concept, so there's nothing for a real user's list to be \"lost\" behind. - Every wat",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found from a read-only audit (no edits made)  I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the session/cookie machinery in `db/auth.ts` and `modules/auth/handlers.ts`.  Notably, **I could not find an obvious wiring bug in the code as it currently stands**: - `watchlists.user_id` is `NOT NULL` with no default — there's no anonymous/guest row concept, so there's nothing for a real user's list to be \"lost\" behind. - Every wat",
+  "started": "2026-09-18T00:14:32Z",
+  "finished": "2026-09-18T00:14:33Z",
+  "repo": "wealthcx01/arca"
+}
