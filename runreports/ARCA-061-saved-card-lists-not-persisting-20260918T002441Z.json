@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-18T00:24:40Z",
+  "ended_at": "2026-09-18T00:24:41Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changed — audit only)  **What I already checked (read-only), and what it found:**  I read the full watchlist path end-to-end: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth layer (`modules/auth/handlers.ts`, `db/auth.ts`, `App.tsx`/`useAuth.tsx`, and `server.ts` CORS/proxy config).  Contrary to the ticket's working theory, I did **not** find an obvious client-side wiring bug: - `WatchlistPage.tsx` only mounts after `App.tsx` confirms a logged-in `user` (no race, no anonymous ren",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changed — audit only)  **What I already checked (read-only), and what it found:**  I read the full watchlist path end-to-end: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth layer (`modules/auth/handlers.ts`, `db/auth.ts`, `App.tsx`/`useAuth.tsx`, and `server.ts` CORS/proxy config).  Contrary to the ticket's working theory, I did **not** find an obvious client-side wiring bug: - `WatchlistPage.tsx` only mounts after `App.tsx` confirms a logged-in `user` (no race, no anonymous ren",
+  "started": "2026-09-18T00:24:40Z",
+  "finished": "2026-09-18T00:24:41Z",
+  "repo": "wealthcx01/arca"
+}
