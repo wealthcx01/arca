@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-18T00:47:49Z",
+  "ended_at": "2026-09-18T00:47:50Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I did before writing this plan Since this is auth-adjacent, I read (but did not touch) the full chain rather than guessing: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/handlers.ts` + `schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `db/index.ts`, and the middleware wiring in `server.ts`.  **Finding worth flagging to the founder up front:** the specific bugs the ticket hypothesizes (localStorage/anonymous fallback, missing user-id on save, unchecked sessi",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I did before writing this plan Since this is auth-adjacent, I read (but did not touch) the full chain rather than guessing: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/handlers.ts` + `schema.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `db/index.ts`, and the middleware wiring in `server.ts`.  **Finding worth flagging to the founder up front:** the specific bugs the ticket hypothesizes (localStorage/anonymous fallback, missing user-id on save, unchecked sessi",
+  "started": "2026-09-18T00:47:49Z",
+  "finished": "2026-09-18T00:47:50Z",
+  "repo": "wealthcx01/arca"
+}
