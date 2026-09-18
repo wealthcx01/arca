@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-18T00:33:27Z",
+  "ended_at": "2026-09-18T00:33:27Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found from a read-only audit first Before proposing changes, I traced the full path (backend `modules/watchlist/schema.ts` + `handlers.ts`, `db/auth.ts`, `server.ts` route mounting, and frontend `WatchlistPage.tsx`, `useAuth.tsx`, `lib/api.ts`, `LoginPage.tsx`, `App.tsx`). On current `master`, the chain looks correctly wired end-to-end: - Watchlists/items are owned by `user_id` in the schema, every handler filters by `eq(watchlists.user_id, userId)`, and there's no hardcoded/guest/default watchlist. - All ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found from a read-only audit first Before proposing changes, I traced the full path (backend `modules/watchlist/schema.ts` + `handlers.ts`, `db/auth.ts`, `server.ts` route mounting, and frontend `WatchlistPage.tsx`, `useAuth.tsx`, `lib/api.ts`, `LoginPage.tsx`, `App.tsx`). On current `master`, the chain looks correctly wired end-to-end: - Watchlists/items are owned by `user_id` in the schema, every handler filters by `eq(watchlists.user_id, userId)`, and there's no hardcoded/guest/default watchlist. - All ",
+  "started": "2026-09-18T00:33:27Z",
+  "finished": "2026-09-18T00:33:27Z",
+  "repo": "wealthcx01/arca"
+}
