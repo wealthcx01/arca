@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-18T01:33:12Z",
+  "ended_at": "2026-09-18T01:33:13Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I checked before writing this (read-only, no edits) I read the full path: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, and `db/auth.ts`, and ran a live Bun+Hono test against the exact middleware pattern used here.  Findings so far: - **DB ownership scoping is correct.** `watchlists.user_id` and every watchlist/item query in `modules/watchlist/handlers.ts` filter by the authenticated `user_id`. No obvious cross-user leakage or missing f",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I checked before writing this (read-only, no edits) I read the full path: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, and `db/auth.ts`, and ran a live Bun+Hono test against the exact middleware pattern used here.  Findings so far: - **DB ownership scoping is correct.** `watchlists.user_id` and every watchlist/item query in `modules/watchlist/handlers.ts` filter by the authenticated `user_id`. No obvious cross-user leakage or missing f",
+  "started": "2026-09-18T01:33:12Z",
+  "finished": "2026-09-18T01:33:13Z",
+  "repo": "wealthcx01/arca"
+}
