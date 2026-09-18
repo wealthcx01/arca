@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-18T01:07:06Z",
+  "ended_at": "2026-09-18T01:07:06Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I traced the full watchlist path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `watchlistRouter` middleware → `modules/watchlist/handlers.ts` → SQLite.  **The backend is correctly scoped today.** Every watchlist query filters on `eq(watchlists.user_id, userId)`, and `userId` comes only from a server-verified session (`arca_session` cookie → `getSession(token)` → DB join on non-expired session). The client can't spoof `X-User-Id`; the router middleware overwrites it. `login()` always resolves to the same stable `user.id` for ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I traced the full watchlist path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `watchlistRouter` middleware → `modules/watchlist/handlers.ts` → SQLite.  **The backend is correctly scoped today.** Every watchlist query filters on `eq(watchlists.user_id, userId)`, and `userId` comes only from a server-verified session (`arca_session` cookie → `getSession(token)` → DB join on non-expired session). The client can't spoof `X-User-Id`; the router middleware overwrites it. `login()` always resolves to the same stable `user.id` for ",
+  "started": "2026-09-18T01:07:06Z",
+  "finished": "2026-09-18T01:07:06Z",
+  "repo": "wealthcx01/arca"
+}
