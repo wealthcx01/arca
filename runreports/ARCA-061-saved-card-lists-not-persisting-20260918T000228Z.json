@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-18T00:02:28Z",
+  "ended_at": "2026-09-18T00:02:28Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I found from a read-only audit (no changes made):**  I traced the whole path — `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` — and the current code is actually built correctly end-to-end:  - Watchlists are keyed by a stable `user_id` (tied to the `users.id` row, not the session), so the same account always maps to the same rows regardless of device. - Every handler (list/create/get/update/delete/add-item/remove-item) filte",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I found from a read-only audit (no changes made):**  I traced the whole path — `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` — and the current code is actually built correctly end-to-end:  - Watchlists are keyed by a stable `user_id` (tied to the `users.id` row, not the session), so the same account always maps to the same rows regardless of device. - Every handler (list/create/get/update/delete/add-item/remove-item) filte",
+  "started": "2026-09-18T00:02:28Z",
+  "finished": "2026-09-18T00:02:28Z",
+  "repo": "wealthcx01/arca"
+}
