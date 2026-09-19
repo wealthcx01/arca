@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T01:07:55Z",
+  "ended_at": "2026-09-19T01:07:55Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence audit (no code changes made)  ### What I did to prepare this plan I read the full path already, since this is auth-adjacent and I wanted the plan to be grounded, not speculative: - `modules/watchlist/handlers.ts` — every route (list, create, get, update, delete, add item, remove item) - `modules/auth/handlers.ts` and `db/auth.ts` — session creation, cookie settings, `requireAuth`/session lookup - `client/src/pages/WatchlistPage.tsx`, `client/src/hooks/useAuth.tsx`, `client/src/lib/api.ts`, `client/src/App.tsx`  **Finding so far:** the code, as ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence audit (no code changes made)  ### What I did to prepare this plan I read the full path already, since this is auth-adjacent and I wanted the plan to be grounded, not speculative: - `modules/watchlist/handlers.ts` — every route (list, create, get, update, delete, add item, remove item) - `modules/auth/handlers.ts` and `db/auth.ts` — session creation, cookie settings, `requireAuth`/session lookup - `client/src/pages/WatchlistPage.tsx`, `client/src/hooks/useAuth.tsx`, `client/src/lib/api.ts`, `client/src/App.tsx`  **Finding so far:** the code, as ",
+  "started": "2026-09-19T01:07:55Z",
+  "finished": "2026-09-19T01:07:55Z",
+  "repo": "wealthcx01/arca"
+}
