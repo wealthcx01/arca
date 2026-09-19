@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T00:58:05Z",
+  "ended_at": "2026-09-19T00:58:05Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I did first (read-only):** Before proposing a fix, I traced the full read/write path — `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → schema — to find the actual break, rather than guessing. No files were changed.  ### What I found  The specific failure modes the ticket suspects are **not present**: - No localStorage/sessionStorage fallback anywhere in the watchlist UI (only unrelated theme prefs use localStorage). - Every watchlist route requires a valid session and enforces `eq(watc",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I did first (read-only):** Before proposing a fix, I traced the full read/write path — `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → schema — to find the actual break, rather than guessing. No files were changed.  ### What I found  The specific failure modes the ticket suspects are **not present**: - No localStorage/sessionStorage fallback anywhere in the watchlist UI (only unrelated theme prefs use localStorage). - Every watchlist route requires a valid session and enforces `eq(watc",
+  "started": "2026-09-19T00:58:05Z",
+  "finished": "2026-09-19T00:58:05Z",
+  "repo": "wealthcx01/arca"
+}
