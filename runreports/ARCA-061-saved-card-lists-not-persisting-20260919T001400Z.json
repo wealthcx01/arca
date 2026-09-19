@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T00:14:00Z",
+  "ended_at": "2026-09-19T00:14:00Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## What I found (read-only audit, no code changed)  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  **The wiring is actually correct, end to end:** - Watchlists and items are scoped by `user_id` at the DB level, and every handler (list/get/create/delete/add-item/remove-item) filters by `and(eq(watchlists.id, id), eq(watchlists.user_id, userId))`. No shortcuts. - `X-User-Id` is injected from a real, persistent SQLite `sessions` table (not in-memory, not lost on restart) via `getSession(token)`, which joins to `users.id` ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## What I found (read-only audit, no code changed)  I traced the full path: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  **The wiring is actually correct, end to end:** - Watchlists and items are scoped by `user_id` at the DB level, and every handler (list/get/create/delete/add-item/remove-item) filters by `and(eq(watchlists.id, id), eq(watchlists.user_id, userId))`. No shortcuts. - `X-User-Id` is injected from a real, persistent SQLite `sessions` table (not in-memory, not lost on restart) via `getSession(token)`, which joins to `users.id` ",
+  "started": "2026-09-19T00:14:00Z",
+  "finished": "2026-09-19T00:14:00Z",
+  "repo": "wealthcx01/arca"
+}
