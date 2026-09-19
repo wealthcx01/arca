@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T00:36:51Z",
+  "ended_at": "2026-09-19T00:36:51Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting across login  ### What I found (read-only audit, no changes made) The wiring is actually correct end-to-end, which changes the nature of this ticket: - `WatchlistPage.tsx` has no localStorage/guest fallback — it always calls the API (`GET /watchlist`, `POST /watchlist/:id/items`, etc.) with no default/guest watchlist id anywhere in the client. - `client/src/lib/api.ts` sends `credentials: \"include\"`, so the session cookie is attached to every request. - `modules/watchlist/handlers.ts` applies its own `router.use(\"*\", ...)` auth middlewa",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting across login  ### What I found (read-only audit, no changes made) The wiring is actually correct end-to-end, which changes the nature of this ticket: - `WatchlistPage.tsx` has no localStorage/guest fallback — it always calls the API (`GET /watchlist`, `POST /watchlist/:id/items`, etc.) with no default/guest watchlist id anywhere in the client. - `client/src/lib/api.ts` sends `credentials: \"include\"`, so the session cookie is attached to every request. - `modules/watchlist/handlers.ts` applies its own `router.use(\"*\", ...)` auth middlewa",
+  "started": "2026-09-19T00:36:51Z",
+  "finished": "2026-09-19T00:36:51Z",
+  "repo": "wealthcx01/arca"
+}
