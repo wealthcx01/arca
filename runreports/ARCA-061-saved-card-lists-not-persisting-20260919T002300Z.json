@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T00:23:00Z",
+  "ended_at": "2026-09-19T00:23:00Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  ### What I did before planning I had a subagent trace the entire watchlist path read-only (no edits): `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `modules/auth`. Summary of what it found:  - Every watchlist route is behind its own auth middleware that derives identity **only** from the server-validated session cookie (`getSession(token)`), injects `X-User-Id` server-side, and every handler (list, detail, add item, remove item, rename, delete) re-checks `w",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  ### What I did before planning I had a subagent trace the entire watchlist path read-only (no edits): `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `modules/auth`. Summary of what it found:  - Every watchlist route is behind its own auth middleware that derives identity **only** from the server-validated session cookie (`getSession(token)`), injects `X-User-Id` server-side, and every handler (list, detail, add item, remove item, rename, delete) re-checks `w",
+  "started": "2026-09-19T00:23:00Z",
+  "finished": "2026-09-19T00:23:00Z",
+  "repo": "wealthcx01/arca"
+}
