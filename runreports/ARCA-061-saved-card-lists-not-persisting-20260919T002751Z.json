@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T00:27:50Z",
+  "ended_at": "2026-09-19T00:27:51Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I traced the full watchlist path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth layer (`db/auth.ts`, `modules/auth/handlers.ts`, `useAuth.tsx`).  **What's actually correct** (contrary to the ticket's leading theory): - Every watchlist read/write (list, get, create, delete, add-item, remove-item) filters by `eq(watchlists.user_id, userId)`, and `userId` comes only from a verified session token — never client-supplied. - There's no anonymous/guest fallba",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I traced the full watchlist path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth layer (`db/auth.ts`, `modules/auth/handlers.ts`, `useAuth.tsx`).  **What's actually correct** (contrary to the ticket's leading theory): - Every watchlist read/write (list, get, create, delete, add-item, remove-item) filters by `eq(watchlists.user_id, userId)`, and `userId` comes only from a verified session token — never client-supplied. - There's no anonymous/guest fallba",
+  "started": "2026-09-19T00:27:50Z",
+  "finished": "2026-09-19T00:27:51Z",
+  "repo": "wealthcx01/arca"
+}
