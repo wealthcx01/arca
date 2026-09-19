@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T00:34:56Z",
+  "ended_at": "2026-09-19T00:34:57Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did (research only, no edits):** Read the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` routing → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` (session/cookie logic) → `useAuth.tsx`/`App.tsx` (auth gating).  **What I found, so the founder isn't surprised by the plan:** Static reading of the current code does *not* turn up an obvious bug. Specifically: - `watchlists`/`watchlist_items` tables are correctly scoped by `user_id`, and every handler (`GET/POST /",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did (research only, no edits):** Read the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` routing → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` (session/cookie logic) → `useAuth.tsx`/`App.tsx` (auth gating).  **What I found, so the founder isn't surprised by the plan:** Static reading of the current code does *not* turn up an obvious bug. Specifically: - `watchlists`/`watchlist_items` tables are correctly scoped by `user_id`, and every handler (`GET/POST /",
+  "started": "2026-09-19T00:34:56Z",
+  "finished": "2026-09-19T00:34:57Z",
+  "repo": "wealthcx01/arca"
+}
