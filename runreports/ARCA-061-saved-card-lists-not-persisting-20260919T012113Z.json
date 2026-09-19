@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T01:21:13Z",
+  "ended_at": "2026-09-19T01:21:13Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I did to prepare this plan (read-only, no edits):** traced the full path — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` sessions → SQLite — and then actually ran the backend locally and drove it through the real flow with curl: signed up a test user, created a watchlist, added a card, logged out, logged back in with a **fresh session** (simulating a different device), and re-fetched. The list and item came back correctly every time, scoped to the sa",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I did to prepare this plan (read-only, no edits):** traced the full path — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` sessions → SQLite — and then actually ran the backend locally and drove it through the real flow with curl: signed up a test user, created a watchlist, added a card, logged out, logged back in with a **fresh session** (simulating a different device), and re-fetched. The list and item came back correctly every time, scoped to the sa",
+  "started": "2026-09-19T01:21:13Z",
+  "finished": "2026-09-19T01:21:13Z",
+  "repo": "wealthcx01/arca"
+}
