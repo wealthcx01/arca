@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T00:02:27Z",
+  "ended_at": "2026-09-19T00:02:28Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found from auditing the flow (read-only, no changes made)  I traced the full path end to end:  - **`client/src/pages/WatchlistPage.tsx`** — loads watchlists via `api.get(\"/watchlist\")` on mount, loads the active list's detail via `api.get(\"/watchlist/:id\")`, and add/remove card actions correctly call `api.post`/`api.delete` against the real endpoints. No localStorage or anonymous/local fallback anywhere. - **`client/src/lib/api.ts`** — every request sends `credentials: \"include\"`, so the session cookie is always attached. ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found from auditing the flow (read-only, no changes made)  I traced the full path end to end:  - **`client/src/pages/WatchlistPage.tsx`** — loads watchlists via `api.get(\"/watchlist\")` on mount, loads the active list's detail via `api.get(\"/watchlist/:id\")`, and add/remove card actions correctly call `api.post`/`api.delete` against the real endpoints. No localStorage or anonymous/local fallback anywhere. - **`client/src/lib/api.ts`** — every request sends `credentials: \"include\"`, so the session cookie is always attached. ",
+  "started": "2026-09-19T00:02:27Z",
+  "finished": "2026-09-19T00:02:28Z",
+  "repo": "wealthcx01/arca"
+}
