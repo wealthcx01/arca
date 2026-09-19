@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T01:28:31Z",
+  "ended_at": "2026-09-19T01:28:32Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I did:** read-only audit only (no files touched) — walked the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → CORS/session middleware in `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts`.  ### What the audit actually found  The ticket assumes an obvious client-side wiring bug (local/anonymous fallback, missing user id, stale watchlist_id). I could not confirm that hypothesis — the code doesn't show it:  - `WatchlistPage.tsx` has no localStorage/anonymous fallback (only `Layout.tsx` uses localStorage, ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I did:** read-only audit only (no files touched) — walked the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → CORS/session middleware in `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts`.  ### What the audit actually found  The ticket assumes an obvious client-side wiring bug (local/anonymous fallback, missing user id, stale watchlist_id). I could not confirm that hypothesis — the code doesn't show it:  - `WatchlistPage.tsx` has no localStorage/anonymous fallback (only `Layout.tsx` uses localStorage, ",
+  "started": "2026-09-19T01:28:31Z",
+  "finished": "2026-09-19T01:28:32Z",
+  "repo": "wealthcx01/arca"
+}
