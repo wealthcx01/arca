@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T00:10:38Z",
+  "ended_at": "2026-09-19T00:10:39Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **Investigation done (read-only):** I traced the full chain — `WatchlistPage.tsx` → `api.ts` fetch wrapper → `modules/watchlist/handlers.ts` → auth middleware → `db/auth.ts` → schema/DB. Contrary to the ticket's hypothesis, I did **not** find a broken ownership check, a missing `X-User-Id`, or a local/anonymous storage fallback. Every layer scopes correctly by `user_id`, cookies are sent (`credentials: \"include\"`), and `watchlist_id` is always re-fetched from the server on load rather than cached client-side. A live repro I r",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **Investigation done (read-only):** I traced the full chain — `WatchlistPage.tsx` → `api.ts` fetch wrapper → `modules/watchlist/handlers.ts` → auth middleware → `db/auth.ts` → schema/DB. Contrary to the ticket's hypothesis, I did **not** find a broken ownership check, a missing `X-User-Id`, or a local/anonymous storage fallback. Every layer scopes correctly by `user_id`, cookies are sent (`credentials: \"include\"`), and `watchlist_id` is always re-fetched from the server on load rather than cached client-side. A live repro I r",
+  "started": "2026-09-19T00:10:38Z",
+  "finished": "2026-09-19T00:10:39Z",
+  "repo": "wealthcx01/arca"
+}
