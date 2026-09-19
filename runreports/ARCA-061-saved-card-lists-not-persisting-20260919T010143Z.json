@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T01:01:42Z",
+  "ended_at": "2026-09-19T01:01:43Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I'd do (no code changes made yet):**  1. **Confirm the actual failure mode first.** Before touching anything, I'd reproduce it manually: log in, add cards, log out, log back in (same device, then a second device/browser), and watch the network tab + server logs for the `GET /watchlist` call on reload — is it returning the right rows, empty rows, or erroring? This matters because \"lists vanish\" could mean several different bugs, and I don't want to fix the wrong one.  2. **What I already found by reading the ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **What I'd do (no code changes made yet):**  1. **Confirm the actual failure mode first.** Before touching anything, I'd reproduce it manually: log in, add cards, log out, log back in (same device, then a second device/browser), and watch the network tab + server logs for the `GET /watchlist` call on reload — is it returning the right rows, empty rows, or erroring? This matters because \"lists vanish\" could mean several different bugs, and I don't want to fix the wrong one.  2. **What I already found by reading the ",
+  "started": "2026-09-19T01:01:42Z",
+  "finished": "2026-09-19T01:01:43Z",
+  "repo": "wealthcx01/arca"
+}
