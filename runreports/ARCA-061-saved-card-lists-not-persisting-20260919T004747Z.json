@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-19T00:47:47Z",
+  "ended_at": "2026-09-19T00:47:47Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist not persisting across login  ### What I found by reading the code first (no changes made) I read the full chain before proposing anything, since \"plan\" work on an auth-adjacent bug should start from facts, not guesses:  - **Client (`WatchlistPage.tsx`)**: fetches `/watchlist` on mount, saves via `/watchlist/{id}/items`. No localStorage/sessionStorage/guest-list fallback exists anywhere in this file — it's fully server-driven. - **Server (`modules/watchlist/handlers.ts:12-21`)**: has its own auth middleware requiring a valid `arca_session` cookie, resolving it t",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist not persisting across login  ### What I found by reading the code first (no changes made) I read the full chain before proposing anything, since \"plan\" work on an auth-adjacent bug should start from facts, not guesses:  - **Client (`WatchlistPage.tsx`)**: fetches `/watchlist` on mount, saves via `/watchlist/{id}/items`. No localStorage/sessionStorage/guest-list fallback exists anywhere in this file — it's fully server-driven. - **Server (`modules/watchlist/handlers.ts:12-21`)**: has its own auth middleware requiring a valid `arca_session` cookie, resolving it t",
+  "started": "2026-09-19T00:47:47Z",
+  "finished": "2026-09-19T00:47:47Z",
+  "repo": "wealthcx01/arca"
+}
