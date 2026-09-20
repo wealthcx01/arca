@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-20T00:19:44Z",
+  "ended_at": "2026-09-20T00:19:45Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found from a read-only audit (no code changed)  I walked the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` → `server.ts` cookie/CORS wiring.  Contrary to the ticket's hypothesis, I could **not** find an obvious smoking-gun bug: - Every watchlist route (`GET /`, `GET /:id`, `POST /`, `PUT /:id`, `DELETE /:id`, item add/remove) correctly filters by `eq(watchlists.user_id, userId)`, where `u",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found from a read-only audit (no code changed)  I walked the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` → `server.ts` cookie/CORS wiring.  Contrary to the ticket's hypothesis, I could **not** find an obvious smoking-gun bug: - Every watchlist route (`GET /`, `GET /:id`, `POST /`, `PUT /:id`, `DELETE /:id`, item add/remove) correctly filters by `eq(watchlists.user_id, userId)`, where `u",
+  "started": "2026-09-20T00:19:44Z",
+  "finished": "2026-09-20T00:19:45Z",
+  "repo": "wealthcx01/arca"
+}
