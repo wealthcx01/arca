@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-20T01:36:53Z",
+  "ended_at": "2026-09-20T01:36:54Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  **What I already checked (read-only, no edits):** - `modules/watchlist/handlers.ts` — every route requires a valid session cookie/token, resolves `X-User-Id` from the session, and every query is scoped `WHERE user_id = ?`. This part looks correct. - `db/auth.ts` — login always resolves to the *same* `user.id` for a given email (no re-creation of users on login), sessions map token → stable user_id. Also looks correct. - `client/src/pages/WatchlistPage.tsx` — all reads/writes go through `api.get/post/delete(\"/watchlist...\")`",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  **What I already checked (read-only, no edits):** - `modules/watchlist/handlers.ts` — every route requires a valid session cookie/token, resolves `X-User-Id` from the session, and every query is scoped `WHERE user_id = ?`. This part looks correct. - `db/auth.ts` — login always resolves to the *same* `user.id` for a given email (no re-creation of users on login), sessions map token → stable user_id. Also looks correct. - `client/src/pages/WatchlistPage.tsx` — all reads/writes go through `api.get/post/delete(\"/watchlist...\")`",
+  "started": "2026-09-20T01:36:53Z",
+  "finished": "2026-09-20T01:36:54Z",
+  "repo": "wealthcx01/arca"
+}
