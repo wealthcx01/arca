@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-20T00:36:47Z",
+  "ended_at": "2026-09-20T00:36:47Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting across login  ### What I found from a read-only audit (no code changed)  The watchlist backend actually looks correctly scoped on paper: - `modules/watchlist/schema.ts` has a `user_id` NOT NULL column. - `modules/watchlist/handlers.ts` filters every read/write/delete by `user_id`. - The client (`WatchlistPage.tsx`, `client/src/lib/api.ts`) uses the shared `api` wrapper with `credentials: \"include\"`, so cookies are sent — no localStorage/anonymous fallback exists anywhere in the client.  So this is **not** an obvious \"hardcoded default watchl",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting across login  ### What I found from a read-only audit (no code changed)  The watchlist backend actually looks correctly scoped on paper: - `modules/watchlist/schema.ts` has a `user_id` NOT NULL column. - `modules/watchlist/handlers.ts` filters every read/write/delete by `user_id`. - The client (`WatchlistPage.tsx`, `client/src/lib/api.ts`) uses the shared `api` wrapper with `credentials: \"include\"`, so cookies are sent — no localStorage/anonymous fallback exists anywhere in the client.  So this is **not** an obvious \"hardcoded default watchl",
+  "started": "2026-09-20T00:36:47Z",
+  "finished": "2026-09-20T00:36:47Z",
+  "repo": "wealthcx01/arca"
+}
