@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-20T00:28:00Z",
+  "ended_at": "2026-09-20T00:28:01Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence audit  ### What I found before proposing anything (read-only, no changes made)  I traced the full path and it's cleaner than the ticket assumes:  - **`modules/watchlist/handlers.ts`** — has its own inline auth middleware (separate from the shared `requireAuth` in `db/auth.ts`) that reads the `arca_session` cookie, calls `getSession(token)`, and injects `X-User-Id`. Every single route (list/create/get/update/delete/add-item/remove-item) filters by `eq(watchlists.user_id, userId)` before touching a row. No anonymous/guest fallback exists anywhere i",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence audit  ### What I found before proposing anything (read-only, no changes made)  I traced the full path and it's cleaner than the ticket assumes:  - **`modules/watchlist/handlers.ts`** — has its own inline auth middleware (separate from the shared `requireAuth` in `db/auth.ts`) that reads the `arca_session` cookie, calls `getSession(token)`, and injects `X-User-Id`. Every single route (list/create/get/update/delete/add-item/remove-item) filters by `eq(watchlists.user_id, userId)` before touching a row. No anonymous/guest fallback exists anywhere i",
+  "started": "2026-09-20T00:28:00Z",
+  "finished": "2026-09-20T00:28:01Z",
+  "repo": "wealthcx01/arca"
+}
