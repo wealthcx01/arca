@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-20T00:12:11Z",
+  "ended_at": "2026-09-20T00:12:12Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation findings (read-only, no changes made)  I traced the whole chain before writing this plan, since guessing at a fix on a high-impact ticket is worse than not touching it:  - **Backend (`modules/watchlist/handlers.ts`)**: every route requires a valid `arca_session` cookie, resolves it to a real user via `getSession()` (DB-backed, not in-memory), and scopes every read/write with `WHERE user_id = ...`. This matches the working pattern already used by `modules/portfolio` and `modules/pricing`. - **Client (`WatchlistPage.tsx`, `client/src/lib/api.ts`)**: all calls go through a shared",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation findings (read-only, no changes made)  I traced the whole chain before writing this plan, since guessing at a fix on a high-impact ticket is worse than not touching it:  - **Backend (`modules/watchlist/handlers.ts`)**: every route requires a valid `arca_session` cookie, resolves it to a real user via `getSession()` (DB-backed, not in-memory), and scopes every read/write with `WHERE user_id = ...`. This matches the working pattern already used by `modules/portfolio` and `modules/pricing`. - **Client (`WatchlistPage.tsx`, `client/src/lib/api.ts`)**: all calls go through a shared",
+  "started": "2026-09-20T00:12:11Z",
+  "finished": "2026-09-20T00:12:12Z",
+  "repo": "wealthcx01/arca"
+}
