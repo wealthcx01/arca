@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-20T00:07:36Z",
+  "ended_at": "2026-09-20T00:07:36Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I'd do (investigation phase — no code changes):**  1. **Confirm the symptom is reproducible in the current codebase before touching anything.** I had a sub-agent trace the entire chain — client `WatchlistPage.tsx` → `api.ts` → `modules/watchlist` session middleware → DB — and every link checked out correct:    - Client fetches use `credentials: \"include\"` so the session cookie is always sent; there's no localStorage/guest-id fallback anywhere in the client.    - The watchlist router has its own session-auth middleware ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I'd do (investigation phase — no code changes):**  1. **Confirm the symptom is reproducible in the current codebase before touching anything.** I had a sub-agent trace the entire chain — client `WatchlistPage.tsx` → `api.ts` → `modules/watchlist` session middleware → DB — and every link checked out correct:    - Client fetches use `credentials: \"include\"` so the session cookie is always sent; there's no localStorage/guest-id fallback anywhere in the client.    - The watchlist router has its own session-auth middleware ",
+  "started": "2026-09-20T00:07:36Z",
+  "finished": "2026-09-20T00:07:36Z",
+  "repo": "wealthcx01/arca"
+}
