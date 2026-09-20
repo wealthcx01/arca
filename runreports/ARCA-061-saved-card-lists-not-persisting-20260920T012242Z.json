@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-20T01:22:42Z",
+  "ended_at": "2026-09-20T01:22:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **I have not made any changes.** Per the instructions for this ticket, this is a plan only — no files edited, nothing implemented.  ### What I found from a read-only audit (already done)  I traced the full chain before writing this plan, since a real diagnosis is more useful to you than a generic checklist:  - `client/src/pages/WatchlistPage.tsx` — fetches `/watchlist` and `/watchlist/:id` on mount, saves via `POST /watchlist/:id/items`. No localStorage/sessionStorage fallback for watchlist data anywhere in `clie",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  **I have not made any changes.** Per the instructions for this ticket, this is a plan only — no files edited, nothing implemented.  ### What I found from a read-only audit (already done)  I traced the full chain before writing this plan, since a real diagnosis is more useful to you than a generic checklist:  - `client/src/pages/WatchlistPage.tsx` — fetches `/watchlist` and `/watchlist/:id` on mount, saves via `POST /watchlist/:id/items`. No localStorage/sessionStorage fallback for watchlist data anywhere in `clie",
+  "started": "2026-09-20T01:22:42Z",
+  "finished": "2026-09-20T01:22:42Z",
+  "repo": "wealthcx01/arca"
+}
