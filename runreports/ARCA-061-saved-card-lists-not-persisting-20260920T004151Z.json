@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-20T00:41:51Z",
+  "ended_at": "2026-09-20T00:41:51Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (audit only — no changes made)  ### What I'd verify first (read-only audit) I traced the path already; here's what the code currently shows, which the fix plan builds on:  1. **Client** (`client/src/pages/WatchlistPage.tsx`) — fetches via `api.get(\"/watchlist\")` on mount and `/watchlist/:id` when `activeId` changes. No localStorage/anonymous fallback exists. 2. **API client** (`client/src/lib/api.ts`) — sends `credentials: \"include\"` on every request, so the session cookie is always attached. 3. **Server** (`modules/watchlist/handlers.ts`) — has its own auth middlew",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (audit only — no changes made)  ### What I'd verify first (read-only audit) I traced the path already; here's what the code currently shows, which the fix plan builds on:  1. **Client** (`client/src/pages/WatchlistPage.tsx`) — fetches via `api.get(\"/watchlist\")` on mount and `/watchlist/:id` when `activeId` changes. No localStorage/anonymous fallback exists. 2. **API client** (`client/src/lib/api.ts`) — sends `credentials: \"include\"` on every request, so the session cookie is always attached. 3. **Server** (`modules/watchlist/handlers.ts`) — has its own auth middlew",
+  "started": "2026-09-20T00:41:51Z",
+  "finished": "2026-09-20T00:41:51Z",
+  "repo": "wealthcx01/arca"
+}
