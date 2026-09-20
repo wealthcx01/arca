@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-20T01:18:15Z",
+  "ended_at": "2026-09-20T01:18:15Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  **What I did:** Read-only audit of the full path — no files touched.  ### What I already verified is correct (won't re-litigate these) - `modules/watchlist/handlers.ts`: every route (`list`, `create`, `get`, `update`, `delete`, `add item`, `remove item`) scopes its query by `watchlists.user_id = userId`, sourced from a per-router auth middleware that validates the `arca_session` cookie via `getSession()` and injects `X-User-Id` — same pattern as the portfolio module, just applied at the router level instead of `s",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting to signed-in account  **What I did:** Read-only audit of the full path — no files touched.  ### What I already verified is correct (won't re-litigate these) - `modules/watchlist/handlers.ts`: every route (`list`, `create`, `get`, `update`, `delete`, `add item`, `remove item`) scopes its query by `watchlists.user_id = userId`, sourced from a per-router auth middleware that validates the `arca_session` cookie via `getSession()` and injects `X-User-Id` — same pattern as the portfolio module, just applied at the router level instead of `s",
+  "started": "2026-09-20T01:18:15Z",
+  "finished": "2026-09-20T01:18:15Z",
+  "repo": "wealthcx01/arca"
+}
