@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-21T00:56:36Z",
+  "ended_at": "2026-09-21T00:56:37Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I'd do, in order:**  1. **Re-verify the audit before writing any code.** I had a sub-agent trace the full path (schema → handlers → auth middleware → client fetch → cookie issuance), and it came back clean: every watchlist route requires a valid session, scopes reads/writes to `user_id`, the client always sends `credentials: \"include\"`, and there's no localStorage/anonymous-watchlist fallback in the client. That's the opposite of what the ticket assumes (a wiring bug). Before touching code I'd confirm this isn't a stale/in",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I'd do, in order:**  1. **Re-verify the audit before writing any code.** I had a sub-agent trace the full path (schema → handlers → auth middleware → client fetch → cookie issuance), and it came back clean: every watchlist route requires a valid session, scopes reads/writes to `user_id`, the client always sends `credentials: \"include\"`, and there's no localStorage/anonymous-watchlist fallback in the client. That's the opposite of what the ticket assumes (a wiring bug). Before touching code I'd confirm this isn't a stale/in",
+  "started": "2026-09-21T00:56:36Z",
+  "finished": "2026-09-21T00:56:37Z",
+  "repo": "wealthcx01/arca"
+}
