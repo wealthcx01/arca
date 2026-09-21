@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-21T00:18:01Z",
+  "ended_at": "2026-09-21T00:18:01Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good — no seed/reset script touches the watchlist tables. That rules out one hypothesis. I now have enough grounding to write the plan.  ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found from a read-only audit (no changes made)  I traced the full chain before proposing anything, because the ticket's own hypothesis (client-side/wiring bug) needs to survive contact with the actual code:  - `client/src/lib/api.ts` — every request sends `credentials: \"include\"`; no localStorage/guest fallback anywhere in the watchlist flow. - `client/src/pages/WatchlistPage",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good — no seed/reset script touches the watchlist tables. That rules out one hypothesis. I now have enough grounding to write the plan.  ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found from a read-only audit (no changes made)  I traced the full chain before proposing anything, because the ticket's own hypothesis (client-side/wiring bug) needs to survive contact with the actual code:  - `client/src/lib/api.ts` — every request sends `credentials: \"include\"`; no localStorage/guest fallback anywhere in the watchlist flow. - `client/src/pages/WatchlistPage",
+  "started": "2026-09-21T00:18:01Z",
+  "finished": "2026-09-21T00:18:01Z",
+  "repo": "wealthcx01/arca"
+}
