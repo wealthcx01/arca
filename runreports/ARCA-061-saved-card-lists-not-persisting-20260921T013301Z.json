@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-21T01:33:01Z",
+  "ended_at": "2026-09-21T01:33:01Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I read the full watchlist path end-to-end (read-only, no edits made):  - `client/src/pages/WatchlistPage.tsx` — every load/save goes through `api.*` calls with `credentials: \"include\"`; no localStorage/anonymous fallback, no stale client cache. - `modules/watchlist/handlers.ts` — every route derives `user_id` from the session and scopes every read/write with `WHERE user_id = ?`; ownership is checked before every item add/remove/delete. This is correctly implemented. - `modules/auth/handlers.ts` + `db/auth.ts` — session cookie (`arca_session`, httpOnly, 30-day) r",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary  I read the full watchlist path end-to-end (read-only, no edits made):  - `client/src/pages/WatchlistPage.tsx` — every load/save goes through `api.*` calls with `credentials: \"include\"`; no localStorage/anonymous fallback, no stale client cache. - `modules/watchlist/handlers.ts` — every route derives `user_id` from the session and scopes every read/write with `WHERE user_id = ?`; ownership is checked before every item add/remove/delete. This is correctly implemented. - `modules/auth/handlers.ts` + `db/auth.ts` — session cookie (`arca_session`, httpOnly, 30-day) r",
+  "started": "2026-09-21T01:33:01Z",
+  "finished": "2026-09-21T01:33:01Z",
+  "repo": "wealthcx01/arca"
+}
