@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-21T01:08:40Z",
+  "ended_at": "2026-09-21T01:08:41Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found by reading the code (no changes made) - `modules/watchlist/handlers.ts` — every route requires a valid session, resolves `user_id` from the session cookie/token, and every query (`GET /`, `GET /:id`, item add/remove) filters strictly by `eq(watchlists.user_id, userId)`. No anonymous or local fallback exists in this module. - `db/auth.ts` — `login()` looks up the existing user row and always reuses that user's stable DB `id`; each login just creates a *new session token* pointing at the *same* `user_id`. ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I found by reading the code (no changes made) - `modules/watchlist/handlers.ts` — every route requires a valid session, resolves `user_id` from the session cookie/token, and every query (`GET /`, `GET /:id`, item add/remove) filters strictly by `eq(watchlists.user_id, userId)`. No anonymous or local fallback exists in this module. - `db/auth.ts` — `login()` looks up the existing user row and always reuses that user's stable DB `id`; each login just creates a *new session token* pointing at the *same* `user_id`. ",
+  "started": "2026-09-21T01:08:40Z",
+  "finished": "2026-09-21T01:08:41Z",
+  "repo": "wealthcx01/arca"
+}
