@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-21T00:22:22Z",
+  "ended_at": "2026-09-21T00:22:22Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found (investigation only, no changes made) I traced the full chain: `WatchlistPage.tsx` → API → `modules/watchlist` → DB. The watchlist-specific wiring is actually correct: - Client always calls the server with `credentials: \"include\"` (cookie sent every time) — no localStorage/anonymous fallback anywhere in the watchlist UI. - `modules/watchlist` requires a valid session on every route, derives the user id **server-side** from the session token (never trusts a client-supplied id), and every DB read/write is filtered ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found (investigation only, no changes made) I traced the full chain: `WatchlistPage.tsx` → API → `modules/watchlist` → DB. The watchlist-specific wiring is actually correct: - Client always calls the server with `credentials: \"include\"` (cookie sent every time) — no localStorage/anonymous fallback anywhere in the watchlist UI. - `modules/watchlist` requires a valid session on every route, derives the user id **server-side** from the session token (never trusts a client-supplied id), and every DB read/write is filtered ",
+  "started": "2026-09-21T00:22:22Z",
+  "finished": "2026-09-21T00:22:22Z",
+  "repo": "wealthcx01/arca"
+}
