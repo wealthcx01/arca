@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-21T00:47:49Z",
+  "ended_at": "2026-09-21T00:47:49Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I did (read-only, no edits) I traced the full chain end-to-end before writing this plan: - `client/src/pages/WatchlistPage.tsx` — fetches/saves only via `api.get/post/delete(\"/watchlist...\")`, no localStorage/sessionStorage/anonymous fallback. - `client/src/lib/api.ts` — every request sent with `credentials: \"include\"`, so the session cookie always goes along. - `client/src/hooks/useAuth.tsx` + `App.tsx` — the whole app gates on `/api/auth/me` before rendering any page; `WatchlistPage` can't even mount for a l",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I did (read-only, no edits) I traced the full chain end-to-end before writing this plan: - `client/src/pages/WatchlistPage.tsx` — fetches/saves only via `api.get/post/delete(\"/watchlist...\")`, no localStorage/sessionStorage/anonymous fallback. - `client/src/lib/api.ts` — every request sent with `credentials: \"include\"`, so the session cookie always goes along. - `client/src/hooks/useAuth.tsx` + `App.tsx` — the whole app gates on `/api/auth/me` before rendering any page; `WatchlistPage` can't even mount for a l",
+  "started": "2026-09-21T00:47:49Z",
+  "finished": "2026-09-21T00:47:49Z",
+  "repo": "wealthcx01/arca"
+}
