@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-21T01:12:41Z",
+  "ended_at": "2026-09-21T01:12:41Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (read-only investigation done, no code changed)  ### What I found already (read-only) I read the full path before proposing anything, since this is auth-adjacent: - `client/src/pages/WatchlistPage.tsx` — loads via `api.get(\"/watchlist\")`, no localStorage/sessionStorage fallback, no anonymous state. Looks correct. - `client/src/lib/api.ts` — fetch wrapper sends `credentials: \"include\"` on every call, so cookies go out with every watchlist request. - `modules/watchlist/handlers.ts` — has its own auth middleware (separate from `modules/auth`'s `requireAuth`) that require",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (read-only investigation done, no code changed)  ### What I found already (read-only) I read the full path before proposing anything, since this is auth-adjacent: - `client/src/pages/WatchlistPage.tsx` — loads via `api.get(\"/watchlist\")`, no localStorage/sessionStorage fallback, no anonymous state. Looks correct. - `client/src/lib/api.ts` — fetch wrapper sends `credentials: \"include\"` on every call, so cookies go out with every watchlist request. - `modules/watchlist/handlers.ts` — has its own auth middleware (separate from `modules/auth`'s `requireAuth`) that require",
+  "started": "2026-09-21T01:12:41Z",
+  "finished": "2026-09-21T01:12:41Z",
+  "repo": "wealthcx01/arca"
+}
