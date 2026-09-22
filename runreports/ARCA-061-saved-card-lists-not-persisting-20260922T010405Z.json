@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-22T01:04:05Z",
+  "ended_at": "2026-09-22T01:04:05Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did for this plan:** read-only audit of the full chain — `modules/watchlist/schema.ts`, `handlers.ts`, `server.ts` middleware, `db/auth.ts` (sessions), `client/src/hooks/useAuth.tsx`, `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`. No files edited.  ### What the audit found (surprising) Every piece of the chain I read looks *correctly* wired, contrary to the ticket's working theory: - `watchlists`/`watchlist_items` schema has a mandatory `user_id`/`watchlist_id` FK — no anonymous/default row possible. - Watchl",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did for this plan:** read-only audit of the full chain — `modules/watchlist/schema.ts`, `handlers.ts`, `server.ts` middleware, `db/auth.ts` (sessions), `client/src/hooks/useAuth.tsx`, `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`. No files edited.  ### What the audit found (surprising) Every piece of the chain I read looks *correctly* wired, contrary to the ticket's working theory: - `watchlists`/`watchlist_items` schema has a mandatory `user_id`/`watchlist_id` FK — no anonymous/default row possible. - Watchl",
+  "started": "2026-09-22T01:04:05Z",
+  "finished": "2026-09-22T01:04:05Z",
+  "repo": "wealthcx01/arca"
+}
