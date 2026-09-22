@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-22T00:13:32Z",
+  "ended_at": "2026-09-22T00:13:33Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I found by reading the code (no changes made):**  The backend path is actually solid: `modules/watchlist/handlers.ts` has its own auth middleware that validates the session cookie/token, looks up the user via `getSession()`, and injects `X-User-Id`. Every route (`GET /`, `GET /:id`, `POST /:id/items`, `DELETE /:id/items/:itemId`) filters by `eq(watchlists.user_id, userId)`, so ownership scoping looks correct. `login()` in `db/auth.ts` looks the user up by email and reuses the same `user_id` across sessions — I didn't find a hardcoded",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I found by reading the code (no changes made):**  The backend path is actually solid: `modules/watchlist/handlers.ts` has its own auth middleware that validates the session cookie/token, looks up the user via `getSession()`, and injects `X-User-Id`. Every route (`GET /`, `GET /:id`, `POST /:id/items`, `DELETE /:id/items/:itemId`) filters by `eq(watchlists.user_id, userId)`, so ownership scoping looks correct. `login()` in `db/auth.ts` looks the user up by email and reuses the same `user_id` across sessions — I didn't find a hardcoded",
+  "started": "2026-09-22T00:13:32Z",
+  "finished": "2026-09-22T00:13:33Z",
+  "repo": "wealthcx01/arca"
+}
