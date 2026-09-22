@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-22T01:08:14Z",
+  "ended_at": "2026-09-22T01:08:14Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found before proposing anything I traced the full path first: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → schema. Contrary to the ticket's framing, I did **not** find an obvious wiring bug: - The router (`App.tsx`) already blocks rendering `WatchlistPage` until `useAuth()` resolves and a `user` exists — no race condition on load. - `api.ts` sends `credentials: \"include\"` on every request, so the session cookie is always attached. - The watchlist router requir",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting to signed-in account  ### What I found before proposing anything I traced the full path first: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → schema. Contrary to the ticket's framing, I did **not** find an obvious wiring bug: - The router (`App.tsx`) already blocks rendering `WatchlistPage` until `useAuth()` resolves and a `user` exists — no race condition on load. - `api.ts` sends `credentials: \"include\"` on every request, so the session cookie is always attached. - The watchlist router requir",
+  "started": "2026-09-22T01:08:14Z",
+  "finished": "2026-09-22T01:08:14Z",
+  "repo": "wealthcx01/arca"
+}
