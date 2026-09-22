@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-22T01:27:18Z",
+  "ended_at": "2026-09-22T01:27:18Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found from reading the code (no changes made)  I read the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session handling in `db/auth.ts` / `modules/auth/handlers.ts` → mounting in `server.ts`.  On paper, the wiring is correct: - `watchlists.user_id` is NOT NULL — every list is owned by a real user, no shared/default list exists. - `watchlistRouter.use(\"*\", ...)` requires a valid session cookie or bearer token on **every** watchlist rout",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found from reading the code (no changes made)  I read the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session handling in `db/auth.ts` / `modules/auth/handlers.ts` → mounting in `server.ts`.  On paper, the wiring is correct: - `watchlists.user_id` is NOT NULL — every list is owned by a real user, no shared/default list exists. - `watchlistRouter.use(\"*\", ...)` requires a valid session cookie or bearer token on **every** watchlist rout",
+  "started": "2026-09-22T01:27:18Z",
+  "finished": "2026-09-22T01:27:18Z",
+  "repo": "wealthcx01/arca"
+}
