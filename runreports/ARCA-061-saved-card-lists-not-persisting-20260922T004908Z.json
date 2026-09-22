@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-22T00:49:08Z",
+  "ended_at": "2026-09-22T00:49:08Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **No code changes made.** I read the full chain end-to-end (`WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`) before writing this.  ### What I found (important — contradicts the ticket's working theory)  The ticket assumes this is an obvious client-side wiring bug. I couldn't find one. Every link in the chain looks correctly scoped to the signed-in user:  - `WatchlistPage.tsx` fetches via `api.get(\"/watchlist\")` with no user id in the ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **No code changes made.** I read the full chain end-to-end (`WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts`) before writing this.  ### What I found (important — contradicts the ticket's working theory)  The ticket assumes this is an obvious client-side wiring bug. I couldn't find one. Every link in the chain looks correctly scoped to the signed-in user:  - `WatchlistPage.tsx` fetches via `api.get(\"/watchlist\")` with no user id in the ",
+  "started": "2026-09-22T00:49:08Z",
+  "finished": "2026-09-22T00:49:08Z",
+  "repo": "wealthcx01/arca"
+}
