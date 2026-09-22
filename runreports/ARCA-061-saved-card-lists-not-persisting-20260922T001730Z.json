@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-22T00:17:29Z",
+  "ended_at": "2026-09-22T00:17:30Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found before writing this plan (read-only audit, no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `watchlists`/`watchlist_items` tables, plus the auth stack (`modules/auth/handlers.ts`, `db/auth.ts`).  Contrary to the ticket's hypothesis, everything I read is correctly wired: - Every watchlist route (`GET/POST/PUT/DELETE`) is gated by its own auth middleware, validates the `arca_session` cookie against the `sessions` table, and scopes every query ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found before writing this plan (read-only audit, no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `watchlists`/`watchlist_items` tables, plus the auth stack (`modules/auth/handlers.ts`, `db/auth.ts`).  Contrary to the ticket's hypothesis, everything I read is correctly wired: - Every watchlist route (`GET/POST/PUT/DELETE`) is gated by its own auth middleware, validates the `arca_session` cookie against the `sessions` table, and scopes every query ",
+  "started": "2026-09-22T00:17:29Z",
+  "finished": "2026-09-22T00:17:30Z",
+  "repo": "wealthcx01/arca"
+}
