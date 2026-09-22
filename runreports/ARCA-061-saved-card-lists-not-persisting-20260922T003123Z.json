@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-22T00:31:22Z",
+  "ended_at": "2026-09-22T00:31:23Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Confirms the sub-agent's finding: the load effect has no `user`/`toast`-only dependency tied to auth state, and `AuthProvider.logout()` (`client/src/hooks/useAuth.tsx:42-45`) only clears `user` — it never signals other components to drop their fetched state. I have enough to write the plan. No files were edited.  ---  ## Plan for ARCA-61 — Saved card lists not persisting  **What I'd investigate/confirm first (read-only, ~15 min):** Reproduce manually: log in as user A, add cards to a watchlist, log out, log in as user B on the same tab (no hard refresh), check if user A's list is still sho",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Confirms the sub-agent's finding: the load effect has no `user`/`toast`-only dependency tied to auth state, and `AuthProvider.logout()` (`client/src/hooks/useAuth.tsx:42-45`) only clears `user` — it never signals other components to drop their fetched state. I have enough to write the plan. No files were edited.  ---  ## Plan for ARCA-61 — Saved card lists not persisting  **What I'd investigate/confirm first (read-only, ~15 min):** Reproduce manually: log in as user A, add cards to a watchlist, log out, log in as user B on the same tab (no hard refresh), check if user A's list is still sho",
+  "started": "2026-09-22T00:31:22Z",
+  "finished": "2026-09-22T00:31:23Z",
+  "repo": "wealthcx01/arca"
+}
