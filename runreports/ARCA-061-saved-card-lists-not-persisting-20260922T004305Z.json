@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-22T00:43:05Z",
+  "ended_at": "2026-09-22T00:43:05Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting to signed-in account  **No code changed.** I read the full path read-only: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, and the watchlist/session schema in `db/push.ts`.  ### What I found (static read) Contrary to the ticket's hypothesis, I did **not** find an obvious wiring bug: - Server: every watchlist route (`modules/watchlist/handlers.ts:13-21, 33-265`) requires a valid `arca_session` cookie, resolv",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Saved card lists not persisting to signed-in account  **No code changed.** I read the full path read-only: `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, `db/index.ts`, and the watchlist/session schema in `db/push.ts`.  ### What I found (static read) Contrary to the ticket's hypothesis, I did **not** find an obvious wiring bug: - Server: every watchlist route (`modules/watchlist/handlers.ts:13-21, 33-265`) requires a valid `arca_session` cookie, resolv",
+  "started": "2026-09-22T00:43:05Z",
+  "finished": "2026-09-22T00:43:05Z",
+  "repo": "wealthcx01/arca"
+}
