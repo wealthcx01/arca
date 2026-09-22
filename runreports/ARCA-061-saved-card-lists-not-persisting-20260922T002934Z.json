@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-22T00:29:33Z",
+  "ended_at": "2026-09-22T00:29:34Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **No files were edited.** I did a read-only audit of the full chain first (client `WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, the DB schema) since a plan for a \"vanishing data\" bug is only useful if it's grounded in what's actually there.  ### What I found (important — changes the plan) Every layer I inspected looks correct, not broken: - **Client**: `WatchlistPage.tsx` has no localStorage/sessionStorage, no anonymo",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **No files were edited.** I did a read-only audit of the full chain first (client `WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/handlers.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, the DB schema) since a plan for a \"vanishing data\" bug is only useful if it's grounded in what's actually there.  ### What I found (important — changes the plan) Every layer I inspected looks correct, not broken: - **Client**: `WatchlistPage.tsx` has no localStorage/sessionStorage, no anonymo",
+  "started": "2026-09-22T00:29:33Z",
+  "finished": "2026-09-22T00:29:34Z",
+  "repo": "wealthcx01/arca"
+}
