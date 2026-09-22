@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-22T00:53:46Z",
+  "ended_at": "2026-09-22T00:53:46Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only, below)  **What I found by reading the code (no edits):**  The path that's supposed to be broken actually looks correct on paper: - Watchlist routes require a valid `arca_session` cookie; middleware validates it and injects `X-User-Id` from the session's `user_id`. - All watchlist DB queries are scoped by that `user_id`. - The client (`api.ts`) sends `credentials: \"include\"` on every request — no localStorage/anonymous fallback for watchlist data anywhere in the client. - Login always looks up the existing user by email (unique",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only, below)  **What I found by reading the code (no edits):**  The path that's supposed to be broken actually looks correct on paper: - Watchlist routes require a valid `arca_session` cookie; middleware validates it and injects `X-User-Id` from the session's `user_id`. - All watchlist DB queries are scoped by that `user_id`. - The client (`api.ts`) sends `credentials: \"include\"` on every request — no localStorage/anonymous fallback for watchlist data anywhere in the client. - Login always looks up the existing user by email (unique",
+  "started": "2026-09-22T00:53:46Z",
+  "finished": "2026-09-22T00:53:46Z",
+  "repo": "wealthcx01/arca"
+}
