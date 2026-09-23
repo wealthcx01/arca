@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-23T01:36:51Z",
+  "ended_at": "2026-09-23T01:36:52Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: This confirms a concrete lead. Here's the plan — no code changes made.  ## Plan for ARCA-61: Saved lists not persisting  **What I'd investigate/do, in order:**  1. **Check the cookie `secure` flag first — top suspect.** `modules/auth/handlers.ts:25` and `:51` hardcode `secure: false` on the `arca_session` cookie, with a comment \"Set to true in production.\" If ARCA is served over HTTPS in production (or staging), most browsers still accept a non-`Secure` cookie set over HTTPS, but any reverse proxy/CDN config, cross-subdomain access, or a browser with strict cookie policies can silently dro",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: This confirms a concrete lead. Here's the plan — no code changes made.  ## Plan for ARCA-61: Saved lists not persisting  **What I'd investigate/do, in order:**  1. **Check the cookie `secure` flag first — top suspect.** `modules/auth/handlers.ts:25` and `:51` hardcode `secure: false` on the `arca_session` cookie, with a comment \"Set to true in production.\" If ARCA is served over HTTPS in production (or staging), most browsers still accept a non-`Secure` cookie set over HTTPS, but any reverse proxy/CDN config, cross-subdomain access, or a browser with strict cookie policies can silently dro",
+  "started": "2026-09-23T01:36:51Z",
+  "finished": "2026-09-23T01:36:52Z",
+  "repo": "wealthcx01/arca"
+}
