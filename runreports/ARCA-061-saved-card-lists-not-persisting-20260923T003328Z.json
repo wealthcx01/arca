@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-23T00:33:27Z",
+  "ended_at": "2026-09-23T00:33:28Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I checked first (read-only):** I traced the full path — `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → schema → session/auth code in `db/auth.ts` and `modules/auth/handlers.ts`.  **Finding: the ticket's stated hypothesis doesn't hold up.** There is no localStorage/anonymous fallback, no missing session check, and no wrong/default watchlist_id in the current code: - Every watchlist CRUD handler requires `X-User-Id` and filters/checks ownership by `user_id` (`modules/watchlist/handlers.ts`). - Login re-",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I checked first (read-only):** I traced the full path — `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → schema → session/auth code in `db/auth.ts` and `modules/auth/handlers.ts`.  **Finding: the ticket's stated hypothesis doesn't hold up.** There is no localStorage/anonymous fallback, no missing session check, and no wrong/default watchlist_id in the current code: - Every watchlist CRUD handler requires `X-User-Id` and filters/checks ownership by `user_id` (`modules/watchlist/handlers.ts`). - Login re-",
+  "started": "2026-09-23T00:33:27Z",
+  "finished": "2026-09-23T00:33:28Z",
+  "repo": "wealthcx01/arca"
+}
