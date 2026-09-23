@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-23T00:04:39Z",
+  "ended_at": "2026-09-23T00:04:39Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I did:** Read-only audit of the full chain — no files touched, no code written. I traced `WatchlistPage.tsx` → `api.ts` → CORS/auth middleware in `server.ts` → `modules/watchlist/handlers.ts` → schema/DB, plus `db/auth.ts` (login/session) and `useAuth.tsx`/`App.tsx` (routing on login/logout).  **What I found:** The chain as it exists on `master` today looks correctly wired — this is worth flagging because it changes where the bug probably lives: - Login always resolves to the *same* `user_id` for a given email (no dupl",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  **What I did:** Read-only audit of the full chain — no files touched, no code written. I traced `WatchlistPage.tsx` → `api.ts` → CORS/auth middleware in `server.ts` → `modules/watchlist/handlers.ts` → schema/DB, plus `db/auth.ts` (login/session) and `useAuth.tsx`/`App.tsx` (routing on login/logout).  **What I found:** The chain as it exists on `master` today looks correctly wired — this is worth flagging because it changes where the bug probably lives: - Login always resolves to the *same* `user_id` for a given email (no dupl",
+  "started": "2026-09-23T00:04:39Z",
+  "finished": "2026-09-23T00:04:39Z",
+  "repo": "wealthcx01/arca"
+}
