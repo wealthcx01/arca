@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-23T00:46:54Z",
+  "ended_at": "2026-09-23T00:46:54Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good — the backend scoping is solid (its own middleware validates the session cookie, sets `X-User-Id`, and every query filters by `watchlists.user_id`). The bug is client-side state going stale across login/logout, not a backend/auth gap. Here's the plan.  ## Plan: ARCA-61 — Watchlist persistence bug  **Diagnosis (confirmed by reading the code, not guessing):** - `modules/watchlist/handlers.ts:13-21` — the watchlist router has its own middleware that validates the session cookie and sets `X-User-Id` per request; every handler (`handlers.ts:34,63,95,140,166,189,240`) scopes its query by ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good — the backend scoping is solid (its own middleware validates the session cookie, sets `X-User-Id`, and every query filters by `watchlists.user_id`). The bug is client-side state going stale across login/logout, not a backend/auth gap. Here's the plan.  ## Plan: ARCA-61 — Watchlist persistence bug  **Diagnosis (confirmed by reading the code, not guessing):** - `modules/watchlist/handlers.ts:13-21` — the watchlist router has its own middleware that validates the session cookie and sets `X-User-Id` per request; every handler (`handlers.ts:34,63,95,140,166,189,240`) scopes its query by ",
+  "started": "2026-09-23T00:46:54Z",
+  "finished": "2026-09-23T00:46:54Z",
+  "repo": "wealthcx01/arca"
+}
