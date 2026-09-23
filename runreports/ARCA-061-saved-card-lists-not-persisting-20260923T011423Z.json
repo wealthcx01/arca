@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-23T01:14:22Z",
+  "ended_at": "2026-09-23T01:14:23Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I already checked (read-only, no edits) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `modules/auth/handlers.ts` → schema. Two \"obvious\" theories did **not** hold up, so I want to flag that up front rather than let a wrong hypothesis drive the fix:  - **Not a header-propagation bug.** The watchlist middleware sets `X-User-Id` via `c.req.raw.headers.set()` and reads it back via `c.req.header()`. I checked the installed Hono version's source (`node_",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I already checked (read-only, no edits) I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` / `modules/auth/handlers.ts` → schema. Two \"obvious\" theories did **not** hold up, so I want to flag that up front rather than let a wrong hypothesis drive the fix:  - **Not a header-propagation bug.** The watchlist middleware sets `X-User-Id` via `c.req.raw.headers.set()` and reads it back via `c.req.header()`. I checked the installed Hono version's source (`node_",
+  "started": "2026-09-23T01:14:22Z",
+  "finished": "2026-09-23T01:14:23Z",
+  "repo": "wealthcx01/arca"
+}
