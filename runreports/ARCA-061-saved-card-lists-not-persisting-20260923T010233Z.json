@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-23T01:02:33Z",
+  "ended_at": "2026-09-23T01:02:33Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I did (read-only) Traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth chain `useAuth.tsx` → `App.tsx` Router → `modules/auth/handlers.ts` → `db/auth.ts`. I did not change anything.  ### What I found Contrary to the ticket's assumption that this is an obvious wiring bug, everything I could verify statically is actually correct: - Backend: every watchlist route requires a valid `arca_session` cookie, resolves i",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  ### What I did (read-only) Traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth chain `useAuth.tsx` → `App.tsx` Router → `modules/auth/handlers.ts` → `db/auth.ts`. I did not change anything.  ### What I found Contrary to the ticket's assumption that this is an obvious wiring bug, everything I could verify statically is actually correct: - Backend: every watchlist route requires a valid `arca_session` cookie, resolves i",
+  "started": "2026-09-23T01:02:33Z",
+  "finished": "2026-09-23T01:02:33Z",
+  "repo": "wealthcx01/arca"
+}
