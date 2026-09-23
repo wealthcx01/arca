@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-23T01:10:06Z",
+  "ended_at": "2026-09-23T01:10:07Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I'd do first: get a real repro before touching anything I read through the full chain end-to-end (schema, watchlist handlers, auth session logic, `WatchlistPage.tsx`, the API client) without changing anything. Notable: **on paper, this path already looks correct.**  - `watchlists.user_id` is a stable, permanent foreign key. Login always resolves to the *same* `users.id` for a given email (unique constraint, no create-on-login fallback, no guest/anonymous user path). - Every watchlist route (list/create/get/add-item/remove-item/d",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I'd do first: get a real repro before touching anything I read through the full chain end-to-end (schema, watchlist handlers, auth session logic, `WatchlistPage.tsx`, the API client) without changing anything. Notable: **on paper, this path already looks correct.**  - `watchlists.user_id` is a stable, permanent foreign key. Login always resolves to the *same* `users.id` for a given email (unique constraint, no create-on-login fallback, no guest/anonymous user path). - Every watchlist route (list/create/get/add-item/remove-item/d",
+  "started": "2026-09-23T01:10:06Z",
+  "finished": "2026-09-23T01:10:07Z",
+  "repo": "wealthcx01/arca"
+}
