@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-23T00:17:41Z",
+  "ended_at": "2026-09-23T00:17:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan — ARCA-61: Saved watchlists not persisting to signed-in account  ### What I did to prepare this plan Read-only audit of the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `client/src/hooks/useAuth.tsx` + `client/src/App.tsx` (routing) → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` (session/login). No files were edited.  ### What the audit found Contrary to the ticket's hypothesis, I could **not** find a client-side fallback, missing-auth-check, or wrong-watchlist-id bug in the current code: - `App.tsx` gates al",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan — ARCA-61: Saved watchlists not persisting to signed-in account  ### What I did to prepare this plan Read-only audit of the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `client/src/hooks/useAuth.tsx` + `client/src/App.tsx` (routing) → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` (session/login). No files were edited.  ### What the audit found Contrary to the ticket's hypothesis, I could **not** find a client-side fallback, missing-auth-check, or wrong-watchlist-id bug in the current code: - `App.tsx` gates al",
+  "started": "2026-09-23T00:17:41Z",
+  "finished": "2026-09-23T00:17:42Z",
+  "repo": "wealthcx01/arca"
+}
