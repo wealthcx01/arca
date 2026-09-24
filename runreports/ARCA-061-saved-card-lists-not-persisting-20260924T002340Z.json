@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T00:23:39Z",
+  "ended_at": "2026-09-24T00:23:40Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only — no code changed)  I traced the whole path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → Vite proxy → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  What I found is that the wiring is actually correct everywhere I looked: - Watchlists and items are scoped by `user_id` in the schema, and every handler (get/post/put/delete, including item add/remove) re-checks `eq(watchlists.user_id, userId)` before touching a row — no cross-account leakage, no default/guest id. - The auth middleware on the watchlist router requires a valid `arca_s",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only — no code changed)  I traced the whole path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → Vite proxy → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  What I found is that the wiring is actually correct everywhere I looked: - Watchlists and items are scoped by `user_id` in the schema, and every handler (get/post/put/delete, including item add/remove) re-checks `eq(watchlists.user_id, userId)` before touching a row — no cross-account leakage, no default/guest id. - The auth middleware on the watchlist router requires a valid `arca_s",
+  "started": "2026-09-24T00:23:39Z",
+  "finished": "2026-09-24T00:23:40Z",
+  "repo": "wealthcx01/arca"
+}
