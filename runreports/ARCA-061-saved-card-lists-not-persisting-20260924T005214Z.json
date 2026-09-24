@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T00:52:13Z",
+  "ended_at": "2026-09-24T00:52:14Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **Investigation done so far (read-only):** I traced the full path — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `/api/watchlist` route → `modules/watchlist/handlers.ts` auth middleware → `db/auth.ts` session lookup → `watchlists.user_id` in schema. Every layer is correctly ownership-scoped:  - Client sends `credentials: \"include\"` on every request, no localStorage/anonymous fallback for watchlist data. - The watchlist router has its own session-verifying middleware that derives `X-User-Id` from the verified `",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **Investigation done so far (read-only):** I traced the full path — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `/api/watchlist` route → `modules/watchlist/handlers.ts` auth middleware → `db/auth.ts` session lookup → `watchlists.user_id` in schema. Every layer is correctly ownership-scoped:  - Client sends `credentials: \"include\"` on every request, no localStorage/anonymous fallback for watchlist data. - The watchlist router has its own session-verifying middleware that derives `X-User-Id` from the verified `",
+  "started": "2026-09-24T00:52:13Z",
+  "finished": "2026-09-24T00:52:14Z",
+  "repo": "wealthcx01/arca"
+}
