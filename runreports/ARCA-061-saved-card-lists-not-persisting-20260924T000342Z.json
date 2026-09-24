@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T00:03:42Z",
+  "ended_at": "2026-09-24T00:03:42Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did:** Read-only trace of the whole watchlist path — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth session code in `db/auth.ts`. No files were edited.  ### What the code actually shows - Every watchlist DB query (`handlers.ts`) is correctly filtered by `eq(watchlists.user_id, userId)`. There's no anonymous/default watchlist, no ownership bug, no cross-user leak on the server. - The session cookie (`arca_session`) is persistent (30-day `maxAg",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did:** Read-only trace of the whole watchlist path — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the auth session code in `db/auth.ts`. No files were edited.  ### What the code actually shows - Every watchlist DB query (`handlers.ts`) is correctly filtered by `eq(watchlists.user_id, userId)`. There's no anonymous/default watchlist, no ownership bug, no cross-user leak on the server. - The session cookie (`arca_session`) is persistent (30-day `maxAg",
+  "started": "2026-09-24T00:03:42Z",
+  "finished": "2026-09-24T00:03:42Z",
+  "repo": "wealthcx01/arca"
+}
