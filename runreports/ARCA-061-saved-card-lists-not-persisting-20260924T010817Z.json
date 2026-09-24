@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T01:08:16Z",
+  "ended_at": "2026-09-24T01:08:17Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found from a read-only audit (no changes made)  I traced the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite — and it is, on paper, wired correctly:  - **Backend:** every watchlist route requires a valid `arca_session` cookie, resolves it via `getSession()`, and scopes all reads/writes by `user_id`. No anonymous/default fallback exists. - **Frontend:** `WatchlistPage.tsx` only ever reads/writes via the API (`api.get(\"/watchlist\")`, etc.). There is",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  ### What I found from a read-only audit (no changes made)  I traced the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite — and it is, on paper, wired correctly:  - **Backend:** every watchlist route requires a valid `arca_session` cookie, resolves it via `getSession()`, and scopes all reads/writes by `user_id`. No anonymous/default fallback exists. - **Frontend:** `WatchlistPage.tsx` only ever reads/writes via the API (`api.get(\"/watchlist\")`, etc.). There is",
+  "started": "2026-09-24T01:08:16Z",
+  "finished": "2026-09-24T01:08:17Z",
+  "repo": "wealthcx01/arca"
+}
