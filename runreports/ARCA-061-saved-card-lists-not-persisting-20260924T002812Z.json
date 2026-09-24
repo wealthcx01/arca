@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T00:28:12Z",
+  "ended_at": "2026-09-24T00:28:12Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **No code changes made — this is a plan only, per the high-impact/auth flag on this ticket.**  ### What I did to prepare this plan Read the full chain end-to-end (read-only): `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and `server.ts`'s middleware/CORS wiring.  ### What I found Contrary to the ticket's suspicion, **the code I can see is already correct**: - `watchlists.user_id` is a real column, filt",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting across login  **No code changes made — this is a plan only, per the high-impact/auth flag on this ticket.**  ### What I did to prepare this plan Read the full chain end-to-end (read-only): `client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and `server.ts`'s middleware/CORS wiring.  ### What I found Contrary to the ticket's suspicion, **the code I can see is already correct**: - `watchlists.user_id` is a real column, filt",
+  "started": "2026-09-24T00:28:12Z",
+  "finished": "2026-09-24T00:28:12Z",
+  "repo": "wealthcx01/arca"
+}
