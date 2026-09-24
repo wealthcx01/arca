@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T01:37:55Z",
+  "ended_at": "2026-09-24T01:37:56Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting to signed-in account  ### What I found from a read-only audit (no changes made)  The backend data model and auth enforcement look structurally sound, which matters because it narrows where the bug can be:  - `modules/watchlist/schema.ts` — watchlists are owned by a real `user_id` column (not device/session-scoped), items hang off `watchlist_id`. No guest/anonymous fallback IDs anywhere in the codebase. - `modules/watchlist/handlers.ts` — every route (`GET/POST /watchlist`, item add/remove) runs through auth middleware that requires a valid",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting to signed-in account  ### What I found from a read-only audit (no changes made)  The backend data model and auth enforcement look structurally sound, which matters because it narrows where the bug can be:  - `modules/watchlist/schema.ts` — watchlists are owned by a real `user_id` column (not device/session-scoped), items hang off `watchlist_id`. No guest/anonymous fallback IDs anywhere in the codebase. - `modules/watchlist/handlers.ts` — every route (`GET/POST /watchlist`, item add/remove) runs through auth middleware that requires a valid",
+  "started": "2026-09-24T01:37:55Z",
+  "finished": "2026-09-24T01:37:56Z",
+  "repo": "wealthcx01/arca"
+}
