@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T00:46:22Z",
+  "ended_at": "2026-09-24T00:46:22Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I'd do (audit, in order):** 1. Read the full chain again live, not just statically: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` auth middleware → `modules/watchlist/schema.ts` (`user_id` scoping) → `db/auth.ts` session/login logic → `server.ts` mount order. 2. Reproduce the bug manually: sign in, add cards, log out, log back in (same browser, then a second browser/incognito to simulate \"different device\"), and watch the actual network requests/cookies/response bodies �",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I'd do (audit, in order):** 1. Read the full chain again live, not just statically: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` auth middleware → `modules/watchlist/schema.ts` (`user_id` scoping) → `db/auth.ts` session/login logic → `server.ts` mount order. 2. Reproduce the bug manually: sign in, add cards, log out, log back in (same browser, then a second browser/incognito to simulate \"different device\"), and watch the actual network requests/cookies/response bodies �",
+  "started": "2026-09-24T00:46:22Z",
+  "finished": "2026-09-24T00:46:22Z",
+  "repo": "wealthcx01/arca"
+}
