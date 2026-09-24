@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T00:31:33Z",
+  "ended_at": "2026-09-24T00:31:33Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did:** read-only audit of the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → Vite proxy → `server.ts` → `modules/watchlist/handlers.ts` → auth check → Drizzle queries → `schema.ts`. No files touched.  **Finding, which changes the shape of this ticket:** the code, as it currently stands, looks correct. None of the bug patterns the ticket names as \"prime suspects\" are present: - No localStorage/sessionStorage/anonymous fallback for watchlist data. - Client always sends `credentials: \"include\"`, and al",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I did:** read-only audit of the full chain — `WatchlistPage.tsx` → `client/src/lib/api.ts` → Vite proxy → `server.ts` → `modules/watchlist/handlers.ts` → auth check → Drizzle queries → `schema.ts`. No files touched.  **Finding, which changes the shape of this ticket:** the code, as it currently stands, looks correct. None of the bug patterns the ticket names as \"prime suspects\" are present: - No localStorage/sessionStorage/anonymous fallback for watchlist data. - Client always sends `credentials: \"include\"`, and al",
+  "started": "2026-09-24T00:31:33Z",
+  "finished": "2026-09-24T00:31:33Z",
+  "repo": "wealthcx01/arca"
+}
