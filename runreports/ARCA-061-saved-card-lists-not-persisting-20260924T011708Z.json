@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T01:17:08Z",
+  "ended_at": "2026-09-24T01:17:08Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I found (read-only audit, no code touched):** The watchlist read/write path itself is actually built correctly — every route is scoped by the signed-in user's ID, there's no localStorage/anonymous fallback, and no hardcoded/default list. The real bug is one level up, in **login/signup email matching**, which is case-sensitive:  - Sign-up and login both compare email with a plain `=` lookup, and the `users.email` column's `UNIQUE` constraint is also case-sensitive (SQLite default). - So `Jane@Gmail.com` and `jane@gmail.com` are treate",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved lists not persisting  **What I found (read-only audit, no code touched):** The watchlist read/write path itself is actually built correctly — every route is scoped by the signed-in user's ID, there's no localStorage/anonymous fallback, and no hardcoded/default list. The real bug is one level up, in **login/signup email matching**, which is case-sensitive:  - Sign-up and login both compare email with a plain `=` lookup, and the `users.email` column's `UNIQUE` constraint is also case-sensitive (SQLite default). - So `Jane@Gmail.com` and `jane@gmail.com` are treate",
+  "started": "2026-09-24T01:17:08Z",
+  "finished": "2026-09-24T01:17:08Z",
+  "repo": "wealthcx01/arca"
+}
