@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T01:27:32Z",
+  "ended_at": "2026-09-24T01:27:32Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only)  **What I found by reading the code first** (client `WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/handlers.ts` + `schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`):  The chain is: fetch uses `credentials: \"include\"` → session cookie `arca_session` → `getSession(token)` joins to the user row → watchlist router's own auth middleware sets `X-User-Id` → every handler filters by `eq(watchlists.user_id, userId)`. Login always resolves the *same* user row by email (no dupli",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (no code changes made — investigation only)  **What I found by reading the code first** (client `WatchlistPage.tsx`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `modules/watchlist/handlers.ts` + `schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`):  The chain is: fetch uses `credentials: \"include\"` → session cookie `arca_session` → `getSession(token)` joins to the user row → watchlist router's own auth middleware sets `X-User-Id` → every handler filters by `eq(watchlists.user_id, userId)`. Login always resolves the *same* user row by email (no dupli",
+  "started": "2026-09-24T01:27:32Z",
+  "finished": "2026-09-24T01:27:32Z",
+  "repo": "wealthcx01/arca"
+}
