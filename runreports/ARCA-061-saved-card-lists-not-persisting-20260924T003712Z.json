@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T00:37:11Z",
+  "ended_at": "2026-09-24T00:37:12Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found (read-only investigation, no files changed):**  The watchlist backend itself is fine. `modules/watchlist` correctly scopes every read/write by `user_id`, has its own session check, and the client (`WatchlistPage.tsx`) has no localStorage/anonymous fallback — it always fetches fresh from the server on mount, and fully unmounts on logout. So this isn't the wiring bug the ticket assumed.  The real root cause looks like it's one level up, in auth (`db/auth.ts` + `db/push.ts`): - `signUp` and `login` both match on `email = ?`",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found (read-only investigation, no files changed):**  The watchlist backend itself is fine. `modules/watchlist` correctly scopes every read/write by `user_id`, has its own session check, and the client (`WatchlistPage.tsx`) has no localStorage/anonymous fallback — it always fetches fresh from the server on mount, and fully unmounts on logout. So this isn't the wiring bug the ticket assumed.  The real root cause looks like it's one level up, in auth (`db/auth.ts` + `db/push.ts`): - `signUp` and `login` both match on `email = ?`",
+  "started": "2026-09-24T00:37:11Z",
+  "finished": "2026-09-24T00:37:12Z",
+  "repo": "wealthcx01/arca"
+}
