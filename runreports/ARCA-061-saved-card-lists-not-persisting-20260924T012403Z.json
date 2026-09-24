@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T01:24:02Z",
+  "ended_at": "2026-09-24T01:24:03Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (read-only audit complete — no code changed)  ### What I found I traced the full chain: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts`. The watchlist backend itself is correctly scoped — every GET/POST/PUT/DELETE handler filters by `watchlists.user_id` derived from the session, there's no anonymous/localStorage fallback on the client, and cookies are sent with `credentials: \"include\"` on every request. So the ticket's own hypothesis (\"client wiring bug\") doesn't hold up — I didn't find a wiring defect in the watchlist path.  What",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 (read-only audit complete — no code changed)  ### What I found I traced the full chain: `WatchlistPage.tsx` → `api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts`. The watchlist backend itself is correctly scoped — every GET/POST/PUT/DELETE handler filters by `watchlists.user_id` derived from the session, there's no anonymous/localStorage fallback on the client, and cookies are sent with `credentials: \"include\"` on every request. So the ticket's own hypothesis (\"client wiring bug\") doesn't hold up — I didn't find a wiring defect in the watchlist path.  What",
+  "started": "2026-09-24T01:24:02Z",
+  "finished": "2026-09-24T01:24:03Z",
+  "repo": "wealthcx01/arca"
+}
