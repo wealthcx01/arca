@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T01:12:06Z",
+  "ended_at": "2026-09-24T01:12:07Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61: Saved card lists not persisting  **What the investigation found:** I read through the full chain (client `WatchlistPage.tsx` → `api.ts` → auth session hook → `modules/watchlist` handlers/schema → server route mounting) and, on static reading, the code is actually correct: cookies are sent with `credentials: \"include\"`, the app blocks rendering until session resolves, the watchlist router has its own auth middleware requiring a valid session and injecting `X-User-Id`, and every watchlist query is scoped by that `user_id`. No localStorage fallback, no anonymous defau",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61: Saved card lists not persisting  **What the investigation found:** I read through the full chain (client `WatchlistPage.tsx` → `api.ts` → auth session hook → `modules/watchlist` handlers/schema → server route mounting) and, on static reading, the code is actually correct: cookies are sent with `credentials: \"include\"`, the app blocks rendering until session resolves, the watchlist router has its own auth middleware requiring a valid session and injecting `X-User-Id`, and every watchlist query is scoped by that `user_id`. No localStorage fallback, no anonymous defau",
+  "started": "2026-09-24T01:12:06Z",
+  "finished": "2026-09-24T01:12:07Z",
+  "repo": "wealthcx01/arca"
+}
