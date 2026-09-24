@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-24T00:44:15Z",
+  "ended_at": "2026-09-24T00:44:16Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence  **What I found by reading the code (no changes made):**  The chain the ticket suspects is broken actually looks correctly wired in the current codebase: - `client/src/lib/api.ts` sends `credentials: \"include\"` on every request — no localStorage/anonymous fallback anywhere in the watchlist client code (`WatchlistPage.tsx`). - `modules/watchlist/handlers.ts` has its own auth middleware requiring a valid session and injecting `X-User-Id`; every query (list, create, read, update, delete, add/remove item) filters `WHERE user_id = ?`. - `db/auth.ts`: ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence  **What I found by reading the code (no changes made):**  The chain the ticket suspects is broken actually looks correctly wired in the current codebase: - `client/src/lib/api.ts` sends `credentials: \"include\"` on every request — no localStorage/anonymous fallback anywhere in the watchlist client code (`WatchlistPage.tsx`). - `modules/watchlist/handlers.ts` has its own auth middleware requiring a valid session and injecting `X-User-Id`; every query (list, create, read, update, delete, add/remove item) filters `WHERE user_id = ?`. - `db/auth.ts`: ",
+  "started": "2026-09-24T00:44:15Z",
+  "finished": "2026-09-24T00:44:16Z",
+  "repo": "wealthcx01/arca"
+}
