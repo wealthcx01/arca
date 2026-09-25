@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-25T01:36:34Z",
+  "ended_at": "2026-09-25T01:36:34Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found before proposing anything:** I had an agent trace the whole path (client `WatchlistPage.tsx` → `api.ts` → auth middleware → `modules/watchlist` handlers → schema) read-only. The backend/client wiring is actually correct: watchlists are scoped by a required `user_id` column, every handler filters by the authenticated user via `X-User-Id` (injected from the session cookie), the client always sends `credentials: \"include\"`, and there's no localStorage/anonymous fallback anywhere in the watchlist code. So this is likel",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **What I found before proposing anything:** I had an agent trace the whole path (client `WatchlistPage.tsx` → `api.ts` → auth middleware → `modules/watchlist` handlers → schema) read-only. The backend/client wiring is actually correct: watchlists are scoped by a required `user_id` column, every handler filters by the authenticated user via `X-User-Id` (injected from the session cookie), the client always sends `credentials: \"include\"`, and there's no localStorage/anonymous fallback anywhere in the watchlist code. So this is likel",
+  "started": "2026-09-25T01:36:34Z",
+  "finished": "2026-09-25T01:36:34Z",
+  "repo": "wealthcx01/arca"
+}
