@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-25T00:03:58Z",
+  "ended_at": "2026-09-25T00:03:58Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  ### What I found before proposing anything I read the full chain read-only (no edits made): `modules/watchlist/schema.ts`, `handlers.ts`, `server.ts` middleware wiring, `db/auth.ts`, `modules/auth/handlers.ts`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/pages/WatchlistPage.tsx`, `client/src/components/Layout.tsx`.  Contrary to the ticket's working theory, this path currently looks correctly wired end-to-end: - `watchlists.user_id` is `NOT NULL`; every read/write handler filters by `eq(watchlists.user_id, u",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist not persisting across login  ### What I found before proposing anything I read the full chain read-only (no edits made): `modules/watchlist/schema.ts`, `handlers.ts`, `server.ts` middleware wiring, `db/auth.ts`, `modules/auth/handlers.ts`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/pages/WatchlistPage.tsx`, `client/src/components/Layout.tsx`.  Contrary to the ticket's working theory, this path currently looks correctly wired end-to-end: - `watchlists.user_id` is `NOT NULL`; every read/write handler filters by `eq(watchlists.user_id, u",
+  "started": "2026-09-25T00:03:58Z",
+  "finished": "2026-09-25T00:03:58Z",
+  "repo": "wealthcx01/arca"
+}
