@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-25T00:33:41Z",
+  "ended_at": "2026-09-25T00:33:41Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan — ARCA-61: Saved watchlists not persisting across login  **No code was changed.** I read through the full chain end-to-end (read-only) to scope the actual fix before anyone touches auth-adjacent code. Summary of what I found, then what I'd propose doing next.  ### What I found (audit, no edits) Traced: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` / DB, plus the auth chain (`modules/auth/handlers.ts`, `db/auth.ts`, `useAuth.tsx`, `App.tsx`).  Everything I inspected looks correctly wired today: - `watchlists` tabl",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan — ARCA-61: Saved watchlists not persisting across login  **No code was changed.** I read through the full chain end-to-end (read-only) to scope the actual fix before anyone touches auth-adjacent code. Summary of what I found, then what I'd propose doing next.  ### What I found (audit, no edits) Traced: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` / DB, plus the auth chain (`modules/auth/handlers.ts`, `db/auth.ts`, `useAuth.tsx`, `App.tsx`).  Everything I inspected looks correctly wired today: - `watchlists` tabl",
+  "started": "2026-09-25T00:33:41Z",
+  "finished": "2026-09-25T00:33:41Z",
+  "repo": "wealthcx01/arca"
+}
