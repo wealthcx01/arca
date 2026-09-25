@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-25T00:42:34Z",
+  "ended_at": "2026-09-25T00:42:34Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I did (read-only) Traced the full path end to end without editing anything: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/auth/handlers.ts` / `db/auth.ts` → SQLite (`watchlists`, `watchlist_items`, `sessions`, `users` tables).  ### What I found Contrary to the ticket's working theory, **every layer I inspected is correctly wired**, not obviously broken: - `WatchlistPage.tsx` has no localStorage/anonymous fallback — it always calls the real API (`GET /watchli",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I did (read-only) Traced the full path end to end without editing anything: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/auth/handlers.ts` / `db/auth.ts` → SQLite (`watchlists`, `watchlist_items`, `sessions`, `users` tables).  ### What I found Contrary to the ticket's working theory, **every layer I inspected is correctly wired**, not obviously broken: - `WatchlistPage.tsx` has no localStorage/anonymous fallback — it always calls the real API (`GET /watchli",
+  "started": "2026-09-25T00:42:34Z",
+  "finished": "2026-09-25T00:42:34Z",
+  "repo": "wealthcx01/arca"
+}
