@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-25T00:12:58Z",
+  "ended_at": "2026-09-25T00:12:58Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  What I found is, honestly, **surprisingly clean**: - `api.ts` sends `credentials: \"include\"` on every request — cookies go out on watchlist calls. - `modules/watchlist/handlers.ts` has its own auth middleware (mirrors the pattern used for `/api/portfolio/*` in `server.ts`) that requires a valid `arca_session` cookie, resolves it to a user via `getSession()`, and injects `X-User-Id`. Eve",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Investigation summary (read-only, no changes made)  I traced the full path: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  What I found is, honestly, **surprisingly clean**: - `api.ts` sends `credentials: \"include\"` on every request — cookies go out on watchlist calls. - `modules/watchlist/handlers.ts` has its own auth middleware (mirrors the pattern used for `/api/portfolio/*` in `server.ts`) that requires a valid `arca_session` cookie, resolves it to a user via `getSession()`, and injects `X-User-Id`. Eve",
+  "started": "2026-09-25T00:12:58Z",
+  "finished": "2026-09-25T00:12:58Z",
+  "repo": "wealthcx01/arca"
+}
