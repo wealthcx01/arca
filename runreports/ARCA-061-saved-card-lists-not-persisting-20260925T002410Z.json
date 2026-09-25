@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-25T00:24:09Z",
+  "ended_at": "2026-09-25T00:24:10Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from a read-only audit (no changes made)  I traced the full chain end to end and it is, surprisingly, wired correctly everywhere I checked:  - **Client** (`client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`): fetches `/watchlist` and `/watchlist/:id` from the real API, sends `credentials: \"include\"` on every call, and has no localStorage/sessionStorage fallback for watchlist data (only the theme toggle uses localStorage — unrelated). - **Auth → API wiring** (`modules/watchlist/handlers.ts`): every route is ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I found from a read-only audit (no changes made)  I traced the full chain end to end and it is, surprisingly, wired correctly everywhere I checked:  - **Client** (`client/src/pages/WatchlistPage.tsx`, `client/src/lib/api.ts`): fetches `/watchlist` and `/watchlist/:id` from the real API, sends `credentials: \"include\"` on every call, and has no localStorage/sessionStorage fallback for watchlist data (only the theme toggle uses localStorage — unrelated). - **Auth → API wiring** (`modules/watchlist/handlers.ts`): every route is ",
+  "started": "2026-09-25T00:24:09Z",
+  "finished": "2026-09-25T00:24:10Z",
+  "repo": "wealthcx01/arca"
+}
