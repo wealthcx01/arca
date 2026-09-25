@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-25T00:52:47Z",
+  "ended_at": "2026-09-25T00:52:47Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan — ARCA-61: Saved watchlists not persisting to signed-in account  **No code changes made.** Below is what I read (client + server + DB layer) and what I'd do next.  ### What I already verified (read-only) I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` (sessions).  - **Server-side ownership scoping is correct.** Every watchlist query filters by `user_id` derived from the session token (`getSession(token)` → `c.req.raw.headers.set(\"X-User-Id\", user.id)`), not from anything ",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan — ARCA-61: Saved watchlists not persisting to signed-in account  **No code changes made.** Below is what I read (client + server + DB layer) and what I'd do next.  ### What I already verified (read-only) I traced the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → `db/auth.ts` (sessions).  - **Server-side ownership scoping is correct.** Every watchlist query filters by `user_id` derived from the session token (`getSession(token)` → `c.req.raw.headers.set(\"X-User-Id\", user.id)`), not from anything ",
+  "started": "2026-09-25T00:52:47Z",
+  "finished": "2026-09-25T00:52:47Z",
+  "repo": "wealthcx01/arca"
+}
