@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-26T01:38:31Z",
+  "ended_at": "2026-09-26T01:38:32Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist persistence bug  **What I did before writing this plan:** read-only audit of the full chain (no edits) — `WatchlistPage.tsx`, `useAuth.tsx`, `App.tsx` routing, `api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and `server.ts`.  ### What the audit found (facts, not guesses) - **Backend is correctly scoped.** Every watchlist route requires a valid session cookie/token, resolves it to a real `user.id` via `getSession()`, and every query filters by `watchlists.user_id`. No anonymous/default/global wa",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan: ARCA-61 — Watchlist persistence bug  **What I did before writing this plan:** read-only audit of the full chain (no edits) — `WatchlistPage.tsx`, `useAuth.tsx`, `App.tsx` routing, `api.ts`, `modules/watchlist/handlers.ts`, `modules/watchlist/schema.ts`, `modules/auth/handlers.ts`, `db/auth.ts`, and `server.ts`.  ### What the audit found (facts, not guesses) - **Backend is correctly scoped.** Every watchlist route requires a valid session cookie/token, resolves it to a real `user.id` via `getSession()`, and every query filters by `watchlists.user_id`. No anonymous/default/global wa",
+  "started": "2026-09-26T01:38:31Z",
+  "finished": "2026-09-26T01:38:32Z",
+  "repo": "wealthcx01/arca"
+}
