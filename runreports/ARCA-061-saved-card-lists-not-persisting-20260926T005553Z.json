@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-26T00:55:52Z",
+  "ended_at": "2026-09-26T00:55:53Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good — I now have enough grounding in the actual code to write a well-informed plan. Here's the plan for ARCA-61:  ## Plan for ARCA-61 — Saved card lists not persisting  ### What I did to prepare this plan (read-only, no edits) I traced the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` route mounting → `modules/watchlist/handlers.ts` (auth middleware + CRUD) → `modules/watchlist/schema.ts` → `db/auth.ts` (login/session).  **Notable finding:** on static read, every layer looks correctly wired — `api.ts` sends `credentials: \"include\"`; `",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: Good — I now have enough grounding in the actual code to write a well-informed plan. Here's the plan for ARCA-61:  ## Plan for ARCA-61 — Saved card lists not persisting  ### What I did to prepare this plan (read-only, no edits) I traced the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `server.ts` route mounting → `modules/watchlist/handlers.ts` (auth middleware + CRUD) → `modules/watchlist/schema.ts` → `db/auth.ts` (login/session).  **Notable finding:** on static read, every layer looks correctly wired — `api.ts` sends `credentials: \"include\"`; `",
+  "started": "2026-09-26T00:55:52Z",
+  "finished": "2026-09-26T00:55:53Z",
+  "repo": "wealthcx01/arca"
+}
