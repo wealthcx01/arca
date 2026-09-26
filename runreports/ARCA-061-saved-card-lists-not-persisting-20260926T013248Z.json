@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-26T01:32:48Z",
+  "ended_at": "2026-09-26T01:32:48Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Investigation before any fix  **No code changes made or proposed for immediate implementation — this is a plan for founder sign-off, per the ticket's high-impact classification (auth-adjacent, user data).**  ### What I did (read-only audit) I traced the full watchlist path: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the session layer in `db/auth.ts` and `modules/auth/handlers.ts`.  ### What I found (contrary to the ticket's working theory) The backend is **correctly scope",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Investigation before any fix  **No code changes made or proposed for immediate implementation — this is a plan for founder sign-off, per the ticket's high-impact classification (auth-adjacent, user data).**  ### What I did (read-only audit) I traced the full watchlist path: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts`, plus the session layer in `db/auth.ts` and `modules/auth/handlers.ts`.  ### What I found (contrary to the ticket's working theory) The backend is **correctly scope",
+  "started": "2026-09-26T01:32:48Z",
+  "finished": "2026-09-26T01:32:48Z",
+  "repo": "wealthcx01/arca"
+}
