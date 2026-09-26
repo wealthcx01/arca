@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-26T00:10:11Z",
+  "ended_at": "2026-09-26T00:10:11Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I did Read-only audit of the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session/cookie handling in `modules/auth` and `db/auth.ts` → app-level routing/auth gating in `App.tsx` and `server.ts`. No files changed.  ### What I found (this is the important part) Contrary to the ticket's working theory, I could **not** find the bug the description predicts: - Every watchlist route (`list`, `get`, `create`, `rename`, `delete`, `add item`, `remo",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved watchlists not persisting  ### What I did Read-only audit of the full chain: `WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `modules/watchlist/schema.ts` → session/cookie handling in `modules/auth` and `db/auth.ts` → app-level routing/auth gating in `App.tsx` and `server.ts`. No files changed.  ### What I found (this is the important part) Contrary to the ticket's working theory, I could **not** find the bug the description predicts: - Every watchlist route (`list`, `get`, `create`, `rename`, `delete`, `add item`, `remo",
+  "started": "2026-09-26T00:10:11Z",
+  "finished": "2026-09-26T00:10:11Z",
+  "repo": "wealthcx01/arca"
+}
