@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-26T01:07:57Z",
+  "ended_at": "2026-09-26T01:07:57Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence bug  ### What I found before proposing anything I read the full chain end to end (not just delegated it) since this is auth-adjacent: - `modules/watchlist/schema.ts` / `handlers.ts` — every route (list, detail, create, delete, add item, remove item) filters by `watchlists.user_id`. No anonymous/default watchlist path exists. - `modules/watchlist/handlers.ts` has its own inline auth middleware (reads `arca_session` cookie or `Authorization` header, calls `getSession()`, sets `X-User-Id`) — it's wired correctly and mirrors `requireAuth` in `db/au",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Watchlist persistence bug  ### What I found before proposing anything I read the full chain end to end (not just delegated it) since this is auth-adjacent: - `modules/watchlist/schema.ts` / `handlers.ts` — every route (list, detail, create, delete, add item, remove item) filters by `watchlists.user_id`. No anonymous/default watchlist path exists. - `modules/watchlist/handlers.ts` has its own inline auth middleware (reads `arca_session` cookie or `Authorization` header, calls `getSession()`, sets `X-User-Id`) — it's wired correctly and mirrors `requireAuth` in `db/au",
+  "started": "2026-09-26T01:07:57Z",
+  "finished": "2026-09-26T01:07:57Z",
+  "repo": "wealthcx01/arca"
+}
