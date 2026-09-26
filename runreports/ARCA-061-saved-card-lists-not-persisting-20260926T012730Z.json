@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-26T01:27:29Z",
+  "ended_at": "2026-09-26T01:27:30Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan (no code changed — read-only investigation done)  ### What I found from reading the code (not yet running it) I traced the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  - Client always calls the real API (`fetch` with `credentials: \"include\"`); I found **no** `localStorage`/`sessionStorage` fallback and no second/duplicate \"add to watchlist\" entry point anywhere else in the client. - `modules/watchlist/handlers.ts` requires a valid session on every route, resolves the user from th",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## ARCA-61 Plan (no code changed — read-only investigation done)  ### What I found from reading the code (not yet running it) I traced the full chain: `client/src/pages/WatchlistPage.tsx` → `client/src/lib/api.ts` → `modules/watchlist/handlers.ts` → `db/auth.ts` → SQLite.  - Client always calls the real API (`fetch` with `credentials: \"include\"`); I found **no** `localStorage`/`sessionStorage` fallback and no second/duplicate \"add to watchlist\" entry point anywhere else in the client. - `modules/watchlist/handlers.ts` requires a valid session on every route, resolves the user from th",
+  "started": "2026-09-26T01:27:29Z",
+  "finished": "2026-09-26T01:27:30Z",
+  "repo": "wealthcx01/arca"
+}
