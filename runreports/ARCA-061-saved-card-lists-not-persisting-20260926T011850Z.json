@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-26T01:18:50Z",
+  "ended_at": "2026-09-26T01:18:50Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan — ARCA-61 (audit only, no changes made)  ### What I verified by reading the actual code (not guessing)  I read the full chain: `modules/watchlist/schema.ts`, `handlers.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/pages/WatchlistPage.tsx`, `client/src/App.tsx`, and the `users`/`sessions` DDL in `db/push.ts`.  **Everything in the watchlist path itself looks correct:** - Every watchlist route requires a valid `arca_session` cookie/token and derives `user_id` from the server-side session — not from the client (`modu",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan — ARCA-61 (audit only, no changes made)  ### What I verified by reading the actual code (not guessing)  I read the full chain: `modules/watchlist/schema.ts`, `handlers.ts`, `db/auth.ts`, `modules/auth/handlers.ts`, `client/src/lib/api.ts`, `client/src/hooks/useAuth.tsx`, `client/src/pages/WatchlistPage.tsx`, `client/src/App.tsx`, and the `users`/`sessions` DDL in `db/push.ts`.  **Everything in the watchlist path itself looks correct:** - Every watchlist route requires a valid `arca_session` cookie/token and derives `user_id` from the server-side session — not from the client (`modu",
+  "started": "2026-09-26T01:18:50Z",
+  "finished": "2026-09-26T01:18:50Z",
+  "repo": "wealthcx01/arca"
+}
