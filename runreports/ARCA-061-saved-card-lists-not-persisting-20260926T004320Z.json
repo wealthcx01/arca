@@ -1,0 +1,20 @@
+{
+  "lane_id": "arca",
+  "started_at": "2026-09-26T00:43:20Z",
+  "ended_at": "2026-09-26T00:43:20Z",
+  "trigger": "scheduled",
+  "outcome": "awaiting-approval",
+  "summary_md": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **No code changes made.** I read the full chain end-to-end (client → API auth → watchlist handlers → schema → session/login logic) to ground this plan in what's actually there, not speculation.  ### What I verified is *not* the bug - `WatchlistPage.tsx` has no localStorage/sessionStorage fallback — every read and write goes through `api.get/post/delete` to `/api/watchlist/*` with cookies included. No anonymous/local state anywhere in the watchlist code. - The watchlist router has its own auth middleware (`modules/watchlist/hand",
+  "tickets_touched": [
+    "ARCA-061-saved-card-lists-not-persisting"
+  ],
+  "error_detail": null,
+  "pr_url": null,
+  "ticket": "ARCA-061-saved-card-lists-not-persisting",
+  "lane": "arca",
+  "status": "awaiting_founder",
+  "summary": "This looks high-impact (auth/payments/sends/migrations). The lane planned it but paused for your go before doing anything. Plan: ## Plan for ARCA-61 — Saved card lists not persisting  **No code changes made.** I read the full chain end-to-end (client → API auth → watchlist handlers → schema → session/login logic) to ground this plan in what's actually there, not speculation.  ### What I verified is *not* the bug - `WatchlistPage.tsx` has no localStorage/sessionStorage fallback — every read and write goes through `api.get/post/delete` to `/api/watchlist/*` with cookies included. No anonymous/local state anywhere in the watchlist code. - The watchlist router has its own auth middleware (`modules/watchlist/hand",
+  "started": "2026-09-26T00:43:20Z",
+  "finished": "2026-09-26T00:43:20Z",
+  "repo": "wealthcx01/arca"
+}
